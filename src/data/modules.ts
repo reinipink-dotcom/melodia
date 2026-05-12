@@ -299,6 +299,49 @@ export const MODULES: Module[] = [
     songsNeeded: 2,
     status: 'unlocked',
     xpReward: 100,
+    quizQuestions: [
+      {
+        question: 'What does "¿Qué?" mean in English?',
+        options: ['Who?', 'Where?', 'What?', 'When?'],
+        correctIndex: 2,
+        explanation: '¿Qué? = What?',
+      },
+      {
+        question: 'How do you ask "Where?" in Spanish?',
+        options: ['¿Quién?', '¿Dónde?', '¿Cuándo?', '¿Cómo?'],
+        correctIndex: 1,
+        explanation: '¿Dónde? = Where?',
+      },
+      {
+        question: 'Which question word means "Why?"',
+        options: ['¿Por qué?', '¿Cuál?', '¿Cuánto?', '¿Cómo?'],
+        correctIndex: 0,
+        explanation: '¿Por qué? = Why? (Note: literally "for what?")',
+      },
+      {
+        question: 'What is missing from this Spanish question: "Cómo estás?"',
+        options: ['The verb', 'The subject pronoun', 'The opening ¿', 'Nothing — it is correct'],
+        correctIndex: 2,
+        explanation: 'Every Spanish question opens with an inverted ¿ — "¿Cómo estás?"',
+      },
+      {
+        question: 'You want to ask "Who is that?" — which word starts your question?',
+        options: ['¿Qué?', '¿Quién?', '¿Cuál?', '¿Dónde?'],
+        correctIndex: 1,
+        explanation: '¿Quién? = Who?',
+      },
+    ],
+    readingPassage: [
+      { text: 'Maná started in a garage in Guadalajara, Mexico in the 1980s. Four friends who could barely afford instruments rehearsed rock songs until the neighbors banged on the walls. They called themselves Sombrero Verde at first, then changed the name to Maná — a word that, in their telling, came from a dream. The band found their voice when they stopped imitating American rock and started writing in Spanish about the things they actually cared about: love, the environment, immigration, and the kids who had nowhere to play. Their song ', isSpanish: false },
+      { text: '¿Dónde jugarán los niños?', isSpanish: true, english: 'Where will the children play?' },
+      { text: ' became an anthem because it asked a question every parent already felt. The lyrics never preach — they just keep asking. ', isSpanish: false },
+      { text: '¿Cómo', isSpanish: true, english: 'How' },
+      { text: ' did we get here? ', isSpanish: false },
+      { text: '¿Dónde', isSpanish: true, english: 'Where' },
+      { text: ' did the forests go? ', isSpanish: false },
+      { text: '¿Por qué', isSpanish: true, english: 'Why' },
+      { text: ' did no one stop it? Spanish question words land harder than English ones because they are short, sharp, and carry an accent mark that pulls your voice up at the end. Maná sold over forty million albums by asking questions instead of giving answers.', isSpanish: false },
+    ],
   },
 
   {
