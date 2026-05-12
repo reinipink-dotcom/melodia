@@ -247,3 +247,185 @@ These are proven strategies from a successful app launch that apply to Melodia:
 - PostHog docs: https://posthog.com/docs
 - Supabase docs: https://supabase.com/docs
 - Astro (ASO tool): https://astro.useastro.com
+
+<!-- GSD:project-start source:PROJECT.md -->
+## Project
+
+**Melodia**
+
+Melodia is a mobile Spanish learning app that teaches through real music. Users work through a structured 60-module curriculum (A1–B2) where each module is tied to a real song — they learn grammar and vocabulary concepts, deep-link to the song on their streaming platform, take a quiz on Spanish concepts (never lyrics), and read original cultural context passages about the artist. Think "Spotify meets Duolingo."
+
+Built with React Native + Expo by Reine, a first-time developer building in public on TikTok.
+
+**Core Value:** The 6-screen lesson loop: a complete, satisfying learning cycle tied to a real song that users actually want to listen to.
+
+### Constraints
+
+- **Copyright:** Never display song lyrics or large excerpts. Quiz questions must test Spanish concepts, not song content. Reading passages must be 100% original.
+- **Legal:** No embedded music playback. Deep links only ("Listen on Spotify").
+- **Platform:** Apple In-App Purchase required for all subscription revenue — RevenueCat in Phase 6.
+- **Privacy:** Must include privacy policy, restore purchase button, and account deletion option for App Store.
+- **Stack:** React Native + Expo only. No ejecting. EAS for builds and submission.
+<!-- GSD:project-end -->
+
+<!-- GSD:stack-start source:codebase/STACK.md -->
+## Technology Stack
+
+## Runtime & Language
+| Layer | Technology | Version |
+|-------|-----------|---------|
+| Language | TypeScript | ~5.9.2 |
+| Framework | React Native | 0.81.5 |
+| Platform | Expo SDK | ~54.0.33 |
+| Runtime | Node.js | 22 (via nvm) |
+| Architecture | New Architecture | Enabled (`newArchEnabled: true` in app.json) |
+## Navigation
+- `@react-navigation/native` ^7.2.2 — NavigationContainer, useNavigation, RouteProp
+- `@react-navigation/stack` ^7.8.9 — Stack navigators (Onboarding, Modules)
+- `@react-navigation/bottom-tabs` ^7.15.9 — Main tab bar
+- `react-native-screens` ~4.16.0 — Native screen optimization
+- `react-native-gesture-handler` ~2.28.0 — Required peer for navigation
+## State Management
+- `zustand` ^5.0.12 — Two stores, both persisted via AsyncStorage:
+- `@react-native-async-storage/async-storage` 2.2.0 — persistence layer
+## UI & Animations
+- `@expo/vector-icons` ^15.1.1 — Ionicons exclusively (no emoji icons)
+- `expo-linear-gradient` ~15.0.8 — Hero cards, gradients
+- `expo-haptics` ~15.0.8 — Impact and notification feedback throughout
+- `react-native-safe-area-context` ~5.6.0 — SafeAreaView on all screens
+- `react-native-reanimated` ~4.1.1 — **Installed but not yet used** (reserved for Phase 4+)
+- React Native `Animated` API — Used for all current animations (MascotIcon bounce/pulse, CommitmentScreen hold progress, ripple rings)
+## Fonts
+- `@expo-google-fonts/plus-jakarta-sans` — PlusJakartaSans_700Bold, PlusJakartaSans_800ExtraBold
+- `@expo-google-fonts/be-vietnam-pro` — BeVietnamPro_400Regular, BeVietnamPro_500Medium, BeVietnamPro_600SemiBold
+- `@expo-google-fonts/inter` ^0.4.2 — **Installed but fonts not loaded in App.tsx** (legacy from Phase 1, Button.tsx still references Inter)
+- `expo-font` ~14.0.11 — Font loading infrastructure
+## Utilities
+- `expo-linking` ~8.0.12 — Deep linking to Spotify/Apple Music/YouTube (planned for Phase 4)
+- `expo-splash-screen` ~31.0.13 — Splash screen management
+- `expo-status-bar` ~3.0.9 — Status bar control
+## Build & Config
+- `app.json` — Expo config, slug: `melodia-app`, portrait orientation, iOS + Android + Web
+- `tsconfig.json` — Strict TypeScript
+- `index.ts` — Entry point via `registerRootComponent(App)`
+- `package.json` main: `index.ts`
+## Planned (Not Yet Installed)
+| Package | Purpose | Phase |
+|---------|---------|-------|
+| `expo-notifications` | Timer + push notifications | Phase 4 |
+| `expo-av` | Lesson complete sound effect | Phase 4 |
+| `react-native-confetti-cannon` | Lesson complete celebration | Phase 4 |
+| Supabase client | Auth + database | Phase 5 |
+| RevenueCat | In-app subscriptions | Phase 6 |
+| Spotify Web API client | Playlist creation | Phase 7 |
+| PostHog | Analytics + A/B testing | Phase 10 |
+<!-- GSD:stack-end -->
+
+<!-- GSD:conventions-start source:CONVENTIONS.md -->
+## Conventions
+
+## TypeScript
+- **Strict mode** on
+- All props explicitly typed with interfaces (not `type` aliases for component props)
+- Navigation types use `StackNavigationProp<ParamList, RouteName>` and `RouteProp<ParamList, RouteName>`
+- `as const` for icon name types: `{ icon: 'flash' as const }`
+- No `any` — types are explicit throughout
+- Zustand stores are typed with interface declarations before `create<State>()`
+## Component Style
+- Named exports for all screens (not default)
+- `MascotIcon` is the one exception (default export)
+- Onboarding screens use default exports
+## Design System Usage
+- `midnight` (#111125) — screen background
+- `surfaceContainer` (#1E1E32) — cards, inputs
+- `surfaceHigh` (#28283D) — elevated elements
+- `surfaceHighest` (#333348) — chips, tags
+## Animation Patterns
+## Haptics Pattern
+## State Access
+## Navigation
+## Styles
+- All styles via `StyleSheet.create()` at bottom of file — never inline objects
+- Style prop spreading: `[styles.base, condition && styles.variant]`
+- Hex alpha shorthand: `Colors.coral + '22'` (not rgba) for semi-transparent backgrounds
+- `gap` used in flex containers instead of margin for spacing between siblings
+<!-- GSD:conventions-end -->
+
+<!-- GSD:architecture-start source:ARCHITECTURE.md -->
+## Architecture
+
+## Pattern
+## Navigation Tree
+```
+```
+## State Architecture
+### `onboardingStore.ts`
+- Tracks user's choices during onboarding flow
+- Key: `@melodia_onboarding`
+- Fields: `level`, `genres[]`, `platform`, `dailyGoal`, `isComplete`
+- `isComplete = true` after CreateAccount screen → triggers route to MainTabs
+### `progressStore.ts`
+- Tracks learning progress in main app
+- Key: `@melodia_progress`
+- Fields: `currentModuleId` (default: 2), `completedModuleIds` (default: [1]), `totalXP` (default: 100), `streak` (default: 3), `lastActivityDate`
+- `completeModule(id, xp)` → updates all fields + persists
+## Data Layer
+### `src/data/modules.ts` (1953 lines)
+- `CEFRLevel` — `'A1' | 'A1-A2' | 'A2' | 'A2-B1' | 'B1' | 'B1-B2' | 'B2'`
+- `DisplayLevel` — `'A1' | 'A2' | 'B1' | 'B2'` (what tabs show)
+- `GenreTrack` — `'pop' | 'reggaeton' | 'rnb' | 'regional-mexican'`
+- `Module` — id, title, level, song, genreSongs, vocabulary, grammarPoints, quizTypes, readingTopic, readingRatio, xpReward
+- `getDisplayLevel(level)` — maps transition levels to display tab
+- `getSongForGenre(module, genre)` — genre-aware song selection with fallback
+## Component Architecture
+### Design System Constants (`src/constants/`)
+- `colors.ts` — Single source of truth for all colors (tonal hierarchy pattern)
+- `typography.ts` — Pre-typed TextStyle objects (display, h1, h2, label, body, bodyMedium, caption)
+- `spacing.ts` — Spacing + Radius token sets
+- `index.ts` — Re-exports all three
+### Reusable Components (`src/components/`)
+- `Button` — primary/outline/ghost variants, disabled/loading states
+- `Card` — base card wrapper
+- `ProgressBar` — coral fill on surface track
+- `LevelBadge` — A1/A2/B1/B2 with level-appropriate color
+- `QuizOption` — default/selected/correct/incorrect states
+- `MascotIcon` — animated coral circle with music note (bounce + 3 pulse rings)
+### Screen Pattern
+- `SafeAreaView` from `react-native-safe-area-context` with `edges={['top']}`
+- `StatusBar barStyle="light-content"`
+- Styles via `StyleSheet.create()` at bottom of file
+- Direct color/typography references (no theme context)
+## Lesson Flow (Phase 4 — Not Yet Built)
+## Font Loading
+<!-- GSD:architecture-end -->
+
+<!-- GSD:skills-start source:skills/ -->
+## Project Skills
+
+| Skill | Description | Path |
+|-------|-------------|------|
+| design-inspiration | \| Loads visual design references before creating or modifying any UI. Reads all images in the references/ folder and uses them to guide design decisions — colors, layout, typography, spacing, component style, and overall feel. Triggered automatically whenever a screen, component, or stylesheet is being designed or modified. Use when someone says "design", "build a screen", "create a component", "style this", "make it look like", or when any .tsx/.jsx/.ts file containing UI code is being created or edited. | `.agents/skills/design-inspiration/SKILL.md` |
+| plaid-build | \| Product Led AI Development — Build mode. Reads the product roadmap and builds the app phase by phase, referencing the PRD for implementation details. After each phase, reviews code for issues, then commits to git. Continues until all phases are complete. Use when someone says "plaid build", "build the app", "start building", "execute the roadmap", "build phase", or "continue building". For product planning, see plaid-plan. For go-to-market, see plaid-launch. | `.agents/skills/plaid-build/SKILL.md` |
+| plaid-launch | \| Product Led AI Development — Launch mode. Generates a go-to-market plan (gtm.md) based on existing vision.json and product-vision.md. Requires that plaid-plan has been run first. Use when someone says "plaid launch", "go-to-market", "launch plan", "GTM strategy", "help me launch", "marketing plan", or "launch playbook". For product planning, see plaid-plan. For building, see plaid-build. | `.agents/skills/plaid-launch/SKILL.md` |
+| plaid-plan | \| Product Led AI Development — Planning mode. Guides founders through a structured vision intake conversation, then generates three documents: product-vision.md (strategy, brand, audience), prd.md (technical spec, design system, requirements), and product-roadmap.md (phased build plan with checkboxes). Use when someone says "plaid plan", "plan a product", "help me build something", "define my vision", "generate a PRD", "plan my app", "spec out my idea", "what should I build", "product strategy", or "PLAID". For go-to-market planning, see plaid-launch. For building from the roadmap, see plaid-build. | `.agents/skills/plaid-plan/SKILL.md` |
+<!-- GSD:skills-end -->
+
+<!-- GSD:workflow-start source:GSD defaults -->
+## GSD Workflow Enforcement
+
+Before using Edit, Write, or other file-changing tools, start work through a GSD command so planning artifacts and execution context stay in sync.
+
+Use these entry points:
+- `/gsd-quick` for small fixes, doc updates, and ad-hoc tasks
+- `/gsd-debug` for investigation and bug fixing
+- `/gsd-execute-phase` for planned phase work
+
+Do not make direct repo edits outside a GSD workflow unless the user explicitly asks to bypass it.
+<!-- GSD:workflow-end -->
+
+<!-- GSD:profile-start -->
+## Developer Profile
+
+> Profile not yet configured. Run `/gsd-profile-user` to generate your developer profile.
+> This section is managed by `generate-claude-profile` -- do not edit manually.
+<!-- GSD:profile-end -->
