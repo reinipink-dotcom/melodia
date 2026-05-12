@@ -104,7 +104,7 @@ export const MODULES: Module[] = [
     concept: 'Pronunciation & the 27-letter alphabet',
     conceptDescription:
       'Spanish is almost perfectly phonetic — once you know the sounds, you can read anything out loud. Start here and the rest of the language opens up.',
-    song: { title: 'Bésame Mucho', artist: 'Consuelo Velázquez', durationSeconds: 210 },
+    song: { title: 'Bésame Mucho', artist: 'Consuelo Velázquez', durationSeconds: 210, spotifyId: '6jXSjt2gZkLQ9yEAGOC7CR' },
     genreSongs: {
       reggaeton: { title: 'La Bamba', artist: 'Los Lobos', durationSeconds: 183 },
       'regional-mexican': { title: 'La Bamba', artist: 'Los Lobos', durationSeconds: 183 },
@@ -129,6 +129,51 @@ export const MODULES: Module[] = [
     songsNeeded: 2,
     status: 'completed',
     xpReward: 100,
+    quizQuestions: [
+      {
+        question: 'How is the Spanish vowel "i" always pronounced?',
+        options: ['Like "eye" in English', 'Like "ee" in "see"', 'Like "ih" in "sit"', 'Like "y" in "fly"'],
+        correctIndex: 1,
+        explanation: 'Spanish vowels are pure and consistent. "i" is always pronounced "ee".',
+      },
+      {
+        question: 'Which letter is ALWAYS silent in Spanish?',
+        options: ['j', 'h', 'v', 'r'],
+        correctIndex: 1,
+        explanation: 'The Spanish "h" is silent in every word: hola, hablar, hacer.',
+      },
+      {
+        question: 'How is the double "ll" pronounced in most Spanish dialects?',
+        options: ['Like English "l"', 'Like English "y"', 'Like English "j"', 'Like a rolled "r"'],
+        correctIndex: 1,
+        explanation: '"ll" sounds like "y" — so "llamar" sounds like "ya-mar".',
+      },
+      {
+        question: 'What sound does "ñ" make?',
+        options: ['"n" as in "no"', '"ng" as in "sing"', '"ny" as in "canyon"', 'Silent'],
+        correctIndex: 2,
+        explanation: '"ñ" makes the "ny" sound — niño = "neen-yo".',
+      },
+      {
+        question: 'How many letters are in the modern Spanish alphabet?',
+        options: ['26', '27', '28', '29'],
+        correctIndex: 1,
+        explanation: 'The modern Spanish alphabet has 27 letters — the 26 English letters plus ñ.',
+      },
+    ],
+    readingPassage: [
+      { text: 'In 1940, a sixteen-year-old girl in Mexico City sat down at a piano and composed one of the most-recorded songs in history. Her name was Consuelo Velázquez, and the song was ', isSpanish: false },
+      { text: '"Bésame Mucho"', isSpanish: true, english: 'Kiss Me a Lot' },
+      { text: '. What makes it remarkable is not just the melody, but that Consuelo had never been kissed when she wrote it. She built the song from imagination and the bolero traditions she had grown up with. ', isSpanish: false },
+      { text: 'Hola', isSpanish: true, english: 'Hello' },
+      { text: ' is the first word most Spanish learners say, but a song can be the first phrase that truly sticks. Consuelo went on to perform with major orchestras and serve in the Mexican government, but the song followed her everywhere — translated into more than twenty languages and recorded by artists from Frank Sinatra to The Beatles. Listen closely to the chorus and you can hear the Spanish ', isSpanish: false },
+      { text: 'b', isSpanish: true, english: 'the letter b' },
+      { text: ' and ', isSpanish: false },
+      { text: 'v', isSpanish: true, english: 'the letter v' },
+      { text: ' that sound nearly identical, the ', isSpanish: false },
+      { text: 'h', isSpanish: true, english: 'silent letter h' },
+      { text: ' that you never hear, and the rolling vowels that make Spanish so musical. The whole alphabet, in one love song from a girl who had not yet lived the feeling.', isSpanish: false },
+    ],
   },
 
   {
