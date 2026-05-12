@@ -1,10 +1,23 @@
+---
+gsd_state_version: 1.0
+milestone: v1.0
+milestone_name: milestone
+status: unknown
+last_updated: "2026-05-12T12:31:53.469Z"
+progress:
+  total_phases: 12
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
+---
+
 # STATE.md — Project Memory
 
 ## Current State
 
 **Phase:** 4 — Lesson Flow
-**Workflow state:** Planning
-**Last Updated:** 2026-05-11
+**Workflow state:** Planning (UI-SPEC approved — ready to plan)
+**Last Updated:** 2026-05-12
 
 ## Project Reference
 
@@ -44,6 +57,7 @@ Nothing in progress yet — ready to plan Phase 4.
 ## Phase 4 Planning Notes
 
 **6 screens to build:**
+
 1. `PreListenScreen` — concept explanation + vocab preview
 2. `ListenScreen` — song card + deep link + countdown timer
 3. `QuizScreen` — 5 multiple choice questions
