@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 15,
     fontWeight: '500',
-    fontFamily: 'Inter_500Medium',
+    fontFamily: 'BeVietnamPro_500Medium',
   },
   primaryLabel: {
     color: Colors.white,

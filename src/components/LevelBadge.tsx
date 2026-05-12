@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 11,
     fontWeight: '600',
-    fontFamily: 'Inter_500Medium',
+    fontFamily: 'BeVietnamPro_500Medium',
     letterSpacing: 0.5,
   },
 });

@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
   },
   label: {
     fontSize: 15,
-    fontFamily: 'Inter_400Regular',
+    fontFamily: 'BeVietnamPro_400Regular',
     color: Colors.white,
   },
   defaultText: {
