@@ -2,6 +2,45 @@
 
 ---
 
+## Design Overhaul — Session 2 (2026-04-06)
+
+Complete visual redesign based on Stitch "Sonic Immersion" design system:
+
+### Design System Changes
+- **Colors**: Replaced Inter-era palette with Stitch tonal system (#111125 base, #1E1E32 cards, #FF6B4A coral, #F4BE4E amber, #5DD9D0 teal, #E2E0FC text)
+- **Typography**: Switched from Inter → Plus Jakarta Sans (headlines) + Be Vietnam Pro (body)
+- **No borders rule**: All card boundaries defined via tonal background shifts only
+- **Coral glow shadows**: All CTAs have `shadowColor: coral` glow effect
+
+### New Features
+- `MascotIcon` component: animated coral circle with music note, continuous bounce + 3-ring pulse fade
+- Haptic feedback on all selections (`expo-haptics`)
+- **Commitment screen hold-to-lock**: Press & hold 2.5s, fills from left, haptic pulses every 600ms, success haptic + navigate on complete
+- Ripple rings on commitment button while holding
+- Ambient radial glow layers on every screen
+- Progress bar header (label + % + thin fill bar) replaces old dots
+- Genre cards: `LinearGradient` per genre (no emojis, no stock photos)
+- Ionicons throughout (no emojis)
+
+---
+
+## Phase 2: Onboarding Flow — COMPLETE ✅
+
+All 8 onboarding screens built and wired:
+- [x] Splash screen — fade + scale animation, auto-advances to Welcome after 2.2s
+- [x] Welcome screen — mascot hero, headline with coral accent, "Get Started" CTA
+- [x] Level selection — 3 options (beginner / some basics / intermediate), radio select
+- [x] Genre selection — 4 genres (pop, reggaeton, R&B, regional Mexican), multi-select chips
+- [x] Platform selection — Spotify / Apple Music / YouTube Music / YouTube, radio select
+- [x] Daily goal — 4 options in 2×2 grid (5/10/15/20+ min)
+- [x] Commitment screen — mascot + "Lock in" button with spring bounce animation, "Maybe later" skip
+- [x] Create account — Apple / Google social buttons + email input + skip option
+- [x] Onboarding store (Zustand) — persists all choices to AsyncStorage
+- [x] RootNavigator — auto-routes to MainTabs if onboarding already completed
+- [x] ProgressDots component — animated pill indicator (6 steps)
+
+---
+
 ## Session 1 — 2026-04-05
 
 ### What was built
@@ -21,15 +60,60 @@
 - Expo warned about package version mismatches on first start — fixed with `npx expo install` to pin correct SDK-compatible versions
 - A second Expo server was already running on port 8081 — used port 8082
 
-### What's next (Phase 2)
-- [ ] Splash screen (Screen 1) — logo + mascot animation
-- [ ] Welcome screen (Screen 2)
-- [ ] Level selection (Screen 3)
-- [ ] Genre selection (Screen 4)
-- [ ] Listening platform (Screen 5)
-- [ ] Daily goal (Screen 6)
-- [ ] Commitment screen (Screen 7) — "Lock in" button
-- [ ] Create account screen (Screen 8) — placed after onboarding for conversion
-- [ ] Store onboarding choices in AsyncStorage
+### What's next (Phase 3)
+- Home, Modules, and Module Detail screens
+
+---
+
+## Phase 3: Home & Modules — COMPLETE ✅
+
+### Files created/updated
+- `src/data/modules.ts` — 18 real modules (A1–B2) with song, vocab, grammar points, reading topic, XP reward; `FREE_MODULE_LIMIT = 8`
+- `src/store/progressStore.ts` — Zustand store tracking currentModuleId, completedModuleIds, totalXP, streak (persisted to AsyncStorage)
+- `src/screens/Home/HomeScreen.tsx` — full dashboard (greeting, streak/XP/modules stats row, hero "Continue Learning" card with LinearGradient, XP progress bar, "Up Next" card, browse button)
+- `src/screens/Modules/ModulesScreen.tsx` — CEFR level tab selector (A1/A2/B1/B2), module list with completed/active/unlocked/locked states, paywall banner, taps through to ModuleDetail
+- `src/screens/Modules/ModuleDetailScreen.tsx` — full detail view: hero card with concept description, featured song card, grammar focus list, vocabulary grid, reading track preview, XP reward, "Start Lesson" CTA
+- `src/navigation/ModulesNavigator.tsx` — new stack navigator wrapping ModulesList + ModuleDetail
+- `src/navigation/TabNavigator.tsx` — updated Modules tab to use ModulesNavigator, exported `TabParamList` type, updated font to BeVietnamPro
+
+### Design details
+- All surfaces use tonal hierarchy (midnight → surfaceContainer → surfaceHigh) — no hard borders
+- Coral glow on hero card and CTA buttons
+- Level-color system: A1=teal, A2=coral, B1=amber, B2=lavender
+- Active module has coral border glow; completed modules show teal checkmark; locked modules are dimmed with lock icon
+
+### What's next (Phase 4)
+- Lesson flow: pre-listening context (screen 12), listen screen with deep link (screen 13), quiz (screen 14), quiz results (screen 15), reading comprehension (screen 16), lesson complete (screen 17)
+
+### Autonomous agent team — build plan (from Reine, 2026-04-28)
+
+Goal: set up a team of Claude agents that can autonomously build one new module per day (or per run) with minimal manual input from Reine.
+
+**Why this works for Melodia:** Every module follows the exact same structure — pre-lesson concept, vocab words, quiz questions, reading passage. The consistency makes it an ideal agent pipeline.
+
+**The agent team:**
+1. **Planner agent** — given a module number + concept from the curriculum doc, selects a real song, writes concept explanation, picks vocabulary, writes 3–5 quiz questions (testing grammar, NOT lyrics), writes original reading passage. Outputs structured JSON.
+2. **Reviewer agent** — checks planner output for: accurate Spanish, quiz questions that test the concept only, original reading content (no copyright), correct CEFR level vocabulary. Flags issues before anything gets written.
+3. **Builder agent** — takes reviewed JSON and writes the actual lesson screen files following the Phase 4 template exactly.
+4. **Tester agent** — runs `tsc --noEmit`, checks navigation wiring, confirms no broken imports.
+5. **Commit + notify agent** — commits to git, updates PROGRESS.md, sends email/text to Reine summarizing what was added.
+6. **Scheduler** — runs the full pipeline on a cron (e.g. every morning at 8am, build one module).
+
+**Prerequisites before agents can run:**
+- Phase 4 must be complete — Module 1's full lesson flow (all 6 screens) becomes the gold-standard template every agent copies
+- `melodia-curriculum.docx` must be properly ingested so agents pick the right concepts in the right order
+- Content guardrails must be written into the reviewer agent's prompt (copyright rules, Spanish accuracy checks, CEFR level checks)
+
+**Tools available in Claude Code now:** `/schedule` for cron-based remote agents, file read/write, TypeScript checks, git commits, email notifications.
+
+**Session to design this:** Dedicate one session (after Phase 4 is done) purely to designing the agent team prompts, the JSON schema, and the reviewer checklist. Then test with Module 2 before letting it run autonomously.
+
+---
+
+### Feature note — Listen screen timer (from Reine, 2026-04-28)
+When the user leaves the app to listen on Spotify/Apple Music/YouTube, there should be a timer experience:
+- **Phase 4 (simple):** Start a countdown (= song duration) when user taps "Open in [platform]". Use `expo-notifications` to fire a push notification when the timer hits zero: "Your song just finished — ready for the quiz?" Tapping it deep-links back to the quiz screen. iOS cannot force the app to foreground automatically — the notification is the trigger. When the user returns (via notification tap or manually), show an intermediate screen: "Ready to quiz?" with two options: **Start Quiz** or **Give me more time** (shows +1 min / +2 min / replay options, restarts timer, sends back to streaming app).
+- **Phase 8 (upgrade):** Implement as an iOS Live Activity (Dynamic Island / lock screen widget) using `expo-live-activity`. Shows a persistent timer pill the user can see without reopening the app — like Uber's driver ETA widget.
+- **Not pursuing:** Pause detection (knowing if user paused the song in another app) — requires per-platform SDKs and YouTube has no API for it. Not worth the complexity.
 
 ---

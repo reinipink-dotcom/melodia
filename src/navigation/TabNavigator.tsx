@@ -2,12 +2,19 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 import { HomeScreen } from '../screens/Home/HomeScreen';
-import { ModulesScreen } from '../screens/Modules/ModulesScreen';
+import { ModulesNavigator } from './ModulesNavigator';
 import { PlaylistScreen } from '../screens/Playlist/PlaylistScreen';
 import { ProfileScreen } from '../screens/Profile/ProfileScreen';
 import { Colors } from '../constants';
 
-const Tab = createBottomTabNavigator();
+export type TabParamList = {
+  Home: undefined;
+  Modules: undefined;
+  Playlist: undefined;
+  Profile: undefined;
+};
+
+const Tab = createBottomTabNavigator<TabParamList>();
 
 type IoniconName = React.ComponentProps<typeof Ionicons>['name'];
 
@@ -38,12 +45,12 @@ export function TabNavigator() {
         },
         tabBarLabelStyle: {
           fontSize: 11,
-          fontFamily: 'Inter_400Regular',
+          fontFamily: 'BeVietnamPro_400Regular',
         },
       })}
     >
       <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Modules" component={ModulesScreen} />
+      <Tab.Screen name="Modules" component={ModulesNavigator} />
       <Tab.Screen name="Playlist" component={PlaylistScreen} />
       <Tab.Screen name="Profile" component={ProfileScreen} />
     </Tab.Navigator>
