@@ -208,6 +208,63 @@ export const MODULES: Module[] = [
     songsNeeded: 2,
     status: 'active',
     xpReward: 100,
+    quizQuestions: [
+      {
+        question: 'What does the accent on "él" change about the word?',
+        options: [
+          'Nothing — it is decorative',
+          'It changes "the" into "he"',
+          'It changes the pronunciation only',
+          'It marks a question',
+        ],
+        correctIndex: 1,
+        explanation: '"el" (no accent) = "the". "él" (with accent) = "he". The mark distinguishes meaning.',
+      },
+      {
+        question: 'Which Spanish word means "yes"?',
+        options: ['si', 'sí', 'se', 'sé'],
+        correctIndex: 1,
+        explanation: '"sí" with an accent means "yes". "si" without an accent means "if".',
+      },
+      {
+        question: 'Where is the stress placed on the word "hablo" (I speak)?',
+        options: ['HA-blo', 'ha-BLO', 'Equal stress on both', 'Stress depends on dialect'],
+        correctIndex: 0,
+        explanation: 'Words ending in a vowel, n, or s stress the second-to-last syllable by default — HA-blo.',
+      },
+      {
+        question: 'Which question word is missing its required accent mark?',
+        options: ['¿Qué?', '¿Cómo?', '¿Donde?', '¿Cuándo?'],
+        correctIndex: 2,
+        explanation: 'All Spanish question words carry accents when used as questions: ¿Dónde? not ¿Donde?',
+      },
+      {
+        question: 'What does the accent on "tú" tell you?',
+        options: [
+          'It means "your"',
+          'It means "you" (pronoun)',
+          'It marks a stressed syllable only',
+          'It signals a question',
+        ],
+        correctIndex: 1,
+        explanation: '"tu" = your (possessive). "tú" with accent = you (subject pronoun).',
+      },
+    ],
+    readingPassage: [
+      { text: 'Karla Camila Cabello was born in Havana, Cuba in 1997 and moved to the United States as a child. She grew up speaking Spanish at home and English at school — a balance that later shaped her music. After auditioning for a singing competition at fifteen, she joined a group that became briefly famous, then left to build a solo career on her own terms. Her first solo hit, ', isSpanish: false },
+      { text: '"Havana"', isSpanish: true, english: 'a love letter to her birth city' },
+      { text: ', made it impossible to ignore where she came from. The video opens with the words ', isSpanish: false },
+      { text: 'la habana', isSpanish: true, english: 'Havana, written with no capital letters' },
+      { text: ' on screen, and the chorus carries that lilting Cuban rhythm into pop radio worldwide. Camila has said that singing in Spanish feels different — the vowels are more open, the accents land in different places, and the meaning hits harder. Pay attention to how she pronounces ', isSpanish: false },
+      { text: 'sí', isSpanish: true, english: 'yes' },
+      { text: ' versus ', isSpanish: false },
+      { text: 'si', isSpanish: true, english: 'if' },
+      { text: ', or ', isSpanish: false },
+      { text: 'tú', isSpanish: true, english: 'you' },
+      { text: ' versus ', isSpanish: false },
+      { text: 'tu', isSpanish: true, english: 'your' },
+      { text: '. The accent marks are small, but in her singing they carry the entire emotion of a line.', isSpanish: false },
+    ],
   },
 
   {
