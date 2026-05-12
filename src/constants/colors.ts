@@ -1,27 +1,29 @@
 export const Colors = {
-  // Base
+  // Base backgrounds (tonal layers)
   midnight: '#111125',
-  surface: '#252542',
-  warmWhite: '#F8F6F3',
-  lightBorder: '#EEEAE5',
-
-  // Surface tonal hierarchy
+  surfaceLow: '#1A1A2E',
   surfaceContainer: '#1E1E32',
   surfaceHigh: '#28283D',
   surfaceHighest: '#333348',
+
+  // Legacy aliases
+  surface: '#252542',
+  warmWhite: '#F8F6F3',
+  lightBorder: '#EEEAE5',
 
   // Borders
   outlineVariant: '#3A3A55',
 
   // Accents
   coral: '#FF6B4A',
-  peach: '#FF8F73',
-  blush: '#FFB199',
-  amber: '#FFC857',
-  teal: '#4ECDC4',
+  coralLight: '#FFB4A3',
+  peach: '#FFB4A3',
+  blush: '#FFB4A3',
+  amber: '#F4BE4E',
+  teal: '#5DD9D0',
   lavender: '#A078FF',
 
   // Text
-  white: '#FFFFFF',
-  mist: '#8A8AA3',
+  white: '#E2E0FC',
+  mist: '#E1BFB8',
 };
