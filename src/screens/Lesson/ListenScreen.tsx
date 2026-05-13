@@ -14,6 +14,7 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
+import * as Linking from 'expo-linking';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RouteProp } from '@react-navigation/native';
 import { Colors } from '../../constants/colors';
@@ -57,6 +58,7 @@ export function ListenScreen({ navigation, route }: Props) {
   const durationSeconds = module?.song.durationSeconds ?? 210;
   const [secondsLeft, setSecondsLeft] = useState(durationSeconds);
   const [phase, setPhase] = useState<'idle' | 'running' | 'done'>('idle');
+  const [notifDenied, setNotifDenied] = useState(false);
   const progress = useRef(new Animated.Value(1)).current;
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
@@ -118,7 +120,9 @@ export function ListenScreen({ navigation, route }: Props) {
   if (!module) return null;
 
   async function startListening() {
+    if (phase === 'running') return;
     const granted = await ensureNotificationPermission();
+    if (!granted) setNotifDenied(true);
     const id = granted
       ? await scheduleTimerNotification(durationSeconds, module!.song.title, moduleId)
       : null;
@@ -152,6 +156,7 @@ export function ListenScreen({ navigation, route }: Props) {
   }
 
   async function handleListenOnPlatform() {
+    await startListening();
     await openStreaming(platform, module!.song);
   }
 
@@ -242,8 +247,8 @@ export function ListenScreen({ navigation, route }: Props) {
           </View>
 
           {phase === 'idle' && (
-            <TouchableOpacity style={styles.primaryBtn} onPress={startListening} activeOpacity={0.85}>
-              <Text style={styles.primaryBtnText}>I'm listening</Text>
+            <TouchableOpacity onPress={startListening} activeOpacity={0.7} style={{ marginTop: 4 }}>
+              <Text style={styles.skipLink}>I'm already listening</Text>
             </TouchableOpacity>
           )}
 
@@ -259,9 +264,27 @@ export function ListenScreen({ navigation, route }: Props) {
           )}
 
           {phase === 'done' && (
-            <TouchableOpacity style={styles.primaryBtn} onPress={goToQuiz} activeOpacity={0.85}>
-              <Text style={styles.primaryBtnText}>Continue to Quiz</Text>
-              <Ionicons name="arrow-forward" size={18} color="#fff" style={{ marginLeft: 6 }} />
+            <>
+              <Text style={styles.timerDoneMsg}>Your song is done!</Text>
+              <TouchableOpacity style={styles.primaryBtn} onPress={goToQuiz} activeOpacity={0.85}>
+                <Text style={styles.primaryBtnText}>Continue to Quiz</Text>
+                <Ionicons name="arrow-forward" size={18} color="#fff" style={{ marginLeft: 6 }} />
+              </TouchableOpacity>
+              <TouchableOpacity onPress={handleNeedMoreTime} activeOpacity={0.7} style={{ marginTop: 12 }}>
+                <Text style={styles.skipLink}>I need more time (+2 min)</Text>
+              </TouchableOpacity>
+            </>
+          )}
+
+          {notifDenied && (
+            <TouchableOpacity
+              onPress={() => Linking.openURL('app-settings:')}
+              style={{ marginTop: 10 }}
+              activeOpacity={0.7}
+            >
+              <Text style={styles.notifHint}>
+                Enable notifications for song reminders → Open Settings
+              </Text>
             </TouchableOpacity>
           )}
         </View>
@@ -350,4 +373,18 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10, paddingVertical: 6, borderRadius: 20,
   },
   chipText: { ...Typography.caption, fontSize: 13, color: Colors.white },
+  timerDoneMsg: {
+    ...Typography.bodyMedium,
+    fontSize: 15,
+    color: Colors.teal,
+    textAlign: 'center',
+    marginBottom: Spacing.md,
+  },
+  notifHint: {
+    ...Typography.caption,
+    fontSize: 12,
+    color: Colors.mist,
+    textAlign: 'center',
+    textDecorationLine: 'underline',
+  },
 });
