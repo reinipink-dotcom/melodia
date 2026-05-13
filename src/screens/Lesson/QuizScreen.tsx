@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   View,
   Text,
@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   Alert,
   BackHandler,
+  Animated,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
@@ -37,6 +38,9 @@ export function QuizScreen({ navigation, route }: Props) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [revealed, setRevealed] = useState(false);
   const [correctCount, setCorrectCount] = useState(0);
+  const [toastMsg, setToastMsg] = useState('');
+  const [toastIsCorrect, setToastIsCorrect] = useState(true);
+  const toastAnim = useRef(new Animated.Value(0)).current;
 
   function confirmExit() {
     Alert.alert(
@@ -79,6 +83,17 @@ export function QuizScreen({ navigation, route }: Props) {
   const total = questions.length;
   const isLast = questionIndex === total - 1;
 
+  function showToast(msg: string, isCorrect: boolean) {
+    setToastMsg(msg);
+    setToastIsCorrect(isCorrect);
+    toastAnim.setValue(0);
+    Animated.sequence([
+      Animated.timing(toastAnim, { toValue: 1, duration: 150, useNativeDriver: true }),
+      Animated.delay(700),
+      Animated.timing(toastAnim, { toValue: 0, duration: 200, useNativeDriver: true }),
+    ]).start();
+  }
+
   function checkAnswer() {
     if (selectedIndex === null) return;
     const isCorrect = selectedIndex === question.correctIndex;
@@ -86,8 +101,10 @@ export function QuizScreen({ navigation, route }: Props) {
     if (isCorrect) {
       setCorrectCount((c) => c + 1);
       Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success).catch(() => {});
+      showToast('Correcto ✓', true);
     } else {
       Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error).catch(() => {});
+      showToast('Incorrecto ✗', false);
     }
   }
 
@@ -184,6 +201,18 @@ export function QuizScreen({ navigation, route }: Props) {
           </TouchableOpacity>
         )}
       </View>
+
+      {/* Correcto / Incorrecto toast */}
+      <Animated.View
+        pointerEvents="none"
+        style={[
+          styles.toast,
+          { opacity: toastAnim, transform: [{ translateY: toastAnim.interpolate({ inputRange: [0, 1], outputRange: [8, 0] }) }] },
+          toastIsCorrect ? styles.toastCorrect : styles.toastIncorrect,
+        ]}
+      >
+        <Text style={styles.toastText}>{toastMsg}</Text>
+      </Animated.View>
     </SafeAreaView>
   );
 }
@@ -263,4 +292,20 @@ const styles = StyleSheet.create({
   },
   primaryBtnDisabled: { backgroundColor: Colors.surfaceHigh },
   primaryBtnText: { ...Typography.bodyMedium, fontSize: 16, color: '#fff' },
+  toast: {
+    position: 'absolute',
+    bottom: 110,
+    alignSelf: 'center',
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    borderRadius: 20,
+  },
+  toastCorrect: { backgroundColor: Colors.teal },
+  toastIncorrect: { backgroundColor: Colors.coral },
+  toastText: {
+    fontFamily: 'BeVietnamPro_600SemiBold',
+    fontSize: 14,
+    color: '#fff',
+    letterSpacing: 0.3,
+  },
 });

@@ -1,5 +1,5 @@
-import React from 'react';
-import { TouchableOpacity, Text, StyleSheet, ViewStyle } from 'react-native';
+import React, { useEffect, useRef } from 'react';
+import { TouchableOpacity, Text, StyleSheet, ViewStyle, Animated } from 'react-native';
 import { Colors, Radius, Spacing } from '../constants';
 
 type QuizState = 'default' | 'selected' | 'correct' | 'incorrect';
@@ -19,15 +19,37 @@ export function QuizOption({
   disabled = false,
   style,
 }: QuizOptionProps) {
+  const scaleAnim = useRef(new Animated.Value(1)).current;
+  const shakeAnim = useRef(new Animated.Value(0)).current;
+
+  useEffect(() => {
+    if (state === 'correct') {
+      Animated.sequence([
+        Animated.spring(scaleAnim, { toValue: 1.06, friction: 3, tension: 200, useNativeDriver: true }),
+        Animated.spring(scaleAnim, { toValue: 1, friction: 5, tension: 200, useNativeDriver: true }),
+      ]).start();
+    } else if (state === 'incorrect') {
+      Animated.sequence([
+        Animated.timing(shakeAnim, { toValue: -8, duration: 50, useNativeDriver: true }),
+        Animated.timing(shakeAnim, { toValue: 8, duration: 50, useNativeDriver: true }),
+        Animated.timing(shakeAnim, { toValue: -6, duration: 50, useNativeDriver: true }),
+        Animated.timing(shakeAnim, { toValue: 6, duration: 50, useNativeDriver: true }),
+        Animated.timing(shakeAnim, { toValue: 0, duration: 50, useNativeDriver: true }),
+      ]).start();
+    }
+  }, [state]);
+
   return (
-    <TouchableOpacity
-      onPress={onPress}
-      disabled={disabled}
-      activeOpacity={0.8}
-      style={[styles.base, styles[state], style]}
-    >
-      <Text style={[styles.label, styles[`${state}Text`]]}>{label}</Text>
-    </TouchableOpacity>
+    <Animated.View style={{ transform: [{ scale: scaleAnim }, { translateX: shakeAnim }] }}>
+      <TouchableOpacity
+        onPress={onPress}
+        disabled={disabled}
+        activeOpacity={0.8}
+        style={[styles.base, styles[state], style]}
+      >
+        <Text style={[styles.label, styles[`${state}Text`]]}>{label}</Text>
+      </TouchableOpacity>
+    </Animated.View>
   );
 }
 
