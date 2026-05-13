@@ -94,13 +94,12 @@ export function QuizScreen({ navigation, route }: Props) {
   function advance() {
     if (selectedIndex === null) return;
     if (isLast) {
-      // Compute final correct count synchronously: correctCount may not yet reflect last answer.
-      const lastIsCorrect = selectedIndex === question.correctIndex;
-      const finalCorrect = correctCount + (lastIsCorrect ? 1 : 0);
-      const xpEarned = computeXp(finalCorrect, total, module!.xpReward);
+      // By the time the user taps "See My Results", checkAnswer() has already fired
+      // as a separate button press — React committed correctCount before this render.
+      const xpEarned = computeXp(correctCount, total, module!.xpReward);
       navigation.replace('QuizResults', {
         moduleId,
-        score: finalCorrect,
+        score: correctCount,
         total,
         xpEarned,
       });

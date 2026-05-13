@@ -6,22 +6,22 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { RouteProp, useNavigation } from '@react-navigation/native';
+import { RouteProp } from '@react-navigation/native';
 import { Colors } from '../../constants/colors';
 import { Typography } from '../../constants/typography';
 import { Spacing } from '../../constants/spacing';
 import { MODULES } from '../../data/modules';
 import { ModulesStackParamList } from '../../navigation/ModulesNavigator';
-import { RootStackParamList } from '../../navigation/RootNavigator';
 import MascotIcon from '../../components/MascotIcon';
 import { useLessonStore } from '../../store/lessonStore';
 import { useProgressStore } from '../../store/progressStore';
 
 type Props = {
+  navigation: StackNavigationProp<ModulesStackParamList, 'LessonComplete'>;
   route: RouteProp<ModulesStackParamList, 'LessonComplete'>;
 };
 
-export function LessonCompleteScreen({ route }: Props) {
+export function LessonCompleteScreen({ navigation, route }: Props) {
   const { moduleId, xpEarned } = route.params;
   const module = MODULES.find((m) => m.id === moduleId);
   const nextModule = MODULES.find((m) => m.id === moduleId + 1);
@@ -29,9 +29,6 @@ export function LessonCompleteScreen({ route }: Props) {
   const completeModule = useProgressStore((s) => s.completeModule);
   const completedModuleIds = useProgressStore((s) => s.completedModuleIds);
   const completeLesson = useLessonStore((s) => s.completeLesson);
-
-  // Type the root navigator so we can cross navigator boundaries
-  const rootNav = useNavigation<StackNavigationProp<RootStackParamList>>();
 
   // Update progress store ONCE on mount, idempotent
   useEffect(() => {
@@ -41,12 +38,10 @@ export function LessonCompleteScreen({ route }: Props) {
     completeLesson();
   }, []);
 
-  // Disable Android hardware back
+  // Disable Android hardware back — pop to module list
   useEffect(() => {
     const sub = BackHandler.addEventListener('hardwareBackPress', () => {
-      // Behave like "Continue to Modules"
-      // @ts-expect-error nested screen typing
-      rootNav.navigate('MainTabs', { screen: 'Modules' });
+      navigation.popToTop();
       return true;
     });
     return () => sub.remove();
@@ -55,13 +50,14 @@ export function LessonCompleteScreen({ route }: Props) {
   if (!module) return null;
 
   function goToModules() {
-    // @ts-expect-error nested screen typing
-    rootNav.navigate('MainTabs', { screen: 'Modules' });
+    // Pop the entire lesson stack — lands on ModulesList inside the Modules tab
+    navigation.popToTop();
   }
 
   function goToHome() {
-    // @ts-expect-error nested screen typing
-    rootNav.navigate('MainTabs', { screen: 'Home' });
+    // Pop lesson stack first, then switch to Home tab via parent tab navigator
+    navigation.popToTop();
+    navigation.getParent()?.navigate('Home' as never);
   }
 
   function handleAddToPlaylist() {
