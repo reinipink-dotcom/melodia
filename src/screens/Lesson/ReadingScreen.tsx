@@ -13,6 +13,7 @@ import { Spacing } from '../../constants/spacing';
 import { MODULES, ReadingPassageToken } from '../../data/modules';
 import { ModulesStackParamList } from '../../navigation/ModulesNavigator';
 import { useLessonStore } from '../../store/lessonStore';
+import { speakSpanish, stopSpeech } from '../../utils/speech';
 
 type Props = {
   navigation: StackNavigationProp<ModulesStackParamList, 'Reading'>;
@@ -86,7 +87,7 @@ export function ReadingScreen({ navigation, route }: Props) {
               token.isSpanish ? (
                 <Text
                   key={i}
-                  onPress={() => setActiveToken(token)}
+                  onPress={() => { setActiveToken(token); speakSpanish(token.text); }}
                   style={styles.spanishWord}
                 >
                   {token.text}
@@ -119,7 +120,7 @@ export function ReadingScreen({ navigation, route }: Props) {
         animationType="fade"
         onRequestClose={() => setActiveToken(null)}
       >
-        <TouchableWithoutFeedback onPress={() => setActiveToken(null)}>
+        <TouchableWithoutFeedback onPress={() => { setActiveToken(null); stopSpeech(); }}>
           <View style={styles.modalOverlay}>
             <TouchableWithoutFeedback>
               <View style={styles.tooltip}>
@@ -128,6 +129,13 @@ export function ReadingScreen({ navigation, route }: Props) {
                 {activeToken?.phonetic && (
                   <Text style={styles.tooltipPhonetic}>{activeToken.phonetic}</Text>
                 )}
+                <TouchableOpacity
+                  onPress={() => activeToken && speakSpanish(activeToken.text)}
+                  style={styles.tooltipSpeaker}
+                  activeOpacity={0.7}
+                >
+                  <Ionicons name="volume-high-outline" size={18} color={Colors.mist} />
+                </TouchableOpacity>
               </View>
             </TouchableWithoutFeedback>
           </View>
@@ -192,4 +200,5 @@ const styles = StyleSheet.create({
   },
   tooltipEnglish: { ...Typography.body, fontSize: 15, color: Colors.white },
   tooltipPhonetic: { ...Typography.caption, color: Colors.mist, marginTop: 4 },
+  tooltipSpeaker: { marginTop: 10, padding: 4 },
 });
