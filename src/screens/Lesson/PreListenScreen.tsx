@@ -20,6 +20,7 @@ import { Spacing } from '../../constants/spacing';
 import { MODULES } from '../../data/modules';
 import { ModulesStackParamList } from '../../navigation/ModulesNavigator';
 import { useLessonStore } from '../../store/lessonStore';
+import { speakSpanish, stopSpeech } from '../../utils/speech';
 
 type Props = {
   navigation: StackNavigationProp<ModulesStackParamList, 'PreListen'>;
@@ -64,7 +65,10 @@ export function PreListenScreen({ navigation, route }: Props) {
       confirmExit();
       return true;
     });
-    return () => sub.remove();
+    return () => {
+      sub.remove();
+      stopSpeech();
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -108,6 +112,13 @@ export function PreListenScreen({ navigation, route }: Props) {
                 <Text style={[styles.vocabSpanish, { color: accent }]}>{word.spanish}</Text>
                 <Text style={styles.vocabEnglish}>{word.english}</Text>
               </View>
+              <TouchableOpacity
+                onPress={() => speakSpanish(word.spanish)}
+                style={styles.speakerBtn}
+                activeOpacity={0.7}
+              >
+                <Ionicons name="volume-high-outline" size={16} color={Colors.white} />
+              </TouchableOpacity>
             </View>
           ))}
         </View>
@@ -175,6 +186,12 @@ const styles = StyleSheet.create({
   vocabDot: { width: 6, height: 6, borderRadius: 3, marginTop: 8 },
   vocabSpanish: { ...Typography.bodyMedium, fontSize: 17 },
   vocabEnglish: { ...Typography.caption, fontSize: 13, color: Colors.mist, marginTop: 2 },
+  speakerBtn: {
+    width: 30, height: 30, borderRadius: 15,
+    backgroundColor: Colors.coral + '33',
+    alignItems: 'center', justifyContent: 'center',
+    alignSelf: 'center',
+  },
   ctaContainer: {
     position: 'absolute', bottom: 0, left: 0, right: 0,
     paddingHorizontal: Spacing.md, paddingBottom: 32, paddingTop: 16,
