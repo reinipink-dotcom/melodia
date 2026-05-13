@@ -5,7 +5,7 @@ export type StreamingPlatform = 'spotify' | 'apple-music' | 'youtube-music' | 'y
 
 export function getStreamingUrl(
   platform: StreamingPlatform | null,
-  song: Pick<Song, 'title' | 'artist' | 'spotifyId'>
+  song: Pick<Song, 'title' | 'artist' | 'spotifyId' | 'youtubeId'>
 ): string {
   const query = encodeURIComponent(`${song.title} ${song.artist}`);
   const resolved = platform ?? 'spotify';
@@ -18,9 +18,13 @@ export function getStreamingUrl(
     case 'apple-music':
       return `https://music.apple.com/search?term=${query}`;
     case 'youtube-music':
-      return `https://music.youtube.com/search?q=${query}`;
+      return song.youtubeId
+        ? `https://music.youtube.com/watch?v=${song.youtubeId}`
+        : `https://music.youtube.com/search?q=${query}`;
     case 'youtube':
-      return `https://www.youtube.com/results?search_query=${query}`;
+      return song.youtubeId
+        ? `https://www.youtube.com/watch?v=${song.youtubeId}`
+        : `https://www.youtube.com/results?search_query=${query}`;
     default:
       return `https://open.spotify.com/search/${query}`;
   }
@@ -28,7 +32,7 @@ export function getStreamingUrl(
 
 export async function openStreaming(
   platform: StreamingPlatform | null,
-  song: Pick<Song, 'title' | 'artist' | 'spotifyId'>
+  song: Pick<Song, 'title' | 'artist' | 'spotifyId' | 'youtubeId'>
 ): Promise<void> {
   const url = getStreamingUrl(platform, song);
   try {

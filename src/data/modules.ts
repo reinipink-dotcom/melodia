@@ -33,6 +33,7 @@ export type Song = {
   artist: string;
   durationSeconds: number;
   spotifyId?: string;
+  youtubeId?: string;
 };
 
 export type QuizQuestion = {
@@ -104,7 +105,7 @@ export const MODULES: Module[] = [
     concept: 'Pronunciation & the 27-letter alphabet',
     conceptDescription:
       'Spanish is almost perfectly phonetic — once you know the sounds, you can read anything out loud. Start here and the rest of the language opens up.',
-    song: { title: 'Bésame Mucho', artist: 'Consuelo Velázquez', durationSeconds: 210, spotifyId: '6jXSjt2gZkLQ9yEAGOC7CR' },
+    song: { title: 'Bésame Mucho', artist: 'Consuelo Velázquez', durationSeconds: 210, spotifyId: '6jXSjt2gZkLQ9yEAGOC7CR', youtubeId: 'MY0fuEfBmD4' },
     genreSongs: {
       reggaeton: { title: 'La Bamba', artist: 'Los Lobos', durationSeconds: 183 },
       'regional-mexican': { title: 'La Bamba', artist: 'Los Lobos', durationSeconds: 183 },
@@ -131,34 +132,34 @@ export const MODULES: Module[] = [
     xpReward: 100,
     quizQuestions: [
       {
-        question: 'How is the Spanish vowel "i" always pronounced?',
-        options: ['Like "eye" in English', 'Like "ee" in "see"', 'Like "ih" in "sit"', 'Like "y" in "fly"'],
+        question: 'The title "Bésame Mucho" starts with B. In Spanish, B and V sound almost identical — like a soft ___',
+        options: ['hard "p" sound', 'gentle sound between English "b" and "v"', 'silent letter', 'hard "d" sound'],
         correctIndex: 1,
-        explanation: 'Spanish vowels are pure and consistent. "i" is always pronounced "ee".',
+        explanation: 'Spanish B and V are nearly indistinguishable — both are soft bilabial sounds, unlike the distinct English versions.',
       },
       {
-        question: 'Which letter is ALWAYS silent in Spanish?',
-        options: ['j', 'h', 'v', 'r'],
+        question: 'The word "bésame" has an accent on the é. What does that accent mark tell you?',
+        options: ['The word is feminine', 'Stress that syllable when you say it', 'It marks a question', 'The word is a verb'],
         correctIndex: 1,
-        explanation: 'The Spanish "h" is silent in every word: hola, hablar, hacer.',
+        explanation: 'The accent on é in BÉ-sa-me tells you to stress that syllable. Without the accent, stress would fall elsewhere.',
       },
       {
-        question: 'How is the double "ll" pronounced in most Spanish dialects?',
-        options: ['Like English "l"', 'Like English "y"', 'Like English "j"', 'Like a rolled "r"'],
-        correctIndex: 1,
-        explanation: '"ll" sounds like "y" — so "llamar" sounds like "ya-mar".',
-      },
-      {
-        question: 'What sound does "ñ" make?',
-        options: ['"n" as in "no"', '"ng" as in "sing"', '"ny" as in "canyon"', 'Silent'],
+        question: 'How many syllables are in the word "bésame"?',
+        options: ['1', '2', '3', '4'],
         correctIndex: 2,
-        explanation: '"ñ" makes the "ny" sound — niño = "neen-yo".',
+        explanation: 'Bé-sa-me has three syllables: BÉ-sa-me. Say it with the stress on the first.',
       },
       {
-        question: 'How many letters are in the modern Spanish alphabet?',
-        options: ['26', '27', '28', '29'],
+        question: 'The word "mucho" contains the letter U. How is the Spanish U always pronounced?',
+        options: ['Like "uh" in "cup"', 'Like "oo" in "food"', 'Like "you" in English', 'Like "u" in "but"'],
         correctIndex: 1,
-        explanation: 'The modern Spanish alphabet has 27 letters — the 26 English letters plus ñ.',
+        explanation: 'Spanish U is always a pure "oo" sound — so "mucho" sounds like "MOO-cho".',
+      },
+      {
+        question: '"Mucho" is one of the first Spanish words English speakers recognize. What does it mean?',
+        options: ['beautiful', 'music', 'a lot / very much', 'goodbye'],
+        correctIndex: 2,
+        explanation: '"Mucho" means "a lot" or "very much." Bésame Mucho = "Kiss Me a Lot."',
       },
     ],
     readingPassage: [
@@ -166,13 +167,13 @@ export const MODULES: Module[] = [
       { text: '"Bésame Mucho"', isSpanish: true, english: 'Kiss Me a Lot' },
       { text: '. What makes it remarkable is not just the melody, but that Consuelo had never been kissed when she wrote it. She built the song from imagination and the bolero traditions she had grown up with. ', isSpanish: false },
       { text: 'Hola', isSpanish: true, english: 'Hello' },
-      { text: ' is the first word most Spanish learners say, but a song can be the first phrase that truly sticks. Consuelo went on to perform with major orchestras and serve in the Mexican government, but the song followed her everywhere — translated into more than twenty languages and recorded by artists from Frank Sinatra to The Beatles. Listen closely to the chorus and you can hear the Spanish ', isSpanish: false },
-      { text: 'b', isSpanish: true, english: 'the letter b' },
-      { text: ' and ', isSpanish: false },
-      { text: 'v', isSpanish: true, english: 'the letter v' },
-      { text: ' that sound nearly identical, the ', isSpanish: false },
-      { text: 'h', isSpanish: true, english: 'silent letter h' },
-      { text: ' that you never hear, and the rolling vowels that make Spanish so musical. The whole alphabet, in one love song from a girl who had not yet lived the feeling.', isSpanish: false },
+      { text: ' is the first word most Spanish learners say, but a song can be the first phrase that truly sticks. Consuelo went on to perform with major orchestras and serve in the Mexican government, but the song followed her everywhere — translated into more than twenty languages and recorded by artists from Frank Sinatra to The Beatles. Listen closely and your first alphabet lessons come alive: ', isSpanish: false },
+      { text: 'bésame', isSpanish: true, english: 'kiss me', phonetic: 'BEH-sa-meh' },
+      { text: ' shows how B and V blend into the same gentle sound. ', isSpanish: false },
+      { text: 'llorar', isSpanish: true, english: 'to cry', phonetic: 'yo-RAR' },
+      { text: ' shows the double-L that sounds like Y. And ', isSpanish: false },
+      { text: 'hablar', isSpanish: true, english: 'to speak', phonetic: 'ah-BLAR' },
+      { text: ' proves the H is always silent. The whole alphabet, in one love song from a girl who had not yet lived the feeling.', isSpanish: false },
     ],
   },
 
@@ -183,7 +184,7 @@ export const MODULES: Module[] = [
     concept: 'Accent marks & stressed syllables',
     conceptDescription:
       'Those little marks over vowels aren\'t decoration — they change meaning and pronunciation entirely. Master them early and you\'ll sound natural from day one.',
-    song: { title: 'Quizás, Quizás, Quizás', artist: 'Nat King Cole', durationSeconds: 174 },
+    song: { title: 'Quizás, Quizás, Quizás', artist: 'Nat King Cole', durationSeconds: 174, youtubeId: 'rDGgUGBD-90' },
     genreSongs: {
       pop: { title: 'Señorita', artist: 'Shawn Mendes & Camila Cabello', durationSeconds: 193 },
       reggaeton: { title: 'Señorita', artist: 'Shawn Mendes & Camila Cabello', durationSeconds: 193 },
@@ -274,7 +275,7 @@ export const MODULES: Module[] = [
     concept: '¿Qué? ¿Dónde? ¿Cómo? and the rest',
     conceptDescription:
       'Eight question words unlock thousands of real conversations. Learn them once and they work in every tense, every context, forever.',
-    song: { title: '¿Dónde Jugarán los Niños?', artist: 'Maná', durationSeconds: 275 },
+    song: { title: '¿Dónde Jugarán los Niños?', artist: 'Maná', durationSeconds: 275, youtubeId: '3H9dN5Na8JI' },
     genreSongs: {
       pop: { title: 'Qué Calor', artist: 'Major Lazer ft. J Balvin & El Alfa', durationSeconds: 205 },
       reggaeton: { title: 'Qué Calor', artist: 'Major Lazer ft. J Balvin & El Alfa', durationSeconds: 205 },
