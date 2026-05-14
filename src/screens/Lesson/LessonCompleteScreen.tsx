@@ -11,6 +11,7 @@ import { Colors } from '../../constants/colors';
 import { Typography } from '../../constants/typography';
 import { Spacing } from '../../constants/spacing';
 import { MODULES } from '../../data/modules';
+import { getEnrichment } from '../../data/curriculum-enrichment';
 import { ModulesStackParamList } from '../../navigation/ModulesNavigator';
 import MascotIcon from '../../components/MascotIcon';
 import { useLessonStore } from '../../store/lessonStore';
@@ -26,6 +27,7 @@ export function LessonCompleteScreen({ navigation, route }: Props) {
   const module = MODULES.find((m) => m.id === moduleId);
   const nextModule = MODULES.find((m) => m.id === moduleId + 1);
 
+  const enrichment = getEnrichment(moduleId);
   const completeModule = useProgressStore((s) => s.completeModule);
   const completedModuleIds = useProgressStore((s) => s.completedModuleIds);
   const completeLesson = useLessonStore((s) => s.completeLesson);
@@ -84,6 +86,16 @@ export function LessonCompleteScreen({ navigation, route }: Props) {
             <Text style={styles.xpNumber}>+{xpEarned}</Text>
           </View>
 
+          {enrichment && (
+            <View style={styles.challengeCard}>
+              <View style={styles.challengeHeader}>
+                <Ionicons name="mic-outline" size={15} color={Colors.coral} />
+                <Text style={styles.challengeLabel}>SPEAKING CHALLENGE</Text>
+              </View>
+              <Text style={styles.challengeText}>{enrichment.speakingPrompts.miniChallenge}</Text>
+            </View>
+          )}
+
           {nextModule && (
             <View style={styles.nextCard}>
               <Ionicons name="lock-open-outline" size={16} color={Colors.coral} />
@@ -138,6 +150,21 @@ const styles = StyleSheet.create({
     fontFamily: 'PlusJakartaSans_700Bold',
     fontSize: 28, color: Colors.amber,
   },
+  challengeCard: {
+    backgroundColor: Colors.surfaceContainer,
+    borderRadius: 12,
+    padding: Spacing.md,
+    borderLeftWidth: 3,
+    borderLeftColor: Colors.coral,
+  },
+  challengeHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+    marginBottom: 8,
+  },
+  challengeLabel: { ...Typography.label, fontSize: 10, letterSpacing: 2, color: Colors.coral },
+  challengeText: { ...Typography.body, fontSize: 13, color: Colors.white, lineHeight: 19 },
   nextCard: {
     flexDirection: 'row', alignItems: 'center', gap: 10,
     backgroundColor: Colors.surfaceContainer,

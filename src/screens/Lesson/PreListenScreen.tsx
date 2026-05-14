@@ -18,6 +18,7 @@ import { Colors } from '../../constants/colors';
 import { Typography } from '../../constants/typography';
 import { Spacing } from '../../constants/spacing';
 import { MODULES } from '../../data/modules';
+import { getEnrichment } from '../../data/curriculum-enrichment';
 import { ModulesStackParamList } from '../../navigation/ModulesNavigator';
 import { useLessonStore } from '../../store/lessonStore';
 import { speakSpanish, stopSpeech } from '../../utils/speech';
@@ -74,6 +75,7 @@ export function PreListenScreen({ navigation, route }: Props) {
 
   if (!module) return null;
   const accent = levelColor(module.level);
+  const enrichment = getEnrichment(moduleId);
 
   return (
     <SafeAreaView style={styles.safe} edges={['top']}>
@@ -101,6 +103,12 @@ export function PreListenScreen({ navigation, route }: Props) {
           </View>
           <Text style={styles.heroTitle}>{module.title}</Text>
           <Text style={styles.heroConcept}>{module.conceptDescription}</Text>
+          {enrichment && (
+            <View style={styles.goalRow}>
+              <Ionicons name="flag-outline" size={12} color={Colors.mist} />
+              <Text style={styles.goalText}>{enrichment.speakingGoal}</Text>
+            </View>
+          )}
         </LinearGradient>
 
         <Text style={styles.sectionLabel}>VOCABULARY TO LISTEN FOR</Text>
@@ -122,6 +130,35 @@ export function PreListenScreen({ navigation, route }: Props) {
             </View>
           ))}
         </View>
+
+        {enrichment && (
+          <>
+            <View style={styles.tipBox}>
+              <Ionicons name="ear-outline" size={16} color={accent} style={{ marginTop: 2 }} />
+              <View style={{ flex: 1 }}>
+                <Text style={styles.tipLabel}>LISTENING TIP</Text>
+                <Text style={styles.tipText}>{enrichment.listeningSkill}</Text>
+              </View>
+            </View>
+
+            <Text style={styles.sectionLabel}>KEY PHRASE</Text>
+            <View style={styles.phraseBox}>
+              <Text style={[styles.phraseChunk, { color: accent }]}>{enrichment.vocabPack.phraseChunk}</Text>
+              <Text style={styles.phrasePattern}>{enrichment.vocabPack.speakingPattern}</Text>
+            </View>
+
+            {enrichment.survivalPhrases && enrichment.survivalPhrases.length > 0 && (
+              <>
+                <Text style={styles.sectionLabel}>SURVIVAL PHRASES</Text>
+                <View style={styles.survivalBox}>
+                  {enrichment.survivalPhrases.map((phrase, i) => (
+                    <Text key={i} style={styles.survivalPhrase}>· {phrase}</Text>
+                  ))}
+                </View>
+              </>
+            )}
+          </>
+        )}
 
         <View style={{ height: 120 }} />
       </ScrollView>
@@ -192,6 +229,42 @@ const styles = StyleSheet.create({
     alignItems: 'center', justifyContent: 'center',
     alignSelf: 'center',
   },
+  goalRow: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    gap: 6,
+    marginTop: 14,
+    paddingTop: 12,
+    borderTopWidth: 1,
+    borderTopColor: 'rgba(255,255,255,0.08)',
+  },
+  goalText: { ...Typography.caption, fontSize: 12, color: Colors.mist, flex: 1, lineHeight: 17 },
+  tipBox: {
+    flexDirection: 'row',
+    gap: 10,
+    backgroundColor: Colors.surfaceContainer,
+    borderRadius: 12,
+    padding: Spacing.md,
+    marginBottom: Spacing.lg,
+  },
+  tipLabel: { ...Typography.label, fontSize: 9, letterSpacing: 2, color: Colors.mist, marginBottom: 4 },
+  tipText: { ...Typography.body, fontSize: 13, color: Colors.white, lineHeight: 19 },
+  phraseBox: {
+    backgroundColor: Colors.surfaceContainer,
+    borderRadius: 12,
+    padding: Spacing.md,
+    marginBottom: Spacing.lg,
+  },
+  phraseChunk: { ...Typography.bodyMedium, fontSize: 18, marginBottom: 8 },
+  phrasePattern: { ...Typography.caption, fontSize: 12, color: Colors.mist, lineHeight: 18 },
+  survivalBox: {
+    backgroundColor: Colors.surfaceContainer,
+    borderRadius: 12,
+    padding: Spacing.md,
+    marginBottom: Spacing.lg,
+    gap: 8,
+  },
+  survivalPhrase: { ...Typography.body, fontSize: 13, color: Colors.white, lineHeight: 19 },
   ctaContainer: {
     position: 'absolute', bottom: 0, left: 0, right: 0,
     paddingHorizontal: Spacing.md, paddingBottom: 32, paddingTop: 16,
