@@ -111,7 +111,7 @@ assets/audio/module-{NNN}/phrase-{phrase-slug}.mp3
 assets/audio/module-{NNN}/reading-{NNN}.mp3
 ```
 
-If the exact same `text` already has an approved audio file (from a previous module), reuse it — do not regenerate. Maintain a global lookup in `notes/melodia/audio-manifest.json`.
+If the exact same `text` already has an approved audio file (from a previous module), reuse it — do not regenerate. Maintain a global lookup in `notes/melodia/2-tracking/audio-manifest.json`.
 </file_naming>
 
 <cost_log>

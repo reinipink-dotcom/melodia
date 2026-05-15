@@ -154,9 +154,27 @@ Run this command to surface the run summary as a native Mac notification:
 osascript -e 'display notification "Module N — {status}" with title "Melodia daily build" sound name "Glass"'
 ```
 
-**Gmail recap (cloud-mode runs — required; local-mode runs — skip):**
+**Phone push notification (cloud-mode runs — required; local-mode optional):**
 
-If running in cloud mode (no XcodeBuildMCP, scheduled via /schedule), send Reine a Gmail recap using the available Gmail MCP tool.
+Send a short push notification to Reine's iPhone via ntfy.sh. This is her primary morning alert.
+
+```bash
+curl -s -X POST "https://ntfy.sh/melodia-build-c129bdfe878a" \
+  -H "Title: Melodia daily build" \
+  -H "Priority: 3" \
+  -H "Tags: musical_note" \
+  -d "Module N ready — branch melodia/daily-YYYY-MM-DD pushed. Check Gmail draft for full recap."
+```
+
+Required headers: `Title`, optional `Priority` (1-5, default 3), optional `Tags`.
+
+Topic: `melodia-build-c129bdfe878a` (hardcoded — unguessable; Reine's iPhone is subscribed to this exact string).
+
+If ntfy fails for any reason, do NOT block the run — the Gmail draft still serves as the recap.
+
+**Gmail recap draft (cloud-mode runs — required; local-mode runs — skip):**
+
+The Gmail MCP only exposes `create_draft` (no `send_message` tool exists). So you CREATE A DRAFT — it lands in Reine's Drafts folder, NOT her inbox. The ntfy push notification (above) tells her to check Drafts. Use `mcp__claude_ai_Gmail__create_draft` with:
 
 - **Recipient (`to`):** `reinipink@gmail.com`
 - **From:** the authenticated Gmail account (auto-handled by the MCP)

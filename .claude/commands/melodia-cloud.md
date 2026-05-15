@@ -84,9 +84,25 @@ Built by /melodia-cloud scheduled agent."
 git push -u origin melodia/daily-$(date +%Y-%m-%d)
 ```
 
-### Step 7 — Send Gmail recap to Reine
+### Step 7a — Push notification to Reine's iPhone (ntfy.sh)
 
-Use the Gmail MCP tool to send Reine an email.
+Fire instantly so Reine sees the build status the moment she picks up her phone.
+
+```bash
+curl -s -X POST "https://ntfy.sh/melodia-build-c129bdfe878a" \
+  -H "Title: Melodia daily build" \
+  -H "Priority: 3" \
+  -H "Tags: musical_note" \
+  -d "Module N ready — branch melodia/daily-YYYY-MM-DD pushed. Full recap in Gmail Drafts."
+```
+
+Topic `melodia-build-c129bdfe878a` is Reine's private channel — her iPhone's ntfy app is subscribed. Free, no auth, no token cost.
+
+If the curl fails, do NOT abort the run. The Gmail draft below is the backup channel.
+
+### Step 7b — Gmail recap (DRAFT — Gmail MCP can't send, only draft)
+
+Use `mcp__claude_ai_Gmail__create_draft`. The draft lands in Reine's Gmail Drafts folder — she opens it in the morning to see the full recap.
 
 - **Recipient (`to`):** `reinipink@gmail.com`
 - **From:** the authenticated Gmail account (auto-handled by the MCP)
