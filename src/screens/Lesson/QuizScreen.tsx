@@ -22,6 +22,7 @@ import { MODULES } from '../../data/modules';
 import { ModulesStackParamList } from '../../navigation/ModulesNavigator';
 import { QuizOption } from '../../components/QuizOption';
 import { useLessonStore } from '../../store/lessonStore';
+import { playTrigger, stopAudio } from '../../utils/audioPlayer';
 
 type Props = {
   navigation: StackNavigationProp<ModulesStackParamList, 'Quiz'>;
@@ -41,6 +42,7 @@ export function QuizScreen({ navigation, route }: Props) {
   const [toastMsg, setToastMsg] = useState('');
   const [toastIsCorrect, setToastIsCorrect] = useState(true);
   const toastAnim = useRef(new Animated.Value(0)).current;
+  const contrastTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   function confirmExit() {
     Alert.alert(
@@ -65,7 +67,11 @@ export function QuizScreen({ navigation, route }: Props) {
       confirmExit();
       return true;
     });
-    return () => sub.remove();
+    return () => {
+      sub.remove();
+      stopAudio();
+      if (contrastTimerRef.current) clearTimeout(contrastTimerRef.current);
+    };
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -149,6 +155,28 @@ export function QuizScreen({ navigation, route }: Props) {
         <View style={styles.questionCard}>
           <Text style={styles.questionNumber}>Q{questionIndex + 1}</Text>
           <Text style={styles.questionText}>{question.question}</Text>
+          {module.id === 4 && questionIndex === 0 && (() => {
+            const perroTrigger = module.ttsTriggers?.find(t => t.id === 'contrast-perro-slow');
+            const peroTrigger = module.ttsTriggers?.find(t => t.id === 'vocab-pero-slow');
+            if (!perroTrigger) return null;
+            return (
+              <TouchableOpacity
+                style={styles.contrastRow}
+                activeOpacity={0.8}
+                onPress={() => {
+                  playTrigger(perroTrigger);
+                  if (peroTrigger) {
+                    contrastTimerRef.current = setTimeout(() => {
+                      playTrigger(peroTrigger!);
+                    }, 1400);
+                  }
+                }}
+              >
+                <Ionicons name="volume-medium-outline" size={15} color={Colors.coral} />
+                <Text style={styles.contrastBtnText}>Hear pero vs perro</Text>
+              </TouchableOpacity>
+            );
+          })()}
         </View>
 
         <View style={styles.options}>
@@ -307,5 +335,22 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#fff',
     letterSpacing: 0.3,
+  },
+  contrastRow: {
+    borderWidth: 1,
+    borderColor: Colors.coral + '55',
+    borderRadius: 20,
+    paddingVertical: 8,
+    paddingHorizontal: 14,
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+    alignSelf: 'flex-start',
+    marginTop: 12,
+  },
+  contrastBtnText: {
+    fontFamily: 'BeVietnamPro_500Medium',
+    fontSize: 13,
+    color: Colors.coral,
   },
 });

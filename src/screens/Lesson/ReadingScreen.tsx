@@ -14,6 +14,7 @@ import { MODULES, ReadingPassageToken } from '../../data/modules';
 import { ModulesStackParamList } from '../../navigation/ModulesNavigator';
 import { useLessonStore } from '../../store/lessonStore';
 import { speakSpanish, stopSpeech } from '../../utils/speech';
+import { playTrigger, stopAudio } from '../../utils/audioPlayer';
 
 type Props = {
   navigation: StackNavigationProp<ModulesStackParamList, 'Reading'>;
@@ -26,6 +27,13 @@ export function ReadingScreen({ navigation, route }: Props) {
   const updatePhase = useLessonStore((s) => s.updatePhase);
   const completeLesson = useLessonStore((s) => s.completeLesson);
   const [activeToken, setActiveToken] = useState<ReadingPassageToken | null>(null);
+
+  function handleTokenTap(token: ReadingPassageToken): void {
+    const trigger = module?.ttsTriggers?.find(
+      t => t.screen === 'reading' && t.text === token.text,
+    );
+    trigger ? playTrigger(trigger) : speakSpanish(token.text);
+  }
 
   useEffect(() => {
     updatePhase('reading');
@@ -50,7 +58,7 @@ export function ReadingScreen({ navigation, route }: Props) {
       );
       return true;
     });
-    return () => sub.remove();
+    return () => { sub.remove(); stopAudio(); };
   }, []);
 
   if (!module || !module.readingPassage) {
@@ -87,7 +95,7 @@ export function ReadingScreen({ navigation, route }: Props) {
               token.isSpanish ? (
                 <Text
                   key={i}
-                  onPress={() => { setActiveToken(token); speakSpanish(token.text); }}
+                  onPress={() => { setActiveToken(token); handleTokenTap(token); }}
                   style={styles.spanishWord}
                 >
                   {token.text}
@@ -120,7 +128,7 @@ export function ReadingScreen({ navigation, route }: Props) {
         animationType="fade"
         onRequestClose={() => setActiveToken(null)}
       >
-        <TouchableWithoutFeedback onPress={() => { setActiveToken(null); stopSpeech(); }}>
+        <TouchableWithoutFeedback onPress={() => { setActiveToken(null); stopSpeech(); stopAudio(); }}>
           <View style={styles.modalOverlay}>
             <TouchableWithoutFeedback>
               <View style={styles.tooltip}>
@@ -130,7 +138,7 @@ export function ReadingScreen({ navigation, route }: Props) {
                   <Text style={styles.tooltipPhonetic}>{activeToken.phonetic}</Text>
                 )}
                 <TouchableOpacity
-                  onPress={() => activeToken && speakSpanish(activeToken.text)}
+                  onPress={() => activeToken && handleTokenTap(activeToken)}
                   style={styles.tooltipSpeaker}
                   activeOpacity={0.7}
                 >

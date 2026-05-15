@@ -22,6 +22,7 @@ import { getEnrichment } from '../../data/curriculum-enrichment';
 import { ModulesStackParamList } from '../../navigation/ModulesNavigator';
 import { useLessonStore } from '../../store/lessonStore';
 import { speakSpanish, stopSpeech } from '../../utils/speech';
+import { playTrigger, stopAudio } from '../../utils/audioPlayer';
 
 type Props = {
   navigation: StackNavigationProp<ModulesStackParamList, 'PreListen'>;
@@ -69,6 +70,7 @@ export function PreListenScreen({ navigation, route }: Props) {
     return () => {
       sub.remove();
       stopSpeech();
+      stopAudio();
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -121,7 +123,12 @@ export function PreListenScreen({ navigation, route }: Props) {
                 <Text style={styles.vocabEnglish}>{word.english}</Text>
               </View>
               <TouchableOpacity
-                onPress={() => speakSpanish(word.spanish)}
+                onPress={() => {
+                  const trigger = module.ttsTriggers?.find(
+                    t => t.screen === 'preListen' && t.text === word.spanish && t.normalVersion,
+                  );
+                  trigger ? playTrigger(trigger) : speakSpanish(word.spanish);
+                }}
                 style={styles.speakerBtn}
                 activeOpacity={0.7}
               >
@@ -143,7 +150,21 @@ export function PreListenScreen({ navigation, route }: Props) {
 
             <Text style={styles.sectionLabel}>KEY PHRASE</Text>
             <View style={styles.phraseBox}>
-              <Text style={[styles.phraseChunk, { color: accent }]}>{enrichment.vocabPack.phraseChunk}</Text>
+              <View style={styles.phraseRow}>
+                <Text style={[styles.phraseChunk, { color: accent, flex: 1 }]}>{enrichment.vocabPack.phraseChunk}</Text>
+                <TouchableOpacity
+                  onPress={() => {
+                    const trigger = module.ttsTriggers?.find(
+                      t => t.screen === 'preListen' && t.text === enrichment.vocabPack.phraseChunk,
+                    );
+                    trigger ? playTrigger(trigger) : speakSpanish(enrichment.vocabPack.phraseChunk);
+                  }}
+                  style={styles.speakerBtn}
+                  activeOpacity={0.7}
+                >
+                  <Ionicons name="volume-high-outline" size={16} color={Colors.white} />
+                </TouchableOpacity>
+              </View>
               <Text style={styles.phrasePattern}>{enrichment.vocabPack.speakingPattern}</Text>
             </View>
 
@@ -255,7 +276,8 @@ const styles = StyleSheet.create({
     padding: Spacing.md,
     marginBottom: Spacing.lg,
   },
-  phraseChunk: { ...Typography.bodyMedium, fontSize: 18, marginBottom: 8 },
+  phraseRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 },
+  phraseChunk: { ...Typography.bodyMedium, fontSize: 18 },
   phrasePattern: { ...Typography.caption, fontSize: 12, color: Colors.mist, lineHeight: 18 },
   survivalBox: {
     backgroundColor: Colors.surfaceContainer,
