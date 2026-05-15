@@ -11,12 +11,10 @@
             "id": "e4e23bdebc0cc281",
             "type": "leaf",
             "state": {
-              "type": "image",
-              "state": {
-                "file": "build-logs/screenshots/Screenshot 2026-05-15 at 2.46.13 PM.png"
-              },
-              "icon": "lucide-image",
-              "title": "Screenshot 2026-05-15 at 2.46.13 PM"
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
             }
           }
         ]
@@ -108,7 +106,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "build-logs/screenshots/Screenshot 2026-05-15 at 2.46.13 PM.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +115,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Screenshot 2026-05-15 at 2.46.13 PM"
+              "title": "Backlinks"
             }
           },
           {
@@ -127,12 +124,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "build-logs/screenshots/Screenshot 2026-05-15 at 2.46.13 PM.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Screenshot 2026-05-15 at 2.46.13 PM"
+              "title": "Outgoing links"
             }
           },
           {
@@ -170,13 +166,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "build-logs/screenshots/Screenshot 2026-05-15 at 2.46.13 PM.png",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Screenshot 2026-05-15 at 2.46.13 PM"
+              "title": "Outline"
             }
           }
         ]
@@ -199,8 +194,33 @@
   },
   "active": "e4e23bdebc0cc281",
   "lastOpenFiles": [
-    "build-logs/TEMPLATE.md",
+    "0-DASHBOARD.md",
+    "4-debug/resolved",
+    "4-debug/README.md",
     "build-logs/screenshots/Screenshot 2026-05-15 at 2.46.13 PM.png",
+    "5-lessons",
+    "4-debug",
+    "3-reference/team-learnings.md",
+    "3-reference/style-guide.md",
+    "3-reference/curriculum-full.md",
+    "3-reference/codex-scope.md",
+    "3-reference/agent-team-launch-prompt.md",
+    "3-reference",
+    "2-tracking/worklog/SESSION.md",
+    "2-tracking/worklog/PENDING.md",
+    "2-tracking/worklog",
+    "2-tracking/module-tracker.md",
+    "2-tracking/audio-cost-log.csv",
+    "2-tracking",
+    "1-daily/build-logs/screenshots/Screenshot 2026-05-15 at 2.46.13 PM.png",
+    "1-daily/build-logs/screenshots",
+    "1-daily/build-logs/TEMPLATE.md",
+    "1-daily/reine-feedback.md",
+    "1-daily/module-queue.md",
+    "1-daily/inbox.md",
+    "1-daily/build-logs",
+    "1-daily",
+    "build-logs/TEMPLATE.md",
     "team-learnings.md",
     "Welcome.md",
     "style-guide.md",
@@ -212,22 +232,7 @@
     "agent-team-launch-prompt.md",
     "_index.md",
     "worklog/PENDING.md",
-    "debug/resolved",
-    "debug/README.md",
-    "debug",
-    "inbox.md",
-    "build-logs/screenshots",
-    "worklog/SESSION.md",
     "Screenshot 2026-05-14 at 1.04.46 AM.png",
-    "audio-cost-log.csv",
-    "build-logs",
-    "worklog",
-    "feedback/phase-4.md",
-    "2026-05-13.md",
-    "Untitled.base",
-    "Untitled.canvas",
-    "feedback",
-    "sessions/2026-05-13.md",
-    "sessions"
+    "Untitled.canvas"
   ]
 }

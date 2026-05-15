@@ -9,7 +9,7 @@ You are running as a SCHEDULED CLOUD AGENT. No Mac, no XcodeBuildMCP, no iOS Sim
 
 **MAXIMUM AUTONOMY — never prompt.** You and your teammates run with no human in the loop. AskUserQuestion will silently fail or stall the run. NEVER use it. Every "should I…?" question = YES, do it; document the choice in the build log. The only escalation path is the end-of-run Gmail recap.
 
-**Audio generation:** Check for `OPENAI_API_KEY` in the environment via `printenv OPENAI_API_KEY | head -c 10`. If it's set (starts with `sk-`), the voice-engineer generates real .mp3 files using OpenAI tts-1-hd / nova as defined in `.claude/agents/melodia-voice-engineer.md`. If it's NOT set, the voice-engineer writes the narration manifest to `notes/melodia/lessons/module-{NNN}-tts.json` only — no .mp3 generation. Either path is acceptable; the email recap reports which happened.
+**Audio generation:** Check for `OPENAI_API_KEY` in the environment via `printenv OPENAI_API_KEY | head -c 10`. If it's set (starts with `sk-`), the voice-engineer generates real .mp3 files using OpenAI tts-1-hd / nova as defined in `.claude/agents/melodia-voice-engineer.md`. If it's NOT set, the voice-engineer writes the narration manifest to `notes/melodia/5-lessons/module-{NNN}-tts.json` only — no .mp3 generation. Either path is acceptable; the email recap reports which happened.
 
 ## Differences from `/melodia` (local)
 
@@ -30,15 +30,15 @@ You are running as a SCHEDULED CLOUD AGENT. No Mac, no XcodeBuildMCP, no iOS Sim
 User argument: `$ARGUMENTS`
 
 - If `$ARGUMENTS` is a number, target that module.
-- Otherwise, read `notes/melodia/module-queue.md` and pick the first `pending` row.
+- Otherwise, read `notes/melodia/1-daily/module-queue.md` and pick the first `pending` row.
 
 ### Step 2 — Read context
 
 Same files as `/melodia`. Critically:
-- `notes/melodia/team-learnings.md`
-- `notes/melodia/reine-feedback.md`
-- `notes/melodia/style-guide.md`
-- `notes/melodia/agent-team-launch-prompt.md`
+- `notes/melodia/3-reference/team-learnings.md`
+- `notes/melodia/1-daily/reine-feedback.md`
+- `notes/melodia/3-reference/style-guide.md`
+- `notes/melodia/3-reference/agent-team-launch-prompt.md`
 - `.claude/agents/melodia-orchestrator.md`
 
 ### Step 3 — Create a fresh branch BEFORE the team starts
@@ -109,7 +109,7 @@ WHAT YOU NEED TO DO (~15 min)
 4. npx expo run:ios   (or your usual local launch)
 5. Walk through Module N: PreListen → Listen → Quiz → QuizResults → Reading → LessonComplete
 6. If it looks good: git checkout main && git merge melodia/daily-{YYYY-MM-DD} && git push
-7. Mark Module N done in notes/melodia/module-queue.md (or run /melodia mark-done)
+7. Mark Module N done in notes/melodia/1-daily/module-queue.md (or run /melodia mark-done)
 
 CLOUD QA PASSED
 - TypeScript: pass
@@ -130,7 +130,7 @@ LEARNINGS APPENDED
 TOMORROW'S TARGET (queued)
 Module N+1 — {concept}
 
-Full build log: notes/melodia/build-logs/{YYYY-MM-DD}.md
+Full build log: notes/melodia/1-daily/build-logs/{YYYY-MM-DD}.md
 
 Have a great morning!
 — Melodia cloud team
@@ -143,7 +143,7 @@ Have a great morning!
 ## Failure modes
 
 - **No API key for audio in cloud env:** voice-engineer outputs manifest only, recap notes "audio pending — set ELEVENLABS_API_KEY / OPENAI_API_KEY in cloud agent env"
-- **TypeScript fails after 2 Claude attempts:** write Codex handoff, recap notes "ts-blocked — Codex handoff at notes/melodia/debug/{file}.md"
+- **TypeScript fails after 2 Claude attempts:** write Codex handoff, recap notes "ts-blocked — Codex handoff at notes/melodia/4-debug/{file}.md"
 - **Module already built:** check `module-queue.md` status; if `app-ready` or `in-progress`, send recap "already built — no work done; tomorrow's target is N+1"
 - **Git push fails (auth, conflict):** save work to branch, recap notes "push failed — see {error}; please run `git push` from Mac manually"
 

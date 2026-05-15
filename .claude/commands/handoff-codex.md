@@ -13,13 +13,13 @@ User argument (short bug description): `$ARGUMENTS`
 
 Read these to ground the bug report:
 - The file(s) where the bug manifests
-- Any recent error messages in Reine's terminal scroll, build logs, or `notes/melodia/build-logs/`
+- Any recent error messages in Reine's terminal scroll, build logs, or `notes/melodia/1-daily/build-logs/`
 - The relevant slice of `src/` and `src/data/modules.ts` if the bug is content/UI related
-- `notes/melodia/codex-scope.md` to know which files Codex is allowed to touch
+- `notes/melodia/3-reference/codex-scope.md` to know which files Codex is allowed to touch
 
 ## Step 2 — Write the bug report
 
-File path: `notes/melodia/debug/{YYYY-MM-DD}-{kebab-case-bug-slug}.md`
+File path: `notes/melodia/4-debug/{YYYY-MM-DD}-{kebab-case-bug-slug}.md`
 
 Use this template:
 
@@ -63,9 +63,9 @@ Use this template:
 **Files Codex MUST NOT touch:**
 - `.claude/agents/*` — Claude infra
 - `.claude/commands/*` — Claude infra
-- `notes/melodia/build-logs/*` — Claude qa-scribe owns this
-- `notes/melodia/module-queue.md` — Claude orchestrator owns this
-- `notes/melodia/lessons/*` — Claude content-builder owns this
+- `notes/melodia/1-daily/build-logs/*` — Claude qa-scribe owns this
+- `notes/melodia/1-daily/module-queue.md` — Claude orchestrator owns this
+- `notes/melodia/5-lessons/*` — Claude content-builder owns this
 - `.planning/*` — GSD state
 
 **Style rules to respect:**
@@ -90,11 +90,11 @@ Then update the file's `**Status:**` line from `open` to `awaiting-claude-verify
 After writing the bug report file, print to Reine:
 
 ```
-Bug report written to notes/melodia/debug/{filename}.md
+Bug report written to notes/melodia/4-debug/{filename}.md
 
 Next steps:
 1. Open your Codex terminal in this folder.
-2. Tell Codex: "read notes/melodia/debug/{filename}.md and resolve the bug"
+2. Tell Codex: "read notes/melodia/4-debug/{filename}.md and resolve the bug"
 3. When Codex finishes, come back to Claude and say "verify the codex fix" — Claude will check the resolution and verify the fix works.
 ```
 
@@ -107,5 +107,5 @@ If Reine comes back with "verify the codex fix" or similar, read the bug report 
 - Run `npx tsc --noEmit`
 - If applicable, run the simulator walk-through via XcodeBuildMCP
 - Mark the bug as `resolved` in the file's status line
-- Move the file to `notes/melodia/debug/resolved/`
+- Move the file to `notes/melodia/4-debug/resolved/`
 - Commit the fix with message: `fix: {bug summary} (codex handoff)`

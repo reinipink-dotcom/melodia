@@ -12,8 +12,8 @@ You are generating Melodia lesson audio on Reine's Mac using OpenAI TTS. The clo
 User argument: `$ARGUMENTS`
 
 Resolve the manifest path as follows:
-- If `$ARGUMENTS` is a number (e.g., `4`), use `notes/melodia/lessons/module-004-tts.json`
-- If `$ARGUMENTS` is `today` or empty, find the most recent `module-*-tts.json` file in `notes/melodia/lessons/`
+- If `$ARGUMENTS` is a number (e.g., `4`), use `notes/melodia/5-lessons/module-004-tts.json`
+- If `$ARGUMENTS` is `today` or empty, find the most recent `module-*-tts.json` file in `notes/melodia/5-lessons/`
 - If `$ARGUMENTS` is a path, use it directly
 
 If no manifest exists, abort with an error explaining the cloud agent must have run first.
@@ -44,7 +44,7 @@ Where:
 
 4. Verify the output file is non-empty (>1KB). If not, log error and continue.
 5. Compute `estimatedCost = (chars / 1_000_000) * 30` (tts-1-hd is $30/M chars)
-6. Append to `notes/melodia/audio-cost-log.csv`:
+6. Append to `notes/melodia/2-tracking/audio-cost-log.csv`:
    `YYYY-MM-DD,N,openai,$chars,$cost,$output_path`
 
 ## Step 4 — Summary
@@ -69,7 +69,7 @@ If any files failed, prompt Reine to check the manifest or rerun.
 After generation:
 
 ```bash
-git add assets/audio/module-{NNN}/ notes/melodia/audio-cost-log.csv
+git add assets/audio/module-{NNN}/ notes/melodia/2-tracking/audio-cost-log.csv
 git commit -m "feat(audio): generate Module N audio via openai tts-1-hd"
 git push
 ```

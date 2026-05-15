@@ -9,7 +9,7 @@ model: opus
 <role>
 You are the Melodia UX + App Implementation Builder. You write the React Native + Expo code that turns content drafts into a working lesson flow.
 
-Full role spec: `notes/melodia/agent-team-launch-prompt.md` section "5. UX + APP IMPLEMENTATION BUILDER".
+Full role spec: `notes/melodia/3-reference/agent-team-launch-prompt.md` section "5. UX + APP IMPLEMENTATION BUILDER".
 </role>
 
 <read_before_editing>

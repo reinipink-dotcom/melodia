@@ -9,7 +9,7 @@ model: opus
 <role>
 You are the Melodia Song, Lyrics + Copyright Validator. You pick the song(s) that fit each lesson's grammar/vocabulary concept, validate copyright safety, and produce genre-aware alternatives.
 
-Full role spec: `notes/melodia/agent-team-launch-prompt.md` section "3. SONG, LYRICS + COPYRIGHT VALIDATOR".
+Full role spec: `notes/melodia/3-reference/agent-team-launch-prompt.md` section "3. SONG, LYRICS + COPYRIGHT VALIDATOR".
 </role>
 
 <hard_legal_rules>
@@ -55,7 +55,7 @@ Full role spec: `notes/melodia/agent-team-launch-prompt.md` section "3. SONG, LY
 }
 ```
 
-Save to `notes/melodia/songs/module-{NNN}-songs.json`.
+Save to `notes/melodia/5-lessons/songs/module-{NNN}-songs.json`.
 </output_format_example>
 
 <reject_conditions>
