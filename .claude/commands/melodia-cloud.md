@@ -84,30 +84,44 @@ Built by /melodia-cloud scheduled agent."
 git push -u origin melodia/daily-$(date +%Y-%m-%d)
 ```
 
-### Step 7a — Push notification to Reine's iPhone (ntfy.sh)
+### Step 7 — Push notification with FULL recap (ntfy.sh)
 
-Fire instantly so Reine sees the build status the moment she picks up her phone.
+This is the ONLY notification channel. ntfy delivers a push to Reine's iPhone with the full recap text in the notification body — she reads it in notification center without opening any app. Deeper detail lives in the build log file at `notes/melodia/1-daily/build-logs/{YYYY-MM-DD}.md` (accessible via Obsidian or GitHub on phone if she wants more).
 
 ```bash
 curl -s -X POST "https://ntfy.sh/melodia-build-c129bdfe878a" \
-  -H "Title: Melodia daily build" \
+  -H "Title: Melodia: Module N — {STATUS}" \
   -H "Priority: 3" \
   -H "Tags: musical_note" \
-  -d "Module N ready — branch melodia/daily-YYYY-MM-DD pushed. Full recap in Gmail Drafts."
+  -H "Click: https://github.com/reinipink-dotcom/melodia/tree/melodia/daily-YYYY-MM-DD" \
+  -d "$(cat <<EOF
+Module N — {Concept}
+Song: {Song title} — {Artist}
+
+✓ TypeScript: pass
+✓ Branch pushed: melodia/daily-YYYY-MM-DD
+{audio status line}
+
+Morning tasks (~15 min on Mac):
+1. git pull && git checkout melodia/daily-YYYY-MM-DD
+2. /melodia-audio N  (generate audio, ~30 sec)
+3. npx expo run:ios → simulator walkthrough
+4. Write feedback in 1-daily/reine-feedback.md
+5. Merge to main
+
+Blockers: {none, or list each}
+Tomorrow target: Module N+1 — {Concept}
+
+Full log: notes/melodia/1-daily/build-logs/YYYY-MM-DD.md
+EOF
+)"
 ```
 
-Topic `melodia-build-c129bdfe878a` is Reine's private channel — her iPhone's ntfy app is subscribed. Free, no auth, no token cost.
+Tapping the notification on iPhone opens the GitHub branch URL directly (via the `Click:` header).
 
-If the curl fails, do NOT abort the run. The Gmail draft below is the backup channel.
+Topic `melodia-build-c129bdfe878a` is Reine's private channel — her iPhone's ntfy app is subscribed. Free, no auth, ~1 token cost.
 
-### Step 7b — Gmail recap (DRAFT — Gmail MCP can't send, only draft)
-
-Use `mcp__claude_ai_Gmail__create_draft`. The draft lands in Reine's Gmail Drafts folder — she opens it in the morning to see the full recap.
-
-- **Recipient (`to`):** `reinipink@gmail.com`
-- **From:** the authenticated Gmail account (auto-handled by the MCP)
-
-**Subject:** `Melodia daily build — Module N built — {YYYY-MM-DD}`
+If the curl fails, still complete the build and log everything to the build log file. The build log is the source of truth.
 
 **Body:**
 

@@ -154,25 +154,45 @@ Run this command to surface the run summary as a native Mac notification:
 osascript -e 'display notification "Module N — {status}" with title "Melodia daily build" sound name "Glass"'
 ```
 
-**Phone push notification (cloud-mode runs — required; local-mode optional):**
+**Phone push notification with FULL recap (cloud-mode runs — required; local-mode optional):**
 
-Send a short push notification to Reine's iPhone via ntfy.sh. This is her primary morning alert.
+ntfy.sh push is the ONLY notification channel. Drop the entire recap content into the notification body so Reine reads it in iOS notification center without opening any app. Topic: `melodia-build-c129bdfe878a`. Add a `Click:` header pointing to the GitHub branch URL so tapping the notification opens the branch on her phone.
 
 ```bash
 curl -s -X POST "https://ntfy.sh/melodia-build-c129bdfe878a" \
-  -H "Title: Melodia daily build" \
+  -H "Title: Melodia: Module N — {STATUS}" \
   -H "Priority: 3" \
   -H "Tags: musical_note" \
-  -d "Module N ready — branch melodia/daily-YYYY-MM-DD pushed. Check Gmail draft for full recap."
+  -H "Click: https://github.com/reinipink-dotcom/melodia/tree/melodia/daily-YYYY-MM-DD" \
+  -d "Module N — {Concept}
+Song: {Song} — {Artist}
+
+✓ TypeScript: pass
+✓ Branch: melodia/daily-YYYY-MM-DD
+{audio status}
+
+Morning (~15 min):
+1. git pull && git checkout melodia/daily-YYYY-MM-DD
+2. /melodia-audio N
+3. npx expo run:ios → walk through
+4. Feedback in 1-daily/reine-feedback.md
+5. Merge to main
+
+Blockers: {none or list}
+Tomorrow: Module N+1 — {Concept}
+
+Log: notes/melodia/1-daily/build-logs/YYYY-MM-DD.md"
 ```
 
-Required headers: `Title`, optional `Priority` (1-5, default 3), optional `Tags`.
+If ntfy curl fails, do NOT block the run. The build log file is the source of truth — log everything there regardless.
 
-Topic: `melodia-build-c129bdfe878a` (hardcoded — unguessable; Reine's iPhone is subscribed to this exact string).
+**Gmail draft — REMOVED (deprecated 2026-05-15):**
 
-If ntfy fails for any reason, do NOT block the run — the Gmail draft still serves as the recap.
+We previously used `mcp__claude_ai_Gmail__create_draft` as a recap channel. Removed because ntfy now carries the full recap text and the Gmail draft added friction without value. Do NOT create Gmail drafts in cloud runs going forward.
 
-**Gmail recap draft (cloud-mode runs — required; local-mode runs — skip):**
+---
+
+**Older note about Gmail recap (deprecated, kept for reference only):**
 
 The Gmail MCP only exposes `create_draft` (no `send_message` tool exists). So you CREATE A DRAFT — it lands in Reine's Drafts folder, NOT her inbox. The ntfy push notification (above) tells her to check Drafts. Use `mcp__claude_ai_Gmail__create_draft` with:
 
