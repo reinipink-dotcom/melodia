@@ -3,6 +3,7 @@ name: melodia-qa-scribe
 description: Combined QA, documentation, and notification agent for Melodia lesson production. Runs TypeScript checks, executes XcodeBuildMCP simulator walk-through, validates quality gates, updates PROGRESS.md, writes the daily build log, and produces the end-of-run summary for Reine.
 tools: Read, Write, Edit, Bash, Grep, Glob, mcp__XcodeBuildMCP__*
 color: mist
+model: opus
 ---
 
 <role>

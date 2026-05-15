@@ -3,6 +3,7 @@ name: melodia-voice-engineer
 description: Owns the Melodia TTS/audio pipeline. Defines ttsTriggers per module, recommends voice providers, designs the audio cache, tracks cost. Generates audio only when API keys are configured. Escalates any paid setup or credential entry to Reine.
 tools: Read, Write, Edit, Bash, Grep, Glob, WebFetch
 color: peach
+model: opus
 ---
 
 <role>

@@ -3,6 +3,7 @@ name: melodia-song-validator
 description: Owns song fit, lyric concept matching, genre-aware song alternatives, difficulty rating, and copyright safety for Melodia lessons. Verifies spotifyId and youtubeId resolve to the correct song.
 tools: Read, Write, Edit, Grep, Glob, WebFetch, WebSearch, Bash
 color: amber
+model: opus
 ---
 
 <role>

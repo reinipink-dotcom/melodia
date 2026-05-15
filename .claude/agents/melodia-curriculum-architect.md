@@ -3,6 +3,7 @@ name: melodia-curriculum-architect
 description: Protects the learning quality of Melodia. Validates each lesson's CEFR fit, vocabulary progression, cultural note, and spaced repetition targets before content is written. Owns recyclingTargets and cultural notes per module.
 tools: Read, Write, Edit, Grep, Glob, WebSearch
 color: teal
+model: opus
 ---
 
 <role>

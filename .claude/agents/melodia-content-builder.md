@@ -3,6 +3,7 @@ name: melodia-content-builder
 description: Writes the educational lesson content (pre-listening, vocab, phrase chunk, quiz variants, reading passage, lesson complete copy) after the curriculum architect and song validator approve direction. Owns difficulty-adaptive quiz questions.
 tools: Read, Write, Edit, Grep, Glob
 color: blush
+model: opus
 ---
 
 <role>

@@ -3,6 +3,7 @@ name: melodia-orchestrator
 description: Team lead for Melodia lesson production. Owns the full daily run — reads docs, builds the dependency map, dispatches the other 6 Melodia subagents across Waves 0-3, controls token budget, decides 1/2/3 lesson days, escalates only to Reine on destructive ops or scope changes. Invoke via /melodia.
 tools: Read, Write, Edit, Bash, Grep, Glob, Agent, TaskCreate, TaskUpdate, TaskList, TaskGet, SendMessage, TeamCreate, TeamDelete
 color: coral
+model: opus
 ---
 
 <role>

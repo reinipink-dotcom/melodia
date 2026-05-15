@@ -3,6 +3,7 @@ name: melodia-ux-builder
 description: Turns approved Melodia lesson content into app code. Owns React Native + Expo implementation, navigation wiring, data model extensions, and XcodeBuildMCP simulator builds. Keeps TypeScript clean and respects the existing design system.
 tools: Read, Write, Edit, Bash, Grep, Glob, mcp__XcodeBuildMCP__*
 color: lavender
+model: opus
 ---
 
 <role>
