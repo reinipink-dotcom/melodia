@@ -75,7 +75,13 @@ All 6 lesson screens built under `src/screens/Lesson/`:
 5. `ReadingScreen` ✓ — original passage with tappable Spanish words (Modal tooltip)
 6. `LessonCompleteScreen` ✓ — celebration + XP summary + next module preview
 
+### Quick Tasks Completed
+
+| # | Description | Date | Commit | Directory |
+|---|-------------|------|--------|-----------|
+| 260516-0nw | Wire Module 4 expo-av playback with expo-speech fallback | 2026-05-16 | 6e79f36 | [260516-0nw-module-4-audio-playback](.planning/quick/260516-0nw-module-4-audio-playback/) |
+
 ## Session Continuity
 
-Last session: 2026-05-14T00:11:18.610Z
-Stopped at: context exhaustion at 83% (2026-05-14)
+Last session: 2026-05-16
+Last activity: 2026-05-16 - Completed quick task 260516-0nw: Wire Module 4 expo-av playback with expo-speech fallback
