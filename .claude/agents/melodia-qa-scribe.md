@@ -156,7 +156,12 @@ osascript -e 'display notification "Module N — {status}" with title "Melodia d
 
 **Gmail recap (cloud-mode runs — required; local-mode runs — skip):**
 
-If running in cloud mode (no XcodeBuildMCP, scheduled via /schedule), send Reine a Gmail recap using the available Gmail MCP tool. Subject: `Melodia daily build — Module N — {YYYY-MM-DD}`. Body should include:
+If running in cloud mode (no XcodeBuildMCP, scheduled via /schedule), send Reine a Gmail recap using the available Gmail MCP tool.
+
+- **Recipient (`to`):** `reinipink@gmail.com`
+- **From:** the authenticated Gmail account (auto-handled by the MCP)
+- **Subject:** `Melodia daily build — Module N — {YYYY-MM-DD}`
+- **Body should include:**
 
 - What was built (module ID, concept, song)
 - Branch name where the work is pushed (`melodia/daily-{YYYY-MM-DD}`)

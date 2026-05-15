@@ -86,7 +86,10 @@ git push -u origin melodia/daily-$(date +%Y-%m-%d)
 
 ### Step 7 — Send Gmail recap to Reine
 
-Use the Gmail MCP tool (`mcp__claude_ai_Gmail__create_draft` or equivalent send tool) to send Reine an email:
+Use the Gmail MCP tool to send Reine an email.
+
+- **Recipient (`to`):** `reinipink@gmail.com`
+- **From:** the authenticated Gmail account (auto-handled by the MCP)
 
 **Subject:** `Melodia daily build — Module N built — {YYYY-MM-DD}`
 
