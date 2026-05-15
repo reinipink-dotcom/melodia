@@ -31,7 +31,13 @@
     "_auto_chain_active": false
   },
   "hooks": {
-    "context_warnings": true
+    "context_warnings": false,
+    "workflow_guard": false
+  },
+  "_focus_mode": {
+    "active": true,
+    "scope": "Phase 4 lesson production via 7-agent team",
+    "note": "GSD advisory hooks silenced. Use /melodia to invoke the team. Re-enable hooks.context_warnings when shifting back to phase-by-phase GSD work."
   },
   "project_code": null,
   "phase_naming": "sequential",

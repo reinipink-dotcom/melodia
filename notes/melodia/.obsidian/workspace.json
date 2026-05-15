@@ -1,0 +1,233 @@
+{
+  "main": {
+    "id": "45cbe90b192ff3e5",
+    "type": "split",
+    "children": [
+      {
+        "id": "52ad928b2923ea3d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e4e23bdebc0cc281",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "build-logs/screenshots/Screenshot 2026-05-15 at 2.46.13 PM.png"
+              },
+              "icon": "lucide-image",
+              "title": "Screenshot 2026-05-15 at 2.46.13 PM"
+            }
+          }
+        ]
+      },
+      {
+        "id": "09cf4d41263ca5a4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b72c91c28115e8aa",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "7969b8d7e627a88d",
+    "type": "split",
+    "children": [
+      {
+        "id": "9375722d015f3454",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "53c1b2d5ad0ded68",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "f8ba50341e7f22f2",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "696e528399f0db42",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "da4cad857b5cc323",
+    "type": "split",
+    "children": [
+      {
+        "id": "da265abcf793a60f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ab3c310783031959",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "build-logs/screenshots/Screenshot 2026-05-15 at 2.46.13 PM.png",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Screenshot 2026-05-15 at 2.46.13 PM"
+            }
+          },
+          {
+            "id": "6f27e3965e194187",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "build-logs/screenshots/Screenshot 2026-05-15 at 2.46.13 PM.png",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Screenshot 2026-05-15 at 2.46.13 PM"
+            }
+          },
+          {
+            "id": "cc9d33004edf82aa",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "b55c37b1cfe049e7",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "418073a3f214c75d",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "build-logs/screenshots/Screenshot 2026-05-15 at 2.46.13 PM.png",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Screenshot 2026-05-15 at 2.46.13 PM"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "e4e23bdebc0cc281",
+  "lastOpenFiles": [
+    "build-logs/TEMPLATE.md",
+    "build-logs/screenshots/Screenshot 2026-05-15 at 2.46.13 PM.png",
+    "team-learnings.md",
+    "Welcome.md",
+    "style-guide.md",
+    "reine-feedback.md",
+    "module-tracker.md",
+    "module-queue.md",
+    "curriculum-full.md",
+    "codex-scope.md",
+    "agent-team-launch-prompt.md",
+    "_index.md",
+    "worklog/PENDING.md",
+    "debug/resolved",
+    "debug/README.md",
+    "debug",
+    "inbox.md",
+    "build-logs/screenshots",
+    "worklog/SESSION.md",
+    "Screenshot 2026-05-14 at 1.04.46 AM.png",
+    "audio-cost-log.csv",
+    "build-logs",
+    "worklog",
+    "feedback/phase-4.md",
+    "2026-05-13.md",
+    "Untitled.base",
+    "Untitled.canvas",
+    "feedback",
+    "sessions/2026-05-13.md",
+    "sessions"
+  ]
+}

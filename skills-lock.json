@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "skills": {
+    "plaid-build": {
+      "source": "BuildGreatProducts/plaid",
+      "sourceType": "github",
+      "computedHash": "09b063e569bdd1828f4f391e3d6a1ad6d4847e1572616d7adea51acaf123d3c7"
+    },
+    "plaid-launch": {
+      "source": "BuildGreatProducts/plaid",
+      "sourceType": "github",
+      "computedHash": "6034cf7c19973b7413dac3ae006ad812bebf9059e7e9c8275f7a11d53fdcee7d"
+    },
+    "plaid-plan": {
+      "source": "BuildGreatProducts/plaid",
+      "sourceType": "github",
+      "computedHash": "d1e7beb36dec7642811f722d9e217e725a49382dd3cf532b223c814b0ced9ec0"
+    }
+  }
+}

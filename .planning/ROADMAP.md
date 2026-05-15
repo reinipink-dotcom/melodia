@@ -56,6 +56,24 @@
 
 **Requirements:** PRE-01–03, LISTEN-01–05, QUIZ-01–06, RESULTS-01–04, READ-01–04, COMPLETE-01–05, NAV-01–03, CONTENT-01–05
 
+#### Phase 4 Plan 06: Polish & Fixes (post-testing)
+**Goal:** Fix bugs and UX issues found during first full playthrough. Add TTS audio.
+**Status:** 📋 Planned
+**Plan file:** `.planning/phases/04-lesson-flow/04-PLAN-06-polish-fix.md`
+
+Fixes:
+- BUG-01: Quiz score shows wrong count (off-by-one in correctCount)
+- BUG-02: "Continue to Modules" button broken + loop back to LessonComplete
+- UX-01: No in-app prompt when timer expires
+- UX-02: "Listen on Platform" should auto-start timer (no separate "I'm listening" tap)
+- UX-03: Quiz answers need pop/shake animations + "Correcto/Incorrecto" toast
+- UX-04: Graceful fallback when notification permission denied
+- CONTENT-01: Module 1 quiz questions disconnected from Bésame Mucho
+- CONTENT-02: Reading passage highlights random letters, not meaningful Spanish words
+- CONTENT-03: Direct YouTube/Spotify links for Modules 1–3 (not search queries)
+- ARCH-01: expo-speech TTS on PreListenScreen concept cards
+- ARCH-02: expo-speech pronunciation on ReadingScreen tappable word tooltip
+
 ---
 
 ### Phase 5: Backend

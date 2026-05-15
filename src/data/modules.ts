@@ -55,6 +55,30 @@ export type VocabWord = {
   english: string;
 };
 
+// ─── Curriculum Enrichment Types ──────────────────────────────────────────────
+// Added in curriculum update: vocabulary/speaking/listening/review overlay
+
+export type SongDifficulty = {
+  pace: 'slow' | 'medium' | 'fast';
+  clarity: 'clear' | 'moderate' | 'difficult';
+  slangLevel: 'none' | 'light' | 'moderate' | 'heavy';
+  repetitionLevel: 'low' | 'medium' | 'high';
+  beginnerSuitability: 'excellent' | 'good' | 'moderate' | 'challenging';
+};
+
+export type VocabPack = {
+  coreWords: VocabWord[];    // 5 high-frequency words tied to the vocabulary theme
+  bonusWords: VocabWord[];   // 3 slightly harder, still thematic
+  phraseChunk: string;       // reusable phrase with a blank, e.g. "Quiero ___."
+  speakingPattern: string;   // 3 example sentences showing the pattern in use
+};
+
+export type SpeakingPrompts = {
+  prompts: string[];         // 3 "Say: ..." instructions for speaking practice
+  sentenceFrames: string[];  // 3 fillable sentence frames in Spanish
+  miniChallenge: string;     // one real-life speaking challenge combining grammar + context
+};
+
 export type Module = {
   id: number;
   title: string;
@@ -73,6 +97,16 @@ export type Module = {
   xpReward: number;
   quizQuestions?: QuizQuestion[];
   readingPassage?: ReadingPassageToken[];
+  // ── Curriculum enrichment overlay ──────────────────────────────────────────
+  vocabularyTheme?: string;           // real-world vocabulary category for this module
+  speakingGoal?: string;              // what the user can say after completing this module
+  listeningSkill?: string;            // what to listen for actively in the song
+  recyclingTargets?: string[];        // concepts/words from earlier modules to review
+  vocabPack?: VocabPack;             // 5 core + 3 bonus words + phrase chunk + pattern
+  speakingPrompts?: SpeakingPrompts; // 3 prompts + 3 frames + 1 mini challenge
+  songDifficulty?: SongDifficulty;   // pace/clarity/slang/repetition/beginner rating
+  survivalPhrases?: string[];         // modules 1–12: essential phrases for this topic
+  everydayVocabCategories?: string[]; // modules 1–30: adjacent real-world vocab categories
 };
 
 // Returns the best song for the user's genre preference, falls back to primary
