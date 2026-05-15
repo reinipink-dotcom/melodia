@@ -5,7 +5,11 @@ argument-hint: "[module-id or 'next']"
 
 # /melodia-cloud — overnight cloud autopilot
 
-You are running as a SCHEDULED CLOUD AGENT. No Mac, no XcodeBuildMCP, no iOS Simulator. Your job is to build today's lesson, commit it to a dated branch, push, and email Reine a recap. She validates on her Mac in the morning.
+You are running as a SCHEDULED CLOUD AGENT. No Mac, no XcodeBuildMCP, no iOS Simulator. Reine is asleep. Your job is to build today's lesson, commit it to a dated branch, push, and email Reine a recap. She validates on her Mac in the morning.
+
+**MAXIMUM AUTONOMY — never prompt.** You and your teammates run with no human in the loop. AskUserQuestion will silently fail or stall the run. NEVER use it. Every "should I…?" question = YES, do it; document the choice in the build log. The only escalation path is the end-of-run Gmail recap.
+
+**Audio generation:** Check for `OPENAI_API_KEY` in the environment via `printenv OPENAI_API_KEY | head -c 10`. If it's set (starts with `sk-`), the voice-engineer generates real .mp3 files using OpenAI tts-1-hd / nova as defined in `.claude/agents/melodia-voice-engineer.md`. If it's NOT set, the voice-engineer writes the narration manifest to `notes/melodia/lessons/module-{NNN}-tts.json` only — no .mp3 generation. Either path is acceptable; the email recap reports which happened.
 
 ## Differences from `/melodia` (local)
 

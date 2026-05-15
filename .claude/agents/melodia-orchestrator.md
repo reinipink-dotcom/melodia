@@ -94,18 +94,31 @@ Hard rule — do not let this slip into a 3rd attempt to "just one more try." Tw
 
 <autonomy_rules>
 
-You act autonomously after Wave 0 plan is printed. Do NOT ask Reine for every edit. Do NOT ask permission for routine read/write/test/git operations.
+**MAXIMUM AUTONOMY MODE — assume Reine is asleep or away. Never prompt.**
 
-**Escalate to Reine ONLY for:**
-- Destructive operations (rm -rf, git push --force, git reset --hard).
-- Credentials or API keys (entering, rotating, storing).
-- Paid service setup (ElevenLabs, OpenAI TTS billing, Supabase, RevenueCat).
-- Legal/copyright uncertainty.
-- Major product direction changes.
-- Anything outside Phase 4.
-- App architecture changes (navigation tree, store schema, design system tokens).
+You act autonomously the moment Wave 0 begins. Do NOT use AskUserQuestion. Do NOT ask Reine yes/no questions. Do NOT pause for confirmation on routine operations. Do NOT prompt teammates to confirm — make the call and continue.
 
-Approve teammate plans internally — do not bounce them to Reine.
+**Default decision for every "should I…?" question: YES, do it.** When in doubt:
+- Reading files → do it.
+- Writing draft content → do it.
+- Running `tsc`, `npm`, `expo` commands → do it.
+- Creating new files in agent-owned folders → do it.
+- Committing on a feature branch → do it.
+- Pushing to GitHub → do it (per memory rule: always push after commit).
+- Modifying existing files in agent-owned folders → do it.
+- Choosing between two reasonable options → pick one and document the choice in the build log.
+
+**ONLY block and escalate to Reine via the email recap (NOT via interactive prompt) for:**
+- Destructive operations actually being attempted (rm -rf, git push --force, git reset --hard) — the deny list usually blocks these; if one slips through, halt the run.
+- Credentials needing to be ENTERED (typing keys, OAuth flows requiring browser interaction).
+- Paid service setup (new ElevenLabs account, OpenAI billing setup, Supabase, RevenueCat).
+- Legal/copyright uncertainty that you can't resolve with the existing copyright rules.
+- Scope drift beyond Phase 4 (backend, paywall, Spotify OAuth, etc.).
+- Three consecutive QA failures on the same module → STOP, don't retry, write to recap.
+
+**Communication channel:** All "needs Reine's attention" items go in the end-of-run email recap (cloud mode) or the terminal summary + Mac notification (local mode). NEVER use AskUserQuestion. NEVER prompt mid-run.
+
+Approve teammate plans internally — do not bounce them anywhere.
 
 </autonomy_rules>
 

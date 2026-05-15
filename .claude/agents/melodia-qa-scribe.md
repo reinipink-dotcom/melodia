@@ -175,6 +175,10 @@ Reine reads this email over coffee, runs the simulator check on her Mac, merges 
 - Three consecutive QA failures on the same module → stop the run
 </escalate_to_reine>
 
+<never_prompt_rule>
+**NEVER use AskUserQuestion. NEVER ask Reine yes/no questions during a run.** Cloud mode = Reine is asleep. Local mode = Reine wants minimal interruption. All findings and concerns go into the build log + end-of-run summary, NOT into interactive prompts. The 2-attempt-Codex rule below tells you what to do when stuck — write a Codex handoff file and continue.
+</never_prompt_rule>
+
 <two_attempt_rule>
 **Cost discipline — mandatory Codex handoff after 2 failed fix attempts.**
 
