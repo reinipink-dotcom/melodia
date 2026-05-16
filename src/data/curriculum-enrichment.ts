@@ -62,8 +62,8 @@ export const MODULE_ENRICHMENT: ModuleEnrichment[] = [
         { spanish: 'pronunciar', english: 'to pronounce' },
         { spanish: 'letra', english: 'letter (of alphabet)' },
       ],
-      phraseChunk: 'Se escribe ___.',
-      speakingPattern: 'Se escribe be-é-sa-me. / Se escribe mu-cho. / Se escribe ho-la.',
+      phraseChunk: 'Bésame mucho.',
+      speakingPattern: 'Bésame mucho. / Hola. / Llamar.',
     },
     speakingPrompts: {
       prompts: [

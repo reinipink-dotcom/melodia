@@ -399,6 +399,23 @@ Built with React Native + Expo by Reine, a first-time developer building in publ
 ## Font Loading
 <!-- GSD:architecture-end -->
 
+## Session Start Protocol
+
+At the start of **every** session, before doing anything else:
+
+1. Read `notes/melodia/1-daily/inbox.md` — process each item, then clear the file (keep the header + blank below the divider line)
+2. Read `notes/melodia/2-tracking/worklog/PENDING.md` — note open items so they inform the session's work
+
+After running `/melodia` or `/melodia-audio`:
+
+3. Re-read both files and update them:
+   - Mark any PENDING.md items that were resolved during the run as `~~DONE~~`
+   - Add any new bugs or ideas surfaced during the run to PENDING.md
+   - Clear the inbox if it has been fully processed
+   - **Permissions revert to normal only after the FINAL module of the day is done.** If the orchestrator is running 2–3 modules (Week 2/3 ramp), it stays in bypass between modules and keeps going fully autonomous. Only after the last `TeamDelete` of the day does post-run cleanup happen — fix any newly-unblocked PENDING items under normal approval flow, leave the rest OPEN with a clear next action.
+
+**Never let inbox items sit unread across multiple sessions. If an item can be fixed now, fix it. If it needs planning, add it to PENDING.md with a clear description and next action.**
+
 <!-- GSD:skills-start source:skills/ -->
 ## Project Skills
 
@@ -410,18 +427,6 @@ Built with React Native + Expo by Reine, a first-time developer building in publ
 | plaid-plan | \| Product Led AI Development — Planning mode. Guides founders through a structured vision intake conversation, then generates three documents: product-vision.md (strategy, brand, audience), prd.md (technical spec, design system, requirements), and product-roadmap.md (phased build plan with checkboxes). Use when someone says "plaid plan", "plan a product", "help me build something", "define my vision", "generate a PRD", "plan my app", "spec out my idea", "what should I build", "product strategy", or "PLAID". For go-to-market planning, see plaid-launch. For building from the roadmap, see plaid-build. | `.agents/skills/plaid-plan/SKILL.md` |
 <!-- GSD:skills-end -->
 
-<!-- GSD:workflow-start source:GSD defaults -->
-## GSD Workflow Enforcement
-
-Before using Edit, Write, or other file-changing tools, start work through a GSD command so planning artifacts and execution context stay in sync.
-
-Use these entry points:
-- `/gsd-quick` for small fixes, doc updates, and ad-hoc tasks
-- `/gsd-debug` for investigation and bug fixing
-- `/gsd-execute-phase` for planned phase work
-
-Do not make direct repo edits outside a GSD workflow unless the user explicitly asks to bypass it.
-<!-- GSD:workflow-end -->
 
 <!-- GSD:profile-start -->
 ## Developer Profile

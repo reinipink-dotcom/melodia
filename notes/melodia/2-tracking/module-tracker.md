@@ -5,7 +5,8 @@
 
 | Module | Concept | Status | Song | Genre Alternatives | Cultural Note | Audio Cues | Quiz Variants | Recycling Targets | QA | Reine Review | App Ready |
 |--------|---------|--------|------|--------------------|---------------|------------|---------------|-------------------|----|--------------|-----------|
-| 1 | Ser — Identity | 🔄 In Progress | La Bicicleta | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| 1 | The Spanish Alphabet — Pronunciation | ⚠️ needs-review | Bésame Mucho (Consuelo Velázquez) | ✅ | ✅ | ✅ 16 ttsTriggers, 1:1 match w/ disk | ✅ easy/standard/hard | ❌ deferred | ✅ tsc / ⚠️ sim walk-through pending (Reine) | ⚠️ pending (4 items) | ❌ |
+| 4 | Prepositions, Conjunctions & Adverbs | ⚠️ needs-review | A Dios Le Pido (Juanes) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ tsc / ⚠️ sim (Expo Go not installed) | ⚠️ pending | ❌ |
 
 ---
 

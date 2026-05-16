@@ -42,6 +42,21 @@ Phase 4 lesson production ONLY. Do NOT touch backend (Phase 5), paywall/RevenueC
    - `notes/melodia/1-daily/reine-feedback.md` — Reine's after-action notes on past lessons
    - `notes/melodia/3-reference/style-guide.md` — approved patterns and banned mistakes
    When you spawn teammates, pass them the relevant slice (don't dump the whole file — quote the entries that apply to today's module).
+
+   **Feedback triage (you only, before TeamCreate):**
+   After reading `reine-feedback.md`, for each feedback item decide:
+   - **Addressable this run** (e.g. bug in the module being built, content tweak, missing audio file) → inject into the relevant teammate's spawn prompt as a targeted fix.
+   - **NOT addressable this run** (different module, scope creep, big feature, needs planning, UX overhaul) → write immediately to `notes/melodia/2-tracking/worklog/PENDING.md` using this format:
+
+   ```
+   ## OPEN — [short title] (from feedback YYYY-MM-DD)
+   **Source:** reine-feedback.md, Module N entry
+   **What:** [one-sentence description]
+   **What needs to happen:**
+   - [ ] [first concrete action step]
+   ```
+
+   Do this BEFORE `TeamCreate` so nothing is lost if the run gets cut short.
 5. Decide today's ramp:
    - Week 1 (first 7 runs): 1 lesson/day.
    - Week 2: 2 lessons/day only if QA pass rate >= 90% in Week 1.
@@ -138,4 +153,13 @@ Approve teammate plans internally — do not bounce them anywhere.
 3. Confirm the QA scribe's daily build log is written.
 4. Print a short summary: what's App Ready, what needs Reine review, recommended target for tomorrow.
 5. Clean up: do NOT leave orphaned tasks in the TaskList.
+
+**Multi-module runs:** If today's ramp calls for 2 or 3 modules, stay in bypass mode between module runs — spin up the next team immediately without reverting permissions. Only move to the cleanup step below after the FINAL module's `TeamDelete`.
+
+**Post-run cleanup (normal permissions — ONLY after the final `TeamDelete` of the day):**
+Once all planned modules are complete, permissions revert to NORMAL. Before ending the session:
+1. Re-read `notes/melodia/2-tracking/worklog/PENDING.md`.
+2. For any OPEN item that is now unblocked (e.g. a small fix in a file just touched), fix it now.
+3. For items that need Reine's input or are too large for this session, leave them OPEN.
+4. State explicitly in the final summary which PENDING items were fixed and which remain for next session.
 </end_of_run>

@@ -498,12 +498,24 @@ The Orchestrator must begin every run by defining: which tasks can run in parall
 ### Wave 0 — Ultra-plan
 
 - Orchestrator reads project context.
+- Orchestrator reads `notes/melodia/1-daily/reine-feedback.md` and triages each feedback item:
+  - **Addressable this run** (bug in today's module, content tweak, missing audio) → inject into the relevant teammate's spawn prompt as a targeted fix.
+  - **NOT addressable this run** (different module, scope creep, big feature, UX overhaul, needs planning) → write immediately to `notes/melodia/2-tracking/worklog/PENDING.md` using this format **before `TeamCreate`**:
+    ```
+    ## OPEN — [short title] (from feedback YYYY-MM-DD)
+    **Source:** reine-feedback.md, Module N entry
+    **What:** [one-sentence description]
+    **What needs to happen:**
+    - [ ] [first concrete action step]
+    ```
 - Orchestrator identifies today's target module(s).
 - Orchestrator creates dependency map.
 - Orchestrator assigns agents.
 - Orchestrator defines file ownership.
 - Orchestrator defines which agents can work in parallel.
 - No implementation edits happen yet.
+
+**Multi-module runs (Week 2/3 ramp):** Stay in bypass mode between module runs — spin up the next team immediately after `TeamDelete` without reverting permissions. Only after the FINAL `TeamDelete` of the day do permissions revert to normal for post-run cleanup (re-read PENDING.md, fix any newly-unblocked small items, surface what remains to Reine).
 
 ### Wave 1 — Parallel discovery and validation
 

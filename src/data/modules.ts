@@ -55,6 +55,26 @@ export type VocabWord = {
   english: string;
 };
 
+// ─── Module 4+ enrichment types ───────────────────────────────────────────────
+
+export type TtsTrigger = {
+  id: string;
+  screen: 'preListen' | 'listen' | 'quiz' | 'reading' | 'lessonComplete';
+  text: string;
+  language: string;
+  slowVersion: boolean;
+  normalVersion: boolean;
+  outputFile: string;
+  mvpRequired: boolean;
+};
+
+export type RecyclingTarget = {
+  moduleId: number;
+  concept: string;
+  intervalDays: number[];
+  reviewFormat: ('mini-quiz' | 'speaking-prompt' | 'translation' | 'listening-recognition')[];
+};
+
 // ─── Curriculum Enrichment Types ──────────────────────────────────────────────
 // Added in curriculum update: vocabulary/speaking/listening/review overlay
 
@@ -96,12 +116,16 @@ export type Module = {
   status: ModuleStatus;
   xpReward: number;
   quizQuestions?: QuizQuestion[];
+  easyQuizQuestions?: QuizQuestion[];
+  hardQuizQuestions?: QuizQuestion[];
   readingPassage?: ReadingPassageToken[];
+  culturalNote?: string;
+  ttsTriggers?: TtsTrigger[];
   // ── Curriculum enrichment overlay ──────────────────────────────────────────
   vocabularyTheme?: string;           // real-world vocabulary category for this module
   speakingGoal?: string;              // what the user can say after completing this module
   listeningSkill?: string;            // what to listen for actively in the song
-  recyclingTargets?: string[];        // concepts/words from earlier modules to review
+  recyclingTargets?: RecyclingTarget[]; // spaced-repetition review schedule from earlier modules
   vocabPack?: VocabPack;             // 5 core + 3 bonus words + phrase chunk + pattern
   speakingPrompts?: SpeakingPrompts; // 3 prompts + 3 frames + 1 mini challenge
   songDifficulty?: SongDifficulty;   // pace/clarity/slang/repetition/beginner rating
@@ -141,8 +165,10 @@ export const MODULES: Module[] = [
       'Spanish is almost perfectly phonetic — once you know the sounds, you can read anything out loud. Start here and the rest of the language opens up.',
     song: { title: 'Bésame Mucho', artist: 'Consuelo Velázquez', durationSeconds: 210, spotifyId: '6jXSjt2gZkLQ9yEAGOC7CR', youtubeId: 'MY0fuEfBmD4' },
     genreSongs: {
-      reggaeton: { title: 'La Bamba', artist: 'Los Lobos', durationSeconds: 183 },
-      'regional-mexican': { title: 'La Bamba', artist: 'Los Lobos', durationSeconds: 183 },
+      pop: { title: 'Limón y Sal', artist: 'Julieta Venegas', durationSeconds: 218, spotifyId: '7dITAq1YP5e0kTcaDq4YWI', youtubeId: 'tIpzfs5tBJU' },
+      reggaeton: { title: 'Despacito', artist: 'Luis Fonsi ft. Daddy Yankee', durationSeconds: 229, spotifyId: '6habFhsOp2NvshLv26DqMb', youtubeId: 'kJQP7kiw5Fk' },
+      rnb: { title: 'Burbujas de Amor', artist: 'Juan Luis Guerra 4.40', durationSeconds: 245, spotifyId: '0TarPYIjJndYucFUOMce8P', youtubeId: 'PWGwF_B0bxk' },
+      'regional-mexican': { title: 'Cielito Lindo', artist: 'Vicente Fernández', durationSeconds: 195, spotifyId: '1YIE0WBii65tRNXsxV5iGs', youtubeId: 'T6o_zaTvHSI' },
     },
     vocabulary: [
       { spanish: 'a, e, i, o, u', english: 'the 5 vowels — always the same pure sound' },
@@ -164,6 +190,8 @@ export const MODULES: Module[] = [
     songsNeeded: 2,
     status: 'completed',
     xpReward: 100,
+    culturalNote:
+      "The Girl Who Wrote Bésame Mucho — Picture a teenager at a piano in Mexico City around 1940. Her name is Consuelo Velázquez, and she has never been kissed. Out of her imagination and the bolero records spinning in her house, she writes a song called 'Bésame Mucho' — 'Kiss Me a Lot.' Within a decade it will be one of the most-recorded songs in history, translated into more than twenty languages and sung by Frank Sinatra, The Beatles, Plácido Domingo, and dozens more. What makes it your first listening text is not the romance — it is the sound. Consuelo's lyrics live almost entirely inside pure Spanish vowels and gentle consonants: the steady é in 'bésame,' the pure u in 'mucho.' Nothing in this song will ask your ear to do anything it cannot already do today. That is the point. A Mexican teenager wrote you a perfect first lesson.",
     quizQuestions: [
       {
         question: 'The title "Bésame Mucho" starts with B. In Spanish, B and V sound almost identical — like a soft ___',
@@ -196,6 +224,62 @@ export const MODULES: Module[] = [
         explanation: '"Mucho" means "a lot" or "very much." Bésame Mucho = "Kiss Me a Lot."',
       },
     ],
+    easyQuizQuestions: [
+      {
+        question: 'How is the letter H pronounced in Spanish words like "hola" and "hablar"?',
+        options: [
+          'Like the English "h" in "hat"',
+          'Silent — you do not say it at all',
+          'Like a soft "j" sound',
+          'Like an "f" sound',
+        ],
+        correctIndex: 1,
+        explanation:
+          'The Spanish H is always silent. "Hola" sounds like "OH-la" — no breath at the start. This is the single most common mistake English speakers make on day one.',
+      },
+      {
+        question: 'Which letter in the Spanish alphabet does NOT exist in the English alphabet?',
+        options: ['ll', 'rr', 'ñ', 'h'],
+        correctIndex: 2,
+        explanation:
+          'Ñ is its own letter in Spanish — not just an N with a decoration. It sounds like "ny" in "canyon" and appears in words like niño and mañana.',
+      },
+      {
+        question: 'What does the word "hola" mean?',
+        options: ['goodbye', 'please', 'hello', 'thank you'],
+        correctIndex: 2,
+        explanation:
+          '"Hola" means "hello" — usually the first Spanish word anyone learns. And remember: the H is silent, so it sounds like "OH-la."',
+      },
+    ],
+    hardQuizQuestions: [
+      {
+        question: 'Three of these Spanish words contain a silent letter. Which one does NOT?',
+        options: ['hola', 'hablar', 'mucho', 'hacer'],
+        correctIndex: 2,
+        explanation:
+          '"Mucho" has no silent letter — every sound is pronounced. The other three all start with a silent H. A useful test: if a Spanish word starts with H, the H stays quiet.',
+      },
+      {
+        question: 'You see two written words: "pero" and "perro." What is the difference in how you say them?',
+        options: [
+          'They sound exactly the same — the extra R is silent',
+          '"Pero" has one tapped R; "perro" has a rolled, trilled RR',
+          '"Pero" is louder; "perro" is whispered',
+          '"Perro" has a silent R; "pero" is rolled',
+        ],
+        correctIndex: 1,
+        explanation:
+          'A single R between vowels is a quick tap. A double RR is a full roll. The two words look almost identical on the page, but the trill changes everything. A single tap is fine if you can\'t roll yet — Spanish speakers will understand you.',
+      },
+      {
+        question: 'Which of these Spanish words contains the "y"-like LL sound?',
+        options: ['mañana', 'llamar', 'hola', 'mucho'],
+        correctIndex: 1,
+        explanation:
+          '"Llamar" (to call) starts with LL, which in Spanish sounds like the English "y" — so it begins with a "ya-" sound, not an "la-" sound. The other three contain ñ, silent h, or a pure vowel run.',
+      },
+    ],
     readingPassage: [
       { text: 'In 1940, a sixteen-year-old girl in Mexico City sat down at a piano and composed one of the most-recorded songs in history. Her name was Consuelo Velázquez, and the song was ', isSpanish: false },
       { text: '"Bésame Mucho"', isSpanish: true, english: 'Kiss Me a Lot' },
@@ -208,6 +292,24 @@ export const MODULES: Module[] = [
       { text: ' shows the double-L that sounds like Y. And ', isSpanish: false },
       { text: 'hablar', isSpanish: true, english: 'to speak', phonetic: 'ah-BLAR' },
       { text: ' proves the H is always silent. The whole alphabet, in one love song from a girl who had not yet lived the feeling.', isSpanish: false },
+    ],
+    ttsTriggers: [
+      { id: 'vocab-vowels-slow',           screen: 'preListen', text: 'a, e, i, o, u', language: 'es-419', slowVersion: true,  normalVersion: false, outputFile: 'assets/audio/module-001/vocab-vowels-slow.mp3',          mvpRequired: true },
+      { id: 'vocab-vowels',                screen: 'preListen', text: 'a, e, i, o, u', language: 'es-419', slowVersion: false, normalVersion: true,  outputFile: 'assets/audio/module-001/vocab-vowels.mp3',               mvpRequired: true },
+      { id: 'vocab-enye-slow',             screen: 'preListen', text: 'ñ',             language: 'es-419', slowVersion: true,  normalVersion: false, outputFile: 'assets/audio/module-001/vocab-enye-slow.mp3',            mvpRequired: true },
+      { id: 'vocab-enye',                  screen: 'preListen', text: 'ñ',             language: 'es-419', slowVersion: false, normalVersion: true,  outputFile: 'assets/audio/module-001/vocab-enye.mp3',                 mvpRequired: true },
+      { id: 'vocab-ll-slow',               screen: 'preListen', text: 'll',            language: 'es-419', slowVersion: true,  normalVersion: false, outputFile: 'assets/audio/module-001/vocab-ll-slow.mp3',              mvpRequired: true },
+      { id: 'vocab-ll',                    screen: 'preListen', text: 'll',            language: 'es-419', slowVersion: false, normalVersion: true,  outputFile: 'assets/audio/module-001/vocab-ll.mp3',                   mvpRequired: true },
+      { id: 'vocab-h-slow',                screen: 'preListen', text: 'h',             language: 'es-419', slowVersion: true,  normalVersion: false, outputFile: 'assets/audio/module-001/vocab-h-slow.mp3',               mvpRequired: true },
+      { id: 'vocab-h',                     screen: 'preListen', text: 'h',             language: 'es-419', slowVersion: false, normalVersion: true,  outputFile: 'assets/audio/module-001/vocab-h.mp3',                    mvpRequired: true },
+      { id: 'vocab-rr-slow',               screen: 'preListen', text: 'rr',            language: 'es-419', slowVersion: true,  normalVersion: false, outputFile: 'assets/audio/module-001/vocab-rr-slow.mp3',              mvpRequired: true },
+      { id: 'vocab-rr',                    screen: 'preListen', text: 'rr',            language: 'es-419', slowVersion: false, normalVersion: true,  outputFile: 'assets/audio/module-001/vocab-rr.mp3',                   mvpRequired: true },
+      { id: 'phrase-besame-mucho',         screen: 'preListen', text: 'Bésame mucho.', language: 'es-419', slowVersion: false, normalVersion: true,  outputFile: 'assets/audio/module-001/phrase-besame-mucho.mp3',        mvpRequired: true },
+      { id: 'reading-token-besame-mucho',  screen: 'reading',   text: 'Bésame Mucho',  language: 'es-419', slowVersion: false, normalVersion: true,  outputFile: 'assets/audio/module-001/reading-token-besame-mucho.mp3', mvpRequired: true },
+      { id: 'reading-token-hola',          screen: 'reading',   text: 'Hola',          language: 'es-419', slowVersion: false, normalVersion: true,  outputFile: 'assets/audio/module-001/reading-token-hola.mp3',         mvpRequired: true },
+      { id: 'reading-token-besame',        screen: 'reading',   text: 'bésame',        language: 'es-419', slowVersion: false, normalVersion: true,  outputFile: 'assets/audio/module-001/reading-token-besame.mp3',       mvpRequired: true },
+      { id: 'reading-token-llorar',        screen: 'reading',   text: 'llorar',        language: 'es-419', slowVersion: false, normalVersion: true,  outputFile: 'assets/audio/module-001/reading-token-llorar.mp3',       mvpRequired: true },
+      { id: 'reading-token-hablar',        screen: 'reading',   text: 'hablar',        language: 'es-419', slowVersion: false, normalVersion: true,  outputFile: 'assets/audio/module-001/reading-token-hablar.mp3',       mvpRequired: true },
     ],
   },
 
@@ -386,10 +488,12 @@ export const MODULES: Module[] = [
     concept: 'The glue words that hold sentences together',
     conceptDescription:
       'De, con, sin, pero, también — these small words appear in almost every sentence in Spanish. Learn them now and your comprehension jumps immediately.',
-    song: { title: 'A Dios Le Pido', artist: 'Juanes', durationSeconds: 267 },
+    song: { title: 'A Dios Le Pido', artist: 'Juanes', durationSeconds: 267, spotifyId: '0JHM9KIq6oUPd4gHxMlB0T', youtubeId: 'kMIaYXxLnUA' },
     genreSongs: {
-      reggaeton: { title: 'Con Calma', artist: 'Daddy Yankee ft. Snow', durationSeconds: 193 },
-      'regional-mexican': { title: 'Con Calma', artist: 'Daddy Yankee ft. Snow', durationSeconds: 193 },
+      pop: { title: 'A Dios Le Pido', artist: 'Juanes', durationSeconds: 267, spotifyId: '0JHM9KIq6oUPd4gHxMlB0T', youtubeId: 'kMIaYXxLnUA' },
+      reggaeton: { title: 'Despacito', artist: 'Luis Fonsi ft. Daddy Yankee', durationSeconds: 229, spotifyId: '6habFhsOp2NvshLv26DqMb', youtubeId: 'kJQP7kiw5Fk' },
+      rnb: { title: 'Obsesión', artist: 'Aventura', durationSeconds: 245 },
+      'regional-mexican': { title: 'El Rey', artist: 'Vicente Fernández', durationSeconds: 200, spotifyId: '6P3dT8EkJd0LOyZklOl0Na', youtubeId: 'oVdWmX4OEV8' },
     },
     vocabulary: [
       { spanish: 'de', english: 'of / from' },
@@ -409,8 +513,155 @@ export const MODULES: Module[] = [
     readingTopic: 'Juanes: Music as a Force for Peace in Colombia',
     readingRatio: '90% English / 10% Spanish connectors inserted',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 100,
+    culturalNote:
+      "Juanes and the Sound of Connection — Juan Esteban Aristizábal Vásquez (Juanes) grew up in Medellín during one of Colombia's hardest decades. His songs link two worlds: rock and Colombian folk, English and Spanish audiences, pain and hope. Listen to 'A Dios Le Pido' and you'll hear the small words doing the heavy lifting — con, sin, de, para — stitching together a prayer that asks for life with his loved ones and without fear. That is exactly what these glue words do inside the language: they hold opposite ideas in the same breath. Juanes also founded Mi Sangre, a foundation supporting children affected by landmines. The connection between his music and his peace work is not a coincidence — both are built on the same idea of joining what war tries to separate.",
+    quizQuestions: [
+      {
+        question: "Fill in the blank: 'Café ___ leche, ___ azúcar.' (Coffee with milk, without sugar.)",
+        options: ['con / sin', 'sin / con', 'de / con', 'pero / y'],
+        correctIndex: 0,
+        explanation: "Con means 'with', sin means 'without'. They're functional opposites — when you can hear one, you can hear the other.",
+      },
+      {
+        question: "Which Spanish word would connect these two ideas: 'I speak English' ___ 'I don't speak Spanish'?",
+        options: ['y', 'también', 'pero', 'con'],
+        correctIndex: 2,
+        explanation: "Pero means 'but' — it's the connector you reach for when two ideas contrast. 'Hablo inglés, pero no español.'",
+      },
+      {
+        question: "Which word order correctly says 'I'm from Colombia, but I speak English.'?",
+        options: [
+          'Soy de Colombia, pero hablo inglés.',
+          'Soy Colombia de, pero inglés hablo.',
+          'Soy con Colombia, y hablo inglés.',
+          'Hablo inglés, de soy Colombia pero.',
+        ],
+        correctIndex: 0,
+        explanation: 'De links you to a place and pero pivots to a contrast. Two glue words, one complete sentence.',
+      },
+      {
+        question: "In the phrase 'café con leche', which connector tells you milk is being added?",
+        options: ['sin', 'pero', 'con', 'de'],
+        correctIndex: 2,
+        explanation: 'Con introduces what is being added or included. Sin would mean the milk is absent.',
+      },
+    ],
+    easyQuizQuestions: [
+      {
+        question: "Which word means 'with' in Spanish?",
+        options: ['sin', 'con', 'de', 'pero'],
+        correctIndex: 1,
+        explanation: "Con means 'with' — think 'café con leche' (coffee with milk). Sin is its opposite.",
+      },
+      {
+        question: "Which pairing matches Spanish to English correctly?",
+        options: [
+          'de = also / too',
+          'sin = with',
+          'pero = but',
+          'también = without',
+        ],
+        correctIndex: 2,
+        explanation: "Pero means 'but'. The other three pairs are scrambled — sin = without, también = also/too, de = of/from.",
+      },
+      {
+        question: "How do you say 'me too' in Spanish?",
+        options: ['Yo pero.', 'Yo sin.', 'Yo también.', 'Yo con.'],
+        correctIndex: 2,
+        explanation: "'Yo también' is the most useful two-word response in Spanish. Use it anytime someone says something you agree with.",
+      },
+    ],
+    hardQuizQuestions: [
+      {
+        question: "'Tengo un ___' means 'I have a dog'. Which word fits — and how does it differ from the connector 'pero'?",
+        options: [
+          'pero (tapped R, single sound)',
+          'perro (trilled R, rolled sound)',
+          'pera (a pear)',
+          'pero (means "but")',
+        ],
+        correctIndex: 1,
+        explanation: 'Perro (dog) and pero (but) look almost identical, but the double R changes everything. Pero is a single soft tap; perro is a full rolled trill.',
+      },
+      {
+        question: "Complete the sentence: 'Quiero un café ___ leche, ___ no quiero azúcar, ___ quiero agua.'",
+        options: [
+          'con / pero / también',
+          'sin / y / también',
+          'con / pero / nunca',
+          'de / sin / también',
+        ],
+        correctIndex: 0,
+        explanation: "Con leche (with milk), pero no quiero azúcar (but I don't want sugar), también quiero agua (I also want water). Three connectors stacked into one real sentence.",
+      },
+      {
+        question: "Translate: 'I'm from Mexico, but I also speak English.'",
+        options: [
+          'Soy de México, pero también hablo inglés.',
+          'Soy con México, y también hablo inglés.',
+          'Soy sin México, pero hablo inglés también.',
+          'Soy de México, y nunca hablo inglés.',
+        ],
+        correctIndex: 0,
+        explanation: 'De (from), pero (but), también (also) — three connectors doing exactly the work they were designed for. También typically sits before the verb, not at the end.',
+      },
+    ],
+    readingPassage: [
+      { text: 'Juan Esteban Aristizábal Vásquez — known to the world as Juanes — grew up in Medellín during one of Colombia\'s hardest decades. His songs almost always link two worlds: rock and Colombian folk, English-speaking and Spanish-speaking audiences, pain and hope. Listen carefully to "A Dios Le Pido" and you will notice the small words doing the heavy lifting — ', isSpanish: false },
+      { text: 'de', isSpanish: true, english: 'of / from' },
+      { text: ', ', isSpanish: false },
+      { text: 'con', isSpanish: true, english: 'with' },
+      { text: ', ', isSpanish: false },
+      { text: 'sin', isSpanish: true, english: 'without' },
+      { text: ', ', isSpanish: false },
+      { text: 'y', isSpanish: true, english: 'and' },
+      { text: ' — stitching together a prayer that asks for life with his loved ones and without fear. That is exactly what these glue words do inside the language: they hold opposite ideas in the same breath. Juanes also founded Mi Sangre, a foundation supporting Colombian children affected by landmines. The connection between his music and his peace work is not a coincidence, ', isSpanish: false },
+      { text: 'pero', isSpanish: true, english: 'but' },
+      { text: ' a deliberate choice. Both are built on the same idea of joining what conflict tries to separate. Next time you hear him sing, ', isSpanish: false },
+      { text: 'también', isSpanish: true, english: 'also / too' },
+      { text: ' listen for the tiny words. They are carrying the message.', isSpanish: false },
+    ],
+    recyclingTargets: [
+      {
+        moduleId: 1,
+        concept: 'Spanish phonetics — pero vs perro (single tap R vs trilled R) and the silent H in hablo',
+        intervalDays: [1, 7],
+        reviewFormat: ['listening-recognition'],
+      },
+      {
+        moduleId: 2,
+        concept: 'Accent marks shift stress — también lands on the final é; sí (yes) vs si (if)',
+        intervalDays: [1, 3, 14],
+        reviewFormat: ['mini-quiz'],
+      },
+      {
+        moduleId: 3,
+        concept: 'Question words combined with prepositions — ¿Con quién? ¿De dónde?',
+        intervalDays: [3, 7, 30],
+        reviewFormat: ['speaking-prompt', 'translation'],
+      },
+    ],
+    ttsTriggers: [
+      { id: 'vocab-de-slow',         screen: 'preListen',      text: 'de',                              language: 'es-419', slowVersion: true,  normalVersion: false, outputFile: 'assets/audio/module-004/vocab-de-slow.mp3',                  mvpRequired: true },
+      { id: 'vocab-de',              screen: 'preListen',      text: 'de',                              language: 'es-419', slowVersion: false, normalVersion: true,  outputFile: 'assets/audio/module-004/vocab-de.mp3',                       mvpRequired: true },
+      { id: 'vocab-con-slow',        screen: 'preListen',      text: 'con',                             language: 'es-419', slowVersion: true,  normalVersion: false, outputFile: 'assets/audio/module-004/vocab-con-slow.mp3',                 mvpRequired: true },
+      { id: 'vocab-con',             screen: 'preListen',      text: 'con',                             language: 'es-419', slowVersion: false, normalVersion: true,  outputFile: 'assets/audio/module-004/vocab-con.mp3',                      mvpRequired: true },
+      { id: 'vocab-sin-slow',        screen: 'preListen',      text: 'sin',                             language: 'es-419', slowVersion: true,  normalVersion: false, outputFile: 'assets/audio/module-004/vocab-sin-slow.mp3',                 mvpRequired: true },
+      { id: 'vocab-sin',             screen: 'preListen',      text: 'sin',                             language: 'es-419', slowVersion: false, normalVersion: true,  outputFile: 'assets/audio/module-004/vocab-sin.mp3',                      mvpRequired: true },
+      { id: 'vocab-pero-slow',       screen: 'preListen',      text: 'pero',                            language: 'es-419', slowVersion: true,  normalVersion: false, outputFile: 'assets/audio/module-004/vocab-pero-slow.mp3',                mvpRequired: true },
+      { id: 'vocab-pero',            screen: 'preListen',      text: 'pero',                            language: 'es-419', slowVersion: false, normalVersion: true,  outputFile: 'assets/audio/module-004/vocab-pero.mp3',                     mvpRequired: true },
+      { id: 'vocab-tambien-slow',    screen: 'preListen',      text: 'también',                         language: 'es-419', slowVersion: true,  normalVersion: false, outputFile: 'assets/audio/module-004/vocab-tambien-slow.mp3',             mvpRequired: true },
+      { id: 'vocab-tambien',         screen: 'preListen',      text: 'también',                         language: 'es-419', slowVersion: false, normalVersion: true,  outputFile: 'assets/audio/module-004/vocab-tambien.mp3',                  mvpRequired: true },
+      { id: 'contrast-perro-slow',   screen: 'quiz',           text: 'perro',                           language: 'es-419', slowVersion: true,  normalVersion: false, outputFile: 'assets/audio/module-004/contrast-perro-slow.mp3',            mvpRequired: true },
+      { id: 'phrase-cafe-con-leche', screen: 'preListen',      text: 'Café con leche, sin azúcar.',     language: 'es-419', slowVersion: false, normalVersion: true,  outputFile: 'assets/audio/module-004/phrase-cafe-con-leche.mp3',          mvpRequired: true },
+      { id: 'phrase-yo-tambien',     screen: 'preListen',      text: 'Yo también.',                     language: 'es-419', slowVersion: false, normalVersion: true,  outputFile: 'assets/audio/module-004/phrase-yo-tambien.mp3',              mvpRequired: true },
+      { id: 'speaking-prompt-frame-1', screen: 'preListen',    text: 'Quiero café con leche.',          language: 'es-419', slowVersion: false, normalVersion: true,  outputFile: 'assets/audio/module-004/speaking-frame-quiero-cafe-con-leche.mp3', mvpRequired: true },
+      { id: 'speaking-prompt-frame-2', screen: 'preListen',    text: 'Hablo inglés, pero no español.',  language: 'es-419', slowVersion: false, normalVersion: true,  outputFile: 'assets/audio/module-004/speaking-frame-hablo-ingles-pero.mp3',     mvpRequired: true },
+      { id: 'reading-snippet-con-sus-seres', screen: 'reading', text: 'con sus seres queridos',         language: 'es-419', slowVersion: false, normalVersion: true,  outputFile: 'assets/audio/module-004/reading-con-sus-seres.mp3',          mvpRequired: true },
+      { id: 'reading-snippet-sin-miedo',     screen: 'reading', text: 'sin miedo',                      language: 'es-419', slowVersion: false, normalVersion: true,  outputFile: 'assets/audio/module-004/reading-sin-miedo.mp3',              mvpRequired: true },
+    ],
   },
 
   {
