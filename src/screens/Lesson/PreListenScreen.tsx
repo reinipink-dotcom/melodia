@@ -48,6 +48,15 @@ function findPhraseTrigger(module: Module, phraseChunk: string): TtsTrigger | un
   );
 }
 
+function findVocabTrigger(module: Module, vocabText: string): TtsTrigger | undefined {
+  const triggers = module.ttsTriggers ?? [];
+  return (
+    triggers.find((t) => t.screen === 'preListen' && t.text === vocabText && t.slowVersion) ??
+    triggers.find((t) => t.screen === 'preListen' && t.text === vocabText && t.normalVersion) ??
+    triggers.find((t) => t.screen === 'preListen' && t.text === vocabText)
+  );
+}
+
 export function PreListenScreen({ navigation, route }: Props) {
   const { moduleId } = route.params;
   const module = MODULES.find((m) => m.id === moduleId);
@@ -133,9 +142,7 @@ export function PreListenScreen({ navigation, route }: Props) {
               </View>
               <TouchableOpacity
                 onPress={() => {
-                  const trigger = module.ttsTriggers?.find(
-                    t => t.screen === 'preListen' && t.text === word.spanish && t.normalVersion,
-                  );
+                  const trigger = findVocabTrigger(module, word.spanish);
                   trigger ? playTrigger(trigger) : speakSpanish(word.spanish);
                 }}
                 style={styles.speakerBtn}

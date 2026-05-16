@@ -24,6 +24,7 @@ type Props = {
 function findReadingTrigger(module: Module | undefined, tokenText: string): TtsTrigger | undefined {
   const triggers = module?.ttsTriggers ?? [];
   return (
+    triggers.find((t) => t.text === tokenText && t.slowVersion) ??
     triggers.find((t) => t.screen === 'reading' && t.text === tokenText) ??
     triggers.find((t) => t.text === tokenText && t.normalVersion) ??
     triggers.find((t) => t.text === tokenText)
