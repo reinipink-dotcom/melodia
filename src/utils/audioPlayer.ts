@@ -2,6 +2,13 @@ import { Audio } from 'expo-av';
 import { TtsTrigger } from '../data/modules';
 import { speakSpanish } from './speech';
 
+let audioReady = false;
+async function ensureAudioReady(): Promise<void> {
+  if (audioReady) return;
+  await Audio.setAudioModeAsync({ playsInSilentModeIOS: true, allowsRecordingIOS: false });
+  audioReady = true;
+}
+
 // Static asset map — all 17 Module 4 MP3s.
 // require() calls must be statically analyzable by Metro bundler; dynamic require() does not work.
 const AUDIO_MAP: Record<string, number> = {
@@ -44,6 +51,7 @@ export async function playTrigger(trigger: TtsTrigger): Promise<void> {
   }
 
   try {
+    await ensureAudioReady();
     const { sound } = await Audio.Sound.createAsync(source, { shouldPlay: true });
     currentSound = sound;
   } catch {
