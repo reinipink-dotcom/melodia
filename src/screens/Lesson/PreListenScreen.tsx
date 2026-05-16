@@ -17,7 +17,7 @@ import { RouteProp } from '@react-navigation/native';
 import { Colors } from '../../constants/colors';
 import { Typography } from '../../constants/typography';
 import { Spacing } from '../../constants/spacing';
-import { MODULES } from '../../data/modules';
+import { MODULES, Module, TtsTrigger } from '../../data/modules';
 import { getEnrichment } from '../../data/curriculum-enrichment';
 import { ModulesStackParamList } from '../../navigation/ModulesNavigator';
 import { useLessonStore } from '../../store/lessonStore';
@@ -37,6 +37,15 @@ function levelColor(level: string): string {
     case 'B2': return Colors.lavender;
     default: return Colors.coral;
   }
+}
+
+function findPhraseTrigger(module: Module, phraseChunk: string): TtsTrigger | undefined {
+  const triggers = module.ttsTriggers ?? [];
+  return (
+    triggers.find((t) => t.screen === 'preListen' && t.text === phraseChunk) ??
+    triggers.find((t) => t.screen === 'preListen' && t.id === 'phrase-cafe-con-leche') ??
+    triggers.find((t) => t.screen === 'preListen' && t.id.startsWith('phrase-'))
+  );
 }
 
 export function PreListenScreen({ navigation, route }: Props) {
@@ -154,9 +163,7 @@ export function PreListenScreen({ navigation, route }: Props) {
                 <Text style={[styles.phraseChunk, { color: accent, flex: 1 }]}>{enrichment.vocabPack.phraseChunk}</Text>
                 <TouchableOpacity
                   onPress={() => {
-                    const trigger = module.ttsTriggers?.find(
-                      t => t.screen === 'preListen' && t.text === enrichment.vocabPack.phraseChunk,
-                    );
+                    const trigger = findPhraseTrigger(module, enrichment.vocabPack.phraseChunk);
                     trigger ? playTrigger(trigger) : speakSpanish(enrichment.vocabPack.phraseChunk);
                   }}
                   style={styles.speakerBtn}

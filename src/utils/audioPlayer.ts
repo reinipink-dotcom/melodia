@@ -1,6 +1,6 @@
 import { Audio } from 'expo-av';
 import { TtsTrigger } from '../data/modules';
-import { speakSpanish } from './speech';
+import { speakSpanish, stopSpeech } from './speech';
 
 let audioReady = false;
 async function ensureAudioReady(): Promise<void> {
@@ -34,6 +34,7 @@ const AUDIO_MAP: Record<string, number> = {
 let currentSound: Audio.Sound | null = null;
 
 export function stopAudio(): void {
+  stopSpeech();
   if (currentSound) {
     const s = currentSound;
     currentSound = null;

@@ -10,7 +10,7 @@ import { RouteProp } from '@react-navigation/native';
 import { Colors } from '../../constants/colors';
 import { Typography } from '../../constants/typography';
 import { Spacing } from '../../constants/spacing';
-import { MODULES, ReadingPassageToken } from '../../data/modules';
+import { MODULES, Module, ReadingPassageToken, TtsTrigger } from '../../data/modules';
 import { ModulesStackParamList } from '../../navigation/ModulesNavigator';
 import { useLessonStore } from '../../store/lessonStore';
 import { speakSpanish, stopSpeech } from '../../utils/speech';
@@ -21,6 +21,15 @@ type Props = {
   route: RouteProp<ModulesStackParamList, 'Reading'>;
 };
 
+function findReadingTrigger(module: Module | undefined, tokenText: string): TtsTrigger | undefined {
+  const triggers = module?.ttsTriggers ?? [];
+  return (
+    triggers.find((t) => t.screen === 'reading' && t.text === tokenText) ??
+    triggers.find((t) => t.text === tokenText && t.normalVersion) ??
+    triggers.find((t) => t.text === tokenText)
+  );
+}
+
 export function ReadingScreen({ navigation, route }: Props) {
   const { moduleId, xpEarned } = route.params;
   const module = MODULES.find((m) => m.id === moduleId);
@@ -29,9 +38,7 @@ export function ReadingScreen({ navigation, route }: Props) {
   const [activeToken, setActiveToken] = useState<ReadingPassageToken | null>(null);
 
   function handleTokenTap(token: ReadingPassageToken): void {
-    const trigger = module?.ttsTriggers?.find(
-      t => t.screen === 'reading' && t.text === token.text,
-    );
+    const trigger = findReadingTrigger(module, token.text);
     trigger ? playTrigger(trigger) : speakSpanish(token.text);
   }
 
