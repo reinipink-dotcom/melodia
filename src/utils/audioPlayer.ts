@@ -29,6 +29,23 @@ const AUDIO_MAP: Record<string, number> = {
   'assets/audio/module-004/speaking-frame-hablo-ingles-pero.mp3':     require('../../assets/audio/module-004/speaking-frame-hablo-ingles-pero.mp3'),
   'assets/audio/module-004/reading-con-sus-seres.mp3':                require('../../assets/audio/module-004/reading-con-sus-seres.mp3'),
   'assets/audio/module-004/reading-sin-miedo.mp3':                    require('../../assets/audio/module-004/reading-sin-miedo.mp3'),
+  // Module 1 — The Spanish Alphabet
+  'assets/audio/module-001/vocab-vowels-slow.mp3':                    require('../../assets/audio/module-001/vocab-vowels-slow.mp3'),
+  'assets/audio/module-001/vocab-vowels.mp3':                         require('../../assets/audio/module-001/vocab-vowels.mp3'),
+  'assets/audio/module-001/vocab-enye-slow.mp3':                      require('../../assets/audio/module-001/vocab-enye-slow.mp3'),
+  'assets/audio/module-001/vocab-enye.mp3':                           require('../../assets/audio/module-001/vocab-enye.mp3'),
+  'assets/audio/module-001/vocab-ll-slow.mp3':                        require('../../assets/audio/module-001/vocab-ll-slow.mp3'),
+  'assets/audio/module-001/vocab-ll.mp3':                             require('../../assets/audio/module-001/vocab-ll.mp3'),
+  'assets/audio/module-001/vocab-h-slow.mp3':                         require('../../assets/audio/module-001/vocab-h-slow.mp3'),
+  'assets/audio/module-001/vocab-h.mp3':                              require('../../assets/audio/module-001/vocab-h.mp3'),
+  'assets/audio/module-001/vocab-rr-slow.mp3':                        require('../../assets/audio/module-001/vocab-rr-slow.mp3'),
+  'assets/audio/module-001/vocab-rr.mp3':                             require('../../assets/audio/module-001/vocab-rr.mp3'),
+  'assets/audio/module-001/phrase-besame-mucho.mp3':                  require('../../assets/audio/module-001/phrase-besame-mucho.mp3'),
+  'assets/audio/module-001/reading-token-besame-mucho.mp3':           require('../../assets/audio/module-001/reading-token-besame-mucho.mp3'),
+  'assets/audio/module-001/reading-token-besame.mp3':                 require('../../assets/audio/module-001/reading-token-besame.mp3'),
+  'assets/audio/module-001/reading-token-hola.mp3':                   require('../../assets/audio/module-001/reading-token-hola.mp3'),
+  'assets/audio/module-001/reading-token-llorar.mp3':                 require('../../assets/audio/module-001/reading-token-llorar.mp3'),
+  'assets/audio/module-001/reading-token-hablar.mp3':                 require('../../assets/audio/module-001/reading-token-hablar.mp3'),
 };
 
 let currentSound: Audio.Sound | null = null;
