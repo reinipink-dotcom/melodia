@@ -128,12 +128,9 @@ QuizScreen.tsx:78-99 fallback now renders centered text + "Back to Modules" pill
 
 ---
 
-## OPEN — Quiz Difficulty Should Match Onboarding Selection (from feedback 2026-05-16)
-**Source:** reine-feedback.md, Module 1 entry
-**What:** The quiz shown to the user should reflect the difficulty level they selected during onboarding (beginner → easy, some basics → standard, intermediate → hard).
-**What needs to happen:**
-- [ ] Read the user's `onboardingStore.level` in QuizScreen and select the appropriate quiz variant (easyQuizQuestions / quizQuestions / hardQuizQuestions)
-- [ ] Test all three difficulty paths in the simulator to confirm correct variant is served
+## ~~DONE — Quiz Difficulty Should Match Onboarding Selection~~ ✓ (2026-05-17)
+
+Fixed in QuizScreen.tsx (commit 639a5c4). Simulator path testing is pending Reine's manual walkthrough.
 
 ---
 
@@ -180,27 +177,15 @@ QuizScreen.tsx:78-99 fallback now renders centered text + "Back to Modules" pill
 
 ---
 
-## OPEN — Module 5 Audio MP3s Not Yet Generated | cloud-fixable
+## ~~DONE — Module 5 Audio MP3s Generated~~ ✓ (2026-05-17)
 
-**What:** Module 5 ships with 11 ttsTriggers but `assets/audio/module-005/` directory does not exist. AUDIO_MAP in audioPlayer.ts has no Module 5 entries. All cues fall back to expo-speech.
-
-**What needs to happen:**
-- [ ] Run `/melodia-audio 5` to generate the 11 MP3s via OpenAI TTS tts-1-hd nova
-- [ ] Append AUDIO_MAP entries (11 lines) to src/utils/audioPlayer.ts:49 above the closing brace
+10 MP3s generated via OpenAI TTS tts-1-hd nova (~$0.091). AUDIO_MAP wired in audioPlayer.ts. Committed in 609f957. Conditional reggaeton cue deferred (not mvpRequired).
 
 ---
 
-## OPEN — Quiz Difficulty Variant Routing Never Wired | cloud-fixable
+## ~~DONE — Quiz Difficulty Variant Routing~~ ✓ (2026-05-17)
 
-**What:** QuizScreen.tsx:35 currently does `module?.quizQuestions ?? []` — only the standard variant is ever served. `easyQuizQuestions` and `hardQuizQuestions` exist on the data but are unreachable. Affects Modules 1, 4, 5 (all ship 3 variants).
-
-**Source:** Wave 3 Module 5 QA scan. Related to "Quiz Difficulty Should Match Onboarding Selection" item above.
-
-**What needs to happen:**
-- [ ] Import `useOnboardingStore` in QuizScreen.tsx
-- [ ] Read `level` and map: beginner → easyQuizQuestions, some-basics → quizQuestions, intermediate → hardQuizQuestions
-- [ ] Fall back to quizQuestions if the variant array is empty
-- [ ] Update all 3 deployed modules' fallback paths to match
+QuizScreen.tsx now reads `onboardingStore.level` and routes: beginner→easyQuizQuestions, intermediate→hardQuizQuestions, some-basics→quizQuestions (default). Fallback to quizQuestions if variant is empty. Committed in 639a5c4. Affects M1, M4, M5.
 
 ---
 
