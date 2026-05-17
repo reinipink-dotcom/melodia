@@ -9,7 +9,7 @@ const COST_LOG = path.join(ROOT, 'notes/melodia/2-tracking/audio-cost-log.csv');
 const ENV_FILE = path.join(ROOT, '.env');
 const PRICE_PER_MILLION = 30;
 const RETRY_IDS = [
-  'module-005-vocab-yo',
+  'module-005-cultural-note-reggaeton',
 ];
 
 function loadEnv() {

@@ -44,3 +44,4 @@ date,moduleId,provider,textChars,estimatedCost,outputFile
 2026-05-17,5,openai-tts-1-hd,176,0.005280,assets/audio/module-005/m5-vocab-ellos.mp3
 2026-05-17,5,openai-tts-1-hd,260,0.007800,assets/audio/module-005/m5-phrase-yo-soy-de.mp3
 2026-05-17,5,openai-tts-1-hd,179,0.005370,assets/audio/module-005/m5-vocab-yo.mp3
+2026-05-17,5,openai-tts-1-hd,433,0.012990,assets/audio/module-005/m5-cultural-note-ivy-queen.mp3

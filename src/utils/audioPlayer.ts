@@ -57,6 +57,7 @@ const AUDIO_MAP: Record<string, number> = {
   'assets/audio/module-005/m5-speaking-prompt.mp3':                   require('../../assets/audio/module-005/m5-speaking-prompt.mp3'),
   'assets/audio/module-005/m5-reading-bomba-estereo.mp3':             require('../../assets/audio/module-005/m5-reading-bomba-estereo.mp3'),
   'assets/audio/module-005/m5-lesson-complete.mp3':                   require('../../assets/audio/module-005/m5-lesson-complete.mp3'),
+  'assets/audio/module-005/m5-cultural-note-ivy-queen.mp3':           require('../../assets/audio/module-005/m5-cultural-note-ivy-queen.mp3'),
 };
 
 let currentSound: Audio.Sound | null = null;
