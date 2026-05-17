@@ -78,9 +78,19 @@ export function QuizScreen({ navigation, route }: Props) {
   if (!module || questions.length === 0) {
     return (
       <SafeAreaView style={styles.safe} edges={['top']}>
-        <Text style={[Typography.body, { color: Colors.mist, padding: Spacing.md }]}>
-          No quiz available for this module yet.
-        </Text>
+        <View style={styles.deadEndContainer}>
+          <Text style={[Typography.body, { color: Colors.mist, marginBottom: Spacing.lg, textAlign: 'center' }]}>
+            No quiz available for this module yet.
+          </Text>
+          <TouchableOpacity
+            style={styles.deadEndButton}
+            onPress={() => navigation.popToTop()}
+            activeOpacity={0.85}
+          >
+            <Ionicons name="arrow-back" size={18} color={Colors.white} />
+            <Text style={styles.deadEndButtonText}>Back to Modules</Text>
+          </TouchableOpacity>
+        </View>
       </SafeAreaView>
     );
   }
@@ -256,6 +266,25 @@ function computeXp(correct: number, total: number, base: number): number {
 
 const styles = StyleSheet.create({
   safe: { flex: 1, backgroundColor: Colors.midnight },
+  deadEndContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: Spacing.lg,
+  },
+  deadEndButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+    backgroundColor: Colors.coral,
+    paddingHorizontal: Spacing.lg,
+    paddingVertical: Spacing.md,
+    borderRadius: 24,
+  },
+  deadEndButtonText: {
+    ...Typography.bodyMedium,
+    color: Colors.white,
+  },
   navBar: {
     flexDirection: 'row',
     alignItems: 'center',

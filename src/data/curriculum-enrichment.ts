@@ -286,11 +286,11 @@ export const MODULE_ENRICHMENT: ModuleEnrichment[] = [
       miniChallenge: "Introduce yourself fully: 'Yo soy ___, soy de ___, y soy ___' (name, origin, one thing you are).",
     },
     songDifficulty: {
-      pace: 'fast',
-      clarity: 'difficult',
-      slangLevel: 'heavy',
+      pace: 'medium',
+      clarity: 'clear',
+      slangLevel: 'none',
       repetitionLevel: 'medium',
-      beginnerSuitability: 'challenging',
+      beginnerSuitability: 'excellent',
     },
     survivalPhrases: [
       'Yo soy de ___. (I am from ___)',

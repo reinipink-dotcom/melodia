@@ -23,16 +23,9 @@ Replaced expo-speech with OpenAI TTS tts-1-hd (voice: nova) for all pre-recorded
 
 ---
 
-## OPEN — Quiz Navigation Dead-End (Modules 1-3)
+## ~~DONE — Quiz Navigation Dead-End (Modules 1-3)~~ ✓ (2026-05-17)
 
-**What happened:** When navigating to a module with no quiz yet, "no quiz available" screen has no back button — user gets stuck.
-
-**Location:** `src/screens/Lesson/QuizScreen.tsx:78-86` — bare Text with no exit route.
-
-**What needs to happen:**
-- [ ] Add a "Back to Modules" button on the no-quiz fallback screen
-- [ ] Verify: can navigate back to Modules tab cleanly after hitting this state
-- [ ] Check Modules 1, 2, 3 all trigger this — Module 1 now has quizQuestions so may not hit it anymore
+QuizScreen.tsx:78-99 fallback now renders centered text + "Back to Modules" pill button → `navigation.popToTop()`. Retroactively unblocks Modules 2 and 3 (which still lack quizQuestions). Verified: tsc clean. Sim walk-through still pending Reine.
 
 ---
 
@@ -132,6 +125,96 @@ Replaced expo-speech with OpenAI TTS tts-1-hd (voice: nova) for all pre-recorded
 - [ ] Design a placement test flow (how many questions, what types, how scoring maps to levels)
 - [ ] Plan where it fits in the onboarding flow (after level selection screen, or replace it)
 - [ ] This is a significant feature — plan in a dedicated session before building
+
+---
+
+## OPEN — Quiz Difficulty Should Match Onboarding Selection (from feedback 2026-05-16)
+**Source:** reine-feedback.md, Module 1 entry
+**What:** The quiz shown to the user should reflect the difficulty level they selected during onboarding (beginner → easy, some basics → standard, intermediate → hard).
+**What needs to happen:**
+- [ ] Read the user's `onboardingStore.level` in QuizScreen and select the appropriate quiz variant (easyQuizQuestions / quizQuestions / hardQuizQuestions)
+- [ ] Test all three difficulty paths in the simulator to confirm correct variant is served
+
+---
+
+## OPEN — Retroactive Bug Propagation (from feedback 2026-05-16)
+**Source:** reine-feedback.md, Module 1 entry
+**What:** When a bug is fixed in a later module, the same fix must be applied to all prior modules that share the same pattern.
+**What needs to happen:**
+- [ ] At the end of each run, qa-scribe checks: was any bug fixed this run that also exists in Modules 1–(N-1)?
+- [ ] If yes, apply the fix to prior modules in the same commit
+- [ ] Add this to qa-scribe spawn prompt as a standing instruction
+
+---
+
+## OPEN — QA Scribe Screenshot Coverage (from feedback 2026-05-16)
+**Source:** reine-feedback.md, Module 1 entry
+**What:** QA scribe is only taking 1 screenshot and for the wrong module. It needs to walk through every screen in the built module's lesson flow and capture organized screenshots.
+**What needs to happen:**
+- [ ] qa-scribe must capture screenshots for: PreListen, Listen, Quiz (each difficulty variant), QuizResults, Reading, LessonComplete
+- [ ] Screenshots saved to `notes/melodia/1-daily/build-logs/screenshots/YYYY-MM-DD/module-NNN/` organized by screen name
+- [ ] qa-scribe spawn prompt updated to explicitly list each screen to walk through
+
+---
+
+## OPEN — Module type missing culturalNoteVariants for genre-specific notes (from Module 5 build 2026-05-17)
+**Source:** ux-builder Wave 3 finding
+**What:** Module interface only supports `culturalNote?: string`. Content-builder wrote a reggaeton-variant cultural note (Ivy Queen) for Module 5 that had to be dropped because the schema doesn't support per-genre variants.
+**What needs to happen:**
+- [ ] Add `culturalNoteVariants?: Partial<Record<GenreTrack, string>>` to Module interface in src/data/modules.ts
+- [ ] Wire PreListenScreen to show `culturalNoteVariants[userGenre]` if present, else fall back to `culturalNote`
+- [ ] Backfill Module 5 with the Ivy Queen reggaeton variant (text is in module-005-content.ts.draft)
+
+---
+
+## OPEN — Module 5 Song Duration Mismatch (from 2026-05-17 QA) | sim-required
+
+**What:** Module 5's `durationSeconds: 159` (2:39) for "Soy Yo" by Bomba Estéreo. The actual track on streaming is ~3:21 (201 seconds). Off by ~42 seconds.
+
+**Source:** Wave 3 QA scan, modules.ts:674.
+
+**What needs to happen:**
+- [ ] Reine verify actual length on Spotify (spotifyId: 4Egb5xP6cniUx0kgZd5zLB) or YouTube (bxWxXncl53U)
+- [ ] Update `durationSeconds` in modules.ts:674 if mismatch confirmed
+- [ ] Audit Modules 1, 4 durations same way
+
+---
+
+## OPEN — Module 5 Audio MP3s Not Yet Generated | cloud-fixable
+
+**What:** Module 5 ships with 11 ttsTriggers but `assets/audio/module-005/` directory does not exist. AUDIO_MAP in audioPlayer.ts has no Module 5 entries. All cues fall back to expo-speech.
+
+**What needs to happen:**
+- [ ] Run `/melodia-audio 5` to generate the 11 MP3s via OpenAI TTS tts-1-hd nova
+- [ ] Append AUDIO_MAP entries (11 lines) to src/utils/audioPlayer.ts:49 above the closing brace
+
+---
+
+## OPEN — Quiz Difficulty Variant Routing Never Wired | cloud-fixable
+
+**What:** QuizScreen.tsx:35 currently does `module?.quizQuestions ?? []` — only the standard variant is ever served. `easyQuizQuestions` and `hardQuizQuestions` exist on the data but are unreachable. Affects Modules 1, 4, 5 (all ship 3 variants).
+
+**Source:** Wave 3 Module 5 QA scan. Related to "Quiz Difficulty Should Match Onboarding Selection" item above.
+
+**What needs to happen:**
+- [ ] Import `useOnboardingStore` in QuizScreen.tsx
+- [ ] Read `level` and map: beginner → easyQuizQuestions, some-basics → quizQuestions, intermediate → hardQuizQuestions
+- [ ] Fall back to quizQuestions if the variant array is empty
+- [ ] Update all 3 deployed modules' fallback paths to match
+
+---
+
+## OPEN — Screenshot Coverage Blocked by Missing Sim Input Tool | infra
+
+**What:** QA scribe cannot tap-navigate the simulator. No `idb`, no XcodeBuildMCP, no AppleScript accessibility access. Bundle builds and home screen renders, but the 8-screen lesson-flow screenshot pass requires manual tap input.
+
+**Source:** Wave 3 QA attempt, 2026-05-17.
+
+**What needs to happen:**
+- [ ] Install `idb` (`brew tap facebook/fb && brew install idb-companion && pip install fb-idb`) OR
+- [ ] Install XcodeBuildMCP server in Claude's MCP config OR
+- [ ] Grant osascript accessibility access in System Settings → Privacy & Security → Accessibility
+- [ ] Until then, sim walkthrough is always Reine's job at morning review
 
 ---
 

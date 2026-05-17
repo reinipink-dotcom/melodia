@@ -2,6 +2,34 @@
 
 ---
 
+## Phase 4: Lesson Production — Module 5 (2026-05-17)
+
+Fifth lesson built via the agent team pipeline. First module that ships with the no-quiz dead-end fix and all 4 genre slots filled including reggaeton.
+
+### Module 5 — Subject Pronouns (A1)
+- **Song:** Soy Yo (Bomba Estéreo) — A1 base
+- **Genre alternatives:** Tú (Camila, pop), Yo Quiero Bailar (Ivy Queen, reggaeton), Ella y Yo (Aventura ft. Don Omar, rnb), Yo Ya No Vuelvo Contigo (Lenin Ramírez ft. Grupo Firme, regional-mexican)
+- **Vocabulary:** yo, tú, él/ella, nosotros, ellos/ellas (+ usted, ustedes, vosotros bonus)
+- **Status:** needs-review (audio + sim walkthrough pending)
+
+### What was built
+- Full module entry wired into `src/data/modules.ts` lines 667-818 (status=unlocked, all 4 genre songs with spotifyIds, easy 3 + standard 4 + hard 3 quiz variants, 709-char cultural note, 9-segment reading passage with 4 tappable Spanish tokens, 11 ttsTriggers, recyclingTargets in curriculum-enrichment.ts:258)
+- `src/data/curriculum-enrichment.ts` songDifficulty re-rated for "Soy Yo"
+- Retroactive bug fix: QuizScreen.tsx no-quiz fallback now has "Back to Modules" pill button — applies to Modules 2 and 3 which still lack quizQuestions
+- TypeScript clean (verified twice, before and after edits)
+- Metro bundle compiles cleanly (HTTP 200, 10.6 MB, Module 5 content confirmed via grep)
+
+### Blockers / follow-ups for Reine
+- Run `/melodia-audio 5` to generate the 11 MP3s and wire them into AUDIO_MAP (~30 sec)
+- Sim walkthrough: app boots on iPhone 17 Expo Go but the 8-screen tap navigation must be done manually (no programmatic input tool in this environment)
+- Verify song duration: modules.ts:674 says 159 seconds (2:39) but "Soy Yo" is ~3:21 on streaming — likely a content-builder typo
+- Quiz difficulty variant routing is still unwired across Modules 1, 4, 5 — easy/hard arrays exist on data but QuizScreen only serves standard
+
+### Daily build log
+- `notes/melodia/1-daily/build-logs/2026-05-17.md`
+
+---
+
 ## Phase 4: Lesson Production — Module 4 (2026-05-15)
 
 First production run of the 7-agent autonomous lesson pipeline.

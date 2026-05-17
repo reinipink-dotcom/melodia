@@ -1,0 +1,626 @@
+// Module 5 — Subject Pronouns
+// Drafted by content-builder for ux-builder to merge into src/data/modules.ts
+// Song: "Soy Yo" by Bomba Estéreo (Pop / Latin Alternative primary — replaces
+//   the skeleton's "Yo Perreo Sola" for explicit-content reasons; locked by Reine
+//   via team-lead Gate-1 message on 2026-05-17)
+// Tappable preview vocab (NOT quizzed in isolation): soy, somos, usted, ustedes
+// Words already seen in M1–M4 (safe to use freely): de, con, sin, pero, también, y,
+//   hola, adiós, ¿cómo estás?, ¿qué?, ¿quién?, ¿dónde?, ¿cuándo?, numbers, alphabet.
+// Output shape parallels module004Content.
+
+export const module005Content = {
+  id: 5,
+
+  lessonTitle: 'Who Is Doing What — The Spanish Subject Pronouns',
+
+  conceptExplanation:
+    "Every Spanish sentence has a subject — the person doing the doing. Today you'll meet the five pronouns that name that person: yo, tú, él/ella, nosotros, ellos/ellas. They're small, but they unlock everything. Once you know who the sentence is about, the verbs you'll learn in the next few modules suddenly have a home. And here's the surprise: Spanish speakers often skip the pronoun entirely — the verb ending already tells you who's talking. So when a Spanish speaker does say yo out loud, it lands with weight. It means 'me — specifically.'",
+
+  preListeningContext: {
+    intro:
+      "Today's song is 'Soy Yo' by Bomba Estéreo — a Colombian self-affirmation anthem whose title literally means 'I am me.' Listen for how often Li Saumet sings yo. Each time she chooses to say it (instead of dropping it), she's planting a flag: this is who I am.",
+    listenForWords: [
+      { spanish: 'yo', english: 'I' },
+      { spanish: 'tú', english: 'you (informal)' },
+      { spanish: 'él / ella', english: 'he / she' },
+      { spanish: 'nosotros', english: 'we' },
+      { spanish: 'ellos / ellas', english: 'they' },
+    ],
+    listeningGoal:
+      "Listen for yo in the chorus. Count how many times you hear it — that repetition is the whole point of the song.",
+    pronounSpotlight:
+      "The five pronouns are the answer to one question: ¿Quién? (Who?) from Module 3. Point at yourself — yo. Point at a friend — tú. Point at someone else — él or ella. That physical anchor is the whole trick.",
+    phraseChunkPreview: {
+      spanish: 'Yo soy de ___.',
+      english: 'I am from ___.',
+      note: "Five words once you fill in your country. The single most useful sentence you'll leave today's lesson with.",
+    },
+  },
+
+  vocabulary: {
+    core: [
+      {
+        spanish: 'yo',
+        english: 'I',
+        pronunciationHint: 'A pure "yoh" — short, open vowel. No diphthong, no drift.',
+        example: { spanish: 'yo también', english: 'me too' },
+      },
+      {
+        spanish: 'tú',
+        english: 'you (informal)',
+        pronunciationHint: 'Like English "too" but tighter. The accent mark distinguishes tú (you) from tu (your) — both sound identical, only the meaning differs.',
+        example: { spanish: 'tú y yo', english: 'you and me' },
+      },
+      {
+        spanish: 'él / ella',
+        english: 'he / she',
+        pronunciationHint: 'él = "ehl" with the accent on é to distinguish it from el (the). ella = "EH-yah" in most of Latin America; some regions say "EH-zhah."',
+        example: { spanish: 'él o ella', english: 'he or she' },
+      },
+      {
+        spanish: 'nosotros',
+        english: 'we',
+        pronunciationHint: 'noh-SOH-trohs. Use nosotras if the group is all female. Default to nosotros for mixed or unknown groups.',
+        example: { spanish: 'nosotros también', english: 'us too / we also' },
+      },
+      {
+        spanish: 'ellos / ellas',
+        english: 'they (masc. / fem.)',
+        pronunciationHint: 'EH-yohs / EH-yahs. Mirrors the nosotros / nosotras split — masculine or mixed group uses ellos, all-female group uses ellas.',
+        example: { spanish: 'ellos y ellas', english: 'they (the men) and they (the women)' },
+      },
+    ],
+    bonus: [
+      {
+        spanish: 'usted',
+        english: 'you (formal singular)',
+        pronunciationHint: 'oos-TED. Stress on the second syllable. Use with elders, strangers, bosses, customer service — anyone you want to show respect to.',
+        example: { spanish: '¿Y usted?', english: 'And you? (formal)' },
+        tappablePreview: true,
+      },
+      {
+        spanish: 'ustedes',
+        english: 'you all',
+        pronunciationHint: 'oos-TED-es. The all-purpose "you all" in Latin America. (Spain uses vosotros instead, but Melodia teaches Latin American Spanish.)',
+        example: { spanish: '¿Ustedes hablan español?', english: 'Do you all speak Spanish?' },
+        tappablePreview: true,
+      },
+    ],
+  },
+
+  phraseChunk: {
+    spanish: 'Yo soy de ___.',
+    english: 'I am from ___.',
+    breakdown: [
+      { word: 'yo', meaning: 'I' },
+      { word: 'soy', meaning: 'I am (tappable preview — full verb in Module 9)' },
+      { word: 'de', meaning: 'of / from (Module 4)' },
+      { word: '___', meaning: 'your country or city' },
+    ],
+    usage:
+      "This sentence works in every real-world situation: introductions, travel, meeting someone new. Fill in your country, your city, your neighborhood — whatever feels true. And here's the secret: a native speaker would often just say 'Soy de México' without the yo. Both are correct. Saying yo adds emphasis: I'm from there.",
+  },
+
+  speakingPrompt: {
+    challenge:
+      'Point at yourself or three different people (or photos) and name each one with the correct subject pronoun. Then say one full sentence out loud: "Yo soy de ___." Fill in your country or city.',
+    frames: [
+      { prompt: 'Point at yourself: "___"', hint: 'Which pronoun names you?', answer: 'yo' },
+      { prompt: 'Point at a friend your age: "___"', hint: 'Informal singular — Module 2 accent on the ú.', answer: 'tú' },
+      { prompt: 'Talking to your friend\'s grandmother: "¿Y ___?"', hint: 'Formal singular — respect form.', answer: 'usted' },
+      { prompt: 'You + your sibling = "___"', hint: 'A group of two or more, including yourself.', answer: 'nosotros' },
+    ],
+    encouragement:
+      "Saying these out loud — even alone — locks them in faster than reading them. Your mouth needs the reps, not just your eyes.",
+  },
+
+  quizQuestions: {
+    easy: [
+      {
+        id: 'm5-easy-1',
+        type: 'multiple-choice',
+        question: "Which word means 'I' in Spanish?",
+        choices: [
+          { id: 'A', text: 'tú' },
+          { id: 'B', text: 'yo' },
+          { id: 'C', text: 'él' },
+          { id: 'D', text: 'ella' },
+        ],
+        correctAnswer: 'B',
+        explanation:
+          "Yo means 'I' — and notice it's lowercase. Spanish never capitalizes 'I' the way English does.",
+        difficulty: 'easy',
+        concept: 'pronoun-recognition',
+      },
+      {
+        id: 'm5-easy-2',
+        type: 'matching',
+        question: 'Match each Spanish pronoun to its English meaning.',
+        pairs: [
+          { spanish: 'yo', english: 'I' },
+          { spanish: 'tú', english: 'you (informal)' },
+          { spanish: 'ella', english: 'she' },
+          { spanish: 'nosotros', english: 'we' },
+        ],
+        correctAnswer: {
+          yo: 'I',
+          tú: 'you (informal)',
+          ella: 'she',
+          nosotros: 'we',
+        },
+        explanation:
+          "These four pronouns cover most of the sentences you'll hear in a day. Lock them in today and tomorrow's listening jumps.",
+        difficulty: 'easy',
+        concept: 'core-pronoun-matching',
+      },
+      {
+        id: 'm5-easy-3',
+        type: 'multiple-choice',
+        question: "Which pronoun would you use to talk about a group that includes you?",
+        choices: [
+          { id: 'A', text: 'yo' },
+          { id: 'B', text: 'ellos' },
+          { id: 'C', text: 'nosotros' },
+          { id: 'D', text: 'tú' },
+        ],
+        correctAnswer: 'C',
+        explanation:
+          "Nosotros means 'we' — any group that includes you. If the group is all-female, use nosotras; mixed or masculine, use nosotros.",
+        difficulty: 'easy',
+        concept: 'pronoun-selection',
+      },
+    ],
+
+    standard: [
+      {
+        id: 'm5-std-1',
+        type: 'multiple-choice',
+        question: "You want to say 'they' about a group of women. Which pronoun fits?",
+        choices: [
+          { id: 'A', text: 'ellos' },
+          { id: 'B', text: 'ellas' },
+          { id: 'C', text: 'nosotros' },
+          { id: 'D', text: 'él' },
+        ],
+        correctAnswer: 'B',
+        explanation:
+          "Ellas = 'they' (all-female). Ellos = 'they' (all-male or mixed). The default for unknown or mixed groups is the masculine form — a Spanish-language convention, not a Melodia rule.",
+        difficulty: 'standard',
+        concept: 'gendered-plural-pronoun',
+      },
+      {
+        id: 'm5-std-2',
+        type: 'multiple-choice',
+        question: "Which pronoun would you use to talk about yourself?",
+        choices: [
+          { id: 'A', text: 'tú' },
+          { id: 'B', text: 'él' },
+          { id: 'C', text: 'yo' },
+          { id: 'D', text: 'nosotros' },
+        ],
+        correctAnswer: 'C',
+        explanation:
+          "Yo is the first-person singular pronoun — the one you use when the subject of the sentence is you alone. If you and someone else are doing it together, switch to nosotros.",
+        difficulty: 'standard',
+        concept: 'pronoun-production',
+      },
+      {
+        id: 'm5-std-3',
+        type: 'fill-in-blank',
+        question: "Complete this sentence: '___ soy de México.' (I am from Mexico.)",
+        choices: [
+          { id: 'A', text: 'Tú' },
+          { id: 'B', text: 'Yo' },
+          { id: 'C', text: 'Él' },
+          { id: 'D', text: 'Nosotros' },
+        ],
+        correctAnswer: 'B',
+        explanation:
+          "'Yo soy de México' = 'I am from Mexico.' [tappable: \"soy\" → \"I am\"] This is your phrase chunk for the day — recyle de from Module 4 and you've built a complete sentence.",
+        difficulty: 'standard',
+        concept: 'phrase-chunk-completion',
+      },
+      {
+        id: 'm5-std-4',
+        type: 'multiple-choice',
+        question: "In Module 3 you learned ¿Quién? (Who?). Someone asks ¿Quién habla español? — pointing at you. What's the one-word answer?",
+        choices: [
+          { id: 'A', text: 'Tú.' },
+          { id: 'B', text: 'Él.' },
+          { id: 'C', text: 'Ella.' },
+          { id: 'D', text: 'Yo.' },
+        ],
+        correctAnswer: 'D',
+        explanation:
+          "'Yo.' — just 'me.' Pronouns are the natural one-word answer to ¿Quién? You don't need a full verb yet — the pronoun alone carries the meaning. (habla = speaks, full conjugation in Module 9.)",
+        difficulty: 'standard',
+        concept: 'question-word-recycling',
+      },
+    ],
+
+    hard: [
+      {
+        id: 'm5-hard-1',
+        type: 'multiple-choice',
+        question: "You meet your friend's grandmother for the first time. Which pronoun do you use when talking to her?",
+        choices: [
+          { id: 'A', text: 'tú — she\'s family-adjacent, no need for formality' },
+          { id: 'B', text: 'usted — elder + first meeting = formal respect' },
+          { id: 'C', text: 'ella — she\'s a "she"' },
+          { id: 'D', text: 'ustedes — covers all cases' },
+        ],
+        correctAnswer: 'B',
+        explanation:
+          "[tappable: \"usted\" → \"you (formal singular)\"] Usted is the respect form — use it with elders, strangers, bosses, and anyone in a service role until invited to switch to tú. Choosing tú with someone older than you can sound disrespectful in many Latin American cultures.",
+        difficulty: 'hard',
+        concept: 'formal-vs-informal-context',
+      },
+      {
+        id: 'm5-hard-2',
+        type: 'multiple-choice',
+        question: "Why can a Spanish speaker say 'Soy de México' without ever saying yo?",
+        choices: [
+          { id: 'A', text: 'Because yo is considered rude in formal Spanish.' },
+          { id: 'B', text: 'Because the verb ending in soy already tells you the subject is I — Spanish drops pronouns when context is clear.' },
+          { id: 'C', text: 'Because Latin American Spanish has no first-person pronoun.' },
+          { id: 'D', text: 'Because soy is itself a pronoun.' },
+        ],
+        correctAnswer: 'B',
+        explanation:
+          "This is called pro-drop. [tappable: \"soy\" → \"I am\"] The verb ending in soy carries the 'I'-ness of the sentence, so the yo becomes optional. When a speaker DOES include yo, it's for emphasis: 'I — specifically — am from Mexico.' This is exactly why Bomba Estéreo's 'Soy Yo' lands so hard — the artist is choosing to say yo when she could have dropped it.",
+        difficulty: 'hard',
+        concept: 'pro-drop-awareness',
+      },
+      {
+        id: 'm5-hard-3',
+        type: 'translation',
+        question: "Translate to Spanish: 'You and I are from Mexico, but they speak English.'",
+        choices: [
+          { id: 'A', text: 'Tú y yo somos de México, pero ellos hablan inglés.' },
+          { id: 'B', text: 'Tú y yo soy de México, pero ella habla inglés.' },
+          { id: 'C', text: 'Nosotros somos de México, sin ellos hablan inglés.' },
+          { id: 'D', text: 'Yo y tú somos de México, pero nosotros hablan inglés.' },
+        ],
+        correctAnswer: 'A',
+        explanation:
+          "Three things doing real work here: 'Tú y yo' (you and me — recycles y from Module 4), [tappable: \"somos\" → \"we are\"] for the group, pero (Module 4 contrast), and ellos for the 'they' group. In Spanish, 'tú y yo' is the natural order — the other person comes first, you come last. A small politeness baked into the grammar.",
+        difficulty: 'hard',
+        concept: 'multi-module-production',
+      },
+    ],
+  },
+
+  readingPassage: {
+    title: 'Bomba Estéreo and the Power of "Yo"',
+    wordCount: 175,
+    spanishRatio: '10%',
+    body: [
+      {
+        text: "Bomba Estéreo formed in Bogotá in 2005, but their sound was born on Colombia's Caribbean coast — the cumbia rhythms, the chants, the salt air. Their lead singer, Li Saumet, grew up in Santa Marta and carries that coastal pulse into every line she sings.",
+        tappableTerms: [],
+      },
+      {
+        text: "When the band released 'Soy Yo' in 2015, the title was already the whole message. ",
+        tappableTerms: [],
+      },
+      {
+        text: "Soy yo",
+        tappableTerms: [{ term: 'soy yo', translation: 'I am me / it is me' }],
+      },
+      {
+        text: " — I am me. The song became an anthem for kids who didn't fit in, with a music video starring an eleven-year-old girl walking through her neighborhood being unapologetically herself. The video has been watched hundreds of millions of times.",
+        tappableTerms: [],
+      },
+      {
+        text: "Listen for how often Li sings ",
+        tappableTerms: [],
+      },
+      {
+        text: "yo",
+        tappableTerms: [{ term: 'yo', translation: 'I' }],
+      },
+      {
+        text: ". Spanish usually drops the subject pronoun — the verb ending already does the work. So when a singer chooses to say ",
+        tappableTerms: [],
+      },
+      {
+        text: "yo",
+        tappableTerms: [{ term: 'yo', translation: 'I' }],
+      },
+      {
+        text: " out loud, again and again, it's a deliberate choice. It means: me, specifically, no one else.",
+        tappableTerms: [],
+      },
+      {
+        text: " That's the whole song. That's why this is the perfect first lesson on subject pronouns. Every time you hear ",
+        tappableTerms: [],
+      },
+      {
+        text: "yo",
+        tappableTerms: [{ term: 'yo', translation: 'I' }],
+      },
+      {
+        text: " in the chorus, you're hearing a Spanish speaker plant a flag.",
+        tappableTerms: [],
+      },
+    ],
+    comprehensionQuestion: {
+      question: "According to the passage, why does it matter when a Spanish singer says yo out loud?",
+      choices: [
+        { id: 'A', text: "Because Spanish grammar requires the pronoun in every sentence." },
+        { id: 'B', text: "Because yo is the only way to start a Spanish song." },
+        { id: 'C', text: "Because Spanish usually drops the pronoun — so choosing to include yo is a deliberate emphasis." },
+        { id: 'D', text: "Because Bomba Estéreo invented the use of yo in cumbia music." },
+      ],
+      correctAnswer: 'C',
+      explanation:
+        "The passage explains pro-drop directly: Spanish usually skips the subject pronoun because the verb ending already shows who's speaking. When a singer keeps yo in the line, it's a choice — emphasis, identity, defiance. That's exactly what 'Soy Yo' is doing.",
+    },
+  },
+
+  culturalNote: {
+    title: 'Bomba Estéreo and the Power of "Yo"',
+    body:
+      "Bomba Estéreo formed in Bogotá in 2005, with lead singer Li Saumet drawing on the cumbia rhythms of Colombia's Caribbean coast. Their 2015 hit 'Soy Yo' — literally 'I am me' — became an anthem for outsiders and kids who didn't fit in. The song's music video features an eleven-year-old girl walking through her neighborhood as fully, unapologetically herself. Spanish usually drops the subject pronoun, so every time Li sings yo in the chorus, it's a choice — emphasis, identity, defiance. That choice is exactly the grammar concept you're learning today.",
+    placement: 'pre-listening',
+    genreVariants: {
+      reggaeton: {
+        title: 'Ivy Queen and the First Emphatic "Yo"',
+        body:
+          "If you picked reggaeton, your song today is 'Yo Quiero Bailar' by Ivy Queen — known across Latin America as La Reina del Reggaetón, the Queen of Reggaeton. She was making this music in the early 2000s, years before Bad Bunny brought the genre to global pop charts, and the chorus of this song is a clinic in subject pronouns: she opens with yo (I want), then pivots to tú (you want), drawing a sharp line between what she wants and what someone else assumes. That contrast — yo versus tú, planted at the front of each line — is the same emphatic-pronoun energy Bomba Estéreo uses in 'Soy Yo,' just a generation earlier. Ivy Queen was teaching this lesson before the textbooks caught up.",
+        note: 'Shown to users who selected reggaeton as their genre track. Same grammar thesis as the default note, anchored to the Ivy Queen song they will actually hear.',
+      },
+    },
+  },
+
+  lessonCompleteMessage: {
+    headline: 'You can now name who is doing the doing.',
+    body:
+      "Every Spanish sentence starts with a subject — and now you have the five pronouns to name it: yo, tú, él/ella, nosotros, ellos/ellas. You also know the secret most courses skip: Spanish speakers often drop the pronoun, so when they don't, it's because they want you to hear it. Tomorrow, try one sentence out loud: 'Yo soy de ___.' Say it like you mean it.",
+    nextPreview: 'Next up: days, months, and time — when, how long, how often.',
+  },
+
+  xpReward: 50, // A1 default per role spec. Modules 1-4 currently ship 100; flagging
+                // to ux-builder/Reine for consistency call. Recommend Reine pick one
+                // global A1 default and apply it across M1-M5 in one pass.
+
+  recyclingTargets: {
+    fromModule1: {
+      concept: 'Pure vowel sounds — pronoun pronunciation depends on M1 phonetics',
+      items: [
+        'yo: pure "yoh" with no English diphthong drift',
+        'ella: silent letters never appear here, but the double-L sound (LL) was introduced in M1',
+        'tú: short, tight "oo" — not the long English "ooo"',
+      ],
+      reviewTiming: [1, 7],
+      format: 'listening-recognition',
+    },
+    fromModule2: {
+      concept: 'Accent marks distinguish pronouns from look-alikes',
+      items: [
+        'tú (you) vs tu (your)',
+        'él (he) vs el (the)',
+        'Same letters, accent decides the meaning',
+      ],
+      reviewTiming: [1, 3, 14],
+      format: 'mini-quiz',
+    },
+    fromModule3: {
+      concept: '¿Quién? gets an answer',
+      items: [
+        '¿Quién habla? → Yo.',
+        '¿Quién canta? → Ella.',
+        'Pronouns are the natural reply to "who?"',
+      ],
+      reviewTiming: [3, 7],
+      format: 'speaking-prompt',
+    },
+    fromModule4: {
+      concept: 'Connectors plus pronouns build real sentences',
+      items: [
+        'Tú y yo (you and me)',
+        'Yo también (me too)',
+        'Yo soy de ___ (I am from ___)',
+        'Él o ella (he or she)',
+      ],
+      reviewTiming: [1, 7, 30],
+      format: 'translation-and-speaking',
+      note: 'The connector + pronoun combo is the gateway to Module 9 (ser/estar). Reinforce hard.',
+    },
+  },
+
+  reviewSuggestion: {
+    when: 'day 3 after lesson completion',
+    type: 'mini-quiz',
+    item: "Context-selection prompt: 'You meet your boss for the first time. Do you say tú or usted?' Recycles the formal/informal grammar point — the highest real-world-stakes call in the module. If learner gets this on day 3, schedule the pro-drop concept card for day 7.",
+  },
+};
+
+// =============================================================================
+// AUDIO TEXT MANIFEST — for voice-engineer (OpenAI TTS, nova primary voice)
+// =============================================================================
+// Voice-engineer per Wave-1 plan: 6 vocab files + 1 reading file (truncation guards
+// applied). This manifest expands slightly to cover concept-intro, phrase chunk,
+// speaking prompt, and lesson-complete cues so the UX has every play button wired.
+// All scripts mixed-language by design — accept MVP nova-pronunciation tradeoffs.
+
+export const module005AudioManifest = [
+  {
+    cueId: 'module-005-intro',
+    cueType: 'concept-intro',
+    filename: 'm5-intro-subject-pronouns.mp3',
+    script:
+      "Today we're learning the subject pronouns — the small words that name who is doing the doing. Yo, tú, él, ella, nosotros, ellos. As you listen to 'Soy Yo' by Bomba Estéreo, count how often the singer says yo. Every time she does, she's choosing to. Press listen when you're ready.",
+    voiceStyle: 'primary',
+    speed: 1.0,
+    slowVersionNeeded: false,
+    estimatedDurationSec: 24,
+    uiAttachmentPoint: 'pre-listen-screen-play-button',
+  },
+  {
+    cueId: 'module-005-vocab-yo',
+    cueType: 'vocab-card',
+    filename: 'm5-vocab-yo.mp3',
+    script:
+      "'Yo' means 'I'. A pure 'yoh' sound — short and open. And here's the trick: Spanish often drops the pronoun, so when a singer says yo out loud, it's for emphasis. Me, specifically.",
+    voiceStyle: 'primary',
+    speed: 1.0,
+    slowVersionNeeded: true,
+    estimatedDurationSec: 13,
+    uiAttachmentPoint: 'vocab-card-yo',
+  },
+  {
+    cueId: 'module-005-vocab-tu',
+    cueType: 'vocab-card',
+    filename: 'm5-vocab-tu.mp3',
+    script:
+      "'Tú' means 'you' — the informal singular. Use it with friends, peers, kids, people your age. The accent mark on the ú is what tells it apart from tu, which means 'your'. Same sound, different jobs.",
+    voiceStyle: 'primary',
+    speed: 1.0,
+    slowVersionNeeded: true,
+    estimatedDurationSec: 14,
+    uiAttachmentPoint: 'vocab-card-tu',
+  },
+  {
+    cueId: 'module-005-vocab-el-ella',
+    cueType: 'vocab-card',
+    filename: 'm5-vocab-el-ella.mp3',
+    script:
+      "'Él' means 'he' — with an accent on the é to tell it apart from el, which means 'the'. 'Ella' means 'she' — eh-yah. Together they cover any single third person you're talking about.",
+    voiceStyle: 'primary',
+    speed: 1.0,
+    slowVersionNeeded: true,
+    estimatedDurationSec: 14,
+    uiAttachmentPoint: 'vocab-card-el-ella',
+  },
+  {
+    cueId: 'module-005-vocab-nosotros',
+    cueType: 'vocab-card',
+    filename: 'm5-vocab-nosotros.mp3',
+    script:
+      "'Nosotros' means 'we' — any group that includes you. If the group is all female, switch to 'nosotras'. Mixed or unknown? Stay with nosotros. It's the default.",
+    voiceStyle: 'primary',
+    speed: 1.0,
+    slowVersionNeeded: true,
+    estimatedDurationSec: 12,
+    uiAttachmentPoint: 'vocab-card-nosotros',
+  },
+  {
+    cueId: 'module-005-vocab-ellos',
+    cueType: 'vocab-card',
+    filename: 'm5-vocab-ellos.mp3',
+    script:
+      "'Ellos' means 'they' — a masculine or mixed group. 'Ellas' is the all-female version. Same logic as nosotros and nosotras. The default for unknown groups is the masculine form.",
+    voiceStyle: 'primary',
+    speed: 1.0,
+    slowVersionNeeded: true,
+    estimatedDurationSec: 12,
+    uiAttachmentPoint: 'vocab-card-ellos',
+  },
+  {
+    cueId: 'module-005-phrase-yo-soy',
+    cueType: 'phrase-chunk',
+    filename: 'm5-phrase-yo-soy-de.mp3',
+    script:
+      "'Yo soy de México.' I am from Mexico. Fill in your own country or city. Soy means 'I am' — you'll meet the full verb in Module 9. For now, just memorize the whole chunk: yo soy de, plus a place. The single most useful sentence you'll leave today's lesson with.",
+    voiceStyle: 'primary',
+    speed: 1.0,
+    slowVersionNeeded: true,
+    estimatedDurationSec: 17,
+    uiAttachmentPoint: 'phrase-chunk-screen-play-button',
+  },
+  {
+    cueId: 'module-005-speaking-prompt',
+    cueType: 'speaking-prompt',
+    filename: 'm5-speaking-prompt.mp3',
+    script:
+      "Try this with me. Point at yourself and say 'yo'. Point at a friend your age and say 'tú'. Now one full sentence — 'Yo soy de' — and add your country. Say it out loud. Your mouth needs the reps, not just your eyes.",
+    voiceStyle: 'primary',
+    speed: 1.0,
+    slowVersionNeeded: true,
+    estimatedDurationSec: 16,
+    uiAttachmentPoint: 'speaking-prompt-screen',
+  },
+  {
+    cueId: 'module-005-reading-001',
+    cueType: 'reading-passage',
+    filename: 'm5-reading-bomba-estereo.mp3',
+    script:
+      "Bomba Estéreo formed in Bogotá in 2005, but their sound was born on Colombia's Caribbean coast — the cumbia rhythms, the chants, the salt air. Their lead singer, Li Saumet, grew up in Santa Marta. When the band released 'Soy Yo' in 2015, the title was already the whole message. Soy yo — I am me. The song became an anthem for kids who didn't fit in, with a music video starring an eleven-year-old girl walking through her neighborhood being unapologetically herself. Listen for how often Li sings yo. Spanish usually drops the subject pronoun, so when a singer chooses to say yo out loud, again and again, it's a deliberate choice. It means: me, specifically, no one else. Every time you hear yo in the chorus, you're hearing a Spanish speaker plant a flag.",
+    voiceStyle: 'primary',
+    speed: 0.95,
+    slowVersionNeeded: false,
+    estimatedDurationSec: 52,
+    uiAttachmentPoint: 'reading-screen-play-button',
+  },
+  {
+    cueId: 'module-005-cultural-note-reggaeton',
+    cueType: 'cultural-note-variant',
+    filename: 'm5-cultural-note-ivy-queen.mp3',
+    script:
+      "If you picked reggaeton, your song today is 'Yo Quiero Bailar' by Ivy Queen — La Reina del Reggaetón, the Queen of Reggaeton. She was making this music in the early 2000s, years before Bad Bunny brought the genre to global pop charts. Listen to the chorus: she opens with yo, then pivots to tú — drawing a line between what she wants and what someone else assumes. Same emphatic-pronoun energy as 'Soy Yo,' just a generation earlier.",
+    voiceStyle: 'primary',
+    speed: 0.95,
+    slowVersionNeeded: false,
+    estimatedDurationSec: 28,
+    uiAttachmentPoint: 'pre-listen-screen-cultural-note (reggaeton-variant)',
+    conditional: 'user.genre === "reggaeton"',
+  },
+  {
+    cueId: 'module-005-lesson-complete',
+    cueType: 'celebration',
+    filename: 'm5-lesson-complete.mp3',
+    script:
+      "You can now name who is doing the doing. Five pronouns — yo, tú, él, ella, nosotros, ellos. And you know the secret: Spanish drops the pronoun by default, so when a speaker says it, they mean it. Try one sentence out loud tomorrow — 'Yo soy de' plus your country. Say it like you mean it.",
+    voiceStyle: 'primary',
+    speed: 1.0,
+    slowVersionNeeded: false,
+    estimatedDurationSec: 18,
+    uiAttachmentPoint: 'lesson-complete-screen',
+  },
+];
+
+// =============================================================================
+// REVIEW FLAGS for team-lead / Reine
+// =============================================================================
+// 1. SONG SWAP applied: primary is "Soy Yo" by Bomba Estéreo (per team-lead Gate-1
+//    message), NOT "Yo Perreo Sola" in the existing src/data/modules.ts skeleton.
+//    UX-builder must update the song field at modules.ts line 674 AND the genreSongs
+//    pop slot. Also fix the 4 artist mis-attributions called out in the song spec
+//    (Camila vs Camila Cabello, Aventura ft. Don Omar credit, Lenin Ramírez credit,
+//    and add Ivy Queen's "Yo Quiero Bailar" as the reggaeton slot).
+//
+// 2. TAPPABLE PREVIEW VOCAB: soy, somos, usted, ustedes appear in lesson copy and
+//    quiz answers but are NEVER quizzed in isolation. Every appearance is marked
+//    inline with [tappable: "word" → "translation"]. UX-builder must wire these
+//    as tappable terms with popover translations — same pattern as readingPassage
+//    tappableTerms but inside quiz explanations and the phrase chunk breakdown.
+//
+// 3. Cultural facts about Bomba Estéreo (formed Bogotá 2005, Li Saumet from Santa
+//    Marta, "Soy Yo" released 2015, music video features 11-year-old girl) are
+//    widely public-domain biographical/release-data facts. Did not WebFetch in
+//    sandbox. // REVIEW: Reine spot-check before shipping.
+//
+// 4. xpReward set to 50 per role spec A1 default. Modules 1-4 currently ship 100.
+//    Flagging for Reine to choose a global A1 default — recommend keeping 100 for
+//    consistency unless intentionally rebalancing.
+//
+// 5. NO listening-quiz cue in this module (unlike M4's m4-std-4). Audio plan from
+//    Wave-1 says 6 vocab + 1 reading. If team-lead wants a listening-discrimination
+//    quiz for M5, the cleanest addition would be a yo-vs-tú clip — but it's not
+//    required by the curriculum spec.
+//
+// 6. No full lyrics anywhere in this draft. Only individual pronouns ('yo', 'tú',
+//    'ella', 'él', 'soy yo' as the 2-word title) used as concept evidence — all
+//    well within the copyright safe boundary documented in the song spec.
+
+// =============================================================================
+// ## Audio Text Manifest (lead-readable summary)
+// =============================================================================
+// vocab-yo:        "'Yo' means 'I'. A pure 'yoh' sound — short and open. And here's the trick: Spanish often drops the pronoun, so when a singer says yo out loud, it's for emphasis. Me, specifically."
+// vocab-tu:        "'Tú' means 'you' — the informal singular. Use it with friends, peers, kids, people your age. The accent mark on the ú is what tells it apart from tu, which means 'your'. Same sound, different jobs."
+// vocab-el-ella:   "'Él' means 'he' — with an accent on the é to tell it apart from el, which means 'the'. 'Ella' means 'she' — eh-yah. Together they cover any single third person you're talking about."
+// vocab-nosotros:  "'Nosotros' means 'we' — any group that includes you. If the group is all female, switch to 'nosotras'. Mixed or unknown? Stay with nosotros. It's the default."
+// vocab-ellos:     "'Ellos' means 'they' — a masculine or mixed group. 'Ellas' is the all-female version. Same logic as nosotros and nosotras. The default for unknown groups is the masculine form."
+// phrase-yo-soy:   "'Yo soy de México.' I am from Mexico. Fill in your own country or city. Soy means 'I am' — you'll meet the full verb in Module 9. For now, just memorize the whole chunk: yo soy de, plus a place. The single most useful sentence you'll leave today's lesson with."
+// reading-001:     "Bomba Estéreo formed in Bogotá in 2005... Listen for how often Li sings yo... Every time you hear yo in the chorus, you're hearing a Spanish speaker plant a flag." (full text in module005AudioManifest reading-passage cue)
