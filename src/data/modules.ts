@@ -120,6 +120,7 @@ export type Module = {
   hardQuizQuestions?: QuizQuestion[];
   readingPassage?: ReadingPassageToken[];
   culturalNote?: string;
+  culturalNoteVariants?: Partial<Record<GenreTrack, string>>;
   ttsTriggers?: TtsTrigger[];
   // ── Curriculum enrichment overlay ──────────────────────────────────────────
   vocabularyTheme?: string;           // real-world vocabulary category for this module
@@ -525,10 +526,10 @@ export const MODULES: Module[] = [
         explanation: "Con means 'with', sin means 'without'. They're functional opposites — when you can hear one, you can hear the other.",
       },
       {
-        question: "Which Spanish word would connect these two ideas: 'I speak English' ___ 'I don't speak Spanish'?",
+        question: "Which word completes this sentence to show a contrast: 'Quiero café, ___ no tengo dinero.' (I want coffee, ___ I have no money.)",
         options: ['y', 'también', 'pero', 'con'],
         correctIndex: 2,
-        explanation: "Pero means 'but' — it's the connector you reach for when two ideas contrast. 'Hablo inglés, pero no español.'",
+        explanation: "Pero means 'but' — the contrast connector. 'Quiero café, pero no tengo dinero.' Y means 'and', which would join ideas instead of contrasting them — the opposite of what the sentence needs.",
       },
       {
         question: "Which word order correctly says 'I'm from Colombia, but I speak English.'?",
@@ -701,10 +702,10 @@ export const MODULES: Module[] = [
     // Tappable preview vocab (soy, somos, usted, ustedes) appear inline in explanations
     // below — content-builder marked them with [tappable: "word" → "translation"] markers.
     // Markers stripped here; full tappable-popover UI wiring deferred (see PENDING.md).
-    // TODO: reggaeton variant of culturalNote exists in
-    // notes/melodia/5-lessons/module-005-content.ts.draft (genreVariants.reggaeton — "Ivy Queen
-    // and the First Emphatic 'Yo'"). Module type currently supports only a single culturalNote
-    // string; wire conditional rendering when the schema gains culturalNoteVariants.
+    culturalNoteVariants: {
+      reggaeton:
+        "If you picked reggaeton, your song today is 'Yo Quiero Bailar' by Ivy Queen — known across Latin America as La Reina del Reggaetón, the Queen of Reggaeton. She was making this music in the early 2000s, years before Bad Bunny brought the genre to global pop charts, and the chorus of this song is a clinic in subject pronouns: she opens with yo (I want), then pivots to tú (you want), drawing a sharp line between what she wants and what someone else assumes. That contrast — yo versus tú, planted at the front of each line — is the same emphatic-pronoun energy Bomba Estéreo uses in 'Soy Yo,' just a generation earlier. Ivy Queen was teaching this lesson before the textbooks caught up.",
+    },
     culturalNote:
       "Bomba Estéreo formed in Bogotá in 2005, with lead singer Li Saumet drawing on the cumbia rhythms of Colombia's Caribbean coast. Their 2015 hit 'Soy Yo' — literally 'I am me' — became an anthem for outsiders and kids who didn't fit in. The song's music video features an eleven-year-old girl walking through her neighborhood as fully, unapologetically herself. Spanish usually drops the subject pronoun, so every time Li sings yo in the chorus, it's a choice — emphasis, identity, defiance. That choice is exactly the grammar concept you're learning today.",
     quizQuestions: [
