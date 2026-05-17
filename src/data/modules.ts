@@ -166,7 +166,7 @@ export const MODULES: Module[] = [
     song: { title: 'Bésame Mucho', artist: 'Consuelo Velázquez', durationSeconds: 210, spotifyId: '6jXSjt2gZkLQ9yEAGOC7CR', youtubeId: 'MY0fuEfBmD4' },
     genreSongs: {
       pop: { title: 'Limón y Sal', artist: 'Julieta Venegas', durationSeconds: 218, spotifyId: '7dITAq1YP5e0kTcaDq4YWI', youtubeId: 'tIpzfs5tBJU' },
-      reggaeton: { title: 'Despacito', artist: 'Luis Fonsi ft. Daddy Yankee', durationSeconds: 229, spotifyId: '6habFhsOp2NvshLv26DqMb', youtubeId: 'kJQP7kiw5Fk' },
+      reggaeton: { title: 'Gasolina', artist: 'Daddy Yankee', durationSeconds: 192, spotifyId: '6jEZLz3YpnEBRpVkv35AmP', youtubeId: 'CCF1_jI8Prk' },
       rnb: { title: 'Burbujas de Amor', artist: 'Juan Luis Guerra 4.40', durationSeconds: 245, spotifyId: '0TarPYIjJndYucFUOMce8P', youtubeId: 'PWGwF_B0bxk' },
       'regional-mexican': { title: 'Cielito Lindo', artist: 'Vicente Fernández', durationSeconds: 195, spotifyId: '1YIE0WBii65tRNXsxV5iGs', youtubeId: 'T6o_zaTvHSI' },
     },
@@ -411,7 +411,7 @@ export const MODULES: Module[] = [
     concept: '¿Qué? ¿Dónde? ¿Cómo? and the rest',
     conceptDescription:
       'Eight question words unlock thousands of real conversations. Learn them once and they work in every tense, every context, forever.',
-    song: { title: '¿Dónde Jugarán los Niños?', artist: 'Maná', durationSeconds: 275, youtubeId: '3H9dN5Na8JI' },
+    song: { title: '¿Dónde Jugarán los Niños?', artist: 'Maná', durationSeconds: 275, spotifyId: '6wkt75iqzOk8YCCfwtaYqJ', youtubeId: 'KNo2o_TJF0I' },
     genreSongs: {
       pop: { title: 'Qué Calor', artist: 'Major Lazer ft. J Balvin & El Alfa', durationSeconds: 205 },
       reggaeton: { title: 'Qué Calor', artist: 'Major Lazer ft. J Balvin & El Alfa', durationSeconds: 205 },
@@ -492,7 +492,7 @@ export const MODULES: Module[] = [
     genreSongs: {
       pop: { title: 'A Dios Le Pido', artist: 'Juanes', durationSeconds: 267, spotifyId: '0JHM9KIq6oUPd4gHxMlB0T', youtubeId: 'kMIaYXxLnUA' },
       reggaeton: { title: 'Despacito', artist: 'Luis Fonsi ft. Daddy Yankee', durationSeconds: 229, spotifyId: '6habFhsOp2NvshLv26DqMb', youtubeId: 'kJQP7kiw5Fk' },
-      rnb: { title: 'Obsesión', artist: 'Aventura', durationSeconds: 245 },
+      rnb: { title: 'Obsesión', artist: 'Aventura', durationSeconds: 252, spotifyId: '50iOwPQbtGmEc29q2okbEh', youtubeId: '8_QY5gFQUTg' },
       'regional-mexican': { title: 'El Rey', artist: 'Vicente Fernández', durationSeconds: 200, spotifyId: '6P3dT8EkJd0LOyZklOl0Na', youtubeId: 'oVdWmX4OEV8' },
     },
     vocabulary: [
@@ -793,11 +793,7 @@ export const MODULES: Module[] = [
       { text: 'Soy yo', isSpanish: true, english: 'I am me / it is me' },
       { text: " — I am me. The song became an anthem for kids who didn't fit in, with a music video starring an eleven-year-old girl walking through her neighborhood being unapologetically herself. The video has been watched hundreds of millions of times. Listen for how often Li sings ", isSpanish: false },
       { text: 'yo', isSpanish: true, english: 'I' },
-      { text: '. Spanish usually drops the subject pronoun — the verb ending already does the work. So when a singer chooses to say ', isSpanish: false },
-      { text: 'yo', isSpanish: true, english: 'I' },
-      { text: " out loud, again and again, it's a deliberate choice. It means: me, specifically, no one else. That's the whole song. That's why this is the perfect first lesson on subject pronouns. Every time you hear ", isSpanish: false },
-      { text: 'yo', isSpanish: true, english: 'I' },
-      { text: ' in the chorus, you are hearing a Spanish speaker plant a flag.', isSpanish: false },
+      { text: ". Spanish usually drops the subject pronoun — the verb ending already does the work. So when a singer chooses to say it out loud, again and again, it is a deliberate choice. It means: me, specifically, no one else. Every time you hear it in the chorus, you are hearing a Spanish speaker choose to be seen. That is what yo means — not just 'I', but 'me, right here'.", isSpanish: false },
     ],
     // ttsTriggers: one file per cue (no slow/normal pairs from Module 5 onward —
     // per Reine, 2026-05-17). 10 mvpRequired + 1 conditional reggaeton variant.
@@ -817,6 +813,7 @@ export const MODULES: Module[] = [
     ],
   },
 
+  // TODO Phase 6: re-lock modules 9-60 when RevenueCat is set up
   {
     id: 6,
     title: 'Days, Months, Seasons & Time',
@@ -848,7 +845,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Karol G: La Bichota\'s Journey from Medellín',
     readingRatio: '90% English / 10% Spanish time words inserted',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 100,
   },
 
@@ -882,7 +879,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Pedro Infante: The Golden Age of Mexican Cinema and Music',
     readingRatio: '90% English / 10% Spanish numbers and stats highlighted',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 100,
   },
 
@@ -916,7 +913,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Mercedes Sosa: La Negra and the Voice of Latin America',
     readingRatio: '100% English with Spanish greetings woven in as dialogue',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 100,
   },
 
@@ -950,7 +947,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Shakira: From Barranquilla to the World Stage',
     readingRatio: '70% English / 30% Spanish article+noun pairs highlighted',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 120,
   },
 
@@ -981,7 +978,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Enrique Iglesias: Son of a Legend, Star in His Own Right',
     readingRatio: '70% English / 30% Spanish with AR verbs',
     songsNeeded: 3,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 120,
   },
 
@@ -1012,7 +1009,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Jesse & Joy: A Sibling Duo Who Changed Latin Pop',
     readingRatio: '65% English / 35% Spanish with ER verbs',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 120,
   },
 
@@ -1045,7 +1042,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Marc Anthony: Salsa, Soul, and New York City',
     readingRatio: '60% English / 40% Spanish short bio with IR verbs',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 120,
   },
 
@@ -1076,7 +1073,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Bomba Estéreo: Where Colombian Folklore Meets Electronic Music',
     readingRatio: '55% English / 45% Spanish with ser constructions',
     songsNeeded: 3,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 120,
   },
 
@@ -1107,7 +1104,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Shakira: Early Life in Barranquilla and the Making of Laundry Service',
     readingRatio: '50% English / 50% Spanish with estar constructions',
     songsNeeded: 3,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 120,
   },
 
@@ -1138,7 +1135,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Romeo Santos: The King of Bachata',
     readingRatio: '50% English / 50% Spanish contrasting ser/estar',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 120,
   },
 
@@ -1169,7 +1166,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Calle 13: Music as Political Protest Across Latin America',
     readingRatio: '45% English / 55% Spanish with progressive forms highlighted',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 120,
   },
 
@@ -1200,7 +1197,7 @@ export const MODULES: Module[] = [
     readingTopic: 'J Balvin: Medellín\'s Ambassador to the World',
     readingRatio: '40% English / 60% Spanish descriptions of artists',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 120,
   },
 
@@ -1231,7 +1228,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Nicky Jam: From the Bronx to Reggaeton Royalty',
     readingRatio: '40% English / 60% Spanish with possessives throughout',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 120,
   },
 
@@ -1262,7 +1259,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Maluma: Pretty Boy, Dirty Boy and the New Face of Reggaeton',
     readingRatio: '35% English / 65% Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 120,
   },
 
@@ -1295,7 +1292,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Jesse & Joy: Writing Songs About Real Life',
     readingRatio: '35% English / 65% Spanish',
     songsNeeded: 3,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 140,
   },
 
@@ -1326,7 +1323,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Regional Mexican Music: The Sounds of Sinaloa',
     readingRatio: '30% English / 70% Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 140,
   },
 
@@ -1357,7 +1354,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Ricky Martin: From Menudo to Global Superstar',
     readingRatio: '30% English / 70% Spanish with poder constructions',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 140,
   },
 
@@ -1388,7 +1385,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Pitbull: From Miami to Global Brand',
     readingRatio: '30% English / 70% Spanish with ir constructions',
     songsNeeded: 3,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 140,
   },
 
@@ -1419,7 +1416,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Sech: Panama\'s Biggest Export in Music',
     readingRatio: '25% English / 75% Spanish',
     songsNeeded: 3,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 140,
   },
 
@@ -1450,7 +1447,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Jorge Drexler: The Uruguayan Doctor Who Won an Oscar',
     readingRatio: '25% English / 75% Spanish with al/del throughout',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 140,
   },
 
@@ -1481,7 +1478,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Armando Manzanero: The Romantic Composer Who Defined Latin Ballads',
     readingRatio: '25% English / 75% Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 140,
   },
 
@@ -1512,7 +1509,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Selena: The Queen of Tejano and Her Lasting Legacy',
     readingRatio: '20% English / 80% Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 140,
   },
 
@@ -1543,7 +1540,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Manu Chao: The Globetrotting Voice of Latin Alternative',
     readingRatio: '20% English / 80% Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 140,
   },
 
@@ -1574,7 +1571,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Daddy Yankee: The Godfather of Reggaeton Retires in Style',
     readingRatio: '15% English / 85% Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 140,
   },
 
@@ -1605,7 +1602,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Shakira & Anuel AA: When Pop Worlds Collide',
     readingRatio: '20% English / 80% Spanish',
     songsNeeded: 3,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 140,
   },
 
@@ -1637,7 +1634,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Sech and the Panama City Sound',
     readingRatio: '15% English / 85% Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 160,
   },
 
@@ -1667,7 +1664,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Ricky Martin: The Man Behind the Voice',
     readingRatio: '15% English / 85% Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 160,
   },
 
@@ -1697,7 +1694,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Daddy Yankee: A Career in His Own Words',
     readingRatio: '10% English / 90% Spanish',
     songsNeeded: 3,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 160,
   },
 
@@ -1727,7 +1724,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Alejandro Fernández: Carrying the Mariachi Legacy Forward',
     readingRatio: '10% English / 90% Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 160,
   },
 
@@ -1757,7 +1754,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Becky G: From Inglewood to International Star',
     readingRatio: '10% English / 90% Spanish',
     songsNeeded: 3,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 160,
   },
 
@@ -1787,7 +1784,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Jesse & Joy: The Album That Changed Their Lives',
     readingRatio: 'Fully Spanish with glossary for 5–10 difficult words',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 160,
   },
 
@@ -1817,7 +1814,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Juan Luis Guerra: The Poet of Dominican Music',
     readingRatio: 'Fully Spanish — artist reflecting on their past',
     songsNeeded: 3,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 160,
   },
 
@@ -1847,7 +1844,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Buena Vista Social Club: Rediscovering Cuban Music',
     readingRatio: 'Fully Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 160,
   },
 
@@ -1877,7 +1874,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Julieta Venegas: Accordion, Indie Pop, and Mexican Identity',
     readingRatio: 'Fully Spanish — artist daily routine',
     songsNeeded: 3,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 160,
   },
 
@@ -1907,7 +1904,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Bad Bunny and Enrique Iglesias: Two Generations of Latin Music',
     readingRatio: 'Fully Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 160,
   },
 
@@ -1937,7 +1934,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Karol G: La Bichota and the Rise of Female Reggaeton',
     readingRatio: 'Fully Spanish',
     songsNeeded: 3,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 160,
   },
 
@@ -1967,7 +1964,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Becky G: The Many Sides of a Multilingual Star',
     readingRatio: 'Fully Spanish — comparing artists/albums',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 160,
   },
 
@@ -1997,7 +1994,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Los Ángeles Azules: Cumbia as Cultural Identity',
     readingRatio: 'Fully Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 160,
   },
 
@@ -2027,7 +2024,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Selena: The Queen of Tejano Who Crossed All Borders',
     readingRatio: 'Fully Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 160,
   },
 
@@ -2057,7 +2054,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Los Ángeles Azules: Four Decades of Cumbia Cumbia',
     readingRatio: 'Fully Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 160,
   },
 
@@ -2087,7 +2084,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Día de los Muertos: The Living Holiday',
     readingRatio: 'Fully Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 160,
   },
 
@@ -2119,7 +2116,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Ricardo Arjona: Philosopher, Poet, and Guatemalan Icon',
     readingRatio: 'Fully Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 160,
   },
 
@@ -2149,7 +2146,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Alejandro Fernández: Son of Vicente, King in His Own Right',
     readingRatio: 'Fully Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 160,
   },
 
@@ -2179,7 +2176,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Morat: Colombian Band Taking Over Latin Pop',
     readingRatio: 'Fully Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 160,
   },
 
@@ -2211,7 +2208,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Ha-Ash: Two American Sisters Who Conquered Mexico',
     readingRatio: 'Fully Spanish — artist future plans',
     songsNeeded: 3,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 180,
   },
 
@@ -2241,7 +2238,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Alejandro Sanz: Three Decades at the Top of Spanish Pop',
     readingRatio: 'Fully Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 180,
   },
 
@@ -2271,7 +2268,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Reik: Mexican Pop Trio and the Sound of Romance',
     readingRatio: 'Fully Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 180,
   },
 
@@ -2301,7 +2298,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Selena: What Could Have Been — A Cultural Reflection',
     readingRatio: 'Fully Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 180,
   },
 
@@ -2331,7 +2328,7 @@ export const MODULES: Module[] = [
     readingTopic: 'David Bisbal: From Operación Triunfo to Global Stages',
     readingRatio: 'Fully Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 180,
   },
 
@@ -2363,7 +2360,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Silvio Rodríguez: The Poet Who Defined Cuban Nueva Trova',
     readingRatio: 'Fully Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 200,
   },
 
@@ -2393,7 +2390,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Sebastián Yatra: Colombia\'s Romantic Lead',
     readingRatio: 'Fully Spanish',
     songsNeeded: 3,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 200,
   },
 
@@ -2423,7 +2420,7 @@ export const MODULES: Module[] = [
     readingTopic: 'The Grammar of Desire: Subjunctive in Latin Love Songs',
     readingRatio: 'Fully Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 200,
   },
 
@@ -2453,7 +2450,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Marc Anthony: The Salsa Singer Who Became a Legend',
     readingRatio: 'Fully Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 200,
   },
 
@@ -2483,7 +2480,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Los Bukis: The Band That Defined Mexican Pop Romance',
     readingRatio: 'Fully Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 200,
   },
 
@@ -2513,7 +2510,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Selena: A Life in Music, A Legacy That Never Ended',
     readingRatio: 'Fully Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 200,
   },
 ];

@@ -44,8 +44,35 @@ export async function openStreaming(
   } catch {
     // fall through to web fallback
   }
-  const fallback = `https://open.spotify.com/search/${encodeURIComponent(`${song.title} ${song.artist}`)}`;
+  // App not installed — use a direct web URL when an ID is known, else search
+  const fallback = getWebFallback(platform, song);
   await Linking.openURL(fallback);
+}
+
+function getWebFallback(
+  platform: StreamingPlatform | null,
+  song: Pick<Song, 'title' | 'artist' | 'spotifyId' | 'youtubeId'>
+): string {
+  const query = encodeURIComponent(`${song.title} ${song.artist}`);
+  const resolved = platform ?? 'spotify';
+  switch (resolved) {
+    case 'spotify':
+      return song.spotifyId
+        ? `https://open.spotify.com/track/${song.spotifyId}`
+        : `https://open.spotify.com/search/${query}`;
+    case 'apple-music':
+      return `https://music.apple.com/search?term=${query}`;
+    case 'youtube-music':
+      return song.youtubeId
+        ? `https://music.youtube.com/watch?v=${song.youtubeId}`
+        : `https://music.youtube.com/search?q=${query}`;
+    case 'youtube':
+      return song.youtubeId
+        ? `https://www.youtube.com/watch?v=${song.youtubeId}`
+        : `https://www.youtube.com/results?search_query=${query}`;
+    default:
+      return `https://open.spotify.com/search/${query}`;
+  }
 }
 
 export function platformLabel(platform: StreamingPlatform | null): string {
