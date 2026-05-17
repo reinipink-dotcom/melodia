@@ -22,6 +22,7 @@ import { MODULES } from '../../data/modules';
 import { ModulesStackParamList } from '../../navigation/ModulesNavigator';
 import { QuizOption } from '../../components/QuizOption';
 import { useLessonStore } from '../../store/lessonStore';
+import { useOnboardingStore } from '../../store/onboardingStore';
 import { playTrigger, stopAudio } from '../../utils/audioPlayer';
 
 type Props = {
@@ -32,7 +33,11 @@ type Props = {
 export function QuizScreen({ navigation, route }: Props) {
   const { moduleId } = route.params;
   const module = MODULES.find((m) => m.id === moduleId);
-  const questions = module?.quizQuestions ?? [];
+  const level = useOnboardingStore((s) => s.level);
+  const questions =
+    (level === 'beginner' ? module?.easyQuizQuestions :
+     level === 'intermediate' ? module?.hardQuizQuestions :
+     undefined) ?? module?.quizQuestions ?? [];
   const completeLesson = useLessonStore((s) => s.completeLesson);
 
   const [questionIndex, setQuestionIndex] = useState(0);

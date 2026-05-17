@@ -1,0 +1,593 @@
+// Module 4 — Prepositions, Conjunctions & Adverbs
+// Drafted by content-builder for ux-builder to merge into src/data/modules.ts
+// Song: "A Dios Le Pido" by Juanes (Pop/Latin Pop primary)
+// Locked decisions captured from team-lead + curriculum-architect (2026-05-15)
+// Output is shaped to extend the existing Module type — fields beyond the current
+// Module interface (lessonContent, quizQuestions, readingPassage, audioTextManifest)
+// are additive and parallel the pattern used in Modules 1-3.
+
+export const module004Content = {
+  id: 4,
+
+  lessonTitle: 'The Glue Words That Hold Spanish Together',
+
+  conceptExplanation:
+    "Spanish has a small handful of tiny words — de, con, sin, pero, también — that do enormous work. They sit quietly between the bigger words, linking ideas, contrasts, and lists. Once your ear catches them, whole verses suddenly snap into focus. This is the module where Spanish stops being a list of words and starts becoming sentences.",
+
+  preListeningContext: {
+    intro:
+      "Today's song is 'A Dios Le Pido' by Juanes — a Colombian prayer-anthem built almost entirely out of glue words. Listen for the small connectors stitching each line to the next: con (with), sin (without), de (of/from), y (and). These are the words you'll catch first, even before you understand the full lyric.",
+    listenForWords: [
+      { spanish: 'de', english: 'of / from' },
+      { spanish: 'con', english: 'with' },
+      { spanish: 'sin', english: 'without' },
+      { spanish: 'pero', english: 'but' },
+      { spanish: 'también', english: 'also / too' },
+    ],
+    listeningGoal:
+      "Listen for con and sin in the chorus. Notice how each one points to something Juanes wants in his life — or wants to be free of.",
+    glueWordSpotlight:
+      "Want a second example? Vicente Fernández's 'El Rey' (a ranchera classic from Mexico) lines up con, sin, y, and pero inside a single famous verse — four glue words in one breath. That's how often you'll meet these words once you start listening.",
+    phraseChunkPreview: {
+      spanish: 'Café con leche, sin azúcar.',
+      english: 'Coffee with milk, no sugar.',
+      note: "Six words. Two of our connectors. One sentence you can order tomorrow morning.",
+    },
+  },
+
+  vocabulary: {
+    core: [
+      {
+        spanish: 'de',
+        english: 'of / from',
+        pronunciationHint: 'A soft "deh" — almost swallowed in fast speech.',
+        example: { spanish: 'soy de Colombia', english: "I'm from Colombia" },
+      },
+      {
+        spanish: 'con',
+        english: 'with',
+        pronunciationHint: 'Like English "cone" with the final E cut off.',
+        example: { spanish: 'café con leche', english: 'coffee with milk' },
+      },
+      {
+        spanish: 'sin',
+        english: 'without',
+        pronunciationHint: 'Like English "seen" but shorter and sharper.',
+        example: { spanish: 'sin azúcar', english: 'without sugar' },
+      },
+      {
+        spanish: 'pero',
+        english: 'but',
+        pronunciationHint: 'Tap the R once — soft, not rolled. Don\'t confuse with perro (dog), which has the trilled R.',
+        example: { spanish: 'pero hablo inglés', english: 'but I speak English' },
+      },
+      {
+        spanish: 'también',
+        english: 'also / too',
+        pronunciationHint: 'Stress on the final bién — the accent mark tells you where to land.',
+        example: { spanish: 'yo también', english: 'me too' },
+      },
+    ],
+    bonus: [
+      {
+        spanish: 'y',
+        english: 'and',
+        pronunciationHint: 'A single "ee" sound — the most-used word in Spanish.',
+        example: { spanish: 'pan y agua', english: 'bread and water' },
+      },
+      {
+        spanish: 'o',
+        english: 'or',
+        pronunciationHint: 'A pure "oh" — never the diphthong English speakers slip in.',
+        example: { spanish: 'café o té', english: 'coffee or tea' },
+      },
+      {
+        spanish: 'nunca',
+        english: 'never',
+        pronunciationHint: 'Two clean syllables: NOON-kah.',
+        example: { spanish: 'nunca más', english: 'never again' },
+      },
+    ],
+  },
+
+  phraseChunk: {
+    spanish: 'Café con leche, sin azúcar.',
+    english: 'Coffee with milk, no sugar.',
+    breakdown: [
+      { word: 'café', meaning: 'coffee' },
+      { word: 'con', meaning: 'with' },
+      { word: 'leche', meaning: 'milk' },
+      { word: 'sin', meaning: 'without' },
+      { word: 'azúcar', meaning: 'sugar' },
+    ],
+    usage:
+      "This is the most useful sentence in this module. Order this in any Spanish-speaking café and you'll be understood instantly — and you'll have used two of today's connectors in one breath.",
+  },
+
+  speakingPrompt: {
+    challenge:
+      'Order your morning drink in Spanish. Pick what you actually drink, then say it out loud using con and sin.',
+    frames: [
+      { prompt: 'Quiero café ___ leche.', hint: 'con or sin?', answer: 'con' },
+      { prompt: 'Hablo inglés, ___ no español.', hint: 'which connector contrasts ideas?', answer: 'pero' },
+      { prompt: 'A mí me gusta la música. — Yo ___.', hint: 'how do you say "me too"?', answer: 'también' },
+    ],
+    encouragement:
+      "Even one sentence said out loud counts. This is your first real two-part Spanish sentence.",
+  },
+
+  quizQuestions: {
+    easy: [
+      {
+        id: 'm4-easy-1',
+        type: 'multiple-choice',
+        question: "Which word means 'with' in Spanish?",
+        choices: [
+          { id: 'A', text: 'sin' },
+          { id: 'B', text: 'con' },
+          { id: 'C', text: 'de' },
+          { id: 'D', text: 'pero' },
+        ],
+        correctAnswer: 'B',
+        explanation:
+          "Con means 'with' — think 'café con leche' (coffee with milk). Sin is its opposite.",
+        difficulty: 'easy',
+        concept: 'preposition-recognition',
+      },
+      {
+        id: 'm4-easy-2',
+        type: 'matching',
+        question: "Match the Spanish word to its English meaning.",
+        pairs: [
+          { spanish: 'de', english: 'of / from' },
+          { spanish: 'sin', english: 'without' },
+          { spanish: 'también', english: 'also / too' },
+          { spanish: 'pero', english: 'but' },
+        ],
+        correctAnswer: {
+          de: 'of / from',
+          sin: 'without',
+          también: 'also / too',
+          pero: 'but',
+        },
+        explanation:
+          "These four words show up in almost every Spanish sentence. Memorize them today and your listening comprehension jumps tomorrow.",
+        difficulty: 'easy',
+        concept: 'core-vocab-matching',
+      },
+      {
+        id: 'm4-easy-3',
+        type: 'multiple-choice',
+        question: "How do you say 'me too' in Spanish?",
+        choices: [
+          { id: 'A', text: 'Yo pero.' },
+          { id: 'B', text: 'Yo sin.' },
+          { id: 'C', text: 'Yo también.' },
+          { id: 'D', text: 'Yo con.' },
+        ],
+        correctAnswer: 'C',
+        explanation:
+          "'Yo también' is the most useful two-word response in Spanish. Use it anytime someone says something you agree with.",
+        difficulty: 'easy',
+        concept: 'phrase-recognition',
+      },
+    ],
+
+    standard: [
+      {
+        id: 'm4-std-1',
+        type: 'fill-in-blank',
+        question: "Fill in the blank: 'Café ___ leche, ___ azúcar.' (Coffee with milk, without sugar.)",
+        choices: [
+          { id: 'A', text: 'con / sin' },
+          { id: 'B', text: 'sin / con' },
+          { id: 'C', text: 'de / con' },
+          { id: 'D', text: 'pero / y' },
+        ],
+        correctAnswer: 'A',
+        explanation:
+          "Con means 'with', sin means 'without'. They're functional opposites — when you can hear one, you can hear the other.",
+        difficulty: 'standard',
+        concept: 'preposition-contrast',
+      },
+      {
+        id: 'm4-std-2',
+        type: 'multiple-choice',
+        question: "Which Spanish word would connect these two ideas: 'I speak English' ___ 'I don't speak Spanish'?",
+        choices: [
+          { id: 'A', text: 'y' },
+          { id: 'B', text: 'también' },
+          { id: 'C', text: 'pero' },
+          { id: 'D', text: 'con' },
+        ],
+        correctAnswer: 'C',
+        explanation:
+          "Pero means 'but' — it's the connector you reach for when two ideas contrast. 'Hablo inglés, pero no español.'",
+        difficulty: 'standard',
+        concept: 'conjunction-selection',
+      },
+      {
+        id: 'm4-std-3',
+        type: 'sentence-building',
+        question: "Put these words in the right order to say 'I'm from Colombia, but I speak English.'",
+        wordBank: ['Soy', 'de', 'Colombia,', 'pero', 'hablo', 'inglés.'],
+        correctAnswer: 'Soy de Colombia, pero hablo inglés.',
+        explanation:
+          "Notice how de links you to a place and pero pivots to a contrast. Two glue words, one complete sentence.",
+        difficulty: 'standard',
+        concept: 'sentence-building',
+      },
+      {
+        id: 'm4-std-4',
+        type: 'listening',
+        question: "Listen to this 5-second clip from the song. Did you hear 'con' or 'sin'?",
+        audioRef: 'm4-listening-con-sin-clip',
+        choices: [
+          { id: 'A', text: 'con' },
+          { id: 'B', text: 'sin' },
+        ],
+        correctAnswer: 'A', // REVIEW: depends on which clip the audio team selects from the Juanes track
+        explanation:
+          "Con and sin are short and easy to miss in fast speech. The trick is to listen for what comes right after — a noun usually follows, telling you whether something is being added (con) or removed (sin).",
+        difficulty: 'standard',
+        concept: 'listening-discrimination',
+      },
+    ],
+
+    hard: [
+      {
+        id: 'm4-hard-1',
+        type: 'multiple-choice',
+        question: "Spot the difference: 'Tengo un ___' means 'I have a dog'. Which word fits — and how does it differ from the connector you learned?",
+        choices: [
+          { id: 'A', text: 'pero (tapped R, single sound)' },
+          { id: 'B', text: 'perro (trilled R, rolled sound)' },
+          { id: 'C', text: 'pera (different word entirely)' },
+          { id: 'D', text: 'pero (means "but")' },
+        ],
+        correctAnswer: 'B',
+        explanation:
+          "Perro (dog) and pero (but) look almost identical, but the double R changes everything. Pero is a single soft tap; perro is a full rolled trill. Same letters, very different words.",
+        difficulty: 'hard',
+        concept: 'pronunciation-contrast',
+      },
+      {
+        id: 'm4-hard-2',
+        type: 'sentence-completion',
+        question: "Complete the sentence so it makes sense: 'Quiero un café ___ leche, ___ no quiero azúcar, ___.'",
+        choices: [
+          { id: 'A', text: 'con / pero / también' },
+          { id: 'B', text: 'sin / y / también' },
+          { id: 'C', text: 'con / pero / nunca' },
+          { id: 'D', text: 'de / sin / también' },
+        ],
+        correctAnswer: 'A',
+        explanation:
+          "Con leche (with milk), pero no quiero azúcar (but I don't want sugar), también (also — adding a second preference). Three connectors stacked into one real sentence. This is what fluency looks like at the connector level.",
+        difficulty: 'hard',
+        concept: 'multi-connector-sentence',
+      },
+      {
+        id: 'm4-hard-3',
+        type: 'translation',
+        question: "Translate to Spanish: 'I'm from Mexico, but I also speak English.'",
+        choices: [
+          { id: 'A', text: 'Soy de México, pero también hablo inglés.' },
+          { id: 'B', text: 'Soy con México, y también hablo inglés.' },
+          { id: 'C', text: 'Soy sin México, pero hablo inglés también.' },
+          { id: 'D', text: 'Soy de México, y nunca hablo inglés.' },
+        ],
+        correctAnswer: 'A',
+        explanation:
+          "De (from), pero (but), también (also) — three connectors doing exactly the work they were designed for. Notice how también typically sits before the verb, not at the end like in English.",
+        difficulty: 'hard',
+        concept: 'mixed-review-translation',
+      },
+    ],
+  },
+
+  readingPassage: {
+    title: 'Juanes and the Sound of Connection',
+    wordCount: 168,
+    spanishRatio: '10%',
+    body: [
+      {
+        text: "Juan Esteban Aristizábal Vásquez — known to the world as Juanes — grew up in Medellín during one of Colombia's hardest decades.",
+        tappableTerms: [],
+      },
+      {
+        text: "His songs almost always link two worlds: rock and Colombian folk, English-speaking and Spanish-speaking audiences, pain and hope. Listen carefully to 'A Dios Le Pido' and you'll notice the small words doing the heavy lifting —",
+        tappableTerms: [],
+      },
+      {
+        text: "de, con, sin, y",
+        tappableTerms: [
+          { term: 'de', translation: 'of / from' },
+          { term: 'con', translation: 'with' },
+          { term: 'sin', translation: 'without' },
+          { term: 'y', translation: 'and' },
+        ],
+      },
+      {
+        text: "— stitching together a prayer that asks for life with his loved ones and without fear. That is exactly what these glue words do inside the language: they hold opposite ideas in the same breath.",
+        tappableTerms: [],
+      },
+      {
+        text: "Juanes also founded Mi Sangre, a foundation supporting Colombian children affected by landmines. // REVIEW: verify foundation name and scope — public press references consistent",
+        tappableTerms: [],
+      },
+      {
+        text: "The connection between his music and his peace work is not a coincidence —",
+        tappableTerms: [],
+      },
+      {
+        text: "pero",
+        tappableTerms: [{ term: 'pero', translation: 'but' }],
+      },
+      {
+        text: " a deliberate choice. Both are built on the same idea of joining what conflict tries to separate. Next time you hear him sing,",
+        tappableTerms: [],
+      },
+      {
+        text: "también",
+        tappableTerms: [{ term: 'también', translation: 'also / too' }],
+      },
+      {
+        text: " listen for the tiny words. They are carrying the message.",
+        tappableTerms: [],
+      },
+    ],
+    comprehensionQuestion: {
+      question: "According to the passage, why do the small connector words matter so much in Juanes's music?",
+      choices: [
+        { id: 'A', text: "Because Spanish songs always have more connectors than English songs." },
+        { id: 'B', text: "Because they 'hold opposite ideas in the same breath' — joining what conflict tries to separate." },
+        { id: 'C', text: "Because Juanes invented new ways to use them in his prayer-anthem." },
+        { id: 'D', text: "Because they are the easiest words to pronounce in Spanish." },
+      ],
+      correctAnswer: 'B',
+      explanation:
+        "The passage frames con/sin/pero/también as carrying the actual meaning of connection — the same theme as Juanes's peace work. The small words do the joining.",
+    },
+  },
+
+  culturalNote: {
+    title: 'Juanes and the Sound of Connection',
+    body:
+      "Juanes grew up in Medellín during one of Colombia's hardest decades, and his music has always been about joining things — rock and Colombian folk, two languages, opposite emotions. His foundation Mi Sangre supports Colombian children affected by landmines. // REVIEW: verify foundation specifics. The connector words you're learning today (con, sin, pero, también) carry the same idea inside the language itself: they hold two things in the same sentence. That's why this module is tied to him.",
+    placement: 'pre-listening', // landed before quiz, per spec note
+  },
+
+  lessonCompleteMessage: {
+    headline: 'You just connected two ideas in Spanish.',
+    body:
+      "That's the milestone. 'A Dios Le Pido' is built on the same glue words you just learned — con, sin, de, y — and now you can hear them. Try ordering a 'café con leche, sin azúcar' tomorrow morning and you'll feel today's lesson in your mouth.",
+    nextPreview: 'Next up: numbers and time — when, how long, how often.',
+  },
+
+  xpReward: 50, // A1 default per role spec (overrides the module's existing 100 — flag to UX builder for the call)
+  // NOTE for ux-builder: Module 4 currently has xpReward: 100 in src/data/modules.ts.
+  // The role spec recommends 50 for A1. Flagging for team-lead/Reine to choose; leaving 100
+  // would be consistent with Modules 1-3 if those also pay 100.
+
+  recyclingTargets: {
+    fromModule1: {
+      concept: 'Spanish phonetics — pure vowel sounds',
+      items: ['Pronouncing pero vs perro (single tap vs trilled R)', 'The silent H in hablo'],
+      reviewTiming: [1, 7],
+      format: 'pronunciation-listening',
+    },
+    fromModule2: {
+      concept: 'Accent marks change meaning and stress',
+      items: ['también — accent on the final é shifts the stress', 'sí (yes) vs si (if) — relevant when si appears as conjunction'],
+      reviewTiming: [1, 3, 14],
+      format: 'mini-quiz',
+    },
+    fromModule3: {
+      concept: 'Question words',
+      items: ['¿Con quién? (With whom?) — combines con + quién', '¿De dónde? (From where?) — combines de + dónde'],
+      reviewTiming: [3, 7, 30],
+      format: 'speaking-prompt',
+      note: 'Compound questions are a natural payoff — learners suddenly see that question words PLUS prepositions = real conversational openings.',
+    },
+  },
+
+  reviewSuggestion: {
+    when: 'day 3 after lesson completion',
+    type: 'mini-quiz',
+    item: "Translation prompt: 'coffee with milk' → 'café con leche'. Recycles con + the phrase chunk. If the learner gets this on day 3, schedule listening-recognition for day 7.",
+  },
+};
+
+// =============================================================================
+// AUDIO TEXT MANIFEST — for voice-engineer (OpenAI TTS, nova primary voice)
+// =============================================================================
+// Each entry is one TTS generation. Mixed Spanish/English is accepted (MVP).
+// Keep scripts tight — target 5-15s for vocab, 20-30s for concept intros, 30-60s for reading.
+
+export const module004AudioManifest = [
+  {
+    cueId: 'module-004-intro',
+    cueType: 'concept-intro',
+    filename: 'm4-intro-glue-words.mp3',
+    script:
+      "Today we're learning the small words that hold Spanish sentences together — de, con, sin, pero, también. As you listen to 'A Dios Le Pido' by Juanes, try to catch how these tiny words stitch the bigger ideas together. Press listen when you're ready.",
+    voiceStyle: 'primary',
+    speed: 1.0,
+    slowVersionNeeded: false,
+    estimatedDurationSec: 22,
+    uiAttachmentPoint: 'pre-listen-screen-play-button',
+  },
+  {
+    cueId: 'module-004-vocab-de',
+    cueType: 'vocab-card',
+    filename: 'm4-vocab-de.mp3',
+    script:
+      "'De' means 'of' or 'from'. You'll hear it inside place names and possession — 'soy de Colombia', 'la voz de Juanes'.",
+    voiceStyle: 'primary',
+    speed: 1.0,
+    slowVersionNeeded: true,
+    estimatedDurationSec: 9,
+    uiAttachmentPoint: 'vocab-card-de',
+  },
+  {
+    cueId: 'module-004-vocab-con',
+    cueType: 'vocab-card',
+    filename: 'm4-vocab-con.mp3',
+    script:
+      "'Con' means 'with'. You'll hear it before naming a companion or ingredient — 'café con leche', 'con amor'.",
+    voiceStyle: 'primary',
+    speed: 1.0,
+    slowVersionNeeded: true,
+    estimatedDurationSec: 8,
+    uiAttachmentPoint: 'vocab-card-con',
+  },
+  {
+    cueId: 'module-004-vocab-sin',
+    cueType: 'vocab-card',
+    filename: 'm4-vocab-sin.mp3',
+    script:
+      "'Sin' means 'without' — the functional opposite of con. 'Sin azúcar' is coffee without sugar. 'Sin miedo' is without fear.",
+    voiceStyle: 'primary',
+    speed: 1.0,
+    slowVersionNeeded: true,
+    estimatedDurationSec: 10,
+    uiAttachmentPoint: 'vocab-card-sin',
+  },
+  {
+    cueId: 'module-004-vocab-pero',
+    cueType: 'vocab-card',
+    filename: 'm4-vocab-pero.mp3',
+    script:
+      "'Pero' means 'but'. Tap the R once — softly, not rolled. 'Pero' with one R is the connector. 'Perro' with two R's is a dog. Same letters, very different words.",
+    voiceStyle: 'primary',
+    speed: 1.0,
+    slowVersionNeeded: true,
+    estimatedDurationSec: 13,
+    uiAttachmentPoint: 'vocab-card-pero',
+  },
+  {
+    cueId: 'module-004-vocab-tambien',
+    cueType: 'vocab-card',
+    filename: 'm4-vocab-tambien.mp3',
+    script:
+      "'También' means 'also' or 'too'. The accent mark sits on the final é, which is where you land the stress. 'Yo también' — me too — is one of the most useful phrases in Spanish.",
+    voiceStyle: 'primary',
+    speed: 1.0,
+    slowVersionNeeded: true,
+    estimatedDurationSec: 13,
+    uiAttachmentPoint: 'vocab-card-tambien',
+  },
+  {
+    cueId: 'module-004-vocab-y',
+    cueType: 'vocab-card',
+    filename: 'm4-vocab-y.mp3',
+    script:
+      "'Y' means 'and'. It's just one letter, one sound — 'ee'. Pan y agua. Bread and water.",
+    voiceStyle: 'primary',
+    speed: 1.0,
+    slowVersionNeeded: false,
+    estimatedDurationSec: 7,
+    uiAttachmentPoint: 'vocab-card-y',
+  },
+  {
+    cueId: 'module-004-vocab-o',
+    cueType: 'vocab-card',
+    filename: 'm4-vocab-o.mp3',
+    script:
+      "'O' means 'or'. A pure 'oh' sound. Café o té. Coffee or tea.",
+    voiceStyle: 'primary',
+    speed: 1.0,
+    slowVersionNeeded: false,
+    estimatedDurationSec: 7,
+    uiAttachmentPoint: 'vocab-card-o',
+  },
+  {
+    cueId: 'module-004-vocab-nunca',
+    cueType: 'vocab-card',
+    filename: 'm4-vocab-nunca.mp3',
+    script:
+      "'Nunca' means 'never'. NOON-kah. Two clean syllables. 'Nunca más' — never again. You'll hear it in dozens of song titles.",
+    voiceStyle: 'primary',
+    speed: 1.0,
+    slowVersionNeeded: true,
+    estimatedDurationSec: 10,
+    uiAttachmentPoint: 'vocab-card-nunca',
+  },
+  {
+    cueId: 'module-004-phrase-chunk',
+    cueType: 'phrase-chunk',
+    filename: 'm4-phrase-cafe-con-leche.mp3',
+    script:
+      "'Café con leche, sin azúcar.' Coffee with milk, no sugar. Two of today's connectors in one sentence. This is what you can order tomorrow morning at any Spanish-speaking café — and you'll be understood instantly.",
+    voiceStyle: 'primary',
+    speed: 1.0,
+    slowVersionNeeded: true,
+    estimatedDurationSec: 14,
+    uiAttachmentPoint: 'phrase-chunk-screen-play-button',
+  },
+  {
+    cueId: 'module-004-speaking-prompt',
+    cueType: 'speaking-prompt',
+    filename: 'm4-speaking-prompt.mp3',
+    script:
+      "Try saying this with me — 'Soy de Colombia, pero hablo inglés.' I'm from Colombia, but I speak English. Now you try, with your own country.",
+    voiceStyle: 'primary',
+    speed: 1.0,
+    slowVersionNeeded: true,
+    estimatedDurationSec: 12,
+    uiAttachmentPoint: 'speaking-prompt-screen',
+  },
+  {
+    cueId: 'module-004-reading-passage',
+    cueType: 'reading-passage',
+    filename: 'm4-reading-juanes.mp3',
+    script:
+      "Juan Esteban Aristizábal Vásquez — known to the world as Juanes — grew up in Medellín during one of Colombia's hardest decades. His songs almost always link two worlds: rock and Colombian folk, English-speaking and Spanish-speaking audiences, pain and hope. Listen carefully to 'A Dios Le Pido' and you'll notice the small words doing the heavy lifting — de, con, sin, y — stitching together a prayer that asks for life with his loved ones and without fear. That is exactly what these glue words do inside the language: they hold opposite ideas in the same breath. Juanes also founded Mi Sangre, a foundation supporting Colombian children affected by landmines. The connection between his music and his peace work is not a coincidence — pero a deliberate choice. Both are built on the same idea of joining what conflict tries to separate. Next time you hear him sing, también listen for the tiny words. They are carrying the message.",
+    voiceStyle: 'primary',
+    speed: 0.95,
+    slowVersionNeeded: false,
+    estimatedDurationSec: 58,
+    uiAttachmentPoint: 'reading-screen-play-button',
+  },
+  {
+    cueId: 'module-004-listening-quiz-clip',
+    cueType: 'quiz-listening',
+    filename: 'm4-quiz-con-sin-clip.mp3',
+    script:
+      "// AUDIO ENGINEERING NOTE: This cue is NOT generated TTS. The voice-engineer should source a 5-second isolated clip from 'A Dios Le Pido' that clearly contains either 'con' or 'sin'. If a clean copyright-safe isolation is not feasible, fall back to recording the word inside a short generated phrase like 'café con leche' or 'café sin azúcar' using nova voice — and update the quiz correctAnswer accordingly.",
+    voiceStyle: 'primary',
+    speed: 1.0,
+    slowVersionNeeded: false,
+    estimatedDurationSec: 5,
+    uiAttachmentPoint: 'quiz-listening-question-m4-std-4',
+    requiresHumanReview: true,
+  },
+  {
+    cueId: 'module-004-lesson-complete',
+    cueType: 'celebration',
+    filename: 'm4-lesson-complete.mp3',
+    script:
+      "You just connected two ideas in Spanish. That's the milestone. Try ordering a 'café con leche, sin azúcar' tomorrow morning — and you'll feel today's lesson in your mouth.",
+    voiceStyle: 'primary',
+    speed: 1.0,
+    slowVersionNeeded: false,
+    estimatedDurationSec: 14,
+    uiAttachmentPoint: 'lesson-complete-screen',
+  },
+];
+
+// =============================================================================
+// REVIEW FLAGS for team-lead / Reine
+// =============================================================================
+// 1. xpReward: role spec defaults A1 to 50 XP; current Module 4 record has 100.
+//    Recommend keeping 100 for parity with Modules 1-3 unless Reine wants a global A1=50 reset.
+// 2. Mi Sangre foundation factual claim is marked // REVIEW: verify in the passage.
+//    Public sources are consistent (Juanes founded Mi Sangre to support landmine-affected
+//    children in Colombia) but the content-builder did not WebFetch — flagged per role rules.
+// 3. The listening quiz clip (m4-std-4) currently assumes the audio engineer can isolate
+//    a 'con' clip from the Juanes track. If not feasible for copyright/audio-quality reasons,
+//    swap to a TTS-generated phrase and update correctAnswer accordingly.
+// 4. R&B genre alternative: team-lead said use "Obsesión" by Aventura, NOT "Propuesta
+//    Indecente". This draft does NOT reference Propuesta Indecente anywhere. The genreSongs
+//    update is the ux-builder's responsibility — not embedded here.

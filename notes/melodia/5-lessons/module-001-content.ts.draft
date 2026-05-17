@@ -1,0 +1,148 @@
+// ─── Module 1 — The Spanish Alphabet — Wave 2 content draft ──────────────────
+//
+// Owner: content-builder (melodia-module-1 team)
+// Date:  2026-05-16
+// For:   ux-builder (Wave 3) — copy these fields into src/data/modules.ts
+//        on the existing Module 1 object. Do NOT replace the existing
+//        readingPassage or vocabulary — they are already approved.
+//
+// Scope of this draft:
+//   - culturalNote          (NEW field, ~150 words)
+//   - easyQuizQuestions     (NEW field, exactly 3)
+//   - hardQuizQuestions     (NEW field, exactly 3)
+//   - quizQuestions         (REVIEWED — keep existing 5 as-is)
+//
+// Quiz vocabulary constraint (HARD RULE from module-001-spec.md §11):
+//   Only Spanish allowed: a, e, i, o, u, ñ, ll, h, rr,
+//   Bésame Mucho / bésame / mucho,
+//   niño, mañana, año, llamar, llevar, llorar,
+//   hola, hablar, hacer, hay, perro, carro, tierra, lluvia, sí.
+//   No other Spanish words may appear in quiz questions or options.
+//
+// ─────────────────────────────────────────────────────────────────────────────
+
+import type { QuizQuestion } from '../../../src/data/modules';
+
+// ─── culturalNote ────────────────────────────────────────────────────────────
+// ~150 words. Frames Consuelo Velázquez as a teenager at a Mexico City piano
+// around 1940. Anchors back to the module concept (pure vowels + clean
+// consonants make her song an ideal first listening text). Tone: warm,
+// music-anchored, never patronizing. NO lyric quoting beyond the title.
+// Age phrased as "a teenager" / "in her late teens" — NOT "16" — per the
+// spec's ambiguity flag (some sources say 19 at publication).
+
+export const culturalNote: string =
+  "The Girl Who Wrote Bésame Mucho — Picture a teenager at a piano in Mexico City around 1940. " +
+  "Her name is Consuelo Velázquez, and she has never been kissed. " +
+  "Out of her imagination and the bolero records spinning in her house, " +
+  "she writes a song called 'Bésame Mucho' — 'Kiss Me a Lot.' " +
+  "Within a decade it will be one of the most-recorded songs in history, " +
+  "translated into more than twenty languages and sung by Frank Sinatra, " +
+  "The Beatles, Plácido Domingo, and dozens more. " +
+  "What makes it your first listening text is not the romance — it is the sound. " +
+  "Consuelo's lyrics live almost entirely inside pure Spanish vowels and gentle " +
+  "consonants: the steady é in 'bésame,' the pure u in 'mucho.' " +
+  "Nothing in this song will ask your ear to do anything it cannot already do today. " +
+  "That is the point. A Mexican teenager wrote you a perfect first lesson.";
+
+// ─── easyQuizQuestions (exactly 3) ───────────────────────────────────────────
+// A1 recognition-level. One concept at a time. No production, no syllabification.
+// Sticks strictly to Module 1 vocab. Designed so a learner who has just read the
+// pre-listening screen can answer correctly — these are confidence builders.
+
+export const easyQuizQuestions: QuizQuestion[] = [
+  {
+    question: 'How is the letter H pronounced in Spanish words like "hola" and "hablar"?',
+    options: [
+      'Like the English "h" in "hat"',
+      'Silent — you do not say it at all',
+      'Like a soft "j" sound',
+      'Like an "f" sound',
+    ],
+    correctIndex: 1,
+    explanation:
+      'The Spanish H is always silent. "Hola" sounds like "OH-la" — no breath at the start. This is the single most common mistake English speakers make on day one.',
+  },
+  {
+    question: 'Which letter in the Spanish alphabet does NOT exist in the English alphabet?',
+    options: ['ll', 'rr', 'ñ', 'h'],
+    correctIndex: 2,
+    explanation:
+      'Ñ is its own letter in Spanish — not just an N with a decoration. It sounds like "ny" in "canyon" and appears in words like niño and mañana.',
+  },
+  {
+    question: 'What does the word "hola" mean?',
+    options: ['goodbye', 'please', 'hello', 'thank you'],
+    correctIndex: 2,
+    explanation:
+      '"Hola" means "hello" — usually the first Spanish word anyone learns. And remember: the H is silent, so it sounds like "OH-la."',
+  },
+];
+
+// ─── hardQuizQuestions (exactly 3) ───────────────────────────────────────────
+// A1 application-level. The learner must apply a rule, not just recall it.
+// Common-learner-mistake distractors. All Spanish words still come from the
+// allowed Module 1 vocabulary list. No production of full sentences required.
+
+export const hardQuizQuestions: QuizQuestion[] = [
+  {
+    question: 'Three of these Spanish words contain a silent letter. Which one does NOT?',
+    options: ['hola', 'hablar', 'mucho', 'hacer'],
+    correctIndex: 2,
+    explanation:
+      '"Mucho" has no silent letter — every sound is pronounced. The other three all start with a silent H. A useful test: if a Spanish word starts with H, the H stays quiet.',
+  },
+  {
+    question: 'You see two written words: "pero" and "perro." What is the difference in how you say them?',
+    options: [
+      'They sound exactly the same — the extra R is silent',
+      '"Pero" has one tapped R; "perro" has a rolled, trilled RR',
+      '"Pero" is louder; "perro" is whispered',
+      '"Perro" has a silent R; "pero" is rolled',
+    ],
+    correctIndex: 1,
+    explanation:
+      'A single R between vowels is a quick tap. A double RR is a full roll. The two words look almost identical on the page, but the trill changes everything. A single tap is fine if you can\'t roll yet — Spanish speakers will understand you.',
+  },
+  {
+    question: 'Which of these Spanish words contains the "y"-like LL sound?',
+    options: ['mañana', 'llamar', 'hola', 'mucho'],
+    correctIndex: 1,
+    explanation:
+      '"Llamar" (to call) starts with LL, which in Spanish sounds like the English "y" — so it begins with a "ya-" sound, not an "la-" sound. The other three contain ñ, silent h, or a pure vowel run.',
+  },
+];
+
+// ─── quizQuestions (REVIEW — keep existing 5 as-is) ──────────────────────────
+//
+// I reviewed the 5 existing quizQuestions already on Module 1 in src/data/modules.ts
+// (lines 191–222). They are well-aimed and stay within the vocab constraint:
+//
+//   1. Soft B/V in Bésame Mucho — ALLOWED (song title is in-scope, spec §13 note 4
+//      explicitly approves one B/V question because the title forces it)
+//   2. Accent on é in "bésame" tells you to stress that syllable — ALLOWED
+//   3. Syllable count of "bésame" — ALLOWED
+//   4. How Spanish U is pronounced (mucho) — ALLOWED
+//   5. Meaning of "mucho" — ALLOWED (mucho is a bonus word in §11)
+//
+// All five test sound, stress, or letter identification — exactly the brief in
+// spec §13 note 3 ("Do not quiz on meaning yet... bonus words only"). Question 5
+// is the one meaning-question, on a bonus word, which is the carve-out the spec
+// permits.
+//
+// Recommendation: KEEP ALL 5 UNCHANGED. The ux-builder does not need to edit
+// the existing quizQuestions array.
+//
+// (Not re-exporting here — the existing array in modules.ts is canonical.)
+
+// ─── End of Wave 2 content draft ─────────────────────────────────────────────
+//
+// Notes for the ux-builder (Wave 3 wiring):
+//   - Insert `culturalNote: culturalNote,` into the Module 1 object after
+//     `readingTopic` (matches the position used on Module 4).
+//   - Insert `easyQuizQuestions: [...]` and `hardQuizQuestions: [...]`
+//     immediately after the existing `quizQuestions: [...]` array.
+//   - Leave existing `quizQuestions`, `vocabulary`, `grammarPoints`,
+//     `readingPassage`, and all other fields untouched.
+//   - `recyclingTargets` and `ttsTriggers` are out of scope for this draft;
+//     voice-engineer is handling the audio manifest separately (Task #5).

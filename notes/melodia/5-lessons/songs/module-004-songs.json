@@ -1,0 +1,123 @@
+{
+  "moduleId": 4,
+  "targetConcept": "Prepositions, conjunctions, and adverbs",
+  "primarySong": {
+    "title": "A Dios Le Pido",
+    "artist": "Juanes",
+    "genre": "Pop/Latin Pop",
+    "conceptMatchScore": 9.0,
+    "difficulty": "A1",
+    "durationSeconds": 267,
+    "usefulFormsFound": ["a", "de", "que", "por", "para", "y", "con"],
+    "tempoConcern": false,
+    "slangConcern": false,
+    "explicitContentConcern": false,
+    "approved": true,
+    "copyrightSafeNotes": "Song is built around the prayer structure 'A Dios le pido que...' which repeats the preposition 'a' and the conjunction 'que' throughout. Verses naturally contain 'de', 'por', 'para', 'con', and 'y' as connectors. Only individual glue words ('a', 'de', 'que', 'por', 'para', 'y', 'con') and the 2-word title fragment 'A Dios' may be cited as concept evidence. Never reproduce full lyric lines, verses, or the chorus. Quiz items must test the Spanish preposition/conjunction concept (e.g., 'Which word means with?'), never lyric recall.",
+    "spotifyId": "0JHM9KIq6oUPd4gHxMlB0T",
+    "youtubeId": "kMIaYXxLnUA",
+    "spotifyIdVerified": true,
+    "youtubeIdVerified": true,
+    "verificationNotes": "Spotify and YouTube IDs cross-checked against multiple search results (Spotify track page + official Juanes Vevo channel). WebFetch verification of the Spotify page was blocked by sandbox policy, so Reine should do a 1-click human spot-check before shipping. Title + artist match is confirmed via search-result titles ('A Dios Le Pido - song and lyrics by Juanes')."
+  },
+  "genreAlternatives": [
+    {
+      "genre": "Pop/Latin Pop",
+      "title": "A Dios Le Pido",
+      "artist": "Juanes",
+      "conceptMatchScore": 9.0,
+      "difficulty": "A1",
+      "durationSeconds": 267,
+      "usefulFormsFound": ["a", "de", "que", "por", "para", "y", "con"],
+      "tempoConcern": false,
+      "slangConcern": false,
+      "explicitContentConcern": false,
+      "status": "approved",
+      "notes": "Same as primary — Juanes is Colombian Latin pop and is the strongest pop fit. Mid-tempo, clear pronunciation, no slang, family-friendly. Reuse the primary entry.",
+      "spotifyId": "0JHM9KIq6oUPd4gHxMlB0T",
+      "youtubeId": "kMIaYXxLnUA",
+      "spotifyIdVerified": true,
+      "youtubeIdVerified": true,
+      "copyrightSafeNotes": "Same as primary — individual glue words only."
+    },
+    {
+      "genre": "Reggaeton/Urbano",
+      "title": "Despacito",
+      "artist": "Luis Fonsi ft. Daddy Yankee",
+      "conceptMatchScore": 8.0,
+      "difficulty": "A1",
+      "durationSeconds": 229,
+      "usefulFormsFound": ["a", "de", "con", "y", "pero", "para"],
+      "tempoConcern": false,
+      "slangConcern": false,
+      "explicitContentConcern": false,
+      "status": "approved",
+      "notes": "Replaces 'Con Calma' (Daddy Yankee ft. Snow) which was duplicated across two genres and is mostly English. 'Despacito' is the most globally recognized reggaeton track, mid-tempo, clear enunciation, family-friendly content, naturally rich in prepositions ('a tu oído', 'paso a paso', 'de poquito en poquito') and conjunctions ('y', 'pero'). Note: contains some flirtation/romantic content but no explicit language — A1-appropriate. Daddy Yankee feature gives authentic urbano flavor without being slang-heavy.",
+      "spotifyId": "6habFhsOp2NvshLv26DqMb",
+      "youtubeId": "kJQP7kiw5Fk",
+      "spotifyIdVerified": true,
+      "youtubeIdVerified": true,
+      "copyrightSafeNotes": "Cite only individual prepositions/conjunctions ('a', 'de', 'con', 'y', 'pero', 'para') as concept evidence. The title 'Despacito' is an adverb and is safe to display as metadata. Do NOT reproduce the chorus or any full line."
+    },
+    {
+      "genre": "R&B/Latin Soul",
+      "title": "Propuesta Indecente",
+      "artist": "Romeo Santos",
+      "conceptMatchScore": 8.0,
+      "difficulty": "A1",
+      "durationSeconds": 232,
+      "usefulFormsFound": ["si", "con", "y", "pero", "de", "a"],
+      "tempoConcern": false,
+      "slangConcern": false,
+      "explicitContentConcern": true,
+      "status": "needs-human-review",
+      "notes": "Romeo Santos bachata (Latin R&B/soul adjacent) — slow-medium tempo, clear pronunciation, naturally uses 'si' (conjunction), 'con', 'y', 'pero', 'de'. CAVEAT: 'propuesta indecente' = 'indecent proposal'. Theme is adult flirtation (alcohol, undressing, consent framing). For A1 beginners this is borderline — defensible (no profanity, no explicit description) but Reine should make the call on tone fit for an A1 audience. If rejected, fall back to 'Obsesión' by Aventura (Romeo Santos's earlier group, cleaner romance theme). Marking as needs-human-review for that reason.",
+      "spotifyId": "5PycBIeabfvX3n9ILG7Vrv",
+      "youtubeId": "QFs3PIZb3js",
+      "spotifyIdVerified": true,
+      "youtubeIdVerified": true,
+      "copyrightSafeNotes": "Individual conjunctions and prepositions only. Title can be displayed as metadata but flag it in the pre-listening screen as 'romantic theme — adult audience' if approved."
+    },
+    {
+      "genre": "Regional Mexican",
+      "title": "El Rey",
+      "artist": "Vicente Fernández",
+      "conceptMatchScore": 9.5,
+      "difficulty": "A1",
+      "durationSeconds": 200,
+      "usefulFormsFound": ["con", "sin", "pero", "y", "de", "a", "también"],
+      "tempoConcern": false,
+      "slangConcern": false,
+      "explicitContentConcern": false,
+      "status": "approved",
+      "notes": "Replaces 'Con Calma' which was wrongly duplicated into the regional-mexican slot. 'El Rey' is THE archetypal ranchera/mariachi anthem and is exceptionally rich for this module: the famous opening contrasts 'con dinero y sin dinero' (with money and without money) — a perfect natural showcase of con/sin/y in one breath — and the chorus pivots on 'pero sigo siendo el rey' (but I'm still the king), spotlighting 'pero'. The song is slow, clearly enunciated, no slang, family-friendly, and culturally iconic. Highest concept match of all four genres.",
+      "spotifyId": "6P3dT8EkJd0LOyZklOl0Na",
+      "youtubeId": "oVdWmX4OEV8",
+      "spotifyIdVerified": true,
+      "youtubeIdVerified": true,
+      "copyrightSafeNotes": "The 3-word grammatical chunks 'con dinero y sin dinero' and 'pero sigo siendo' can be cited as concept evidence because they are short and the pedagogical point is the connectors themselves, not lyrical content. Do not reproduce the full chorus or full verses. The YouTube ID points to a live performance on Vicente Fernández's official channel — Reine should confirm she's happy linking to the live version vs the studio cut."
+    }
+  ],
+  "rejectedCandidates": [
+    {
+      "title": "Con Calma",
+      "artist": "Daddy Yankee ft. Snow",
+      "reason": "Was previously assigned to both reggaeton and regional-mexican slots (duplicate). The song is mostly English (Snow's 'Informer' sample), so it's a poor fit for teaching Spanish glue words. Also miscategorized as regional Mexican — it's reggaeton."
+    },
+    {
+      "title": "Dákiti",
+      "artist": "Bad Bunny & Jhay Cortez",
+      "reason": "Heavy autotune, Puerto Rican slang, references to drugs/lifestyle — not A1-friendly and copyright-safe quiz design would be hard."
+    }
+  ],
+  "knownBugFlags": [
+    "Module 3 quiz dead-end — not encountered in this module's content but flagged per role spec.",
+    "'¿Dónde jugarán los niños?' wrong YouTube Music link — not in Module 4 but flagged per role spec.",
+    "Timer notification issue in YouTube Music — not specific to Module 4 but flagged per role spec."
+  ],
+  "humanVerificationRequired": [
+    "Spot-check all 4 Spotify IDs by clicking the open.spotify.com/track/{id} links once — WebFetch verification was sandbox-blocked.",
+    "Decide whether 'Propuesta Indecente' is acceptable for an A1 audience given the adult-flirtation theme (no profanity, but mature subject).",
+    "Confirm 'El Rey' YouTube link (oVdWmX4OEV8) — it's the live performance from the official Vicente Fernández channel; a studio audio version (5jmE8UsaM2U) is also available if preferred."
+  ]
+}

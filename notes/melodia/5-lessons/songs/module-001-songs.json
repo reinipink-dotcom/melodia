@@ -1,0 +1,166 @@
+{
+  "moduleId": 1,
+  "targetConcept": "Pronunciation & the 27-letter Spanish alphabet",
+  "primarySong": {
+    "title": "Bésame Mucho",
+    "artist": "Consuelo Velázquez",
+    "genre": "Bolero/Latin Standard",
+    "conceptMatchScore": 4.5,
+    "difficulty": "A1",
+    "durationSeconds": 210,
+    "usefulFormsFound": ["bésame", "mucho", "hola", "llorar", "hablar"],
+    "alphabetFeatures": [
+      "Pure vowels: a, e, i, o, u all heard clearly in 'bésame' and 'mucho'",
+      "Soft B/V demonstration in 'bésame' — both letters share the same gentle bilabial sound",
+      "Stress mark on é teaches the role of Spanish accents (BÉ-sa-me)",
+      "Slow bolero tempo — ideal for first-listen phonetic parsing",
+      "Three-syllable target words easy to count and clap"
+    ],
+    "tempoConcern": false,
+    "slangConcern": false,
+    "explicitContentConcern": false,
+    "approved": true,
+    "copyrightSafeNotes": "Only individual letter examples ('bésame', 'mucho', 'hola', 'llorar', 'hablar') and the 2-word public title 'Bésame Mucho' may be cited as concept evidence. Never reproduce the chorus or any full lyric line. Quiz items must test Spanish alphabet/pronunciation (e.g., 'How is Spanish U pronounced?'), never lyric recall. The reading passage in modules.ts is original biographical content about Consuelo Velázquez and is copyright-safe.",
+    "spotifyId": "6jXSjt2gZkLQ9yEAGOC7CR",
+    "youtubeId": "MY0fuEfBmD4",
+    "spotifyIdVerified": false,
+    "youtubeIdVerified": true,
+    "verificationNotes": "YouTube ID MY0fuEfBmD4 confirmed via search results — labeled 'Consuelo Velazquez — Besame Mucho'. Spotify ID 6jXSjt2gZkLQ9yEAGOC7CR did NOT appear in any search result; the canonical Consuelo Velázquez recording surfaced in searches is 51RQwCpw50qKCpc0WBY49v. WebFetch was blocked, so Reine MUST spot-check the current Spotify ID by opening https://open.spotify.com/track/6jXSjt2gZkLQ9yEAGOC7CR and confirming title + artist. If wrong, swap to 51RQwCpw50qKCpc0WBY49v."
+  },
+  "genreAlternatives": [
+    {
+      "genre": "Pop/Latin Pop",
+      "title": "Limón y Sal",
+      "artist": "Julieta Venegas",
+      "conceptMatchScore": 4.5,
+      "difficulty": "A1",
+      "durationSeconds": 218,
+      "usefulFormsFound": ["limón", "sal", "yo", "te", "quiero"],
+      "alphabetFeatures": [
+        "Crystal-clear Mexican enunciation — Julieta Venegas is famous for crisp diction",
+        "All five pure vowels appear in the title alone (i, ó, y, a)",
+        "Silent H demonstration available in vocabulary tie-ins",
+        "Mid-tempo acoustic pop — accordion-driven, no autotune or vocal effects",
+        "Repetitive, predictable phrasing helps beginner ears latch on"
+      ],
+      "tempoConcern": false,
+      "slangConcern": false,
+      "explicitContentConcern": false,
+      "status": "approved",
+      "notes": "Strongest pop alternative for an A1 pronunciation module. Julieta Venegas's diction is benchmark-clean — language teachers routinely cite her catalog. Mid-tempo, no slang, family-friendly love song, culturally significant (Mexico).",
+      "spotifyId": "7dITAq1YP5e0kTcaDq4YWI",
+      "youtubeId": "tIpzfs5tBJU",
+      "spotifyIdVerified": true,
+      "youtubeIdVerified": true,
+      "copyrightSafeNotes": "Cite only individual words (limón, sal, yo, te, quiero) and the 2-word title as alphabet/pronunciation evidence. Do not reproduce the chorus."
+    },
+    {
+      "genre": "Reggaeton/Urbano",
+      "title": "Despacito",
+      "artist": "Luis Fonsi ft. Daddy Yankee",
+      "conceptMatchScore": 4.5,
+      "difficulty": "A1",
+      "durationSeconds": 229,
+      "usefulFormsFound": ["despacito", "paso", "a", "oído", "suavecito"],
+      "alphabetFeatures": [
+        "Title 'des-pa-ci-to' is itself a four-syllable pronunciation exercise — perfect for vowel/syllable lessons",
+        "Soft C before i in 'despacito' and 'suavecito' demonstrates the seseo/ceceo split",
+        "Diminutive -ito suffix shows pure -i-o vowel sequence",
+        "Most globally recognized Spanish-language song — students arrive with the melody already memorized",
+        "Mid-tempo reggaeton (~89 BPM) — slow for the genre, comprehensible to A1 ears"
+      ],
+      "tempoConcern": false,
+      "slangConcern": false,
+      "explicitContentConcern": false,
+      "status": "approved",
+      "notes": "By far the most beginner-friendly reggaeton track. Used in Module 4 as the reggaeton alt already — reuse is fine here because the pedagogical purpose is different (alphabet/pronunciation vs. prepositions). Contains some romantic/flirtation content but no profanity. Daddy Yankee's verse is faster — Reine may want to flag a 'focus on the chorus' note in the listen screen.",
+      "spotifyId": "6habFhsOp2NvshLv26DqMb",
+      "youtubeId": "kJQP7kiw5Fk",
+      "spotifyIdVerified": true,
+      "youtubeIdVerified": true,
+      "copyrightSafeNotes": "Cite only the title (publicly available metadata) and individual phonetic targets ('des-pa-ci-to', 'sua-ve-ci-to') as syllabification examples. Do not reproduce any lyric line beyond 2-3 word phonetic chunks used for syllable-counting drills."
+    },
+    {
+      "genre": "R&B/Latin Soul",
+      "title": "Burbujas de Amor",
+      "artist": "Juan Luis Guerra 4.40",
+      "conceptMatchScore": 5.0,
+      "difficulty": "A1",
+      "durationSeconds": 245,
+      "usefulFormsFound": ["burbujas", "amor", "pez", "ciudad", "agua"],
+      "alphabetFeatures": [
+        "Juan Luis Guerra's diction is conservatory-precise — Berklee-trained, sings every syllable cleanly",
+        "Rolled RR explicitly featured in 'burbujas' — perfect for the trilled-R lesson point",
+        "Silent H demo via 'amor' (no H) and contrast with potential H words",
+        "Soft, slow bachata tempo (~110 BPM) — gentle guitar texture, no vocal effects",
+        "All five vowels heard clearly across the title 'Burbujas de Amor'"
+      ],
+      "tempoConcern": false,
+      "slangConcern": false,
+      "explicitContentConcern": false,
+      "status": "approved",
+      "notes": "Highest concept-match score of all four genre alternatives. Bachata is the closest Latin-music analogue to R&B/soul (intimate, romantic, vocal-forward), and Juan Luis Guerra is its most pronunciation-clean exponent. Dominican Spanish but with very standard enunciation — no regional swallowing of consonants. Family-friendly romantic theme, no slang, no explicit content.",
+      "spotifyId": "0TarPYIjJndYucFUOMce8P",
+      "youtubeId": "PWGwF_B0bxk",
+      "spotifyIdVerified": true,
+      "youtubeIdVerified": true,
+      "copyrightSafeNotes": "Cite individual words (burbujas, amor, pez, ciudad) as alphabet/pronunciation evidence. The 3-word title 'Burbujas de Amor' is publicly available metadata. Do not reproduce the chorus."
+    },
+    {
+      "genre": "Regional Mexican",
+      "title": "Cielito Lindo",
+      "artist": "Vicente Fernández",
+      "conceptMatchScore": 5.0,
+      "difficulty": "A1",
+      "durationSeconds": 195,
+      "usefulFormsFound": ["cielito", "lindo", "ay", "canta", "corazón"],
+      "alphabetFeatures": [
+        "THE archetypal Spanish vowel showcase — the famous 'Ay, ay, ay, ay' chorus is literally a pure-vowel drill set to music",
+        "Soft C before i in 'cielito' demonstrates pronunciation rule",
+        "Silent H absent here, but the LL in 'cielito' models the 'y'-like consonant sound",
+        "Canta y no llores — natural showcase of LL (llores) without needing to quote the full line",
+        "Mariachi instrumentation is slow, traditional, and crystal-clear; Vicente Fernández's enunciation is iconic"
+      ],
+      "tempoConcern": false,
+      "slangConcern": false,
+      "explicitContentConcern": false,
+      "status": "approved",
+      "notes": "Replaces 'La Bamba' by Los Lobos (which was wrongly duplicated across reggaeton and regional-mexican slots, and is rock/Chicano rather than regional Mexican). 'Cielito Lindo' is THE most internationally recognized Mexican folk song — every Spanish learner has heard the 'Ay, ay, ay, ay' chorus. Vicente Fernández's recording is the canonical mariachi version. Family-friendly, slow tempo, exceptionally clear pronunciation.",
+      "spotifyId": "1YIE0WBii65tRNXsxV5iGs",
+      "youtubeId": "T6o_zaTvHSI",
+      "spotifyIdVerified": true,
+      "youtubeIdVerified": true,
+      "copyrightSafeNotes": "The 'Ay, ay, ay, ay' interjection is in the public domain (Quirino Mendoza y Cortés, 1882) and is itself a vowel-pronunciation drill. Vicente Fernández's recording is copyrighted as a sound recording, but we are deep-linking only — no embedded playback. Cite individual words (cielito, lindo, canta) and the 2-word title as concept evidence. Do not reproduce verses."
+    }
+  ],
+  "rejectedCandidates": [
+    {
+      "title": "La Bamba",
+      "artist": "Los Lobos",
+      "reason": "Currently duplicated in both the reggaeton and regional-mexican slots in modules.ts. Also miscategorized: 'La Bamba' is Chicano rock/Tex-Mex, not reggaeton and not traditional regional Mexican. The song is fast, slurred in places, and not the strongest fit for a pronunciation-focused A1 module. Replaced by Despacito (reggaeton) and Cielito Lindo (regional Mexican)."
+    },
+    {
+      "title": "Dákiti",
+      "artist": "Bad Bunny & Jhay Cortez",
+      "reason": "Heavy autotune obscures pronunciation — fatal for an alphabet module. Also features Puerto Rican slang and lifestyle references that aren't A1-appropriate."
+    },
+    {
+      "title": "Callaíta",
+      "artist": "Bad Bunny",
+      "reason": "Trap-influenced delivery, swallowed consonants typical of Puerto Rican urban Spanish — not the clean enunciation an alphabet/pronunciation module needs."
+    }
+  ],
+  "knownBugFlags": [
+    "Module 3 quiz dead-end — not encountered in Module 1 but flagged per role spec.",
+    "'¿Dónde jugarán los niños?' wrong YouTube Music link — not in Module 1 but flagged per role spec.",
+    "Timer notification issue in YouTube Music — not specific to Module 1 but flagged per role spec.",
+    "Module 1 primary song Spotify ID (6jXSjt2gZkLQ9yEAGOC7CR) did not surface in any Spotify search result for Consuelo Velázquez's 'Bésame Mucho'. The canonical track ID in search results is 51RQwCpw50qKCpc0WBY49v. Reine must spot-check before shipping.",
+    "Module 1 genreSongs object in modules.ts currently has only reggaeton + regional-mexican (both = La Bamba), and is missing pop and rnb entries. Content Builder must add all four genres."
+  ],
+  "humanVerificationRequired": [
+    "CRITICAL: Open https://open.spotify.com/track/6jXSjt2gZkLQ9yEAGOC7CR and confirm it resolves to a Consuelo Velázquez recording of 'Bésame Mucho'. If it does not, replace with 51RQwCpw50qKCpc0WBY49v.",
+    "Spot-check the other 4 Spotify IDs (Limón y Sal: 7dITAq1YP5e0kTcaDq4YWI, Despacito: 6habFhsOp2NvshLv26DqMb, Burbujas de Amor: 0TarPYIjJndYucFUOMce8P, Cielito Lindo: 1YIE0WBii65tRNXsxV5iGs).",
+    "Confirm the Cielito Lindo YouTube ID T6o_zaTvHSI is the preferred version — it's extracted from a Vicente Fernández film. A Sony Music official audio (jSt20iH3Axo) is available if preferred for cleaner deep-linking.",
+    "Confirm Despacito reuse across Module 1 and Module 4 is intentional — both target different concepts (alphabet vs. prepositions), so the reuse is pedagogically defensible, but Reine may prefer genre-alt diversity."
+  ]
+}

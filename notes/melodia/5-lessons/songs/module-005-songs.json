@@ -1,0 +1,209 @@
+{
+  "moduleId": 5,
+  "targetConcept": "Subject pronouns (yo, tú, él, ella, nosotros, ellos, ellas, usted, ustedes)",
+  "primarySong": {
+    "title": "Yo Perreo Sola",
+    "artist": "Bad Bunny",
+    "genre": "Reggaeton/Urbano",
+    "conceptMatchScore": 9.0,
+    "difficulty": "A1",
+    "durationSeconds": 169,
+    "usefulFormsFound": ["yo", "ella", "él", "ellas", "tú"],
+    "tempoConcern": false,
+    "slangConcern": true,
+    "explicitContentConcern": true,
+    "approved": false,
+    "approvalStatus": "needs-human-review",
+    "recommendation": "REPLACE for the A1 onboarding flow. Use 'Soy Yo' by Bomba Estéreo as the primary instead. Keep 'Yo Perreo Sola' as a Reggaeton/Urbano alternative for users who select reggaeton AND have toggled an 'explicit OK' preference in the future.",
+    "explicitContentReasoning": "Yo Perreo Sola IS marked explicit on Spotify and is documented as one of Bad Bunny's most explicit tracks in mainstream press (sexual autonomy theme, candid sexual imagery, references to twerking/partying/multiple partners). The song's pro-women, anti-harassment message is genuinely positive — but for a user's 5th lesson in an A1 beginner onboarding, surfacing an explicit-rated track risks: (1) App Store age-rating complications if Module 5 is reachable in the free trial, (2) breaking the trust of parents/educators trying the app, (3) clashing with Reine's stated audience (multipassionate learners, not necessarily nightlife audience). Bad Bunny himself is fine to feature elsewhere — just not on an explicit-rated track in early-flow onboarding.",
+    "copyrightSafeNotes": "If retained as a backup, cite only individual pronouns ('yo', 'ella') as concept evidence. NEVER reproduce the chorus or any full line. The song title 'Yo Perreo Sola' contains a single pronoun ('yo') plus an adverb — safe to display as metadata.",
+    "spotifyId": "0SqqAgdovOE24BzxIClpjw",
+    "youtubeId": "GtSRKwDCaZM",
+    "spotifyIdVerified": true,
+    "youtubeIdVerified": true,
+    "verificationNotes": "Spotify ID confirmed via multiple search-result hits including the kworb.net chart history page. YouTube ID GtSRKwDCaZM is the official video upload (released March 27, 2020, directed by Bad Bunny and Stillz). Reine should do a 1-click human spot-check on both links before shipping.",
+    "skeletonDurationMismatch": "Module skeleton lists durationSeconds: 221 but the studio track 'Yo Perreo Sola' (non-remix) is 2:49 = 169s. The 221s value likely came from the Remix (Bad Bunny ft. Nesi & Ivy Queen) which runs ~3:41. Resolve this before shipping — if Reine wants the Remix, swap the spotifyId to 2cpteAYHcd4cjSxAeCkA52 and the youtubeId to sNQ1OktBZw0; if she wants the original, change the skeleton duration to 169."
+  },
+  "recommendedPrimaryReplacement": {
+    "title": "Soy Yo",
+    "artist": "Bomba Estéreo",
+    "genre": "Pop/Latin Alternative",
+    "conceptMatchScore": 10.0,
+    "difficulty": "A1",
+    "durationSeconds": 159,
+    "usefulFormsFound": ["yo", "me", "mi", "tú"],
+    "tempoConcern": false,
+    "slangConcern": false,
+    "explicitContentConcern": false,
+    "approved": true,
+    "rationale": "Title literally means 'I am me' — perfect, on-the-nose showcase of the subject pronoun 'yo' as a first-person identity statement. The song's anthem of self-affirmation uses 'yo' constantly in the chorus ('Soy yo, soy yo') and pairs naturally with first-person verb conjugations users will meet in upcoming modules. Mid-tempo, exceptionally clear pronunciation (Li Saumet enunciates), zero slang, family-friendly (the song's message is body-positivity and being yourself — used on FIFA 16 soundtrack and Sing 2 movie). No explicit content. Colombian artist gives geographic variety vs Module 4's Juanes (also Colombian) — Reine may want to note this clustering. Highest concept match across all candidates.",
+    "copyrightSafeNotes": "Cite only individual pronouns ('yo', 'me', 'mi', 'tú') and the 2-word title 'Soy Yo' as concept evidence. Do not reproduce full chorus lines or verses, even though the chorus is heavily 'yo'-based. Quiz items must test pronoun knowledge ('What does yo mean?'), never lyric recall.",
+    "spotifyId": "4Egb5xP6cniUx0kgZd5zLB",
+    "youtubeId": "bxWxXncl53U",
+    "spotifyIdVerified": true,
+    "youtubeIdVerified": true,
+    "verificationNotes": "Spotify ID 4Egb5xP6cniUx0kgZd5zLB confirmed via Musicstax + Tunebat metadata pages. YouTube ID bxWxXncl53U confirmed as official upload on Bomba Estéreo's channel."
+  },
+  "genreAlternatives": [
+    {
+      "genre": "Pop/Latin Pop",
+      "title": "Soy Yo",
+      "artist": "Bomba Estéreo",
+      "conceptMatchScore": 10.0,
+      "difficulty": "A1",
+      "durationSeconds": 159,
+      "usefulFormsFound": ["yo", "me", "mi", "tú"],
+      "tempoConcern": false,
+      "slangConcern": false,
+      "explicitContentConcern": false,
+      "status": "approved",
+      "notes": "See recommendedPrimaryReplacement above. This is the cleanest, highest-concept-match track for subject pronouns in the entire candidate pool. Should be the primary unless Reine overrides.",
+      "spotifyId": "4Egb5xP6cniUx0kgZd5zLB",
+      "youtubeId": "bxWxXncl53U",
+      "spotifyIdVerified": true,
+      "youtubeIdVerified": true,
+      "copyrightSafeNotes": "Individual pronouns + 2-word title only."
+    },
+    {
+      "genre": "Pop/Latin Pop (skeleton choice)",
+      "title": "Tú",
+      "artist": "Camila",
+      "artistCorrection": "Skeleton says 'Camila Cabello' but the Spotify ID 37Xdi9mHef3ZDcwyiqpBYw belongs to the Mexican pop-rock BAND named Camila (led by Mario Domm), NOT Camila Cabello. Camila Cabello does not have a track titled 'Tú' in her main discography. This is an artist mis-attribution bug in the skeleton — fix the artist field to 'Camila' (no surname) or pick a different song.",
+      "conceptMatchScore": 7.0,
+      "difficulty": "A1",
+      "durationSeconds": 197,
+      "usefulFormsFound": ["tú", "yo"],
+      "tempoConcern": false,
+      "slangConcern": false,
+      "explicitContentConcern": false,
+      "status": "needs-human-review",
+      "notes": "Camila (band) is solid Mexican Latin pop — slow ballad, very clear pronunciation, no slang, family-friendly. Title spotlights 'tú' which is the second-most-important pronoun in this module. Concept match is lower than Soy Yo because the song is romance-themed and 'tú' is used in love-ballad framing rather than as an explicit subject-pronoun showcase. Acceptable as a Pop alternative IF the artist field is corrected. If Reine specifically wanted Camila Cabello, swap to her track 'Havana' (which uses 'yo' and 'él' in storytelling) or 'Bam Bam' (clean enough for A1).",
+      "spotifyId": "37Xdi9mHef3ZDcwyiqpBYw",
+      "youtubeId": null,
+      "spotifyIdVerified": true,
+      "youtubeIdVerified": false,
+      "verificationNotes": "Spotify ID verified as belonging to Camila (band) song 'Tú'. No verified YouTube ID located — Camila (band) tracks are typically on the artist's Vevo channel but the search did not return a clean canonical official-video URL for this specific song. Reine should look up the YouTube Music link manually or substitute another song.",
+      "copyrightSafeNotes": "Cite individual pronouns only ('tú', 'yo'). The 1-word title 'Tú' is safe metadata."
+    },
+    {
+      "genre": "Reggaeton/Urbano",
+      "title": "Yo Quiero Bailar",
+      "artist": "Ivy Queen",
+      "conceptMatchScore": 9.0,
+      "difficulty": "A1",
+      "durationSeconds": 234,
+      "usefulFormsFound": ["yo", "tú"],
+      "tempoConcern": false,
+      "slangConcern": false,
+      "explicitContentConcern": false,
+      "status": "approved",
+      "notes": "Fills the empty reggaeton slot in the skeleton. The original 2003 Ivy Queen track is the foundational 'reggaeton women's anthem' — and crucially, its central pedagogical line directly contrasts 'yo' and 'tú' as subject pronouns in the chorus opener ('Yo quiero bailar, tú quieres sudar'). The song's message is consent-positive ('eso no quiere decir que pa' la cama voy'), which is the same thematic territory as Yo Perreo Sola but WITHOUT the explicit content rating. Mid-tempo, very clear Puerto Rican enunciation, no profanity. Cultural-icon status (Ivy Queen is 'La Reina del Reggaetón' and a Bad Bunny precursor — gives Reine a great reading-passage tie-in for Module 5).",
+      "spotifyId": "7soEJURKTlW5Rku2TZ519W",
+      "youtubeId": null,
+      "spotifyIdVerified": true,
+      "youtubeIdVerified": false,
+      "verificationNotes": "Spotify ID confirmed via Spotify search results. YouTube ID not located in this validation pass — Reine should pull the official audio/video from Ivy Queen's YouTube channel and add it before shipping.",
+      "copyrightSafeNotes": "Cite only the individual pronouns 'yo' and 'tú'. The 3-word phrase 'Yo quiero bailar' is borderline: it contains the pronoun PLUS a verb, so prefer using just 'yo' as evidence and reference the verb 'quiero' in a separate Module 8+ verb lesson. Title is safe metadata."
+    },
+    {
+      "genre": "R&B/Latin Soul",
+      "title": "Ella y Yo",
+      "artist": "Aventura ft. Don Omar",
+      "artistCorrection": "Skeleton says 'Don Omar ft. Romeo Santos'. The correct credit is 'Aventura ft. Don Omar' — Romeo Santos was the lead singer of Aventura at the time but the track is billed to Aventura the group, not Romeo solo. Fix in skeleton.",
+      "conceptMatchScore": 10.0,
+      "difficulty": "A1-A2",
+      "durationSeconds": 252,
+      "usefulFormsFound": ["yo", "ella", "y"],
+      "tempoConcern": false,
+      "slangConcern": false,
+      "explicitContentConcern": true,
+      "status": "needs-human-review",
+      "notes": "Title is LITERALLY a textbook subject-pronoun pairing ('She and I') — perfect for this module. The duet structure of Romeo Santos and Don Omar alternating verses makes the 'yo' / 'ella' contrast vivid. Bachata is in the Latin-R&B/soul lane and the song is mid-tempo with clear pronunciation. CAVEAT: theme is infidelity/cheating — two people 'cheating before God' on someone they were committed to. No profanity but adult emotional content. For A1 module 5 (lesson 5), this may be too thematically heavy. Reine should decide: defensible as a Latin R&B alternative because pronoun pedagogy is exceptional, but the topic is more mature than Modules 1-4 have introduced. If rejected for tone, swap to Romeo Santos's 'Eres Mía' (also clear yo/tú/ella usage, less heavy theme) or Prince Royce 'Stand By Me' cover (very clean, A1-friendly).",
+      "spotifyId": "18C2ThadMI2M476zx00PFi",
+      "youtubeId": null,
+      "spotifyIdVerified": true,
+      "youtubeIdVerified": false,
+      "verificationNotes": "Spotify ID 18C2ThadMI2M476zx00PFi is the most commonly-referenced version. Multiple alternate IDs exist for different masterings (51sbuC0Zm07zuzqEaKOdFr, 6gpbxD1SUkXQreZx5vd0OP, 0SMdUWo0MlezLFrkFanYgX) — confirm which is the one Reine wants to deep-link. YouTube ID not located cleanly; check Aventura's official VEVO channel.",
+      "copyrightSafeNotes": "Cite individual pronouns ('yo', 'ella') and the conjunction 'y'. The 3-word title 'Ella y Yo' is the entire pedagogical point and is safe to display as metadata since it is just three glue/pronoun words. Do NOT reproduce verses or chorus."
+    },
+    {
+      "genre": "Regional Mexican",
+      "title": "Yo Ya No Vuelvo Contigo",
+      "artist": "Lenin Ramírez ft. Grupo Firme",
+      "artistCorrection": "Skeleton says 'La Arrolladora Banda el Limón'. The actual song titled 'Yo Ya No Vuelvo Contigo' is by Lenin Ramírez ft. Grupo Firme (released February 2020, En Vivo single, hit #1 that month). La Arrolladora Banda el Limón has a different song ('No te molestes en volver') that contains the lyric phrase 'yo ya no vuelvo contigo' but is not the track Reine wants. Fix the artist field in the skeleton.",
+      "conceptMatchScore": 8.5,
+      "difficulty": "A1",
+      "durationSeconds": 240,
+      "usefulFormsFound": ["yo", "tú", "contigo"],
+      "tempoConcern": false,
+      "slangConcern": false,
+      "explicitContentConcern": true,
+      "status": "needs-human-review",
+      "notes": "Title showcases 'yo' as first-person subject and 'contigo' as the second-person object pronoun complement (with you) — solid pronoun ladder. Banda/norteño tempo is mid-slow, clear enunciation, regional Mexican pronunciation conventions are A1-accessible. CAVEAT: the song IS marked explicit on Amazon Music (per search result 'Yo Vuelvo Contigo Vivo Explicit'). Reine should confirm whether the explicit tag is for one mild word or for a broader pattern; the En Vivo (live) version is the canonical hit. If the explicit content concern checks out, this is a great Regional Mexican alternative. If not, swap to Vicente Fernández 'Yo' (literal title is the pronoun) or Joan Sebastian 'Tatuajes' (clean, romantic, yo/tú abundant).",
+      "spotifyId": "4dKY6JFNvj2yWzENIL1P6s",
+      "youtubeId": null,
+      "spotifyIdVerified": true,
+      "youtubeIdVerified": false,
+      "verificationNotes": "Spotify ID 4dKY6JFNvj2yWzENIL1P6s is the En Vivo version of the Lenin Ramírez / Grupo Firme track. Alternate ID 1s59X35jDULAyOGmBuTAnd also exists for the intl-es version. YouTube ID not yet pulled; the official video is on Lenin Ramírez's channel. Skeleton durationSeconds of 244 is approximately correct (song is ~4:00).",
+      "copyrightSafeNotes": "Cite only individual pronouns ('yo', 'tú') and the 1-word relational form 'contigo'. The 5-word title is metadata-safe (titles are always safe) but do NOT use the title-as-sentence as concept evidence — it's too close to reproducing lyrical content. Do not reproduce chorus or verses."
+    }
+  ],
+  "rejectedCandidates": [
+    {
+      "title": "Tusa",
+      "artist": "Karol G & Nicki Minaj",
+      "reason": "Considered as a reggaeton alternative — uses 'yo' and 'ella' in storytelling — but the Nicki Minaj verse is in English (breaks the all-Spanish learning goal), and the theme is heartbreak-fueled partying which is borderline-mature for A1 lesson 5. Karol G is a stronger fit for Module 6 anyway ('Mañana Será Bonito')."
+    },
+    {
+      "title": "Bichota",
+      "artist": "Karol G",
+      "reason": "Heavy reggaeton slang ('bichota' is Puerto Rican slang for a powerful woman), explicit-rated, references to partying. Save Karol G for Module 6 with a clean track."
+    },
+    {
+      "title": "Yo Perreo Sola — Remix",
+      "artist": "Bad Bunny ft. Nesi & Ivy Queen",
+      "reason": "Same explicit-content issue as the original Yo Perreo Sola, with the added complication that the Nesi/Ivy verses bring different pronunciations and slang patterns. Not appropriate for A1 lesson 5."
+    }
+  ],
+  "skeletonBugsFound": [
+    {
+      "field": "primary song durationSeconds (221)",
+      "issue": "The original studio cut of 'Yo Perreo Sola' is 169s (2:49). The 221s value matches the Remix length, not the original. Mismatch will cause the Listen-screen timer to overrun the actual track.",
+      "fix": "Either change durationSeconds to 169 (for original) OR swap spotifyId to 2cpteAYHcd4cjSxAeCkA52 and youtubeId to sNQ1OktBZw0 for the Remix at 221s. Recommend the original."
+    },
+    {
+      "field": "rnb genreSongs artist field",
+      "issue": "Skeleton credits 'Ella y Yo' to 'Don Omar ft. Romeo Santos'. Correct credit is 'Aventura ft. Don Omar' (Romeo Santos was Aventura's lead vocalist, but the track is billed to the group).",
+      "fix": "Change artist field to 'Aventura ft. Don Omar' OR pick a different R&B track if Reine specifically wants a Romeo Santos solo cut."
+    },
+    {
+      "field": "regional-mexican genreSongs artist field",
+      "issue": "Skeleton credits 'Yo Ya No Vuelvo Contigo' to 'La Arrolladora Banda el Limón'. The actual hit by that title is by Lenin Ramírez ft. Grupo Firme (Feb 2020 #1). La Arrolladora has a different song with similar lyric content.",
+      "fix": "Change artist field to 'Lenin Ramírez ft. Grupo Firme' OR pick a different Regional Mexican track."
+    },
+    {
+      "field": "pop genreSongs artist field",
+      "issue": "Skeleton credits 'Tú' to 'Camila Cabello'. The Spotify ID 37Xdi9mHef3ZDcwyiqpBYw resolves to the Mexican pop-rock BAND 'Camila' (Mario Domm's group), not Camila Cabello. Camila Cabello has no track titled 'Tú' in her discography.",
+      "fix": "Change artist field to 'Camila' (no surname) OR swap to a real Camila Cabello track that uses subject pronouns (Havana, Bam Bam)."
+    },
+    {
+      "field": "reggaeton genreSongs",
+      "issue": "Reggaeton slot is entirely missing from the skeleton. The primary 'Yo Perreo Sola' IS reggaeton, so technically a user who selected reggaeton genre would get Bad Bunny — but if the primary is replaced for explicit-content reasons, the reggaeton slot needs to be filled.",
+      "fix": "Add reggaeton: { title: 'Yo Quiero Bailar', artist: 'Ivy Queen', durationSeconds: 234 } to genreSongs."
+    }
+  ],
+  "knownBugFlags": [
+    "Module 3 quiz dead-end — not encountered in this module's content but flagged per role spec.",
+    "'¿Dónde jugarán los niños?' wrong YouTube Music link — not in Module 5 but flagged per role spec.",
+    "Timer notification issue in YouTube Music — not specific to Module 5 but flagged per role spec.",
+    "Wrong-artist bug (this module): 3 of 4 genreSongs entries have artist mis-attributions. Recommend the orchestrator agent add a 'verify artist matches the Spotify ID' check to its pre-flight."
+  ],
+  "humanVerificationRequired": [
+    "PRIMARY DECISION: Approve or reject 'Yo Perreo Sola' as the Module 5 primary given its explicit content rating. Recommended replacement: 'Soy Yo' by Bomba Estéreo.",
+    "Approve or reject 'Ella y Yo' (Aventura ft. Don Omar) given the infidelity theme — strong pronoun showcase but mature subject for A1 lesson 5.",
+    "Confirm whether 'Yo Ya No Vuelvo Contigo' (Lenin Ramírez ft. Grupo Firme) is explicit-rated for one mild word or for broader content. The Amazon listing flags it Explicit.",
+    "Fix the 4 artist mis-attributions in the skeleton (or accept the corrected credits in this spec).",
+    "Pull YouTube IDs for: 'Tú' (Camila), 'Yo Quiero Bailar' (Ivy Queen), 'Ella y Yo' (Aventura ft. Don Omar), 'Yo Ya No Vuelvo Contigo' (Lenin Ramírez). I located only the Spotify IDs in this validation pass — Reine should spot-check official YouTube Music links before shipping.",
+    "Spot-check all Spotify IDs by clicking the open.spotify.com/track/{id} links once — WebFetch verification is sandbox-blocked, so search-result matching is the strongest signal I can provide."
+  ]
+}
