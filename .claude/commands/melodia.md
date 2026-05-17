@@ -63,9 +63,23 @@ Per Section 11 of the reference, spawn each teammate using its subagent type so 
 After TeamCreate succeeds:
 
 1. **Wave 1 — Parallel discovery:** All 5 of curriculum, song, ux (review), voice (review), qa-scribe (checklist prep) work in parallel. Content-builder waits.
-2. **Gate 1:** When curriculum-architect and song-validator both message you that their specs are ready, validate the gate criteria (curriculum approved, vocab theme, speaking goal, cultural note direction, recyclingTargets, song approved, genre alts present, copyright boundaries clear). If all pass, SendMessage to content-builder unblocking Wave 2.
+2. **Gate 1:** When curriculum-architect and song-validator both message you that their specs are ready, spawn a gate-checker agent (do NOT read the spec files yourself):
+   ```
+   Agent({
+     description: "Gate 1 check — Module {N}",
+     prompt: "Read these two files: (1) notes/melodia/5-lessons/curriculum/module-{NNN}-spec.md (2) notes/melodia/5-lessons/songs/module-{NNN}-songs.json. Evaluate each criterion and return ONLY a JSON object — no prose: { \"pass\": bool, \"failures\": [\"...\"], \"warnings\": [\"...\"] }. Criteria: curriculum has CEFR level, vocab theme, speaking goal, cultural note direction, recyclingTargets. Song has concept-match score, genre alternatives for all 4 tracks, spotifyId, youtubeId, copyright flag absent or green. A warning is non-blocking; a failure blocks Wave 2."
+   })
+   ```
+   If `pass: true`, SendMessage to content-builder unblocking Wave 2. If `pass: false`, SendMessage the failures back to the responsible teammate for a fix, then re-check.
 3. **Wave 2 — Parallel content + structure:** content-builder writes lesson content; ux-builder updates data model; voice-engineer finalizes ttsTriggers; qa-scribe preps validation checks.
-4. **Gate 2:** Confirm lesson content complete, quiz variants, cultural note, genre alts, audio cues, recyclingTargets, no full lyrics, no unsupported claims. SendMessage to all teammates unblocking Wave 3.
+4. **Gate 2:** When content-builder messages that the draft is ready, spawn a gate-checker agent (do NOT read the draft yourself):
+   ```
+   Agent({
+     description: "Gate 2 check — Module {N}",
+     prompt: "Read these two files: (1) notes/melodia/5-lessons/module-{NNN}-content.ts.draft (2) notes/melodia/5-lessons/module-{NNN}-tts.json. Evaluate each criterion and return ONLY a JSON object — no prose: { \"pass\": bool, \"failures\": [\"...\"], \"warnings\": [\"...\"] }. Criteria: easyQuizQuestions, quizQuestions, hardQuizQuestions all present and non-empty. culturalNote present. genreSongs has entries for pop/reggaeton/rnb/regional-mexican. ttsTriggers non-empty with outputFile paths. recyclingTargets defined. No full song lyrics (flag any run of 4+ consecutive lyric words). No unsupported factual claims about artists (flag any sentence asserting a specific date, chart position, or award without a hedge)."
+   })
+   ```
+   If `pass: true`, SendMessage to all teammates unblocking Wave 3. If `pass: false`, SendMessage the failures to the responsible teammate, then re-check.
 5. **Wave 3 — Parallel implementation + QA + docs:** ux-builder wires content into app; voice-engineer generates audio (or surfaces blocker); qa-scribe runs full QA + simulator walk-through + docs.
 6. **Final Gate:** All quality gates pass — mark lesson "App Ready" or list specific failures for Reine.
 

@@ -74,7 +74,7 @@ Dispatch in parallel via the Agent tool:
 - **melodia-voice-engineer** → review required `ttsTriggers` and audio manifest.
 - **melodia-qa-scribe** → prep QA checklist and module-tracker entry.
 
-**Gate 1:** Before Wave 2, confirm: curriculum approved, vocab theme approved, speaking goal approved, cultural note direction approved, `recyclingTargets` defined, song approved (or marked human-review), genre alternatives present, data model fields understood, copyright boundaries clear.
+**Gate 1:** Before Wave 2, spawn a gate-checker agent — do NOT read the spec files yourself. Pass it the two artifact paths and the criteria list; it returns `{ "pass": bool, "failures": [...], "warnings": [...] }`. Criteria: curriculum has CEFR level, vocab theme, speaking goal, cultural note direction, recyclingTargets. Song has concept-match score, all 4 genre alternatives, spotifyId, youtubeId, no copyright red flags. Warnings are non-blocking. Failures go back to the responsible teammate for a fix before Wave 2 unlocks.
 
 ## Wave 2 — Parallel content + structure build
 
@@ -84,7 +84,7 @@ Dispatch in parallel:
 - **melodia-voice-engineer** → finalize `ttsTriggers` and audio manifest format.
 - **melodia-qa-scribe** → update doc templates, prep validation checks.
 
-**Gate 2:** Before Wave 3, confirm: lesson content complete, quiz variants exist, cultural note exists, genre alternatives exist or flagged, pronunciation cues exist, `recyclingTargets` exist, no full lyrics anywhere, no unsupported artist claims.
+**Gate 2:** Before Wave 3, spawn a gate-checker agent — do NOT read the content draft yourself. Pass it the draft and tts.json paths and the criteria list; it returns `{ "pass": bool, "failures": [...], "warnings": [...] }`. Criteria: all 3 quiz variants present and non-empty, culturalNote present, all 4 genreSongs entries, ttsTriggers non-empty, recyclingTargets defined, no full lyric runs (4+ consecutive lyric words), no unsupported factual claims about artists. Failures go back to content-builder before Wave 3 unlocks.
 
 ## Wave 3 — Parallel implementation, QA, documentation
 
