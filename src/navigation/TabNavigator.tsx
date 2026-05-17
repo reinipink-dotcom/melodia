@@ -1,15 +1,16 @@
 import React from 'react';
+import { NavigatorScreenParams } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 import { HomeScreen } from '../screens/Home/HomeScreen';
-import { ModulesNavigator } from './ModulesNavigator';
+import { ModulesNavigator, ModulesStackParamList } from './ModulesNavigator';
 import { PlaylistScreen } from '../screens/Playlist/PlaylistScreen';
 import { ProfileScreen } from '../screens/Profile/ProfileScreen';
 import { Colors } from '../constants';
 
 export type TabParamList = {
   Home: undefined;
-  Modules: undefined;
+  Modules: NavigatorScreenParams<ModulesStackParamList> | undefined;
   Playlist: undefined;
   Profile: undefined;
 };

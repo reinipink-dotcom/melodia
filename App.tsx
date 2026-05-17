@@ -15,6 +15,8 @@ import { View, ActivityIndicator } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import * as Notifications from 'expo-notifications';
 import { RootNavigator } from './src/navigation/RootNavigator';
+import type { RootStackParamList } from './src/navigation/RootNavigator';
+import { linking } from './src/navigation/linking';
 import { Colors } from './src/constants';
 import { useLessonStore } from './src/store/lessonStore';
 
@@ -29,7 +31,7 @@ Notifications.setNotificationHandler({
 });
 
 export default function App() {
-  const navigationRef = useNavigationContainerRef();
+  const navigationRef = useNavigationContainerRef<RootStackParamList>();
 
   const [fontsLoaded] = useFonts({
     PlusJakartaSans_700Bold,
@@ -45,7 +47,6 @@ export default function App() {
     const sub = Notifications.addNotificationResponseReceivedListener((response) => {
       const data = response.notification.request.content.data as { screen?: string; moduleId?: number };
       if (data?.screen === 'Listen' && typeof data.moduleId === 'number') {
-        // @ts-expect-error nested screen typing
         navigationRef.navigate('MainTabs', {
           screen: 'Modules',
           params: {
@@ -69,7 +70,7 @@ export default function App() {
 
   return (
     <SafeAreaProvider>
-      <NavigationContainer ref={navigationRef}>
+      <NavigationContainer ref={navigationRef} linking={linking}>
         <StatusBar style="light" />
         <RootNavigator />
       </NavigationContainer>

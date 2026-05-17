@@ -10,26 +10,17 @@ import { RouteProp } from '@react-navigation/native';
 import { Colors } from '../../constants/colors';
 import { Typography } from '../../constants/typography';
 import { Spacing } from '../../constants/spacing';
-import { MODULES, Module, ReadingPassageToken, TtsTrigger } from '../../data/modules';
+import { MODULES, ReadingPassageToken } from '../../data/modules';
 import { ModulesStackParamList } from '../../navigation/ModulesNavigator';
 import { useLessonStore } from '../../store/lessonStore';
 import { speakSpanish, stopSpeech } from '../../utils/speech';
 import { playTrigger, stopAudio } from '../../utils/audioPlayer';
+import { findReadingTrigger, hasGeneratedAudio } from '../../utils/ttsTriggers';
 
 type Props = {
   navigation: StackNavigationProp<ModulesStackParamList, 'Reading'>;
   route: RouteProp<ModulesStackParamList, 'Reading'>;
 };
-
-function findReadingTrigger(module: Module | undefined, tokenText: string): TtsTrigger | undefined {
-  const triggers = module?.ttsTriggers ?? [];
-  return (
-    triggers.find((t) => t.text === tokenText && t.slowVersion) ??
-    triggers.find((t) => t.screen === 'reading' && t.text === tokenText) ??
-    triggers.find((t) => t.text === tokenText && t.normalVersion) ??
-    triggers.find((t) => t.text === tokenText)
-  );
-}
 
 export function ReadingScreen({ navigation, route }: Props) {
   const { moduleId, xpEarned } = route.params;
@@ -40,7 +31,8 @@ export function ReadingScreen({ navigation, route }: Props) {
 
   function handleTokenTap(token: ReadingPassageToken): void {
     const trigger = findReadingTrigger(module, token.text);
-    trigger ? playTrigger(trigger) : speakSpanish(token.text);
+    if (trigger) playTrigger(trigger);
+    else if (!hasGeneratedAudio(module)) speakSpanish(token.text);
   }
 
   useEffect(() => {

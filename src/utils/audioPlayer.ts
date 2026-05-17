@@ -1,6 +1,6 @@
 import { Audio } from 'expo-av';
 import { TtsTrigger } from '../data/modules';
-import { speakSpanish, stopSpeech } from './speech';
+import { stopSpeech } from './speech';
 
 let audioReady = false;
 async function ensureAudioReady(): Promise<void> {
@@ -76,7 +76,7 @@ export async function playTrigger(trigger: TtsTrigger): Promise<void> {
 
   const source = AUDIO_MAP[trigger.outputFile];
   if (source === undefined) {
-    speakSpanish(trigger.text);
+    console.warn(`[audio] Missing bundled OpenAI audio asset for ${trigger.id}: ${trigger.outputFile}`);
     return;
   }
 
@@ -84,7 +84,7 @@ export async function playTrigger(trigger: TtsTrigger): Promise<void> {
     await ensureAudioReady();
     const { sound } = await Audio.Sound.createAsync(source, { shouldPlay: true });
     currentSound = sound;
-  } catch {
-    speakSpanish(trigger.text);
+  } catch (error) {
+    console.warn(`[audio] Failed to play OpenAI audio asset for ${trigger.id}: ${trigger.outputFile}`, error);
   }
 }

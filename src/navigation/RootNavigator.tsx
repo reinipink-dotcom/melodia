@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import { NavigatorScreenParams } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { TabNavigator } from './TabNavigator';
+import { TabNavigator, TabParamList } from './TabNavigator';
 import OnboardingNavigator from './OnboardingNavigator';
 import { useOnboardingStore } from '../store/onboardingStore';
 
 export type RootStackParamList = {
   Onboarding: undefined;
-  MainTabs: undefined;
+  MainTabs: NavigatorScreenParams<TabParamList> | undefined;
 };
 
 const Stack = createStackNavigator<RootStackParamList>();

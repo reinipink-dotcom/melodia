@@ -17,12 +17,13 @@ import { RouteProp } from '@react-navigation/native';
 import { Colors } from '../../constants/colors';
 import { Typography } from '../../constants/typography';
 import { Spacing } from '../../constants/spacing';
-import { MODULES, Module, TtsTrigger } from '../../data/modules';
+import { MODULES } from '../../data/modules';
 import { getEnrichment } from '../../data/curriculum-enrichment';
 import { ModulesStackParamList } from '../../navigation/ModulesNavigator';
 import { useLessonStore } from '../../store/lessonStore';
 import { speakSpanish, stopSpeech } from '../../utils/speech';
 import { playTrigger, stopAudio } from '../../utils/audioPlayer';
+import { findPhraseTrigger, findVocabTrigger, hasGeneratedAudio } from '../../utils/ttsTriggers';
 
 type Props = {
   navigation: StackNavigationProp<ModulesStackParamList, 'PreListen'>;
@@ -37,24 +38,6 @@ function levelColor(level: string): string {
     case 'B2': return Colors.lavender;
     default: return Colors.coral;
   }
-}
-
-function findPhraseTrigger(module: Module, phraseChunk: string): TtsTrigger | undefined {
-  const triggers = module.ttsTriggers ?? [];
-  return (
-    triggers.find((t) => t.screen === 'preListen' && t.text === phraseChunk) ??
-    triggers.find((t) => t.screen === 'preListen' && t.id === 'phrase-cafe-con-leche') ??
-    triggers.find((t) => t.screen === 'preListen' && t.id.startsWith('phrase-'))
-  );
-}
-
-function findVocabTrigger(module: Module, vocabText: string): TtsTrigger | undefined {
-  const triggers = module.ttsTriggers ?? [];
-  return (
-    triggers.find((t) => t.screen === 'preListen' && t.text === vocabText && t.slowVersion) ??
-    triggers.find((t) => t.screen === 'preListen' && t.text === vocabText && t.normalVersion) ??
-    triggers.find((t) => t.screen === 'preListen' && t.text === vocabText)
-  );
 }
 
 export function PreListenScreen({ navigation, route }: Props) {
@@ -143,7 +126,8 @@ export function PreListenScreen({ navigation, route }: Props) {
               <TouchableOpacity
                 onPress={() => {
                   const trigger = findVocabTrigger(module, word.spanish);
-                  trigger ? playTrigger(trigger) : speakSpanish(word.spanish);
+                  if (trigger) playTrigger(trigger);
+                  else if (!hasGeneratedAudio(module)) speakSpanish(word.spanish);
                 }}
                 style={styles.speakerBtn}
                 activeOpacity={0.7}
@@ -171,7 +155,8 @@ export function PreListenScreen({ navigation, route }: Props) {
                 <TouchableOpacity
                   onPress={() => {
                     const trigger = findPhraseTrigger(module, enrichment.vocabPack.phraseChunk);
-                    trigger ? playTrigger(trigger) : speakSpanish(enrichment.vocabPack.phraseChunk);
+                    if (trigger) playTrigger(trigger);
+                    else if (!hasGeneratedAudio(module)) speakSpanish(enrichment.vocabPack.phraseChunk);
                   }}
                   style={styles.speakerBtn}
                   activeOpacity={0.7}
