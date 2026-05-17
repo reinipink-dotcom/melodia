@@ -32,3 +32,15 @@ date,moduleId,provider,textChars,estimatedCost,outputFile
 2026-05-16,1,openai-tts-1-hd,7,0.000210,assets/audio/module-001/reading-token-besame.mp3
 2026-05-16,1,openai-tts-1-hd,7,0.000210,assets/audio/module-001/reading-token-llorar.mp3
 2026-05-16,1,openai-tts-1-hd,7,0.000210,assets/audio/module-001/reading-token-hablar.mp3
+2026-05-17,5,openai-tts-1-hd,197,0.005910,assets/audio/module-005/m5-vocab-tu.mp3
+2026-05-17,5,openai-tts-1-hd,181,0.005430,assets/audio/module-005/m5-vocab-el-ella.mp3
+2026-05-17,5,openai-tts-1-hd,158,0.004740,assets/audio/module-005/m5-vocab-nosotros.mp3
+2026-05-17,5,openai-tts-1-hd,214,0.006420,assets/audio/module-005/m5-speaking-prompt.mp3
+2026-05-17,5,openai-tts-1-hd,758,0.022740,assets/audio/module-005/m5-reading-bomba-estereo.mp3
+2026-05-17,5,openai-tts-1-hd,288,0.008640,assets/audio/module-005/m5-lesson-complete.mp3
+2026-05-17,5,openai-tts-1-hd,179,0.005370,assets/audio/module-005/m5-vocab-yo.mp3
+2026-05-17,5,openai-tts-1-hd,176,0.005280,assets/audio/module-005/m5-vocab-ellos.mp3
+2026-05-17,5,openai-tts-1-hd,280,0.008400,assets/audio/module-005/m5-intro-subject-pronouns.mp3
+2026-05-17,5,openai-tts-1-hd,176,0.005280,assets/audio/module-005/m5-vocab-ellos.mp3
+2026-05-17,5,openai-tts-1-hd,260,0.007800,assets/audio/module-005/m5-phrase-yo-soy-de.mp3
+2026-05-17,5,openai-tts-1-hd,179,0.005370,assets/audio/module-005/m5-vocab-yo.mp3

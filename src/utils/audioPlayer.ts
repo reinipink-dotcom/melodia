@@ -46,6 +46,17 @@ const AUDIO_MAP: Record<string, number> = {
   'assets/audio/module-001/reading-token-hola.mp3':                   require('../../assets/audio/module-001/reading-token-hola.mp3'),
   'assets/audio/module-001/reading-token-llorar.mp3':                 require('../../assets/audio/module-001/reading-token-llorar.mp3'),
   'assets/audio/module-001/reading-token-hablar.mp3':                 require('../../assets/audio/module-001/reading-token-hablar.mp3'),
+  // Module 5 — Subject Pronouns
+  'assets/audio/module-005/m5-intro-subject-pronouns.mp3':            require('../../assets/audio/module-005/m5-intro-subject-pronouns.mp3'),
+  'assets/audio/module-005/m5-vocab-yo.mp3':                          require('../../assets/audio/module-005/m5-vocab-yo.mp3'),
+  'assets/audio/module-005/m5-vocab-tu.mp3':                          require('../../assets/audio/module-005/m5-vocab-tu.mp3'),
+  'assets/audio/module-005/m5-vocab-el-ella.mp3':                     require('../../assets/audio/module-005/m5-vocab-el-ella.mp3'),
+  'assets/audio/module-005/m5-vocab-nosotros.mp3':                    require('../../assets/audio/module-005/m5-vocab-nosotros.mp3'),
+  'assets/audio/module-005/m5-vocab-ellos.mp3':                       require('../../assets/audio/module-005/m5-vocab-ellos.mp3'),
+  'assets/audio/module-005/m5-phrase-yo-soy-de.mp3':                  require('../../assets/audio/module-005/m5-phrase-yo-soy-de.mp3'),
+  'assets/audio/module-005/m5-speaking-prompt.mp3':                   require('../../assets/audio/module-005/m5-speaking-prompt.mp3'),
+  'assets/audio/module-005/m5-reading-bomba-estereo.mp3':             require('../../assets/audio/module-005/m5-reading-bomba-estereo.mp3'),
+  'assets/audio/module-005/m5-lesson-complete.mp3':                   require('../../assets/audio/module-005/m5-lesson-complete.mp3'),
 };
 
 let currentSound: Audio.Sound | null = null;
