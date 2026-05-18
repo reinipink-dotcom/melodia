@@ -23,8 +23,17 @@ const AUDIO_MAP: Record<string, number> = {
   'assets/audio/module-001/reading-token-llorar.mp3':                 require('../../assets/audio/module-001/reading-token-llorar.mp3'),
   'assets/audio/module-001/reading-token-hablar.mp3':                 require('../../assets/audio/module-001/reading-token-hablar.mp3'),
   // ── Narration-style audio (v2) ─────────────────────────────────────────────
-  // Add entries below after running /melodia-audio 1 2 3 4.
-  // Format: 'assets/audio/module-00N/mN-slug.mp3': require('../../assets/audio/module-00N/mN-slug.mp3'),
+  // Module 1 — The Spanish Alphabet (9 narration cues)
+  'assets/audio/module-001/m1-intro-alphabet.mp3':                    require('../../assets/audio/module-001/m1-intro-alphabet.mp3'),
+  'assets/audio/module-001/m1-vocab-vowels.mp3':                      require('../../assets/audio/module-001/m1-vocab-vowels.mp3'),
+  'assets/audio/module-001/m1-vocab-enye.mp3':                        require('../../assets/audio/module-001/m1-vocab-enye.mp3'),
+  'assets/audio/module-001/m1-vocab-ll.mp3':                          require('../../assets/audio/module-001/m1-vocab-ll.mp3'),
+  'assets/audio/module-001/m1-vocab-h.mp3':                           require('../../assets/audio/module-001/m1-vocab-h.mp3'),
+  'assets/audio/module-001/m1-vocab-rr.mp3':                          require('../../assets/audio/module-001/m1-vocab-rr.mp3'),
+  'assets/audio/module-001/m1-phrase-besame-mucho.mp3':               require('../../assets/audio/module-001/m1-phrase-besame-mucho.mp3'),
+  'assets/audio/module-001/m1-reading-intro.mp3':                     require('../../assets/audio/module-001/m1-reading-intro.mp3'),
+  'assets/audio/module-001/m1-lesson-complete.mp3':                   require('../../assets/audio/module-001/m1-lesson-complete.mp3'),
+  // Add Modules 2, 3, 4 entries after generating each via /melodia-audio
   // Module 5 — Subject Pronouns
   'assets/audio/module-005/m5-intro-subject-pronouns.mp3':            require('../../assets/audio/module-005/m5-intro-subject-pronouns.mp3'),
   'assets/audio/module-005/m5-vocab-yo.mp3':                          require('../../assets/audio/module-005/m5-vocab-yo.mp3'),

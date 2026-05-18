@@ -45,3 +45,12 @@ date,moduleId,provider,textChars,estimatedCost,outputFile
 2026-05-17,5,openai-tts-1-hd,260,0.007800,assets/audio/module-005/m5-phrase-yo-soy-de.mp3
 2026-05-17,5,openai-tts-1-hd,179,0.005370,assets/audio/module-005/m5-vocab-yo.mp3
 2026-05-17,5,openai-tts-1-hd,433,0.012990,assets/audio/module-005/m5-cultural-note-ivy-queen.mp3
+2026-05-18,1,openai,294,0.0088,assets/audio/module-001/m1-intro-alphabet.mp3
+2026-05-18,1,openai,323,0.0097,assets/audio/module-001/m1-vocab-vowels.mp3
+2026-05-18,1,openai,332,0.0100,assets/audio/module-001/m1-vocab-enye.mp3
+2026-05-18,1,openai,355,0.0106,assets/audio/module-001/m1-vocab-ll.mp3
+2026-05-18,1,openai,335,0.0100,assets/audio/module-001/m1-vocab-h.mp3
+2026-05-18,1,openai,305,0.0092,assets/audio/module-001/m1-reading-intro.mp3
+2026-05-18,1,openai,385,0.0115,assets/audio/module-001/m1-lesson-complete.mp3
+2026-05-18,1,openai,353,0.0106,assets/audio/module-001/m1-phrase-besame-mucho.mp3
+2026-05-18,1,openai,416,0.0125,assets/audio/module-001/m1-vocab-rr.mp3
