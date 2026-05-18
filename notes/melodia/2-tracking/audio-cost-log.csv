@@ -54,3 +54,12 @@ date,moduleId,provider,textChars,estimatedCost,outputFile
 2026-05-18,1,openai,385,0.0115,assets/audio/module-001/m1-lesson-complete.mp3
 2026-05-18,1,openai,353,0.0106,assets/audio/module-001/m1-phrase-besame-mucho.mp3
 2026-05-18,1,openai,416,0.0125,assets/audio/module-001/m1-vocab-rr.mp3
+2026-05-18,2,openai-tts-1-hd,370,0.011100,assets/audio/module-002/m2-intro-accents.mp3
+2026-05-18,2,openai-tts-1-hd,353,0.010590,assets/audio/module-002/m2-vocab-el-vs-el.mp3
+2026-05-18,2,openai-tts-1-hd,331,0.009930,assets/audio/module-002/m2-vocab-tu-vs-tu.mp3
+2026-05-18,2,openai-tts-1-hd,230,0.006900,assets/audio/module-002/m2-vocab-mas-vs-mas.mp3
+2026-05-18,2,openai-tts-1-hd,240,0.007200,assets/audio/module-002/m2-phrase-el-acento-va-en.mp3
+2026-05-18,2,openai-tts-1-hd,352,0.010560,assets/audio/module-002/m2-lesson-complete.mp3
+2026-05-18,2,openai-tts-1-hd,362,0.010860,assets/audio/module-002/m2-vocab-si-vs-si.mp3
+2026-05-18,2,openai-tts-1-hd,282,0.008460,assets/audio/module-002/m2-vocab-se-vs-se.mp3
+2026-05-18,2,openai-tts-1-hd,329,0.009870,assets/audio/module-002/m2-reading-intro.mp3
