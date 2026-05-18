@@ -107,6 +107,50 @@
       "voice": "nova",
       "outputFile": "assets/audio/module-003/m3-lesson-complete.mp3",
       "mvpRequired": true
+    },
+    {
+      "id": "m3-reading-token-donde-jugaran",
+      "text": "¿Dónde jugarán los niños?",
+      "language": "es-419",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.9,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-003/m3-reading-token-donde-jugaran.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m3-reading-token-como",
+      "text": "¿Cómo?",
+      "language": "es-419",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.9,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-003/m3-reading-token-como.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m3-reading-token-donde",
+      "text": "¿Dónde?",
+      "language": "es-419",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.9,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-003/m3-reading-token-donde.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m3-reading-token-por-que",
+      "text": "¿Por qué?",
+      "language": "es-419",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.9,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-003/m3-reading-token-por-que.mp3",
+      "mvpRequired": true
     }
   ]
 }

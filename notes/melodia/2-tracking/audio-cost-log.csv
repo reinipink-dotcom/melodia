@@ -67,3 +67,16 @@ date,moduleId,provider,textChars,estimatedCost,outputFile
 2026-05-18,2,openai-tts-1-hd,9,0.000270,assets/audio/module-002/m2-reading-token-la-habana.mp3
 2026-05-18,2,openai-tts-1-hd,2,0.000060,assets/audio/module-002/m2-reading-token-si.mp3
 2026-05-18,2,openai-tts-1-hd,2,0.000060,assets/audio/module-002/m2-reading-token-tu.mp3
+2026-05-18,3,openai-tts-1-hd,372,0.011160,assets/audio/module-003/m3-intro-question-words.mp3
+2026-05-18,3,openai-tts-1-hd,346,0.010380,assets/audio/module-003/m3-vocab-que.mp3
+2026-05-18,3,openai-tts-1-hd,356,0.010680,assets/audio/module-003/m3-vocab-donde.mp3
+2026-05-18,3,openai-tts-1-hd,362,0.010860,assets/audio/module-003/m3-vocab-como.mp3
+2026-05-18,3,openai-tts-1-hd,382,0.011460,assets/audio/module-003/m3-vocab-por-que.mp3
+2026-05-18,3,openai-tts-1-hd,386,0.011580,assets/audio/module-003/m3-reading-intro.mp3
+2026-05-18,3,openai-tts-1-hd,359,0.010770,assets/audio/module-003/m3-lesson-complete.mp3
+2026-05-18,3,openai-tts-1-hd,25,0.000750,assets/audio/module-003/m3-reading-token-donde-jugaran.mp3
+2026-05-18,3,openai-tts-1-hd,7,0.000210,assets/audio/module-003/m3-reading-token-donde.mp3
+2026-05-18,3,openai-tts-1-hd,307,0.009210,assets/audio/module-003/m3-vocab-quien.mp3
+2026-05-18,3,openai-tts-1-hd,319,0.009570,assets/audio/module-003/m3-phrase-question-frame.mp3
+2026-05-18,3,openai-tts-1-hd,6,0.000180,assets/audio/module-003/m3-reading-token-como.mp3
+2026-05-18,3,openai-tts-1-hd,9,0.000270,assets/audio/module-003/m3-reading-token-por-que.mp3
