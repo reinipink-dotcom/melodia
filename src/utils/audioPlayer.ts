@@ -1,6 +1,7 @@
 import { Audio } from 'expo-av';
 import { TtsTrigger } from '../data/modules';
-import { stopSpeech } from './speech';
+import { AUDIO_ASSETS } from './audioAssets';
+import { speakText, stopSpeech } from './speech';
 
 let audioReady = false;
 async function ensureAudioReady(): Promise<void> {
@@ -8,45 +9,6 @@ async function ensureAudioReady(): Promise<void> {
   await Audio.setAudioModeAsync({ playsInSilentModeIOS: true, allowsRecordingIOS: false });
   audioReady = true;
 }
-
-// Static asset map — Metro bundler requires static require() calls.
-// After running /melodia-audio for each module, add new require() entries here
-// and run `npx expo start --clear` to pick them up.
-const AUDIO_MAP: Record<string, number> = {
-  // Module 4 — reading tap tokens (v1 files, still used)
-  'assets/audio/module-004/reading-con-sus-seres.mp3':                require('../../assets/audio/module-004/reading-con-sus-seres.mp3'),
-  'assets/audio/module-004/reading-sin-miedo.mp3':                    require('../../assets/audio/module-004/reading-sin-miedo.mp3'),
-  // Module 1 — reading tap tokens (v1 files, still used)
-  'assets/audio/module-001/reading-token-besame-mucho.mp3':           require('../../assets/audio/module-001/reading-token-besame-mucho.mp3'),
-  'assets/audio/module-001/reading-token-besame.mp3':                 require('../../assets/audio/module-001/reading-token-besame.mp3'),
-  'assets/audio/module-001/reading-token-hola.mp3':                   require('../../assets/audio/module-001/reading-token-hola.mp3'),
-  'assets/audio/module-001/reading-token-llorar.mp3':                 require('../../assets/audio/module-001/reading-token-llorar.mp3'),
-  'assets/audio/module-001/reading-token-hablar.mp3':                 require('../../assets/audio/module-001/reading-token-hablar.mp3'),
-  // ── Narration-style audio (v2) ─────────────────────────────────────────────
-  // Module 1 — The Spanish Alphabet (9 narration cues)
-  'assets/audio/module-001/m1-intro-alphabet.mp3':                    require('../../assets/audio/module-001/m1-intro-alphabet.mp3'),
-  'assets/audio/module-001/m1-vocab-vowels.mp3':                      require('../../assets/audio/module-001/m1-vocab-vowels.mp3'),
-  'assets/audio/module-001/m1-vocab-enye.mp3':                        require('../../assets/audio/module-001/m1-vocab-enye.mp3'),
-  'assets/audio/module-001/m1-vocab-ll.mp3':                          require('../../assets/audio/module-001/m1-vocab-ll.mp3'),
-  'assets/audio/module-001/m1-vocab-h.mp3':                           require('../../assets/audio/module-001/m1-vocab-h.mp3'),
-  'assets/audio/module-001/m1-vocab-rr.mp3':                          require('../../assets/audio/module-001/m1-vocab-rr.mp3'),
-  'assets/audio/module-001/m1-phrase-besame-mucho.mp3':               require('../../assets/audio/module-001/m1-phrase-besame-mucho.mp3'),
-  'assets/audio/module-001/m1-reading-intro.mp3':                     require('../../assets/audio/module-001/m1-reading-intro.mp3'),
-  'assets/audio/module-001/m1-lesson-complete.mp3':                   require('../../assets/audio/module-001/m1-lesson-complete.mp3'),
-  // Add Modules 2, 3, 4 entries after generating each via /melodia-audio
-  // Module 5 — Subject Pronouns
-  'assets/audio/module-005/m5-intro-subject-pronouns.mp3':            require('../../assets/audio/module-005/m5-intro-subject-pronouns.mp3'),
-  'assets/audio/module-005/m5-vocab-yo.mp3':                          require('../../assets/audio/module-005/m5-vocab-yo.mp3'),
-  'assets/audio/module-005/m5-vocab-tu.mp3':                          require('../../assets/audio/module-005/m5-vocab-tu.mp3'),
-  'assets/audio/module-005/m5-vocab-el-ella.mp3':                     require('../../assets/audio/module-005/m5-vocab-el-ella.mp3'),
-  'assets/audio/module-005/m5-vocab-nosotros.mp3':                    require('../../assets/audio/module-005/m5-vocab-nosotros.mp3'),
-  'assets/audio/module-005/m5-vocab-ellos.mp3':                       require('../../assets/audio/module-005/m5-vocab-ellos.mp3'),
-  'assets/audio/module-005/m5-phrase-yo-soy-de.mp3':                  require('../../assets/audio/module-005/m5-phrase-yo-soy-de.mp3'),
-  'assets/audio/module-005/m5-speaking-prompt.mp3':                   require('../../assets/audio/module-005/m5-speaking-prompt.mp3'),
-  'assets/audio/module-005/m5-reading-bomba-estereo.mp3':             require('../../assets/audio/module-005/m5-reading-bomba-estereo.mp3'),
-  'assets/audio/module-005/m5-lesson-complete.mp3':                   require('../../assets/audio/module-005/m5-lesson-complete.mp3'),
-  'assets/audio/module-005/m5-cultural-note-ivy-queen.mp3':           require('../../assets/audio/module-005/m5-cultural-note-ivy-queen.mp3'),
-};
 
 let currentSound: Audio.Sound | null = null;
 
@@ -62,9 +24,10 @@ export function stopAudio(): void {
 export async function playTrigger(trigger: TtsTrigger): Promise<void> {
   stopAudio();
 
-  const source = AUDIO_MAP[trigger.outputFile];
+  const source = AUDIO_ASSETS[trigger.outputFile];
   if (source === undefined) {
     console.warn(`[audio] Missing bundled OpenAI audio asset for ${trigger.id}: ${trigger.outputFile}`);
+    speakText(trigger.text, trigger.language.startsWith('en') ? 'en-US' : 'es');
     return;
   }
 
@@ -74,5 +37,6 @@ export async function playTrigger(trigger: TtsTrigger): Promise<void> {
     currentSound = sound;
   } catch (error) {
     console.warn(`[audio] Failed to play OpenAI audio asset for ${trigger.id}: ${trigger.outputFile}`, error);
+    speakText(trigger.text, trigger.language.startsWith('en') ? 'en-US' : 'es');
   }
 }

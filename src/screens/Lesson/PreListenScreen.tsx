@@ -24,7 +24,7 @@ import { useLessonStore } from '../../store/lessonStore';
 import { useOnboardingStore } from '../../store/onboardingStore';
 import { speakSpanish, stopSpeech } from '../../utils/speech';
 import { playTrigger, stopAudio } from '../../utils/audioPlayer';
-import { findPhraseTrigger, findVocabTrigger, hasGeneratedAudio } from '../../utils/ttsTriggers';
+import { findPhraseTrigger, findVocabTrigger } from '../../utils/ttsTriggers';
 
 type Props = {
   navigation: StackNavigationProp<ModulesStackParamList, 'PreListen'>;
@@ -132,7 +132,7 @@ export function PreListenScreen({ navigation, route }: Props) {
                 onPress={() => {
                   const trigger = findVocabTrigger(module, word.spanish);
                   if (trigger) playTrigger(trigger);
-                  else if (!hasGeneratedAudio(module)) speakSpanish(word.spanish);
+                  else speakSpanish(word.spanish);
                 }}
                 style={styles.speakerBtn}
                 activeOpacity={0.7}
@@ -161,7 +161,7 @@ export function PreListenScreen({ navigation, route }: Props) {
                   onPress={() => {
                     const trigger = findPhraseTrigger(module, enrichment.vocabPack.phraseChunk);
                     if (trigger) playTrigger(trigger);
-                    else if (!hasGeneratedAudio(module)) speakSpanish(enrichment.vocabPack.phraseChunk);
+                    else speakSpanish(enrichment.vocabPack.phraseChunk);
                   }}
                   style={styles.speakerBtn}
                   activeOpacity={0.7}

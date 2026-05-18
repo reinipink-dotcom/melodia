@@ -76,6 +76,17 @@
       "mvpRequired": true
     },
     {
+      "id": "m3-phrase-question-frame",
+      "text": "The question frame '¿blank es tu blank?' gives you a reusable shell for asking about someone's favorites and identity. Try it with the words from this module: ¿Cuál es tu canción favorita? ¿Dónde está tu casa? ¿Cómo se llama tu artista favorito? The inverted question mark tells your eyes the question starts right now.",
+      "language": "en-US-with-es-419-tokens",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.95,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-003/m3-phrase-question-frame.mp3",
+      "mvpRequired": true
+    },
+    {
       "id": "m3-reading-intro",
       "text": "Time to read about Maná — the band whose question is the title of today's song. You'll see Spanish question words highlighted in the passage. Tap any of them to hear the pronunciation. Notice how every question word carries an accent mark — that's not a coincidence. In Spanish, accent marks on question words are mandatory, and they're how you tell a question word from a regular word.",
       "language": "en-US-with-es-419-tokens",

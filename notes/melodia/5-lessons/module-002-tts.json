@@ -54,25 +54,36 @@
       "mvpRequired": true
     },
     {
-      "id": "m2-vocab-quizas",
-      "text": "'Quizás' means 'maybe' or 'perhaps'. The accent on the á tells you to stress the last syllable: kee-SAS, not KEE-sas. Without the accent, the default stress rule would land on the second-to-last syllable, which would sound wrong. Quizás is a perfect example of how accent marks exist to override the default — and to make sure you sound natural from the very first listen.",
+      "id": "m2-vocab-se-vs-se",
+      "text": "Se without an accent is a small grammar word you'll see in phrases like se llama — is called. Sé with an accent means 'I know'. They sound the same, but the accent tells your eyes which job the word is doing. Se llama Ana. Yo sé la respuesta. One mark, completely different meaning.",
       "language": "en-US-with-es-419-tokens",
       "slowVersion": false,
       "normalVersion": true,
       "speed": 0.95,
       "voice": "nova",
-      "outputFile": "assets/audio/module-002/m2-vocab-quizas.mp3",
+      "outputFile": "assets/audio/module-002/m2-vocab-se-vs-se.mp3",
       "mvpRequired": true
     },
     {
-      "id": "m2-phrase-mas-y-mas",
-      "text": "The phrase 'más y más' means 'more and more'. Más with an accent is the adverb — more. Mas without an accent is a literary word for 'but' that you'll sometimes see in older texts and song lyrics. Y means 'and'. Putting them together: más y más is a phrase you'll hear in countless Spanish songs. The accent on the á is what makes it 'more', not a conjunction.",
+      "id": "m2-vocab-mas-vs-mas",
+      "text": "Mas without an accent is an older, literary word for 'but'. Más with an accent means 'more' — the word you'll hear constantly in songs: más música, más amor, más y más. The accent on the á is what makes it 'more', not a connector.",
       "language": "en-US-with-es-419-tokens",
       "slowVersion": false,
       "normalVersion": true,
       "speed": 0.95,
       "voice": "nova",
-      "outputFile": "assets/audio/module-002/m2-phrase-mas-y-mas.mp3",
+      "outputFile": "assets/audio/module-002/m2-vocab-mas-vs-mas.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m2-phrase-el-acento-va-en",
+      "text": "The phrase 'El acento va en blank' means 'The stress goes on blank'. Use it to talk about pronunciation: el acento va en tú; el acento va en más; el acento va en café. It gives you a sentence for explaining exactly where a word is stressed.",
+      "language": "en-US-with-es-419-tokens",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.95,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-002/m2-phrase-el-acento-va-en.mp3",
       "mvpRequired": true
     },
     {

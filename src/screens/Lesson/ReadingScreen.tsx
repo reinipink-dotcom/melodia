@@ -15,7 +15,7 @@ import { ModulesStackParamList } from '../../navigation/ModulesNavigator';
 import { useLessonStore } from '../../store/lessonStore';
 import { speakSpanish, stopSpeech } from '../../utils/speech';
 import { playTrigger, stopAudio } from '../../utils/audioPlayer';
-import { findReadingTrigger, hasGeneratedAudio } from '../../utils/ttsTriggers';
+import { findReadingTrigger } from '../../utils/ttsTriggers';
 
 type Props = {
   navigation: StackNavigationProp<ModulesStackParamList, 'Reading'>;
@@ -32,7 +32,7 @@ export function ReadingScreen({ navigation, route }: Props) {
   function handleTokenTap(token: ReadingPassageToken): void {
     const trigger = findReadingTrigger(module, token.text);
     if (trigger) playTrigger(trigger);
-    else if (!hasGeneratedAudio(module)) speakSpanish(token.text);
+    else speakSpanish(token.text);
   }
 
   useEffect(() => {
