@@ -1,0 +1,101 @@
+{
+  "module": 2,
+  "title": "Accents & Stress",
+  "provider": "openai",
+  "model": "tts-1-hd",
+  "defaultVoice": "nova",
+  "defaultLangAccent": "en-US-with-es-419-tokens",
+  "generatedBy": "voice-engineer-v2",
+  "generatedOn": "2026-05-18",
+  "notes": "Module 2 has no prior audio. First-generation narration-style TTS following Module 5 gold standard. Song is 'Quizás, Quizás, Quizás' by Nat King Cole. Reading passage covers Camila Cabello.",
+  "ttsTriggers": [
+    {
+      "id": "m2-intro",
+      "text": "Module 2 is about accent marks — those little lines sitting over vowels in Spanish. They are not decoration. They change meaning, they change pronunciation, and they tell you exactly where to stress a word. As you listen to 'Quizás, Quizás, Quizás' by Nat King Cole, notice how the word quizás sounds — the stress lands on the last syllable, and that accent mark is why.",
+      "language": "en-US-with-es-419-tokens",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.95,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-002/m2-intro-accents.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m2-vocab-el-vs-el",
+      "text": "Here's a pair that trips up learners for years: el without an accent means 'the' — it's the masculine article. Él with an accent on the E means 'he' — the pronoun. They sound identical out loud. The accent mark exists purely to tell you which one is on the page. El libro — the book. Él habla — he speaks. One little mark, two completely different jobs.",
+      "language": "en-US-with-es-419-tokens",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.95,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-002/m2-vocab-el-vs-el.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m2-vocab-tu-vs-tu",
+      "text": "Tu without an accent means 'your' — a possessive. Tú with an accent on the U means 'you' — the pronoun. Again, identical sounds, completely different meanings on paper. Tu libro — your book. Tú hablas — you speak. Spanish uses accent marks as a disambiguation tool so you never have to guess from context alone which word is which.",
+      "language": "en-US-with-es-419-tokens",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.95,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-002/m2-vocab-tu-vs-tu.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m2-vocab-si-vs-si",
+      "text": "Si without an accent means 'if' — a conditional connector. Sí with an accent on the I means 'yes'. Same sound, opposite jobs in a sentence. Si quieres — if you want. Sí, quiero — yes, I want. You'll see this pair constantly in song lyrics where singers say sí, sí, sí — yes, yes, yes — with the accent marking every single one as an affirmation, not a condition.",
+      "language": "en-US-with-es-419-tokens",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.95,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-002/m2-vocab-si-vs-si.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m2-vocab-quizas",
+      "text": "'Quizás' means 'maybe' or 'perhaps'. The accent on the á tells you to stress the last syllable: kee-SAS, not KEE-sas. Without the accent, the default stress rule would land on the second-to-last syllable, which would sound wrong. Quizás is a perfect example of how accent marks exist to override the default — and to make sure you sound natural from the very first listen.",
+      "language": "en-US-with-es-419-tokens",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.95,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-002/m2-vocab-quizas.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m2-phrase-mas-y-mas",
+      "text": "The phrase 'más y más' means 'more and more'. Más with an accent is the adverb — more. Mas without an accent is a literary word for 'but' that you'll sometimes see in older texts and song lyrics. Y means 'and'. Putting them together: más y más is a phrase you'll hear in countless Spanish songs. The accent on the á is what makes it 'more', not a conjunction.",
+      "language": "en-US-with-es-419-tokens",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.95,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-002/m2-phrase-mas-y-mas.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m2-reading-intro",
+      "text": "Now a short reading passage about Camila Cabello, whose name itself is a great accent-mark lesson. You'll see Spanish words highlighted — some with accents, some without. Tap any of them to hear the word and see how the accent changes where the stress falls. Pay attention to how a single mark shifts the entire rhythm of a word.",
+      "language": "en-US-with-es-419-tokens",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.95,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-002/m2-reading-intro.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m2-lesson-complete",
+      "text": "Accent marks are now in your toolkit. You know el from él, tu from tú, si from sí — and you know that quizás stresses the last syllable because the accent mark says so. From here on, every accent mark you see in a Spanish text is information, not decoration. Next up: question words — the eight little words that unlock thousands of real conversations.",
+      "language": "en-US-with-es-419-tokens",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.95,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-002/m2-lesson-complete.mp3",
+      "mvpRequired": true
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "module": 1,
+  "title": "The Spanish Alphabet",
+  "provider": "openai",
+  "model": "tts-1-hd",
+  "defaultVoice": "nova",
+  "defaultLangAccent": "en-US-with-es-419-tokens",
+  "generatedBy": "voice-engineer-v2",
+  "generatedOn": "2026-05-18",
+  "notes": "Narration-style upgrade from slow+normal pairs. Each trigger is a complete pedagogical unit in English, 2-3 sentences. No slow/normal pairs — one file per concept. Replaces 16-file old set (vocab-vowels-slow.mp3 etc.).",
+  "ttsTriggers": [
+    {
+      "id": "m1-intro",
+      "text": "Welcome to Module 1. Spanish is one of the most phonetic languages on earth — once you know the sounds, you can read anything out loud. As you listen to 'Bésame Mucho', pay attention to the vowels. Every vowel in the song sounds exactly the same as in every other Spanish word you'll ever hear.",
+      "language": "en-US-with-es-419-tokens",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.95,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-001/m1-intro-alphabet.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m1-vocab-vowels",
+      "text": "Spanish has five vowels: a, e, i, o, u. Each one sounds exactly the same every single time — never reduced, never swallowed, never changed by the letters around it. A is 'ah', E is 'eh', I is 'ee', O is 'oh', U is 'oo'. Once those five sounds are in your ear, you can read any Spanish word out loud and it will sound right.",
+      "language": "en-US-with-es-419-tokens",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.95,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-001/m1-vocab-vowels.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m1-vocab-enye",
+      "text": "'Ñ' is unique to Spanish — it doesn't exist in English. It sounds like the 'ny' in canyon. Think of it as the letter N wearing a little hat. Example words: niño, which means boy or child; mañana, meaning tomorrow or morning; año, meaning year. The tilde on top is the whole story — it transforms N into a completely different sound.",
+      "language": "en-US-with-es-419-tokens",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.95,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-001/m1-vocab-enye.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m1-vocab-ll",
+      "text": "'LL' in Spanish sounds like the English 'y' in 'yes' — a soft, gliding sound. It used to be considered a separate letter called elle, and in some regions it still sounds more like a 'j' or 'zh'. For standard Latin American Spanish, say it like 'y'. Example words: llamar — to call; llegar — to arrive; lluvia — rain. You'll hear this sound a lot in songs.",
+      "language": "en-US-with-es-419-tokens",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.95,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-001/m1-vocab-ll.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m1-vocab-h",
+      "text": "The letter H in Spanish is completely silent — always. If you see an H, pretend it's not there. Hola is pronounced 'oh-la', not 'hoh-la'. Hablar — to speak — sounds like 'ah-BLAR'. Hotel sounds like 'oh-TEL'. The one exception is the combination CH, which sounds like the English 'ch' in cheese. But a standalone H? Silent, every time.",
+      "language": "en-US-with-es-419-tokens",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.95,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-001/m1-vocab-h.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m1-vocab-rr",
+      "text": "The double R — rr — is the famous Spanish trill. It's formed by flapping your tongue tip rapidly against the roof of your mouth, right behind your top teeth. Think of a child making a car engine sound. Words like perro — dog — and carro — car — need this full trill. A single R between vowels, like in pero — but — uses just one quick tap. The difference matters: perro is dog, pero is but. Two very different words.",
+      "language": "en-US-with-es-419-tokens",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.95,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-001/m1-vocab-rr.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m1-phrase-besame-mucho",
+      "text": "'Bésame mucho' means 'kiss me a lot' — bésame means kiss me, and mucho means a lot or very much. This phrase has been recorded by hundreds of artists and is one of the most recognized Spanish phrases in the world. Notice how every vowel is clear and open: BEH-sa-meh MOO-cho. That's the Spanish vowel system doing its job — every syllable lands cleanly.",
+      "language": "en-US-with-es-419-tokens",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.95,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-001/m1-phrase-besame-mucho.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m1-reading-intro",
+      "text": "Now for a short reading passage about the song you just heard. You'll see some Spanish words highlighted in orange — tap any of them to hear the pronunciation and meaning. The goal here isn't to understand every word. It's to start recognizing the alphabet sounds you just learned, appearing in real text.",
+      "language": "en-US-with-es-419-tokens",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.95,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-001/m1-reading-intro.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m1-lesson-complete",
+      "text": "You just learned the foundation of Spanish pronunciation. The 27-letter alphabet, the five pure vowels, the silent H, the unique Ñ, the double-L, and the rolled RR. Spanish is phonetic — these rules work everywhere, every time. From here, every word you see, you can say out loud. That's a superpower. Next up: accent marks and stress — the tiny symbols that change meaning completely.",
+      "language": "en-US-with-es-419-tokens",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.95,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-001/m1-lesson-complete.mp3",
+      "mvpRequired": true
+    }
+  ]
+}

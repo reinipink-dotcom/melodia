@@ -9,43 +9,22 @@ async function ensureAudioReady(): Promise<void> {
   audioReady = true;
 }
 
-// Static asset map — all 17 Module 4 MP3s.
-// require() calls must be statically analyzable by Metro bundler; dynamic require() does not work.
+// Static asset map — Metro bundler requires static require() calls.
+// After running /melodia-audio for each module, add new require() entries here
+// and run `npx expo start --clear` to pick them up.
 const AUDIO_MAP: Record<string, number> = {
-  'assets/audio/module-004/vocab-de-slow.mp3':                        require('../../assets/audio/module-004/vocab-de-slow.mp3'),
-  'assets/audio/module-004/vocab-de.mp3':                             require('../../assets/audio/module-004/vocab-de.mp3'),
-  'assets/audio/module-004/vocab-con-slow.mp3':                       require('../../assets/audio/module-004/vocab-con-slow.mp3'),
-  'assets/audio/module-004/vocab-con.mp3':                            require('../../assets/audio/module-004/vocab-con.mp3'),
-  'assets/audio/module-004/vocab-sin-slow.mp3':                       require('../../assets/audio/module-004/vocab-sin-slow.mp3'),
-  'assets/audio/module-004/vocab-sin.mp3':                            require('../../assets/audio/module-004/vocab-sin.mp3'),
-  'assets/audio/module-004/vocab-pero-slow.mp3':                      require('../../assets/audio/module-004/vocab-pero-slow.mp3'),
-  'assets/audio/module-004/vocab-pero.mp3':                           require('../../assets/audio/module-004/vocab-pero.mp3'),
-  'assets/audio/module-004/vocab-tambien-slow.mp3':                   require('../../assets/audio/module-004/vocab-tambien-slow.mp3'),
-  'assets/audio/module-004/vocab-tambien.mp3':                        require('../../assets/audio/module-004/vocab-tambien.mp3'),
-  'assets/audio/module-004/contrast-perro-slow.mp3':                  require('../../assets/audio/module-004/contrast-perro-slow.mp3'),
-  'assets/audio/module-004/phrase-cafe-con-leche.mp3':                require('../../assets/audio/module-004/phrase-cafe-con-leche.mp3'),
-  'assets/audio/module-004/phrase-yo-tambien.mp3':                    require('../../assets/audio/module-004/phrase-yo-tambien.mp3'),
-  'assets/audio/module-004/speaking-frame-quiero-cafe-con-leche.mp3': require('../../assets/audio/module-004/speaking-frame-quiero-cafe-con-leche.mp3'),
-  'assets/audio/module-004/speaking-frame-hablo-ingles-pero.mp3':     require('../../assets/audio/module-004/speaking-frame-hablo-ingles-pero.mp3'),
+  // Module 4 — reading tap tokens (v1 files, still used)
   'assets/audio/module-004/reading-con-sus-seres.mp3':                require('../../assets/audio/module-004/reading-con-sus-seres.mp3'),
   'assets/audio/module-004/reading-sin-miedo.mp3':                    require('../../assets/audio/module-004/reading-sin-miedo.mp3'),
-  // Module 1 — The Spanish Alphabet
-  'assets/audio/module-001/vocab-vowels-slow.mp3':                    require('../../assets/audio/module-001/vocab-vowels-slow.mp3'),
-  'assets/audio/module-001/vocab-vowels.mp3':                         require('../../assets/audio/module-001/vocab-vowels.mp3'),
-  'assets/audio/module-001/vocab-enye-slow.mp3':                      require('../../assets/audio/module-001/vocab-enye-slow.mp3'),
-  'assets/audio/module-001/vocab-enye.mp3':                           require('../../assets/audio/module-001/vocab-enye.mp3'),
-  'assets/audio/module-001/vocab-ll-slow.mp3':                        require('../../assets/audio/module-001/vocab-ll-slow.mp3'),
-  'assets/audio/module-001/vocab-ll.mp3':                             require('../../assets/audio/module-001/vocab-ll.mp3'),
-  'assets/audio/module-001/vocab-h-slow.mp3':                         require('../../assets/audio/module-001/vocab-h-slow.mp3'),
-  'assets/audio/module-001/vocab-h.mp3':                              require('../../assets/audio/module-001/vocab-h.mp3'),
-  'assets/audio/module-001/vocab-rr-slow.mp3':                        require('../../assets/audio/module-001/vocab-rr-slow.mp3'),
-  'assets/audio/module-001/vocab-rr.mp3':                             require('../../assets/audio/module-001/vocab-rr.mp3'),
-  'assets/audio/module-001/phrase-besame-mucho.mp3':                  require('../../assets/audio/module-001/phrase-besame-mucho.mp3'),
+  // Module 1 — reading tap tokens (v1 files, still used)
   'assets/audio/module-001/reading-token-besame-mucho.mp3':           require('../../assets/audio/module-001/reading-token-besame-mucho.mp3'),
   'assets/audio/module-001/reading-token-besame.mp3':                 require('../../assets/audio/module-001/reading-token-besame.mp3'),
   'assets/audio/module-001/reading-token-hola.mp3':                   require('../../assets/audio/module-001/reading-token-hola.mp3'),
   'assets/audio/module-001/reading-token-llorar.mp3':                 require('../../assets/audio/module-001/reading-token-llorar.mp3'),
   'assets/audio/module-001/reading-token-hablar.mp3':                 require('../../assets/audio/module-001/reading-token-hablar.mp3'),
+  // ── Narration-style audio (v2) ─────────────────────────────────────────────
+  // Add entries below after running /melodia-audio 1 2 3 4.
+  // Format: 'assets/audio/module-00N/mN-slug.mp3': require('../../assets/audio/module-00N/mN-slug.mp3'),
   // Module 5 — Subject Pronouns
   'assets/audio/module-005/m5-intro-subject-pronouns.mp3':            require('../../assets/audio/module-005/m5-intro-subject-pronouns.mp3'),
   'assets/audio/module-005/m5-vocab-yo.mp3':                          require('../../assets/audio/module-005/m5-vocab-yo.mp3'),
