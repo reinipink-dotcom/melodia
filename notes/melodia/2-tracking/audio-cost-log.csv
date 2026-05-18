@@ -63,3 +63,7 @@ date,moduleId,provider,textChars,estimatedCost,outputFile
 2026-05-18,2,openai-tts-1-hd,362,0.010860,assets/audio/module-002/m2-vocab-si-vs-si.mp3
 2026-05-18,2,openai-tts-1-hd,282,0.008460,assets/audio/module-002/m2-vocab-se-vs-se.mp3
 2026-05-18,2,openai-tts-1-hd,329,0.009870,assets/audio/module-002/m2-reading-intro.mp3
+2026-05-18,2,openai-tts-1-hd,6,0.000180,assets/audio/module-002/m2-reading-token-havana.mp3
+2026-05-18,2,openai-tts-1-hd,9,0.000270,assets/audio/module-002/m2-reading-token-la-habana.mp3
+2026-05-18,2,openai-tts-1-hd,2,0.000060,assets/audio/module-002/m2-reading-token-si.mp3
+2026-05-18,2,openai-tts-1-hd,2,0.000060,assets/audio/module-002/m2-reading-token-tu.mp3

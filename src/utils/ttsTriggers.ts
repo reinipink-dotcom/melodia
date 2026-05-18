@@ -113,18 +113,29 @@ export function findPhraseTrigger(module: Module, phraseText: string): TtsTrigge
   );
 }
 
+function isReadingPronunciationTrigger(trigger: TtsTrigger): boolean {
+  if (trigger.screen !== 'reading') return false;
+  // Dedicated tap-to-hear audio (short Spanish pronunciation), not narration.
+  const id = trigger.id.toLowerCase();
+  return id.includes('reading-token') || id.includes('reading-snippet');
+}
+
 export function findReadingTrigger(module: Module | undefined, tokenText: string): TtsTrigger | undefined {
   const triggers = module?.ttsTriggers ?? [];
-  const readingTriggers = triggers.filter((trigger) => trigger.screen === 'reading');
+  const pronunciationTriggers = triggers.filter(isReadingPronunciationTrigger);
   const reusablePreListenTriggers = triggers.filter(
     (trigger) => isPreListenKind(trigger, 'vocab') || isPreListenKind(trigger, 'phrase'),
   );
+  // Dedicated reading-token/snippet pronunciations always beat preListen narrations.
+  // Reading narration cues (e.g. reading-intro) are excluded from tap lookups —
+  // tapping a single word should never play a 300-character English explanation.
   return (
-    readingTriggers.find((trigger) => isExactTextMatch(trigger, tokenText) && trigger.slowVersion) ??
-    readingTriggers.find((trigger) => isExactTextMatch(trigger, tokenText) && trigger.normalVersion) ??
-    readingTriggers.find((trigger) => isExactTextMatch(trigger, tokenText)) ??
+    pronunciationTriggers.find((trigger) => isExactTextMatch(trigger, tokenText) && trigger.slowVersion) ??
+    pronunciationTriggers.find((trigger) => isExactTextMatch(trigger, tokenText) && trigger.normalVersion) ??
+    pronunciationTriggers.find((trigger) => isExactTextMatch(trigger, tokenText)) ??
+    pronunciationTriggers.find((trigger) => matchesIdentifier(trigger, tokenText)) ??
+    pronunciationTriggers.find((trigger) => matchesTrigger(trigger, tokenText)) ??
     reusablePreListenTriggers.find((trigger) => matchesIdentifier(trigger, tokenText)) ??
-    reusablePreListenTriggers.find((trigger) => matchesTrigger(trigger, tokenText)) ??
-    readingTriggers.find((trigger) => matchesTrigger(trigger, tokenText))
+    reusablePreListenTriggers.find((trigger) => matchesTrigger(trigger, tokenText))
   );
 }

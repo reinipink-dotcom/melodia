@@ -107,6 +107,50 @@
       "voice": "nova",
       "outputFile": "assets/audio/module-002/m2-lesson-complete.mp3",
       "mvpRequired": true
+    },
+    {
+      "id": "m2-reading-token-havana",
+      "text": "Havana",
+      "language": "en-US",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 1.0,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-002/m2-reading-token-havana.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m2-reading-token-la-habana",
+      "text": "La Habana",
+      "language": "es-419",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.95,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-002/m2-reading-token-la-habana.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m2-reading-token-si",
+      "text": "sí",
+      "language": "es-419",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.9,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-002/m2-reading-token-si.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m2-reading-token-tu",
+      "text": "tú",
+      "language": "es-419",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.9,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-002/m2-reading-token-tu.mp3",
+      "mvpRequired": true
     }
   ]
 }
