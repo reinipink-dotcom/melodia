@@ -97,3 +97,5 @@ date,moduleId,provider,textChars,estimatedCost,outputFile
 2026-05-18,4,openai-tts-1-hd,1,0.000030,assets/audio/module-004/m4-reading-token-y.mp3
 2026-05-18,4,openai-tts-1-hd,380,0.011400,assets/audio/module-004/m4-vocab-pero.mp3
 2026-05-18,4,openai-tts-1-hd,337,0.010110,assets/audio/module-004/m4-reading-intro.mp3
+2026-05-18,5,openai-tts-1-hd,6,0.000180,assets/audio/module-005/m5-reading-token-soy-yo.mp3
+2026-05-18,5,openai-tts-1-hd,2,0.000060,assets/audio/module-005/m5-reading-token-yo.mp3

@@ -91,6 +91,8 @@ export const AUDIO_ASSETS: Record<string, number> = {
   'assets/audio/module-005/m5-lesson-complete.mp3':                   require('../../assets/audio/module-005/m5-lesson-complete.mp3'),
   'assets/audio/module-005/m5-phrase-yo-soy-de.mp3':                  require('../../assets/audio/module-005/m5-phrase-yo-soy-de.mp3'),
   'assets/audio/module-005/m5-reading-bomba-estereo.mp3':             require('../../assets/audio/module-005/m5-reading-bomba-estereo.mp3'),
+  'assets/audio/module-005/m5-reading-token-soy-yo.mp3':              require('../../assets/audio/module-005/m5-reading-token-soy-yo.mp3'),
+  'assets/audio/module-005/m5-reading-token-yo.mp3':                  require('../../assets/audio/module-005/m5-reading-token-yo.mp3'),
   'assets/audio/module-005/m5-speaking-prompt.mp3':                   require('../../assets/audio/module-005/m5-speaking-prompt.mp3'),
   'assets/audio/module-005/m5-vocab-el-ella.mp3':                     require('../../assets/audio/module-005/m5-vocab-el-ella.mp3'),
   'assets/audio/module-005/m5-vocab-ellos.mp3':                       require('../../assets/audio/module-005/m5-vocab-ellos.mp3'),

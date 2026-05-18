@@ -192,6 +192,28 @@
       "reusableInFutureModules": false,
       "pronunciationNotes": "Closing cue — should feel like a coach giving a final pep talk, not a reading. The five-pronoun roll-call (yo, tú, él, ella, nosotros, ellos) should be paced naturally with brief beats between pronouns, not rushed. 'Yo soy de' must match the phrase-chunk cue's pronunciation. The final 'Say it like you mean it' lands the lesson — listen for a natural cadence, not flat narration. Estimated duration: 18s.",
       "uiAttachmentPoint": "lesson-complete-screen"
+    },
+    {
+      "id": "m5-reading-token-soy-yo",
+      "text": "Soy yo",
+      "language": "es-419",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.95,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-005/m5-reading-token-soy-yo.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m5-reading-token-yo",
+      "text": "yo",
+      "language": "es-419",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.9,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-005/m5-reading-token-yo.mp3",
+      "mvpRequired": true
     }
   ]
 }
