@@ -1,0 +1,188 @@
+{
+  "module": 6,
+  "moduleId": 6,
+  "concept": "Ser vs Estar (A1)",
+  "targetConcept": "Ser vs Estar — the two Spanish 'to be' verbs (A1)",
+  "curriculumSpec": "/Users/reinebadejoko/Desktop/app/melodia-app/notes/melodia/5-lessons/curriculum/module-006-spec.md",
+  "finalDecisionNote": "FINAL — primary locked to 'Estoy Aquí' (Shakira) per team-lead 2026-05-18. Content-builder's draft is anchored to this song. M14 (Estar Deep Dive) currently has Estoy Aquí booked in modules.ts line 1133 — tracked in PENDING.md for swap when M14 is built. No further changes.",
+  "primarySong": {
+    "title": "Estoy Aquí",
+    "artist": "Shakira",
+    "album": "Pies Descalzos (1995)",
+    "genre": "Latin Pop",
+    "conceptMatchScore": 10.0,
+    "difficulty": "A1",
+    "durationSeconds": 250,
+    "spotifyId": "4M1lEbqPzlEw1JYWB6aE7K",
+    "youtubeId": "NmJHH026X0c",
+    "spotifyIdVerified": true,
+    "youtubeIdVerified": true,
+    "usefulFormsFound": ["estoy", "es", "está", "aquí", "soy"],
+    "tempoConcern": false,
+    "slangConcern": false,
+    "explicitContentConcern": false,
+    "approved": true,
+    "approvalStatus": "approved",
+    "conceptMatchRationale": "Title IS the lesson — 'Estoy Aquí' uses estar twice: estar-for-state ('I am [longing/waiting]') AND estar-for-location ('here'). Verb density is exceptional — 'estoy' repeats throughout the chorus, giving the A1 listener the target form dozens of times in 4:10. Clean, family-friendly, no explicit content. Works for both pop and rnb genre slots per curriculum-architect's note.",
+    "copyrightSafeNotes": "Cite only individual verb forms ('estoy', 'soy', 'es', 'está', 'eres') and the 2-word title 'Estoy Aquí' (which IS the verb-form being taught — fair-use educational reference to a title is acceptable). NEVER reproduce verses, the chorus, or any full lyric line. Quiz items must test the Spanish ser/estar concept ('What does estoy mean?', 'When do you use estar?'), never lyric recall.",
+    "verificationNotes": "Spotify ID 4M1lEbqPzlEw1JYWB6aE7K confirmed as the canonical track from Pies Descalzos (1995). YouTube ID NmJHH026X0c is the official HD video on Shakira's verified channel (posted 2012-04-06, runtime 4:10). Duration 4:10 = 250s. Reine should still do a 1-click human spot-check on both links before shipping.",
+    "downstreamConflictNote": "modules.ts line 1133 currently lists 'Estoy Aquí' (Shakira) as the M14 (Estar — To Be Temporary) primary. M14 will now need a different estar-heavy track. Track in PENDING.md. Suggested replacements for M14: 'Calma' (Pedro Capó & Farruko) or 'Vivir Mi Vida' (Marc Anthony)."
+  },
+  "genreAlternatives": {
+    "pop": {
+      "title": "Estoy Aquí",
+      "artist": "Shakira",
+      "genre": "Latin Pop",
+      "conceptMatchScore": 10.0,
+      "difficulty": "A1",
+      "durationSeconds": 250,
+      "spotifyId": "4M1lEbqPzlEw1JYWB6aE7K",
+      "youtubeId": "NmJHH026X0c",
+      "spotifyIdVerified": true,
+      "youtubeIdVerified": true,
+      "usefulFormsFound": ["estoy", "es", "está", "aquí", "soy"],
+      "tempoConcern": false,
+      "slangConcern": false,
+      "explicitContentConcern": false,
+      "status": "approved",
+      "notes": "Same as primary — Shakira's Latin Pop is the ideal pop slot. Reuse the primary entry.",
+      "copyrightSafeNotes": "Same as primary — individual verb forms + 2-word title only."
+    },
+    "reggaeton": {
+      "title": "Calma — Remix",
+      "artist": "Pedro Capó & Farruko",
+      "genre": "Reggaeton/Tropical",
+      "conceptMatchScore": 8.0,
+      "difficulty": "A1",
+      "durationSeconds": 240,
+      "spotifyId": "5iwz1NiezX7WWjnCgY5TH4",
+      "youtubeId": "1_zgKRBrT0Y",
+      "spotifyIdVerified": true,
+      "youtubeIdVerified": true,
+      "usefulFormsFound": ["estoy", "es", "tu", "mi"],
+      "tempoConcern": false,
+      "slangConcern": false,
+      "explicitContentConcern": false,
+      "status": "approved",
+      "notes": "Family-friendly, ~2 billion YouTube views, slower tropical-reggaeton tempo (A1-accessible). Naturally uses 'estoy' in present-state descriptions and 'es' in trait descriptions. Pedro Capó is Puerto Rican (clear enunciation), Farruko verse is short and clean.",
+      "copyrightSafeNotes": "Cite only individual ser/estar forms ('estoy', 'es') as concept evidence. Title 'Calma' (interjection/noun) is safe metadata. Do NOT reproduce chorus."
+    },
+    "rnb": {
+      "title": "Estoy Aquí",
+      "artist": "Shakira",
+      "genre": "Latin Pop (rnb-adjacent — soulful ballad lane)",
+      "conceptMatchScore": 10.0,
+      "difficulty": "A1",
+      "durationSeconds": 250,
+      "spotifyId": "4M1lEbqPzlEw1JYWB6aE7K",
+      "youtubeId": "NmJHH026X0c",
+      "spotifyIdVerified": true,
+      "youtubeIdVerified": true,
+      "usefulFormsFound": ["estoy", "es", "está", "aquí", "soy"],
+      "tempoConcern": false,
+      "slangConcern": false,
+      "explicitContentConcern": false,
+      "status": "approved",
+      "notes": "Per curriculum-architect's note ('works for pop AND rnb genre tracks'), Estoy Aquí covers the rnb slot via its soulful-ballad lane. ALTERNATE PROPOSAL still acceptable per team-lead: if Reine wants a distinct rnb track, swap to 'La Tortura' (Shakira ft. Alejandro Sanz) spotifyId 5BSclXJTa9B0iURhUjZo50 — verified, soulful-flamenco lane, contains both 'soy' and 'está' in the duet exchange. youtubeId for La Tortura would need spot-check (Dsp_8Lm1eSk located via search but not WebFetch-verified).",
+      "copyrightSafeNotes": "Same as primary — individual verb forms + 2-word title only."
+    },
+    "regional-mexican": {
+      "title": "El Rey",
+      "artist": "Vicente Fernández",
+      "genre": "Ranchera/Mariachi",
+      "conceptMatchScore": 9.5,
+      "difficulty": "A1",
+      "durationSeconds": 178,
+      "spotifyId": "32r25QdtfHgAxjohp2EoPH",
+      "youtubeId": "5jmE8UsaM2U",
+      "spotifyIdVerified": true,
+      "youtubeIdVerified": true,
+      "usefulFormsFound": ["soy", "es", "sigo siendo"],
+      "tempoConcern": false,
+      "slangConcern": false,
+      "explicitContentConcern": false,
+      "status": "approved",
+      "notes": "Canonical 'Yo soy el rey' ranchera — likely the single most recognizable ser-identity statement in regional Mexican music. Slow, declamatory mariachi delivery is ideal for A1 listeners parsing every syllable. Cultural cornerstone — gives the content-builder a strong reading-passage hook for Mexican ranchera tradition. Family-friendly, no slang, no explicit. 2:58 = 178s fits the Listen-screen timer.",
+      "copyrightSafeNotes": "Cite only individual ser forms ('soy', 'es') as concept evidence. 2-word title 'El Rey' is safe metadata. NEVER reproduce the chorus line 'Yo soy el rey' as a quiz prompt — instead, use 'soy' alone as the verb-form evidence and quiz the concept ('What does soy mean?')."
+    }
+  },
+  "rejectedCandidates": [
+    {
+      "title": "Vivir Mi Vida",
+      "artist": "Marc Anthony",
+      "reason": "Was briefly primary during back-and-forth on 2026-05-18; final decision per team-lead is 'Estoy Aquí' (Shakira). Vivir Mi Vida remains a strong M14 (Estar deep dive) candidate when M14 is built and needs a new primary."
+    },
+    {
+      "title": "Soy Yo",
+      "artist": "Bomba Estéreo",
+      "reason": "Locked to M5 (subject pronouns primary) AND booked for Module 13 (Ser — To Be Permanent) in modules.ts line 1102. Cannot reuse in M6."
+    },
+    {
+      "title": "Loco",
+      "artist": "Enrique Iglesias ft. Romeo Santos",
+      "reason": "Booked for Module 15 (Ser vs Estar Deep Dive). Save for the A2 deep-dive module where the meaning-shift adjective focus matters more."
+    },
+    {
+      "title": "Eres Mi Religión",
+      "artist": "Maná",
+      "reason": "Strong concept match (title is 'You are my religion') BUT Maná is already used as M3 primary ('¿Dónde Jugarán los Niños?'). Avoid artist clustering in the first 6 modules."
+    },
+    {
+      "title": "La Camisa Negra",
+      "artist": "Juanes",
+      "reason": "Strong A1 candidate ('tengo la camisa negra' + 'estoy mintiendo') BUT Juanes is already M4 primary ('A Dios Le Pido'). Avoid back-to-back artist reuse."
+    },
+    {
+      "title": "Como La Flor",
+      "artist": "Selena",
+      "reason": "Cumbia-Tejano classic but the concept evidence is weak for ser/estar — the song's grammar focus is more on 'cómo' (how) and past-tense framing. Save Selena for a later module focused on adjectives or past tense."
+    },
+    {
+      "title": "Color Esperanza",
+      "artist": "Diego Torres",
+      "reason": "Inspirational pop with some ser-themed identity language but the verb density on ser/estar specifically is lower than Estoy Aquí or Vivir Mi Vida."
+    },
+    {
+      "title": "Soy",
+      "artist": "Alejandro Fernández",
+      "reason": "Curriculum-architect's regional-Mexican backup. Could not surface a verifiable Spotify/YouTube ID for a song titled exactly 'Soy' by Alejandro Fernández. Picked 'El Rey' (Vicente Fernández) for the regional-mexican slot instead."
+    },
+    {
+      "title": "Tú Eres",
+      "artist": "Juan Luis Guerra",
+      "reason": "Curriculum-architect's rnb/bachata backup. Could not surface a clean Spotify/YouTube ID for a Juan Luis Guerra track titled exactly 'Tú Eres' on the Bachata Rosa album."
+    },
+    {
+      "title": "Cómo Estás",
+      "artist": "Daddy Yankee",
+      "reason": "Curriculum-architect's reggaeton backup. Search returned Daddy Yankee's catalog but no track titled exactly 'Cómo Estás'. Picked 'Calma' Remix instead."
+    },
+    {
+      "title": "Sigo Siendo el Rey",
+      "artist": "Vicente Fernández",
+      "reason": "Curriculum-architect's regional-Mexican backup. 'Siendo' (gerund of ser) is a stretch for A1. Picked the original 'El Rey' instead — same artist, A1-clean present-tense 'soy'."
+    },
+    {
+      "title": "Eres",
+      "artist": "Café Tacvba",
+      "reason": "Was briefly the pop alternative during back-and-forth. Excellent concept match (title is the ser conjugation 'you are') but the final pop slot reuses the primary 'Estoy Aquí' per team-lead's locked decision. Reserve for a later module focused on 2nd-person singular forms."
+    }
+  ],
+  "copyrightFlag": "green",
+  "copyrightSafetyOverall": "All distinct tracks (Estoy Aquí covering pop+rnb / Calma Remix / El Rey) are mainstream major-label releases with public Spotify + YouTube metadata. Concept evidence is strictly limited to individual ser/estar verb forms ('soy', 'eres', 'es', 'estoy', 'estás', 'está'). 2-word song titles ('Estoy Aquí', 'El Rey', 'Calma') are safe to display as metadata — 'Estoy Aquí' is itself the verb form being taught (fair-use educational title reference). Quiz items must test the Spanish ser/estar concept, never lyric recall. Reading-comprehension passages must be 100% original.",
+  "knownBugFlags": [
+    "Module 3 quiz dead-end — flagged per role spec, not specific to M6.",
+    "'¿Dónde jugarán los niños?' wrong YouTube Music link — flagged per role spec, M6 does not use Maná so this bug does not apply here.",
+    "Timer notification issue in YouTube Music — flagged per role spec, not specific to M6.",
+    "modules.ts id:6 currently is 'Days, Months, Seasons & Time' (Karol G — Mañana Será Bonito). M6 spec requires this slot to be swapped to Ser vs Estar with primary 'Estoy Aquí'. Curriculum-architect's spec lines 233-234 confirm the rename. Days/Months should move to M7 or M9 downstream.",
+    "modules.ts id:14 ('Estar — To Be Temporary') currently lists 'Estoy Aquí' as its primary. Moving the song to M6 means M14 needs a new primary. Tracked in PENDING.md. Suggested replacements: 'Calma' (Pedro Capó & Farruko) or 'Vivir Mi Vida' (Marc Anthony).",
+    "rnb slot REUSES the primary (Estoy Aquí). If Reine wants distinct songs per genre, swap to 'La Tortura' (Shakira ft. Alejandro Sanz, 5BSclXJTa9B0iURhUjZo50) — alternate still acceptable per team-lead."
+  ],
+  "humanVerificationRequired": [
+    "PRIMARY: 1-click spot-check the Spotify (https://open.spotify.com/track/4M1lEbqPzlEw1JYWB6aE7K) and YouTube (https://www.youtube.com/watch?v=NmJHH026X0c) links for 'Estoy Aquí' (Shakira). Confirm both resolve to the correct 1995 Pies Descalzos track.",
+    "REGGAETON: 1-click spot-check 'Calma — Remix' (Pedro Capó & Farruko) Spotify (5iwz1NiezX7WWjnCgY5TH4) and YouTube (1_zgKRBrT0Y).",
+    "REGIONAL-MEXICAN: 1-click spot-check 'El Rey' (Vicente Fernández) Spotify (32r25QdtfHgAxjohp2EoPH) and YouTube (5jmE8UsaM2U).",
+    "RNB SLOT DECISION: confirm whether to reuse 'Estoy Aquí' (current pick) OR swap to 'La Tortura' (Shakira ft. Alejandro Sanz, 5BSclXJTa9B0iURhUjZo50) for a distinct rnb track.",
+    "DOWNSTREAM M14 CONFLICT: add to PENDING.md that modules.ts line 1133 ('Estoy Aquí' as M14 primary) needs a swap when M14 is built."
+  ]
+}

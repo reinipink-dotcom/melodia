@@ -203,6 +203,16 @@ QuizScreen.tsx now reads `onboardingStore.level` and routes: beginner→easyQuiz
 
 ---
 
+## OPEN — M14 Song Conflict: Estoy Aquí Now Used by M6 | sim-required
+
+**Source:** M6 build 2026-05-18 — song-validator originally had "Estoy Aquí" (Shakira) booked for M14 (Estar — To Be (Temporary)). M6 (Ser vs Estar) ended up taking it after a mid-flight song churn (Vivir Mi Vida → Estoy Aquí → Vivir Mi Vida → Estoy Aquí). Songs JSON has been restored to reflect M6 = Estoy Aquí.
+
+**What needs to happen:**
+- [ ] When M14 enters the build queue, pick a replacement song that exemplifies Estar (temporary states). Candidates: song-validator to propose; do not pre-book here.
+- [ ] Update modules.ts id:14 song field accordingly.
+
+---
+
 ## POST-MVP (future, not blocking launch)
 
 - **AI speaking challenge:** Speaking challenge card connects to an AI the user can have a short back-and-forth conversation with in Spanish

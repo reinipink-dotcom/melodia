@@ -19,7 +19,7 @@ This file is read by `/melodia` to pick today's target. The orchestrator updates
 | 3 | Numbers & Time | A1 | done | — | Pre-existing — KNOWN BUG: "no quiz available" dead-end |
 | 4 | Prepositions, Conjunctions & Adverbs | A1 | app-ready | 2026-05-15 | Content + code pass; audio wired via expo-av. |
 | 5 | Subject Pronouns | A1 | needs-review | 2026-05-17 | tsc pass; content + 11 ttsTriggers + 4/3/3 quiz variants wired; audio MP3s NOT yet generated (run `/melodia-audio 5`); sim walkthrough pending Reine (Expo Go input control unavailable in cloud). |
-| 6 | Ser vs Estar | A1 | pending | — | |
+| 6 | Ser vs Estar | A1 | needs-review | 2026-05-18 | Wired Ser vs Estar, 17→15 tts triggers (orphans stripped), audio gen pending `/melodia-audio 6`, sim walk pending Reine. Song: Estoy Aquí (Shakira). |
 | 7 | Articles & Gender | A1 | pending | — | |
 | 8 | Demonstratives & Possessives | A1 | pending | — | Last module before paywall |
 | 9 | Common Adjectives | A1-A2 | pending | — | |

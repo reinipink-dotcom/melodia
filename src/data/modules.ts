@@ -862,37 +862,216 @@ export const MODULES: Module[] = [
   // TODO Phase 6: re-lock modules 9-60 when RevenueCat is set up
   {
     id: 6,
-    title: 'Days, Months, Seasons & Time',
+    title: 'Ser vs Estar',
     level: 'A1',
-    concept: 'Ayer, hoy, mañana — navigating time in Spanish',
+    concept: 'Two Spanish verbs for "to be" — identity vs. state',
     conceptDescription:
-      'Talk about yesterday, today, and tomorrow. Name the days, months, and seasons. These time words appear in almost every real conversation.',
-    song: { title: 'Mañana Será Bonito', artist: 'Karol G', durationSeconds: 219 },
+      "English has one verb for 'to be'. Spanish has two — and the split is the single most important thing you'll learn this week. Use ser for who someone is: their name, their nationality, their job, the things that don't change overnight. Use estar for how they are right now: feelings, mood, where they're standing. The same sentence — 'I am happy' — can mean two different things depending on which verb you reach for. Soy feliz says you're a happy person by nature. Estoy feliz says you're happy in this moment. Two verbs, two truths, one human.",
+    song: { title: 'Estoy Aquí', artist: 'Shakira', durationSeconds: 250, spotifyId: '4M1lEbqPzlEw1JYWB6aE7K', youtubeId: 'NmJHH026X0c' },
     genreSongs: {
-      pop: { title: 'Mañana Será Bonito', artist: 'Karol G', durationSeconds: 219 },
-      rnb: { title: 'Ayer', artist: 'Luis Miguel', durationSeconds: 206 },
-      'regional-mexican': { title: 'Ayer', artist: 'Luis Miguel', durationSeconds: 206 },
+      pop: { title: 'Estoy Aquí', artist: 'Shakira', durationSeconds: 250, spotifyId: '4M1lEbqPzlEw1JYWB6aE7K', youtubeId: 'NmJHH026X0c' },
+      reggaeton: { title: 'Calma — Remix', artist: 'Pedro Capó & Farruko', durationSeconds: 240, spotifyId: '5iwz1NiezX7WWjnCgY5TH4', youtubeId: '1_zgKRBrT0Y' },
+      rnb: { title: 'Estoy Aquí', artist: 'Shakira', durationSeconds: 250, spotifyId: '4M1lEbqPzlEw1JYWB6aE7K', youtubeId: 'NmJHH026X0c' },
+      'regional-mexican': { title: 'El Rey', artist: 'Vicente Fernández', durationSeconds: 178, spotifyId: '32r25QdtfHgAxjohp2EoPH', youtubeId: '5jmE8UsaM2U' },
     },
     vocabulary: [
-      { spanish: 'ayer', english: 'yesterday' },
-      { spanish: 'hoy', english: 'today' },
-      { spanish: 'mañana', english: 'tomorrow (also: morning)' },
-      { spanish: 'el fin de semana', english: 'the weekend' },
-      { spanish: 'verano', english: 'summer' },
+      { spanish: 'soy', english: 'I am (identity)' },
+      { spanish: 'eres', english: 'you are (identity)' },
+      { spanish: 'es', english: 'he / she is (identity)' },
+      { spanish: 'estoy', english: 'I am (state / location)' },
+      { spanish: 'está', english: 'he / she is (state / location)' },
     ],
     grammarPoints: [
-      'Days: lunes, martes, miércoles, jueves, viernes, sábado, domingo',
-      'Days and months are NOT capitalized in Spanish',
-      'Time words: ayer (yesterday), hoy (today), mañana (tomorrow/morning)',
-      'Seasons: verano (summer), otoño (fall), invierno (winter), primavera (spring)',
-      'Time units: segundo, minuto, hora, día, semana, mes, año',
+      'Ser = identity: name, nationality, profession, relationships, origin',
+      'Estar = state / location: feelings, mood, where someone is right now',
+      'Yo + soy/estoy. Tú + eres/estás. Él/ella + es/está',
+      'Accent matters: está (verb, is) ≠ esta (demonstrative, this)',
+      "Soy feliz (I'm a happy person) ≠ Estoy feliz (I'm happy right now)",
     ],
-    quizTypes: ['Time vocabulary matching', 'Listen for days/months in songs', 'Calendar exercises'],
-    readingTopic: 'Karol G: La Bichota\'s Journey from Medellín',
-    readingRatio: '90% English / 10% Spanish time words inserted',
+    quizTypes: ['Ser vs estar judgment', 'Conjugation match', 'Minimal-pair meaning flip'],
+    readingTopic: 'Shakira and the Song That Said "I Am Here"',
+    readingRatio: '88% English / 12% Spanish ser/estar examples',
     songsNeeded: 2,
     status: 'unlocked',
     xpReward: 100,
+    culturalNoteVariants: {
+      reggaeton:
+        "If you picked reggaeton, your song today is 'Calma' — the remix by Pedro Capó and Farruko, both Puerto Rican artists. The track became one of the most-streamed Spanish-language songs of the late 2010s, and like Shakira's 'Estoy Aquí', it leans hard on estar. Pedro Capó sings about being on the beach, being at peace, being in the moment — present-state descriptions that all call for estoy or está, never soy. His enunciation is unusually clean for the genre, and Farruko's verse is short and accessible. Listen for estoy and es in the chorus. That's estar telling you where he is, and ser telling you what the day is. Two verbs, one slower-tempo reggaeton, the same lesson.",
+    },
+    culturalNote:
+      "Shakira was born in Barranquilla, on Colombia's Caribbean coast, in 1977. She signed with Sony Music as a teenager and recorded Pies Descalzos — 'bare feet' — at eighteen, releasing it in 1995. The album's first single, 'Estoy Aquí' — 'I am here' — was the song that carried her out of Colombia and into the rest of Latin America. The title alone teaches today's lesson: estoy is the state she's in (waiting, longing), and aquí anchors her to a place. Spanish would not accept soy aquí — soy is for identity, and a place is not who you are. Every time you hear estoy in a Latin song, the artist is letting you in on a moment. Every time you hear soy, they are claiming an identity. Those two verbs are how Spanish lets a singer be both at once.",
+    quizQuestions: [
+      {
+        question: "Which verb fits the sentence: 'She is a doctor.'",
+        options: [
+          'ser — being a doctor is her profession, an identity',
+          "estar — she's a doctor right now, but maybe not tomorrow",
+          'either one — both mean "is" in English',
+          'neither — profession needs a different verb',
+        ],
+        correctIndex: 0,
+        explanation:
+          "Profession = identity = ser. The full sentence is 'Ella es doctora.' Even if she changes jobs in five years, the grammar today treats her profession as part of who she is.",
+      },
+      {
+        question: "Which verb fits: 'He is tired.'",
+        options: [
+          'ser — tiredness defines him as a person',
+          'estar — tiredness is a state right now, not who he is',
+          'either one — tiredness is borderline',
+          'neither — tiredness is a noun, no verb needed',
+        ],
+        correctIndex: 1,
+        explanation:
+          "Tiredness is a state, not an identity — and cansado (tired) is always paired with estar. The full sentence is 'Él está cansado.' He'll be fine after a nap; that's exactly what estar is for.",
+      },
+      {
+        question: "Which verb fits: 'We are from Argentina.'",
+        options: [
+          "ser — origin / where you're from is identity",
+          'estar — location, so estar',
+          'either one — origin and location are the same idea',
+          'neither — origin uses a different verb entirely',
+        ],
+        correctIndex: 0,
+        explanation:
+          "Origin (where you're from) is identity — that's ser. The full sentence is 'Somos de Argentina.' Compare to location (where you are right now) — estamos en Argentina — which would use estar. Same country, different grammar.",
+      },
+      {
+        question: "Complete: 'Yo ___ feliz hoy.' (I am happy today — happy right now, in this moment.)",
+        options: ['soy', 'estoy', 'eres', 'está'],
+        correctIndex: 1,
+        explanation:
+          "Hoy means 'today' — a clue that this is about a state right now, not your permanent disposition. Estoy feliz hoy = I'm happy today. Soy feliz would mean you're a happy person by nature — a different claim entirely.",
+      },
+    ],
+    easyQuizQuestions: [
+      {
+        question: "Which word means 'I am' when you're talking about WHO you are (identity)?",
+        options: ['estoy', 'soy', 'eres', 'está'],
+        correctIndex: 1,
+        explanation:
+          "Soy is the 'I am' for identity — your name, your nationality, your job. Estoy is also 'I am', but for states and locations. Same English translation, two different Spanish verbs.",
+      },
+      {
+        question: "Which Spanish verb form means 'he/she is' when you're describing a STATE (mood, feeling, location)?",
+        options: ['es', 'está', 'soy', 'eres'],
+        correctIndex: 1,
+        explanation:
+          "Está is the estar form for 'he/she is' — used for states and locations. Es is also 'he/she is', but it's the ser form for identity. Accent matters: está (verb, is) ≠ esta (this, feminine — no accent).",
+      },
+      {
+        question: "Which infinitive means 'to be' for temporary states and locations?",
+        options: ['ser', 'estar', 'soy', 'tú'],
+        correctIndex: 1,
+        explanation:
+          "Estar is the 'to be' for how you are and where you are — feelings, mood, location. Ser is the other 'to be' — for who you are. Both translate as 'to be' in English. Spanish splits them.",
+      },
+    ],
+    hardQuizQuestions: [
+      {
+        question: "What's the difference between 'Soy feliz' and 'Estoy feliz'? Both translate as 'I am happy' in English.",
+        options: [
+          "No difference — they're interchangeable.",
+          "Soy feliz = I'm a happy person by nature (identity). Estoy feliz = I'm happy right now (state).",
+          'Soy feliz is formal; estoy feliz is informal.',
+          'Soy feliz is past tense; estoy feliz is present tense.',
+        ],
+        correctIndex: 1,
+        explanation:
+          "This is the whole lesson in one minimal pair. Same adjective, same English translation — the only thing that changes is which 'to be' you reach for and what you're actually claiming. Soy feliz is a statement about who you are. Estoy feliz is a statement about how you feel today. Spanish lets you say both; English collapses them into one.",
+      },
+      {
+        question: "Translate: 'I'm well, and you?'",
+        options: [
+          'Soy bien, ¿y tú?',
+          'Estoy bien, ¿y tú?',
+          'Yo bien, ¿tú?',
+          'Estoy bien, ¿y usted?',
+        ],
+        correctIndex: 1,
+        explanation:
+          "'Estoy bien, ¿y tú?' — feeling fine is a state, so estar (estoy). Recycles y from Module 4 and tú from Module 5. Option D uses usted (you, formal) — also grammatical, but in a casual exchange tú is the natural fit.",
+      },
+      {
+        question: "Shakira's song title 'Estoy Aquí' translates as 'I am here'. Why estoy and not soy?",
+        options: [
+          'Because soy is too short to sing in a chorus.',
+          'Because location and the feeling of being somewhere are STATES — exactly what estar (estoy) is for. Soy would mean she IS the place itself.',
+          'Because soy is only for plural subjects.',
+          'Because aquí can only be used with estar grammatically by accident.',
+        ],
+        correctIndex: 1,
+        explanation:
+          "Where you are and how you feel right now = estar. Shakira chose estoy because she's telling you about a moment — being in this place, feeling this longing. If she'd sung 'soy aquí' it would be ungrammatical to a Spanish ear, like saying 'I am here as a permanent identity'. The verb choice is doing emotional work: every estoy in a song lets the listener in on a feeling.",
+      },
+    ],
+    readingPassage: [
+      {
+        text: "Shakira was born in Barranquilla, on Colombia's Caribbean coast, in 1977. By the time she was eighteen, she had already signed with Sony Music and recorded the album that would carry her out of Colombia and into the rest of Latin America: ",
+        isSpanish: false,
+      },
+      { text: 'Pies Descalzos', isSpanish: true, english: 'bare feet' },
+      {
+        text: ", released in 1995. The first single was a song with a title that, by itself, teaches you today's whole lesson. ",
+        isSpanish: false,
+      },
+      { text: 'Estoy aquí', isSpanish: true, english: 'I am here' },
+      {
+        text: ' — I am here. Two words, two verbs of estar doing two jobs at once: estoy is the state she is in (waiting, longing, holding on), and aquí anchors her to the place — here, right now. Notice what she did not sing. She did not sing ',
+        isSpanish: false,
+      },
+      { text: 'soy', isSpanish: true, english: 'I am (identity — ser)' },
+      {
+        text: ' aquí. Spanish would not accept it. Soy is for identity — who someone ',
+        isSpanish: false,
+      },
+      { text: 'es', isSpanish: true, english: 'he/she/it is (identity — ser)' },
+      {
+        text: ' — and a place is not who you are. When Shakira tells the person she is singing to that he ',
+        isSpanish: false,
+      },
+      { text: 'eres', isSpanish: true, english: 'you are (identity — ser)' },
+      {
+        text: ' something to her, that is ser. When she tells you how she ',
+        isSpanish: false,
+      },
+      { text: 'está', isSpanish: true, english: 'he/she/it is (state — estar)' },
+      {
+        text: ' in this moment, that is estar. The whole song is a lesson in two verbs.',
+        isSpanish: false,
+      },
+    ],
+    // ttsTriggers: one file per cue (no slow/normal pairs from Module 5 onward).
+    // Source: notes/melodia/5-lessons/module-006-tts.json (voice-engineer manifest).
+    // Orphan tokens m6-reading-token-estoy and m6-reading-token-aqui stripped per
+    // team-lead Gate-2 — both are covered by the "estoy aquí" phrase tappable.
+    ttsTriggers: [
+      { id: 'module-006-intro',                     screen: 'preListen',      text: "Today we're learning the two Spanish verbs for 'to be' — ser and estar. Ser is for who someone is. Estar is for how they are or where they are. As you listen to 'Estoy Aquí' by Shakira, count how many times she sings estoy. That's estar — the verb of the moment. Then count the soy moments — that's ser, the verb of identity. Press listen when you're ready.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-006/m6-intro-ser-vs-estar.mp3', mvpRequired: true },
+      { id: 'module-006-vocab-ser',                 screen: 'preListen',      text: "Ser is the 'to be' for identity — who someone is. Soy means 'I am'. Eres means 'you are'. Es means 'he is' or 'she is'. Use these when you're naming a person, a profession, a nationality — anything that doesn't change overnight.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-006/m6-vocab-ser.mp3', mvpRequired: true },
+      { id: 'module-006-vocab-estar',               screen: 'preListen',      text: "Estar is the 'to be' for states and locations — how someone is or where they are. Estoy means 'I am'. Estás means 'you are'. Está means 'he is' or 'she is'. Use these for feelings, mood, and where someone is standing right now. When Shakira sings estoy aquí, that's estar twice — the state she's in, and where she is.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-006/m6-vocab-estar.mp3', mvpRequired: true },
+      { id: 'module-006-vocab-contrast',            screen: 'preListen',      text: "Here's the trick. 'Soy feliz' and 'estoy feliz' both translate as 'I am happy' in English — but they mean different things in Spanish. Soy feliz says you're a happy person by nature. Estoy feliz says you're happy in this moment. Same English, two truths.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-006/m6-vocab-contrast.mp3', mvpRequired: true },
+      { id: 'module-006-phrase-estoy-bien',         screen: 'preListen',      text: "'Estoy bien, ¿y tú?' — I'm well, and you? This is the textbook answer to ¿Cómo estás? from Module 3. Estoy is the form of estar — it's about how you feel right now. Then y tú — and you? Memorize the whole chunk. It's the single most useful exchange you'll leave today's lesson with.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-006/m6-phrase-estoy-bien.mp3', mvpRequired: true },
+      { id: 'module-006-speaking-prompt',           screen: 'preListen',      text: "Try this with me. Look in a mirror. First, a ser sentence — 'Soy', plus your name. That's who you are. Now an estar sentence — 'Estoy bien', or 'estoy cansado', or 'estoy aquí'. That's how you are right now, or where you are. Same person, two verbs, two different things said out loud.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-006/m6-speaking-prompt.mp3', mvpRequired: true },
+      { id: 'module-006-reading-001',               screen: 'reading',        text: "Shakira was born in Barranquilla, on Colombia's Caribbean coast, in 1977. By the time she was eighteen, she had already signed with Sony Music and recorded the album that would carry her out of Colombia and into the rest of Latin America — Pies Descalzos, released in 1995. The first single was a song with a title that, by itself, teaches you today's whole lesson. Estoy aquí — I am here. Two words, two verbs of estar doing two jobs at once: estoy is the state she's in, and aquí anchors her to the place. Notice what she did not sing. She did not sing soy aquí. Spanish would not accept it. Soy is for identity, and a place is not who you are. When she tells someone he eres something to her, that's ser. When she tells you how she está in this moment, that's estar. The whole song is a lesson in two verbs.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-006/m6-reading-shakira.mp3', mvpRequired: true },
+      { id: 'module-006-cultural-note-reggaeton',   screen: 'preListen',      text: "If you picked reggaeton, your song today is 'Calma' — the remix by Pedro Capó and Farruko, both Puerto Rican artists. The track became one of the most-streamed Spanish-language songs of the late 2010s, and like Shakira's 'Estoy Aquí', it leans hard on estar. Pedro Capó sings about being on the beach, being at peace, being in the moment — present-state descriptions that all call for estoy or está. Listen for estoy and es in the chorus. That's estar telling you where he is, and ser telling you what the day is. Two verbs, one slower-tempo reggaeton, the same lesson.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-006/m6-cultural-note-calma.mp3', mvpRequired: false },
+      { id: 'module-006-lesson-complete',           screen: 'lessonComplete', text: "You can now say who you are AND how you are. Two verbs, two truths. Ser for identity — soy, eres, es. Estar for state and location — estoy, estás, está. The same English 'I am' splits into two Spanish jobs, and you have both. Try one mirror moment tomorrow — 'Soy' plus your name, then 'Estoy' plus how you feel. Same person, two verbs.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-006/m6-lesson-complete.mp3', mvpRequired: true },
+      // Reading tap tokens — short Spanish pronunciation for tappable passage words.
+      // 6 distinct tokens per the unique-tappable-in-passage rule.
+      { id: 'm6-reading-token-pies-descalzos', screen: 'reading', text: 'pies descalzos', language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-006/m6-reading-token-pies-descalzos.mp3', mvpRequired: true },
+      { id: 'm6-reading-token-estoy-aqui',     screen: 'reading', text: 'estoy aquí',     language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-006/m6-reading-token-estoy-aqui.mp3',     mvpRequired: true },
+      { id: 'm6-reading-token-soy',            screen: 'reading', text: 'soy',            language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-006/m6-reading-token-soy.mp3',            mvpRequired: true },
+      { id: 'm6-reading-token-es',             screen: 'reading', text: 'es',             language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-006/m6-reading-token-es.mp3',             mvpRequired: true },
+      { id: 'm6-reading-token-eres',           screen: 'reading', text: 'eres',           language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-006/m6-reading-token-eres.mp3',           mvpRequired: true },
+      { id: 'm6-reading-token-esta',           screen: 'reading', text: 'está',           language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-006/m6-reading-token-esta.mp3',           mvpRequired: true },
+    ],
+    recyclingTargets: [
+      { moduleId: 1, concept: 'Pure vowel sounds carry the verb forms (soy, eres, estoy stress patterns)', intervalDays: [1, 7], reviewFormat: ['listening-recognition'] },
+      { moduleId: 2, concept: 'Accents do grammatical work: está vs esta, estás vs estas', intervalDays: [1, 3, 14], reviewFormat: ['mini-quiz'] },
+      { moduleId: 3, concept: 'Question words now have verb-anchored answers (¿Cómo estás? → Estoy bien)', intervalDays: [3, 7], reviewFormat: ['speaking-prompt'] },
+      { moduleId: 4, concept: 'Connectors stitch identity and state together (y, pero)', intervalDays: [1, 7, 30], reviewFormat: ['translation'] },
+      { moduleId: 5, concept: 'Pronouns finally get their first real verbs (yo soy / yo estoy, tú eres / tú estás)', intervalDays: [1, 3, 7, 30], reviewFormat: ['mini-quiz', 'speaking-prompt'] },
+    ],
   },
 
   {
