@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Generic Melodia module audio generator.
-// Usage: node scripts/generate-module-audio.mjs 2 [--dry-run] [--force]
+// Usage: node scripts/generate-module-audio.mjs 2 [--dry-run] [--force] [--only trigger-id]
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -16,7 +16,7 @@ const PRICE_PER_MILLION = 30;
 const MIN_AUDIO_BYTES = 4096;
 
 function usage() {
-  console.error('Usage: node scripts/generate-module-audio.mjs <module-number> [--dry-run] [--force]');
+  console.error('Usage: node scripts/generate-module-audio.mjs <module-number> [--dry-run] [--force] [--only trigger-id]');
   process.exit(2);
 }
 
@@ -24,10 +24,19 @@ function parseArgs() {
   const args = process.argv.slice(2);
   const moduleArg = args.find((arg) => /^\d+$/.test(arg));
   if (!moduleArg) usage();
+  const onlyIds = [];
+  args.forEach((arg, index) => {
+    if (arg === '--only' && args[index + 1]) {
+      onlyIds.push(...args[index + 1].split(',').map((id) => id.trim()).filter(Boolean));
+    } else if (arg.startsWith('--only=')) {
+      onlyIds.push(...arg.slice('--only='.length).split(',').map((id) => id.trim()).filter(Boolean));
+    }
+  });
   return {
     moduleId: Number(moduleArg),
     dryRun: args.includes('--dry-run'),
     force: args.includes('--force'),
+    onlyIds,
   };
 }
 
@@ -173,6 +182,17 @@ async function generateOne(trigger, manifest, apiKey, force) {
   const model = manifest.model || 'tts-1-hd';
   const voice = trigger.voice || manifest.defaultVoice || 'nova';
   const speed = trigger.speed ?? (trigger.slowVersion ? 0.85 : 1.0);
+
+  // Speed guardrail: OpenAI's `speed < 1.0` does post-hoc time-stretching, which
+  // accumulates artifacts on multi-word text (smeared vowels, flat intonation).
+  // Safe for single words; risky for 4+ word phrases.
+  const wordCount = input.trim().split(/\s+/).length;
+  if (speed < 1.0 && wordCount >= 4) {
+    console.warn(
+      `[audio] WARNING ${trigger.id}: speed=${speed} on ${wordCount}-word text may sound stretched. ` +
+      `Consider speed:1.0 for phrases/sentences.`
+    );
+  }
   const body = JSON.stringify({
     model,
     voice,
@@ -221,15 +241,24 @@ function syncAudioAssets() {
 }
 
 async function main() {
-  const { moduleId, dryRun, force } = parseArgs();
+  const { moduleId, dryRun, force, onlyIds } = parseArgs();
   const manifestPath = resolveManifestPath(moduleId);
   const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
   validateManifest(manifest, moduleId, manifestPath);
   validateUiWiring(manifest, moduleId);
 
-  const triggers = manifest.ttsTriggers.filter((trigger) => trigger.mvpRequired !== false);
+  let triggers = manifest.ttsTriggers.filter((trigger) => trigger.mvpRequired !== false);
+  if (onlyIds.length > 0) {
+    const requestedIds = new Set(onlyIds);
+    triggers = triggers.filter((trigger) => requestedIds.has(trigger.id));
+    const foundIds = new Set(triggers.map((trigger) => trigger.id));
+    const missingIds = onlyIds.filter((id) => !foundIds.has(id));
+    if (missingIds.length > 0) {
+      throw new Error(`Requested trigger id(s) not found in required manifest triggers: ${missingIds.join(', ')}`);
+    }
+  }
   console.log(`Module ${moduleId} audio manifest: ${path.relative(ROOT, manifestPath)}`);
-  console.log(`Triggers: ${triggers.length}${dryRun ? ' (dry run)' : ''}`);
+  console.log(`Triggers: ${triggers.length}${onlyIds.length > 0 ? ` (${onlyIds.join(', ')})` : ''}${dryRun ? ' (dry run)' : ''}`);
 
   if (dryRun) {
     for (const trigger of triggers) {

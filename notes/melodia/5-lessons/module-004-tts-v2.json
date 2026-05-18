@@ -118,6 +118,72 @@
       "voice": "nova",
       "outputFile": "assets/audio/module-004/m4-lesson-complete.mp3",
       "mvpRequired": true
+    },
+    {
+      "id": "m4-reading-token-de",
+      "text": "de",
+      "language": "es-419",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.9,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-004/m4-reading-token-de.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m4-reading-token-con",
+      "text": "con",
+      "language": "es-419",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.9,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-004/m4-reading-token-con.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m4-reading-token-sin",
+      "text": "sin",
+      "language": "es-419",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.9,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-004/m4-reading-token-sin.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m4-reading-token-y",
+      "text": "y",
+      "language": "es-419",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.9,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-004/m4-reading-token-y.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m4-reading-token-pero",
+      "text": "pero",
+      "language": "es-419",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.9,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-004/m4-reading-token-pero.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m4-reading-token-tambien",
+      "text": "también",
+      "language": "es-419",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.9,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-004/m4-reading-token-tambien.mp3",
+      "mvpRequired": true
     }
   ]
 }
