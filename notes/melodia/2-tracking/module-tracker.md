@@ -9,6 +9,7 @@
 | 4 | Prepositions, Conjunctions & Adverbs | ⚠️ needs-review | A Dios Le Pido (Juanes) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ tsc / ⚠️ sim (Expo Go not installed) | ⚠️ pending | ❌ |
 | 5 | Subject Pronouns | ⚠️ needs-review | Soy Yo (Bomba Estéreo) | ✅ pop/reggaeton/rnb/regional-mexican | ✅ Bomba Estéreo backstory | ✅ 11 ttsTriggers (audio MP3s NOT yet generated) | ✅ easy 3 / standard 4 / hard 3 | ✅ via curriculum-enrichment.ts | ✅ tsc / ⚠️ sim walkthrough deferred to Reine (no programmatic tap control) | ⚠️ pending (sim + audio) | ❌ |
 | 6 | Ser vs Estar | ⚠️ needs-review | Estoy Aquí (Shakira) | ✅ | ✅ | ✅ 15 ttsTriggers (9 narration + 6 reading-token, audio MP3s pending /melodia-audio 6) | ✅ easy/standard/hard | ✅ via curriculum-enrichment.ts | ✅ tsc / verify-audio-lookups / audit-reading-tokens all pass | ⚠️ pending (sim walkthrough + /melodia-audio 6) | ❌ |
+| 7 | Articles & Gender | ⚠️ needs-review | La Vida Es Un Carnaval (Celia Cruz) | ✅ | ✅ Celia Cruz / salsa cubana | ✅ ttsTriggers defined (audio MP3s pending /melodia-audio 7) | ✅ easy/standard/hard | ✅ via curriculum-enrichment.ts | ✅ tsc / verify-audio-lookups / audit-reading-tokens all pass | ⚠️ pending (sim walkthrough + /melodia-audio 7) | ❌ |
 
 ---
 

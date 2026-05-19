@@ -213,6 +213,16 @@ QuizScreen.tsx now reads `onboardingStore.level` and routes: beginner→easyQuiz
 
 ---
 
+## OPEN — modules.ts id:9 "La La La" (Shakira) Needs Repurposing | cloud-fixable
+
+**Source:** M7 song validation 2026-05-19. Artist variety conflict surfaced — M6 already uses Shakira ("Estoy Aquí"). M9 currently has "La La La" (Shakira) as a placeholder.
+
+**What needs to happen:**
+- [ ] Replace M9's song with a non-Shakira A1-A2 song aligned to "Common Adjectives" (the M9 concept). song-validator to propose options when M9 enters the build queue.
+- [ ] Update modules.ts id:9 song field accordingly.
+
+---
+
 ## POST-MVP (future, not blocking launch)
 
 - **AI speaking challenge:** Speaking challenge card connects to an AI the user can have a short back-and-forth conversation with in Spanish

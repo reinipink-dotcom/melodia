@@ -20,7 +20,7 @@ This file is read by `/melodia` to pick today's target. The orchestrator updates
 | 4 | Prepositions, Conjunctions & Adverbs | A1 | app-ready | 2026-05-15 | Content + code pass; audio wired via expo-av. |
 | 5 | Subject Pronouns | A1 | needs-review | 2026-05-17 | tsc pass; content + 11 ttsTriggers + 4/3/3 quiz variants wired; audio MP3s NOT yet generated (run `/melodia-audio 5`); sim walkthrough pending Reine (Expo Go input control unavailable in cloud). |
 | 6 | Ser vs Estar | A1 | needs-review | 2026-05-18 | Wired Ser vs Estar, 17→15 tts triggers (orphans stripped), audio gen pending `/melodia-audio 6`, sim walk pending Reine. Song: Estoy Aquí (Shakira). |
-| 7 | Articles & Gender | A1 | pending | — | |
+| 7 | Articles & Gender | A1 | needs-review | 2026-05-19 | Wired Articles & Gender, song "La Vida Es Un Carnaval" (Celia Cruz); tsc + verify-audio-lookups + audit-reading-tokens all pass; vocab tweak "la canción" → "la casa" to match existing audio cue; audio MP3s pending `/melodia-audio 7`; sim walkthrough pending Reine. |
 | 8 | Demonstratives & Possessives | A1 | pending | — | Last module before paywall |
 | 9 | Common Adjectives | A1-A2 | pending | — | |
 | 10 | Negation & Question Words | A1-A2 | pending | — | |
