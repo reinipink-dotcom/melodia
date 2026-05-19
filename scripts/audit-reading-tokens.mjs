@@ -37,7 +37,7 @@ vm.runInContext(triggersCode, triggersCtx);
 const { findReadingTrigger } = triggersCtx.exports;
 
 let problems = 0;
-for (const moduleId of [1, 2, 3, 4, 5, 6, 7]) {
+for (const moduleId of [1, 2, 3, 4, 5, 6, 7, 8]) {
   const module = MODULES.find((m) => m.id === moduleId);
   if (!module?.readingPassage) continue;
   console.log(`\nModule ${moduleId} — ${module.title}`);

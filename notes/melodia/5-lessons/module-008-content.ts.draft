@@ -1,0 +1,245 @@
+// Module 8 — Demonstratives & Possessives (A1)
+// Primary song: "Mi Gente" — J Balvin & Willy William
+// LAST FREE MODULE before paywall — lesson-complete narration must land hard.
+// Schema matches src/data/modules.ts Module interface (NOT the draft wrapper format).
+// Reading passage uses flat alternating tokens. Max 6 unique Spanish tappables.
+
+{
+  id: 8,
+  title: 'Demonstratives & Possessives',
+  level: 'A1',
+  concept: 'este / ese / aquel — and mi / tu / su — pointing at things and claiming them',
+  conceptDescription:
+    "Spanish gives you two tools for talking about the things around you. The first is the demonstrative — este, ese, aquel — which says how far away the thing is from you. Este is here in your hand. Ese is over by the person you're talking to. Aquel is across the room, or across a year. The second tool is the possessive — mi, tu, su — which says who the thing belongs to. Both tools replace the article you learned yesterday. You say mi libro, not mi el libro. You say este libro, not este el libro. Two systems, one rule, and from today on every noun you point to has an owner and a place.",
+  song: { title: 'Mi Gente', artist: 'J Balvin & Willy William', durationSeconds: 189, spotifyId: '4ipnJyDU3Lq15qBAYNqlqK', youtubeId: 'wnJ6LuUFpMo' },
+  genreSongs: {
+    pop: { title: 'Mi Persona Favorita', artist: 'Alejandro Sanz & Camila Cabello', durationSeconds: 199, spotifyId: '6hCuO8rcHV6Y1he9zOUlcf', youtubeId: 'W4AiOKlOO0Q' },
+    reggaeton: { title: 'Mi Gente', artist: 'J Balvin & Willy William', durationSeconds: 189, spotifyId: '4ipnJyDU3Lq15qBAYNqlqK', youtubeId: 'wnJ6LuUFpMo' },
+    rnb: { title: 'Tu Falta De Querer', artist: 'Mon Laferte', durationSeconds: 232, spotifyId: '4skuEIloXWuxxgekKupkEH', youtubeId: 'WT-VE9OyAJk' },
+    'regional-mexican': { title: 'Esta Noche Con Mariachis', artist: 'Vicente Fernández', durationSeconds: 178, spotifyId: '1NZrtN3sWFoQgIcpcxeh3K', youtubeId: 'COpovqGFU9Q' },
+  },
+  vocabulary: [
+    { spanish: 'este / esta', english: 'this (masc. / fem.)' },
+    { spanish: 'ese / esa', english: 'that (masc. / fem.)' },
+    { spanish: 'aquel / aquella', english: 'that over there (masc. / fem.)' },
+    { spanish: 'mi / mis', english: 'my (singular / plural noun)' },
+    { spanish: 'tu / tus', english: 'your (informal — singular / plural noun)' },
+    { spanish: 'su / sus', english: 'his / her / your (formal) / their' },
+  ],
+  grammarPoints: [
+    'Three-way distance: este (here, with me), ese (there, with you), aquel (over there, far from both).',
+    'Possessives match the noun: mi libro / mis libros — number agreement. nuestra casa / nuestro libro — gender + number.',
+    'Demonstratives and possessives REPLACE the article — say mi libro OR el libro, never mi el libro.',
+    'Accent disambiguation: mi (my, possessive) vs mí (me, after a preposition). tu (your, possessive) vs tú (you, subject pronoun).',
+    'su is ambiguous on purpose — it covers his, her, your (formal), and their. Context tells you which.',
+  ],
+  quizTypes: ['Demonstrative distance pick', 'Possessive person match', 'mi/mí + tu/tú accent disambiguation'],
+  readingTopic: 'J Balvin and the Song That Claimed a Whole City',
+  readingRatio: '80% English / 20% Spanish',
+  songsNeeded: 2,
+  status: 'unlocked',
+  xpReward: 100,
+  culturalNoteVariants: {
+    pop:
+      "If you picked pop, your song today is 'Mi Persona Favorita' — a duet by Alejandro Sanz and Camila Cabello. The title is a textbook M8 phrase — mi (the first-person possessive) wrapped around persona favorita (favorite person), the whole thing claiming someone as yours. Sanz is a Spanish singer-songwriter who has written some of the most-covered ballads in Latin music; Camila Cabello is the Cuban-American pop artist who broke out with 'Havana'. The arrangement is slow, the flamenco guitar leaves space between every line, and the word mi lands clean every time it arrives. Listen for it. Each one is the speaker claiming the listener as their favorite — the entire emotional architecture of the song is built on one syllable.",
+  },
+  culturalNote:
+    "J Balvin is a Medellín-born reggaeton artist who became one of the defining voices of the urbano boom of the 2010s. In 2017 he released 'Mi Gente' with the French-Moroccan producer Willy William, and it turned into one of the biggest Spanish-language songs the world had ever heard — a global hit that played from Bogotá clubs to American radio without ever switching languages. The title is today's whole lesson in two words. Mi is the first-person possessive — my. Gente means people. Mi gente — my people — is what a Spanish speaker calls their crew, their neighborhood, their city, their country, anyone who feels like home. When Balvin sings ¿dónde está mi gente? he's not asking a question, he's planting a flag. That is what possessives do in Spanish. They take a noun and they say this one belongs to me. Every time you hear mi in a song, the artist is claiming something — and from today on, you can hear what.",
+  quizQuestions: [
+    {
+      question: "Which possessive means 'my' before a singular noun like libro?",
+      options: ['mi', 'tu', 'su', 'mis'],
+      correctIndex: 0,
+      explanation:
+        "Mi is 'my' for singular nouns — mi libro, mi casa, mi gente. The plural form mis is used when the noun is plural — mis libros, mis amigos. One word for one thing, the other for many.",
+    },
+    {
+      question: "Pick the right demonstrative: '___ libro' — the book that's right here in my hand.",
+      options: ['aquel', 'ese', 'este', 'esa'],
+      correctIndex: 2,
+      explanation:
+        "Este is the 'near me' demonstrative — the book in your hand, the song you're playing right now. Ese would be the book near the person you're talking to, and aquel would be a book across the room. Libro is masculine, so the masculine form este is correct (not esta).",
+    },
+    {
+      question: "How do you say 'our house' in Spanish?",
+      options: ['mi casa', 'su casa', 'nuestra casa', 'nuestro casa'],
+      correctIndex: 2,
+      explanation:
+        "Nuestra casa — 'our house'. Nuestro / nuestra is one of the only possessives that splits by gender. Casa is feminine, so it takes nuestra. If the noun were masculine — nuestro libro — the form would flip. The rule from yesterday's article lesson still holds: the noun's gender controls everything in front of it.",
+    },
+    {
+      question: "What does 'Es su libro' mean in English?",
+      options: [
+        'It is his book.',
+        'It is her book.',
+        'It is your book (formal) or their book.',
+        'All of the above — context decides.',
+      ],
+      correctIndex: 3,
+      explanation:
+        "Su is the most ambiguous possessive in Spanish. It covers his, her, your (formal), AND their, and the sentence alone doesn't tell you which. Spanish speakers read the surrounding context — or add de él, de ella, de ustedes — to be specific. When you hear su in a song, expect ambiguity and let the rest of the verse clarify.",
+    },
+  ],
+  easyQuizQuestions: [
+    {
+      question: "What does este mean in English?",
+      options: ['that', 'this', 'my', 'the'],
+      correctIndex: 1,
+      explanation:
+        "Este is 'this' for masculine nouns — este libro, este día. The feminine form is esta — esta canción, esta noche. Same meaning, just matched to the gender of the noun.",
+    },
+    {
+      question: "What does esa mean in English?",
+      options: ['this (fem.)', 'that (fem.)', 'her', 'these'],
+      correctIndex: 1,
+      explanation:
+        "Esa is the 'near you' demonstrative for feminine nouns — esa canción, esa casa. The masculine form is ese. Spanish has three distance words where English has two — esa lands in the middle (close to the listener) rather than the close-or-far split English uses.",
+    },
+    {
+      question: "What does tu mean in English (no accent)?",
+      options: ['you', 'your', 'I', 'the'],
+      correctIndex: 1,
+      explanation:
+        "Tu without an accent is the possessive 'your' — tu libro, tu canción. With an accent — tú — it means 'you' (the subject pronoun from Module 5). The accent does grammatical work: same letters, two different jobs.",
+    },
+  ],
+  hardQuizQuestions: [
+    {
+      question: "Which sentence is correct?",
+      options: [
+        'Mi el libro está aquí.',
+        'Mi libro está aquí.',
+        'El mi libro está aquí.',
+        'Libro mi está aquí.',
+      ],
+      correctIndex: 1,
+      explanation:
+        "Possessives REPLACE the article — you say mi libro OR el libro, never mi el libro. The same rule applies to demonstratives: este libro, not este el libro. From today on, treat mi, tu, su, este, ese, and aquel as article-slot words. Only one of them gets to sit there at a time.",
+    },
+    {
+      question: "Pick the correct form: 'It's for me.' (a preposition + the right form)",
+      options: [
+        'Es para mi.',
+        'Es para mí.',
+        'Es para tu.',
+        'Es para tú.',
+      ],
+      correctIndex: 1,
+      explanation:
+        "After a preposition like para, you use mí with an accent — the object-pronoun form. The accent matters: mi (no accent) is the possessive 'my' (mi libro), and mí (with accent) is the 'me' that follows prepositions (para mí). Same word on the page in many fonts, different jobs in the grammar.",
+    },
+    {
+      question: "Translate: 'This is my favorite song.'",
+      options: [
+        'Este es mi canción favorita.',
+        'Esta es mi canción favorita.',
+        'Esta es mi canción favorito.',
+        'Este es la mi canción favorita.',
+      ],
+      correctIndex: 1,
+      explanation:
+        "Canción is feminine (-ción nouns always are, from Module 7), so the demonstrative is esta — not este. The possessive mi doesn't change for gender, but the adjective favorita has to agree with canción — feminine ending -a. One sentence wires together Module 6's es, Module 7's gender system, and Module 8's two new tools.",
+    },
+  ],
+  readingPassage: [
+    {
+      text: "J Balvin grew up in Medellín, Colombia, and built his career one dance floor at a time before becoming one of the most recognized voices in reggaeton anywhere in the world. In 2017, he released a song with the French-Moroccan producer Willy William that crossed borders most Spanish-language tracks never quite manage to cross — ",
+      isSpanish: false,
+    },
+    { text: 'Mi Gente', isSpanish: true, english: 'My People' },
+    {
+      text: ". The title is today's whole lesson in two words. ",
+      isSpanish: false,
+    },
+    { text: 'mi', isSpanish: true, english: 'my' },
+    {
+      text: " is the first-person possessive — my — and gente means people, so the phrase together claims a whole community as the speaker's own. That single syllable is everywhere in Spanish-language music. When an artist sings about ",
+      isSpanish: false,
+    },
+    { text: 'tu', isSpanish: true, english: 'your (informal)' },
+    {
+      text: " corazón, they're naming your heart and addressing you directly at the same time. When they sing about ",
+      isSpanish: false,
+    },
+    { text: 'su', isSpanish: true, english: 'his / her / your (formal) / their' },
+    {
+      text: " familia, they could mean his family, her family, your family, or their family — the listener has to read the rest of the verse to know which. Demonstratives do something different. ",
+      isSpanish: false,
+    },
+    { text: 'esta', isSpanish: true, english: 'this (fem.)' },
+    {
+      text: " noche means tonight — the night happening right now, close enough to touch. But ",
+      isSpanish: false,
+    },
+    { text: 'aquel', isSpanish: true, english: 'that (over there / long ago)' },
+    {
+      text: " verano means that summer — the one from years ago, far enough away to be a memory. Spanish gives you three distances where English gives you two, and songwriters use that extra word to reach across time. By the end of 'Mi Gente', you'll have heard mi dozens of times. That's J Balvin claiming Medellín, claiming his crew, claiming everyone listening — one syllable, one whole city.",
+      isSpanish: false,
+    },
+  ],
+  ttsTriggers: [
+    { id: 'module-008-intro',                     screen: 'preListen',      text: "Today we're learning the two systems Spanish uses to talk about the things around you. The first is demonstratives — este, ese, aquel — three words for three distances. The second is possessives — mi, tu, su — for who the thing belongs to. As you listen to 'Mi Gente' by J Balvin and Willy William, count every time you hear mi. The title itself is the lesson — mi gente means my people, and the whole song is one syllable repeated like a flag. Press listen when you're ready.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-008/m8-intro.mp3', mvpRequired: true },
+    { id: 'module-008-vocab-demonstratives',      screen: 'preListen',      text: "Demonstratives say how far away something is. Este — this, right here in my hand. Ese — that, over by you. Aquel — that one over there, far from both of us. The feminine forms are esta, esa, and aquella — they match feminine nouns the way Module 7 taught. Three distances, two genders, six little words that let you point at anything.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-008/m8-vocab-demonstratives.mp3', mvpRequired: true },
+    { id: 'module-008-vocab-possessives',         screen: 'preListen',      text: "Possessives say who the thing belongs to. Mi means my — mi libro, my book. Tu means your, informally — tu canción, your song. Su means his, her, your formal, or their — all four at once. Su libro could be his book, her book, your book, or their book, and Spanish lets context decide. The plural forms are mis, tus, and sus — they match the noun, not the owner.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-008/m8-vocab-possessives.mp3', mvpRequired: true },
+    { id: 'module-008-vocab-distance-rule',       screen: 'preListen',      text: "Here's the trick that makes the third demonstrative worth learning. Este and esta open a phrase with right now — esta noche means this night, the one happening as you're speaking. Aquel and aquella reach back across time — aquel verano means that summer, the one from years ago, the one you remember. English needs extra words to do that — 'that summer back then, the one I remember' — Spanish does it in one syllable. Aquel is the memory word.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-008/m8-vocab-distance-rule.mp3', mvpRequired: true },
+    { id: 'module-008-phrase-mi-cancion-favorita', screen: 'preListen',     text: "'Es mi canción favorita.' — It's my favorite song. Four words wiring together three modules. Es is the ser form for 'it is', from Module 6. Mi is the first-person possessive, from today. Canción is feminine, so favorita has to end in -a to agree with it — Module 7's gender system at work. From today on, this is the sentence you can say about every track in Melodia. It's my favorite song. The grammar is yours.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-008/m8-phrase-mi-cancion-favorita.mp3', mvpRequired: true },
+    { id: 'module-008-speaking-prompt',           screen: 'preListen',      text: "Try this. Look around your room one more time — you did this yesterday with articles. Now say each object twice. First with a demonstrative, pointing — este libro, esa lámpara, aquel cuadro. Then with a possessive, claiming it — mi libro, mi lámpara, mi cuadro. Now pick one object and imagine handing it to someone. Say 'Es para ti — es tu libro ahora.' It's for you — it's your book now. You're not pointing at objects anymore. You're giving them away.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-008/m8-speaking-prompt.mp3', mvpRequired: true },
+    { id: 'module-008-reading-intro',             screen: 'reading',        text: "J Balvin grew up in Medellín, Colombia, and built his career one dance floor at a time before becoming one of the most recognized voices in reggaeton anywhere in the world. In 2017, he released a song with the French-Moroccan producer Willy William that crossed borders most Spanish-language tracks never quite manage to cross — Mi Gente. The title is today's whole lesson in two words. Mi is the first-person possessive — my — and gente means people, so the phrase together claims a whole community as the speaker's own. That single syllable is everywhere in Spanish-language music. When an artist sings about tu corazón, they're naming your heart and addressing you directly at the same time. When they sing about su familia, they could mean his family, her family, your family, or their family — the listener has to read the rest of the verse to know which. Demonstratives do something different. Esta noche means tonight — the night happening right now, close enough to touch. But aquel verano means that summer — the one from years ago, far enough away to be a memory. Spanish gives you three distances where English gives you two, and songwriters use that extra word to reach across time. By the end of 'Mi Gente', you'll have heard mi dozens of times. That's J Balvin claiming Medellín, claiming his crew, claiming everyone listening — one syllable, one whole city.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-008/m8-reading-balvin.mp3', mvpRequired: true },
+    { id: 'module-008-cultural-note-pop',         screen: 'preListen',      text: "If you picked pop, your song today is 'Mi Persona Favorita' — a duet by Alejandro Sanz and Camila Cabello. The title is a textbook M8 phrase — mi wrapped around persona favorita, the whole thing claiming someone as yours. The arrangement is slow, the flamenco guitar leaves space between every line, and the word mi lands clean every time it arrives. Each one is the speaker claiming the listener as their favorite — the entire emotional architecture of the song is built on one syllable.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-008/m8-cultural-note-pop.mp3', mvpRequired: false },
+    { id: 'module-008-lesson-complete',           screen: 'lessonComplete', text: "Look at what you can do now. You can name anything in Spanish — that was Module 7. You can point at it from three different distances — este, ese, aquel — and you can claim it for any of five people — mi, tu, su, nuestro, su. Every noun phrase in A1 Spanish is built from the tools you have right now. You started this lesson saying words. You're finishing it building sentences out of grammar that belongs to you. This is the last free module — and you earned every part of it. From here on, the language opens up. Mi gente. That's you now.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-008/m8-lesson-complete.mp3', mvpRequired: true },
+    // Reading tap tokens — short Spanish pronunciation for tappable passage words.
+    // 6 distinct unique tokens — one per unique Spanish tappable in the reading passage.
+    { id: 'm8-reading-token-mi-gente', screen: 'reading', text: 'mi gente', language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-008/m8-reading-token-mi-gente.mp3', mvpRequired: true },
+    { id: 'm8-reading-token-mi',       screen: 'reading', text: 'mi',       language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-008/m8-reading-token-mi.mp3',       mvpRequired: true },
+    { id: 'm8-reading-token-tu',       screen: 'reading', text: 'tu',       language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-008/m8-reading-token-tu.mp3',       mvpRequired: true },
+    { id: 'm8-reading-token-su',       screen: 'reading', text: 'su',       language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-008/m8-reading-token-su.mp3',       mvpRequired: true },
+    { id: 'm8-reading-token-esta',     screen: 'reading', text: 'esta',     language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-008/m8-reading-token-esta.mp3',     mvpRequired: true },
+    { id: 'm8-reading-token-aquel',    screen: 'reading', text: 'aquel',    language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-008/m8-reading-token-aquel.mp3',    mvpRequired: true },
+  ],
+  recyclingTargets: [
+    { moduleId: 1, concept: 'Pure vowel discipline in este/esta/esto — three forms separated by one vowel each. M1 vowel pairs doing grammatical work.', intervalDays: [1, 7], reviewFormat: ['listening-recognition'] },
+    { moduleId: 2, concept: 'mi vs mí and tu vs tú — the second-cleanest A1 accent disambiguation pair after el/él. Possessive (no accent) vs object/subject pronoun (with accent).', intervalDays: [1, 3, 14], reviewFormat: ['mini-quiz', 'translation'] },
+    { moduleId: 5, concept: 'Subject pronouns map to possessives: yo→mi, tú→tu, él/ella/usted→su, nosotros→nuestro, ellos/ustedes→su. M5 pronouns now generate ownership claims.', intervalDays: [1, 3, 7, 30], reviewFormat: ['mini-quiz', 'speaking-prompt', 'translation'] },
+    { moduleId: 6, concept: 'es mi casa, es tu libro, es su canción — the canonical ownership frame combines M6 third-person ser with M8 possessives.', intervalDays: [3, 7, 14], reviewFormat: ['mini-quiz', 'speaking-prompt'] },
+    { moduleId: 7, concept: 'Gender + number agreement extends to demonstratives and possessives. Possessives REPLACE articles — mi libro OR el libro, never both.', intervalDays: [1, 3, 7, 14, 30], reviewFormat: ['mini-quiz', 'translation', 'speaking-prompt', 'reading-recall'] },
+  ],
+},
+
+// ──── AUDIO TEXT MANIFEST ────
+//
+// 9 narration scripts above in ttsTriggers, plus 6 reading-token cues.
+// Voice-engineer: generate via OpenAI tts-1-hd, voice "nova", normal speed.
+// All scripts mix English narration with es-419 Spanish tokens — accept MVP
+// mixed-language compromise per narration_script_spec.
+//
+// Cue list (9 narration + 6 reading-token = 15 total):
+//   module-008-intro                     — concept intro, ~27s
+//   module-008-vocab-demonstratives      — vocab cue, ~13s
+//   module-008-vocab-possessives         — vocab cue, ~14s
+//   module-008-vocab-distance-rule       — vocab cue, ~17s
+//   module-008-phrase-mi-cancion-favorita — phrase chunk cue, ~15s
+//   module-008-speaking-prompt           — speaking prompt cue, ~17s
+//   module-008-reading-intro             — reading passage TTS, ~55s
+//   module-008-cultural-note-pop         — pop variant cultural note, ~14s (mvpRequired:false)
+//   module-008-lesson-complete           — graduation moment, ~22s — MUST LAND HARD
+//   m8-reading-token-mi-gente            — short pronunciation, ~2s
+//   m8-reading-token-mi                  — short pronunciation, ~1s
+//   m8-reading-token-tu                  — short pronunciation, ~1s
+//   m8-reading-token-su                  — short pronunciation, ~1s
+//   m8-reading-token-esta                — short pronunciation, ~2s
+//   m8-reading-token-aquel               — short pronunciation, ~2s
+//
+// ──── EXACT READING PASSAGE TAPPABLE TOKENS (voice-engineer reference) ────
+//
+// 6 unique tappable Spanish tokens (one each, no repeats):
+//   1. "Mi Gente"   — song title, masc. noun phrase (mi + gente)
+//   2. "mi"         — 1st-person possessive, isolated
+//   3. "tu"         — 2nd-person informal possessive, isolated
+//   4. "su"         — 3rd-person ambiguous possessive, isolated
+//   5. "esta"       — "near speaker" feminine demonstrative (esta noche)
+//   6. "aquel"      — "far / memory" masculine demonstrative (aquel verano)
+//
+// Audit-script compliance: every unique Spanish tappable token in readingPassage
+// appears EXACTLY ONCE. Repeated forms in the prose (e.g., "mi" in the closing
+// sentence "mi gente. That's you now.") are plain text in English context, NOT
+// tappable — they don't count toward the 6-token cap.

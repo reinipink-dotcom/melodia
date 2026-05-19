@@ -223,6 +223,28 @@ QuizScreen.tsx now reads `onboardingStore.level` and routes: beginner→easyQuiz
 
 ---
 
+## OPEN — modules.ts id:9 Concept Redundant with M7 | cloud-fixable
+
+**Source:** M8 curriculum spec 2026-05-19. modules.ts id:9 placeholder concept is "Definite & Indefinite Articles" — this is functionally REDUNDANT with M7 (Articles & Gender), which already covers `el/la/los/las` plus gender agreement.
+
+**What needs to happen:**
+- [ ] Re-concept M9 BEFORE the next module build kicks off. Curriculum architect to pick a fresh A1-A2 concept (e.g. "Common Adjectives" per current queue, or another distinct topic) that doesn't overlap M7.
+- [ ] Update modules.ts id:9 concept, title, and downstream fields accordingly.
+- [ ] Aligns with the existing PENDING item above ("La La La" song repurposing) — handle both in the same M9 spec pass.
+
+---
+
+## OPEN — reviewFormat Union Missing 'reading-recall' | code-quality
+
+**Source:** M8 wire-up 2026-05-19. While wiring M8 recyclingTargets, content-builder included `'reading-recall'` in a `reviewFormat` array. TS2322: not in the union type. UX-builder dropped the value to ship the module.
+
+**What needs to happen:**
+- [ ] Decide: widen the `reviewFormat` union in `curriculum-enrichment.ts` (or wherever the type lives) to include `'reading-recall'` — OR — accept the drop as canonical and update content-builder guidance to never propose `'reading-recall'`.
+- [ ] If widening: add a default UI handler for the new format on the LessonComplete/review surface.
+- [ ] Low priority — does not block M8 ship.
+
+---
+
 ## POST-MVP (future, not blocking launch)
 
 - **AI speaking challenge:** Speaking challenge card connects to an AI the user can have a short back-and-forth conversation with in Spanish

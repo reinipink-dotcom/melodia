@@ -53,7 +53,7 @@ vm.runInContext(triggers, triggersCtx);
 const { findVocabTrigger, findPhraseTrigger } = triggersCtx.exports;
 
 let failures = 0;
-for (const moduleId of [1, 2, 3, 4, 5, 6, 7]) {
+for (const moduleId of [1, 2, 3, 4, 5, 6, 7, 8]) {
   const module = MODULES.find((m) => m.id === moduleId);
   if (!module || !module.ttsTriggers || module.ttsTriggers.length === 0) {
     console.log(`Module ${moduleId}: no ttsTriggers, skipping`);
