@@ -1,0 +1,168 @@
+{
+  "module": 8,
+  "moduleId": 8,
+  "concept": "Demonstratives & Possessives (A1)",
+  "targetConcept": "Spanish possessive adjectives (mi, tu, su, nuestro/a) and demonstratives (este/esta, ese/esa, aquel/aquella)",
+  "curriculumSpec": "notes/melodia/5-lessons/curriculum/module-008-spec.md — full spec from curriculum-architect, status: approved.",
+  "finalDecisionNote": "FINAL (FINAL REVERT 2026-05-19, per team-lead) — primary RESTORED to 'Mi Gente' (J Balvin & Willy William). Lock history: (1) Original lock = Mi Gente (song-validator initial delivery). (2) Re-lock to Tu Recuerdo (after curriculum-architect surfaced wider avoid-list). (3) FINAL REVERT to Mi Gente, per team-lead ruling: J Balvin's appearance in M3's Qué Calor *variant slot* (not as primary anywhere) does NOT trigger the variety rule — that rule is a soft preference against same-PRIMARY reuse, not zero-tolerance on every variant slot. Content-builder already finished a strong Mi Gente draft (cultural note + 6 tappables + paywall-graduation framing); re-doing it for marginal benefit is the avoidable burn. Mi Gente also fills the reggaeton genre slot for M8 (last free module, all 4 genre tracks should be represented). NO MORE SWAPS.",
+  "primarySong": {
+    "title": "Mi Gente",
+    "artist": "J Balvin & Willy William",
+    "album": "Vibras (2018) / standalone single (2017)",
+    "genre": "Reggaeton / Urbano (mid-tempo)",
+    "conceptMatchScore": 9.5,
+    "difficulty": "A1",
+    "durationSeconds": 189,
+    "spotifyId": "4ipnJyDU3Lq15qBAYNqlqK",
+    "youtubeId": "wnJ6LuUFpMo",
+    "spotifyIdVerified": true,
+    "youtubeIdVerified": true,
+    "usefulFormsFound": ["mi", "tu", "su"],
+    "tempoConcern": false,
+    "slangConcern": false,
+    "explicitContentConcern": false,
+    "approved": true,
+    "approvalStatus": "approved",
+    "conceptMatchRationale": "Title is literally 'Mi Gente' — the possessive+noun pair the lesson teaches. The repeated hook '¿dónde está mi gente?' makes 'mi' the most-heard word in the song. J Balvin's slow Medellín-paisa diction is unusually clean for reggaeton — every 'mi' lands. Bonus possessive evidence: 'mi música', 'mi flow', 'tu', 'su'. A1-accessible by every measure (tempo, enunciation, repetition, cultural recognition).",
+    "copyrightSafeNotes": "Cite only individual possessive adjectives ('mi', 'tu', 'su') and 2-word possessive+noun pairs ('mi gente', 'mi música', 'tu casa', 'su familia') as concept evidence. The 2-word title 'Mi Gente' is safe to display as metadata. NEVER reproduce full lines, chorus, or verses. Quiz items must test the Spanish possessive concept ('Which possessive means \"my\"?', 'How do you say \"your family\"?'), never lyric recall.",
+    "verificationNotes": "Spotify ID 4ipnJyDU3Lq15qBAYNqlqK confirmed via web search as the canonical 2017 standalone single (NOT the Beyoncé remix 4H7YHRlzkfoys1L9jQFcqH, NOT the Hardwell remix 746X5vmwHEnEMI1v7tlwsJ). YouTube ID wnJ6LuUFpMo is the official J Balvin Vevo upload (released July 2017, ~3:09 = 189s). Both should still get a 1-click human spot-check before shipping. Song is widely used in Spanish-as-a-foreign-language classrooms (TpT units, Lyric Fluent, multiple translation/lesson sites confirm A1-classroom safety).",
+    "downstreamConflictNote": "modules.ts id:8 current slot needs verification — coordinate with curriculum-architect on whether the existing id:8 song needs to migrate. J Balvin previously appears in M3's 'Qué Calor' VARIANT slot (not as primary) — per team-lead's final ruling, this is acceptable under the soft-variety rule (which bans same-primary reuse, not every variant slot reuse). Willy William is NEW. Reserve J Balvin from primary use for the rest of A1 — he's now used in M3 (variant) and M8 (primary)."
+  },
+  "genreAlternatives": {
+    "pop": {
+      "title": "Mi Persona Favorita",
+      "artist": "Alejandro Sanz & Camila Cabello",
+      "genre": "Flamenco-Pop / Latin Pop ballad",
+      "conceptMatchScore": 9.0,
+      "difficulty": "A1",
+      "durationSeconds": 199,
+      "spotifyId": "6hCuO8rcHV6Y1he9zOUlcf",
+      "youtubeId": "W4AiOKlOO0Q",
+      "spotifyIdVerified": true,
+      "youtubeIdVerified": true,
+      "usefulFormsFound": ["mi", "tu"],
+      "tempoConcern": false,
+      "slangConcern": false,
+      "explicitContentConcern": false,
+      "status": "approved",
+      "notes": "Title 'Mi Persona Favorita' is a textbook possessive+noun phrase. Alejandro Sanz's ballad delivery + flamenco guitar give A1 listeners ample time to parse 'mi'. Camila Cabello's bilingual diction adds clarity. 2019 release, 100M+ Spotify streams — strong cultural recognition. Family-friendly (Sanz wrote it for his daughter). Per team-lead's final ruling, Camila Cabello's prior appearance in M1-M7 (variant slot, not primary) does NOT trigger the variety rule.",
+      "copyrightSafeNotes": "Cite only individual possessives + 3-word title 'Mi Persona Favorita' as metadata. Quiz the possessive concept, never the lyric."
+    },
+    "reggaeton": {
+      "title": "Mi Gente",
+      "artist": "J Balvin & Willy William",
+      "genre": "Reggaeton / Urbano",
+      "conceptMatchScore": 9.5,
+      "difficulty": "A1",
+      "durationSeconds": 189,
+      "spotifyId": "4ipnJyDU3Lq15qBAYNqlqK",
+      "youtubeId": "wnJ6LuUFpMo",
+      "spotifyIdVerified": true,
+      "youtubeIdVerified": true,
+      "usefulFormsFound": ["mi", "tu", "su"],
+      "tempoConcern": false,
+      "slangConcern": false,
+      "explicitContentConcern": false,
+      "status": "primary",
+      "notes": "Same as primary — Mi Gente IS the reggaeton/urbano genre slot AND the primary pick. Listed here so all four genre slots are filled. Last-free-module reggaeton coverage is critical for the paywall-adjacent motivation curve.",
+      "copyrightSafeNotes": "See primarySong.copyrightSafeNotes."
+    },
+    "rnb": {
+      "title": "Tu Falta De Querer",
+      "artist": "Mon Laferte",
+      "genre": "Bolero-Pop / Latin Soul",
+      "conceptMatchScore": 9.0,
+      "difficulty": "A1",
+      "durationSeconds": 232,
+      "spotifyId": "4skuEIloXWuxxgekKupkEH",
+      "youtubeId": "WT-VE9OyAJk",
+      "spotifyIdVerified": true,
+      "youtubeIdVerified": true,
+      "usefulFormsFound": ["tu", "mi"],
+      "tempoConcern": false,
+      "slangConcern": false,
+      "explicitContentConcern": false,
+      "status": "approved",
+      "notes": "Title 'Tu Falta De Querer' leads with possessive 'tu'. Mon Laferte (Chilean, now Mexico-based) delivers in a slow bolero-pop / Latin soul lane — perfect for A1 listeners parsing every syllable. 200M+ streams, breakout hit from her 2015 album. NEW artist (not used M1-M7). Family-friendly (a melancholy love song, no explicit content).",
+      "copyrightSafeNotes": "Cite only individual possessives + 4-word title 'Tu Falta De Querer' as metadata. Title literally exemplifies the 'tu + noun' possessive pattern. Quiz the rule, not the lyric."
+    },
+    "regional-mexican": {
+      "title": "Esta Noche Con Mariachis",
+      "artist": "Vicente Fernández",
+      "genre": "Ranchera / Mariachi",
+      "conceptMatchScore": 8.5,
+      "difficulty": "A1",
+      "durationSeconds": 178,
+      "spotifyId": "1NZrtN3sWFoQgIcpcxeh3K",
+      "youtubeId": "COpovqGFU9Q",
+      "spotifyIdVerified": true,
+      "youtubeIdVerified": true,
+      "usefulFormsFound": ["esta", "mi", "tu"],
+      "tempoConcern": false,
+      "slangConcern": false,
+      "explicitContentConcern": false,
+      "status": "approved",
+      "notes": "Title 'Esta Noche Con Mariachis' leads with the feminine demonstrative 'esta' — the canonical 'esta + feminine noun' example the lesson teaches. ONE OF THE FEW song-level demonstrative anchors in the M8 lineup. Vicente Fernández ('El Rey de la Música Ranchera') has declamatory, hyper-clear diction. Classic ranchera, family-friendly, deep cultural resonance for the reading-passage hook. Original 1965 recording remastered on Spotify (2009 release date is the remaster). Per team-lead's final ruling, Vicente Fernández's prior appearance in M1-M7 (variant slot, not primary) does NOT trigger the variety rule.",
+      "copyrightSafeNotes": "Cite only individual demonstratives/possessives + 4-word title 'Esta Noche Con Mariachis' as metadata. Reading-passage discussion of Vicente Fernández / ranchera tradition must be 100% original prose."
+    }
+  },
+  "rejectedCandidates": [
+    {
+      "title": "Tu Recuerdo (MTV Unplugged Version)",
+      "artist": "Ricky Martin ft. La Mari de Chambao",
+      "reason": "Was the curriculum-architect's recommended primary and held the lock briefly during the M8 lock-cycle. REVERTED per team-lead: (a) content-builder had already shipped a strong Mi Gente draft; (b) Mi Gente fills the reggaeton genre slot which Tu Recuerdo cannot; (c) the J Balvin M3-variant conflict was ruled non-blocking. Hold Ricky Martin / La Mari de Chambao as fresh A1-viable artists for a future module."
+    },
+    {
+      "title": "Eres Tú",
+      "artist": "Carla Morrison",
+      "reason": "Strong indie-pop teach-point candidate (tu vs tú accent contrast recycling M2). Held the reggaeton substitute slot briefly during the re-lock cycle. Now unused because Mi Gente reclaims the reggaeton slot. Save for a future module where the accent-contrast recycle is the primary teaching target."
+    },
+    {
+      "title": "Mi Razón De Ser",
+      "artist": "Banda MS de Sergio Lizárraga",
+      "reason": "Curriculum-architect's regional-mexican backup. Strong concept match (title = possessive 'mi' + noun + M6 'ser' recycle). Held the regional-mexican slot briefly during re-lock cycle. Now unused because team-lead's final ruling allows Vicente Fernández to fill the slot. Reserve Banda MS for a future regional-mexican module."
+    },
+    {
+      "title": "Tu Boca",
+      "artist": "Andrés Cepeda",
+      "reason": "Could not locate a primary Spotify track for Andrés Cepeda's 'Tu Boca' in search — only Cabas, Antonio José, Thalía/Banda MS, and Beéle/Wisin versions surfaced. ID verification failed. Title would have been a strong possessive+noun pair if confirmable. Backup-tier pending manual ID lookup."
+    },
+    {
+      "title": "Esta Es Mi Vida",
+      "artist": "Soraya",
+      "reason": "Could not locate a Spotify track by Soraya with this title — only Isabel Pantoja, Karina, Jesse & Joy (album, not track), Raquel Olmedo, La Lupe versions surfaced. ID verification failed. Title would have been a triple-perfect concept hit (demonstrative + possessive + noun) if confirmable."
+    },
+    {
+      "title": "Eres Tú",
+      "artist": "Mocedades",
+      "reason": "Eurovision 1973 classic — 'tú' here is the SUBJECT PRONOUN ('you are'), not the POSSESSIVE 'tu' ('your'). Conceptual mismatch for M8's possessive-anchored quiz target. Save for a future subject-pronouns module."
+    },
+    {
+      "title": "Mi Gente (feat. Beyoncé)",
+      "artist": "J Balvin, Willy William, Beyoncé",
+      "reason": "Remix version with Beyoncé verses — picked the original 2017 standalone (4ipnJyDU3Lq15qBAYNqlqK) instead for cleaner A1-parseable Spanish-only diction."
+    },
+    {
+      "title": "Mi Gente (Hardwell & Quintino Remix)",
+      "artist": "J Balvin, Willy William, Hardwell, Quintino",
+      "reason": "EDM remix — tempo too fast for A1, original lyrics partially replaced. Original 2017 version is the canonical pick."
+    }
+  ],
+  "copyrightFlag": "green",
+  "copyrightSafetyOverall": "All four distinct tracks (Mi Gente / Mi Persona Favorita / Tu Falta De Querer / Esta Noche Con Mariachis) are mainstream major-label releases with public Spotify + YouTube metadata. Concept evidence is strictly limited to individual possessives ('mi', 'tu', 'su') and demonstratives ('este', 'esta', 'ese', 'esa', 'aquel') plus 2-4 word possessive+noun or demonstrative+noun pairs that exemplify the concept. All titles are 2-4 words and safe to display as metadata. Quiz items must test the Spanish possessive/demonstrative concept, never lyric recall. Reading-comprehension passage on J Balvin / reggaeton evolution OR Vicente Fernández / ranchera tradition must be 100% original prose. 'Mi Gente' is already widely used in classroom Spanish curricula (TpT units, Lyric Fluent, multiple Spanish-teaching sites) — confirms A1-classroom safety.",
+  "knownBugFlags": [
+    "Module 3 quiz dead-end — flagged per role spec, not specific to M8.",
+    "'¿Dónde jugarán los niños?' wrong YouTube Music link — flagged per role spec, M8 does not use Maná.",
+    "Timer notification issue in YouTube Music — flagged per role spec.",
+    "modules.ts id:8 current slot needs verification — coordinate with curriculum-architect. The new M8 curriculum slot is 'Demonstratives & Possessives'. If the existing id:8 song is different, it should migrate.",
+    "Reggaeton genre slot is occupied by the PRIMARY (Mi Gente) — content-builder should treat the reggaeton alt as a pointer to primary, not a separate secondary recommendation.",
+    "Lock-cycle process learning: team-lead ruling clarified that the artist variety rule is soft (no same-primary reuse) NOT hard (no variant-slot reuse). For M9+: a single variant-slot reuse is OK; only re-flag if a candidate would be reused as PRIMARY."
+  ],
+  "humanVerificationRequired": [
+    "PRIMARY: 1-click spot-check Spotify (https://open.spotify.com/track/4ipnJyDU3Lq15qBAYNqlqK) and YouTube (https://www.youtube.com/watch?v=wnJ6LuUFpMo) for 'Mi Gente' (J Balvin & Willy William). Confirm 2017 standalone single, ~3:09 runtime, NOT the Beyoncé remix.",
+    "POP: 1-click spot-check 'Mi Persona Favorita' (Alejandro Sanz, Camila Cabello) Spotify (6hCuO8rcHV6Y1he9zOUlcf) and YouTube (W4AiOKlOO0Q) — confirm 2019 original (NOT a live/remix version).",
+    "RNB: 1-click spot-check 'Tu Falta De Querer' (Mon Laferte) Spotify (4skuEIloXWuxxgekKupkEH) and YouTube (WT-VE9OyAJk) — confirm 2015 studio Lyric Video, NOT the En Vivo / Acoustic / Teatro Fru Fru versions.",
+    "REGIONAL-MEXICAN: 1-click spot-check 'Esta Noche Con Mariachis' (Vicente Fernández) Spotify (1NZrtN3sWFoQgIcpcxeh3K) and YouTube (COpovqGFU9Q) — confirm the canonical Vicente recording (the YouTube link is labeled 1965 vintage upload; the Spotify is the 2009 remaster).",
+    "DOWNSTREAM M8 SLOT CONFLICT: add to PENDING.md that modules.ts id:8 may need to be repurposed to 'Demonstratives & Possessives' per the curriculum architect's M8 spec. Coordinate before content-builder anchors."
+  ]
+}

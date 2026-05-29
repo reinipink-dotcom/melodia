@@ -1,0 +1,189 @@
+{
+  "module": 4,
+  "title": "Prepositions, Conjunctions & Adverbs",
+  "provider": "openai",
+  "model": "tts-1-hd",
+  "defaultVoice": "nova",
+  "defaultLangAccent": "en-US-with-es-419-tokens",
+  "generatedBy": "voice-engineer-v2",
+  "generatedOn": "2026-05-18",
+  "notes": "Narration-style upgrade from old slow+normal pair format (17 files). Following Module 5 gold standard. Replaces module-004-tts.json. Song is 'A Dios Le Pido' by Juanes. Old files: vocab-de-slow.mp3, vocab-de.mp3 etc.",
+  "ttsTriggers": [
+    {
+      "id": "m4-intro",
+      "text": "Module 4 covers the small words that hold Spanish sentences together — prepositions and connectors. De, con, sin, pero, también. They're short, they're everywhere, and once you know them, you can start building real phrases. As you listen to 'A Dios Le Pido' by Juanes, listen for how these words connect ideas: con sus ojos — with his eyes. A single preposition carrying a whole image.",
+      "language": "en-US-with-es-419-tokens",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.95,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-004/m4-intro-prepositions.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m4-vocab-de",
+      "text": "'De' means 'of' or 'from' — one of the most common words in Spanish. Soy de México — I'm from Mexico. Un vaso de agua — a glass of water. De noche — at night (literally: of night). It connects a noun to its origin, its material, or its container. You'll hear de in almost every Spanish sentence. Two letters, enormous range.",
+      "language": "en-US-with-es-419-tokens",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.95,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-004/m4-vocab-de.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m4-vocab-con",
+      "text": "'Con' means 'with' — it describes accompaniment, ingredients, or the manner of doing something. Café con leche — coffee with milk. Vivo con mi familia — I live with my family. Con mucho gusto — with pleasure. You'll hear con constantly in food orders, in song lyrics, in everyday speech. Three letters, always meaning 'with'.",
+      "language": "en-US-with-es-419-tokens",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.95,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-004/m4-vocab-con.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m4-vocab-sin",
+      "text": "'Sin' means 'without' — the opposite of con. Café sin azúcar — coffee without sugar. Sin miedo — without fear. Sin ti — without you, one of the most common phrases in Latin music. English has the prefix 'sinister' from the same Latin root, but in Spanish sin is neutral and everyday. It shows up everywhere you want to say something is absent.",
+      "language": "en-US-with-es-419-tokens",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.95,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-004/m4-vocab-sin.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m4-vocab-pero",
+      "text": "'Pero' means 'but' — the contrast connector. Hablo inglés, pero no hablo chino — I speak English, but I don't speak Chinese. Me gusta el café, pero prefiero el té — I like coffee, but I prefer tea. When you see pero in a sentence, expect a contrast or a limitation after it. One quick note: pero has one R, not two. Perro with two Rs means dog. The trill makes all the difference.",
+      "language": "en-US-with-es-419-tokens",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.95,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-004/m4-vocab-pero.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m4-vocab-tambien",
+      "text": "'También' means 'also' or 'too' — the addition word. Yo también — me too. Ella habla español y también habla portugués — She speaks Spanish and also speaks Portuguese. The accent on the é: tam-BIÉN. In conversation, yo también is one of the most useful phrases you'll use — every time someone tells you something you share, that's your response.",
+      "language": "en-US-with-es-419-tokens",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.95,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-004/m4-vocab-tambien.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m4-phrase-cafe-con-leche",
+      "text": "'Café con leche' means coffee with milk — it's the classic Spanish breakfast drink, similar to a latte but stronger. Three words, all Module 4 vocabulary: café is the noun, con is the preposition, leche is milk. You can extend it: café con leche sin azúcar — coffee with milk, without sugar. That single sentence uses three of the five words from this module. Order it in any Spanish-speaking country and you'll be understood immediately.",
+      "language": "en-US-with-es-419-tokens",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.95,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-004/m4-phrase-cafe-con-leche.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m4-speaking-prompt",
+      "text": "Here's your speaking frame for today: 'Quiero ___ con ___, pero sin ___.' Fill in the blanks with something you'd order or want. I want — con — pero sin — that's three Module 4 words in one sentence. Say it out loud, substitute your own items, and you've just built a real Spanish sentence from scratch.",
+      "language": "en-US-with-es-419-tokens",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.95,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-004/m4-speaking-prompt.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m4-reading-intro",
+      "text": "Now a reading passage about Juanes, the Colombian singer behind 'A Dios Le Pido'. You'll see the prepositions and connectors from this module highlighted as tappable words in the text. Tap them to hear each one. Notice how con, de, sin, and pero show up constantly — these small words are the connective tissue of every Spanish sentence.",
+      "language": "en-US-with-es-419-tokens",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.95,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-004/m4-reading-intro.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m4-lesson-complete",
+      "text": "Five small words — de, con, sin, pero, también — and you've just unlocked a huge part of how Spanish connects ideas. From here, every phrase you build will use at least one of these. You also know the difference between pero and perro, which is the kind of detail that makes people think you've been studying for years. Next: subject pronouns — yo, tú, él, ella, nosotros, ellos. The building blocks of every sentence.",
+      "language": "en-US-with-es-419-tokens",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.95,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-004/m4-lesson-complete.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m4-reading-token-de",
+      "text": "de",
+      "language": "es-419",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.9,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-004/m4-reading-token-de.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m4-reading-token-con",
+      "text": "con",
+      "language": "es-419",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.9,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-004/m4-reading-token-con.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m4-reading-token-sin",
+      "text": "sin",
+      "language": "es-419",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.9,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-004/m4-reading-token-sin.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m4-reading-token-y",
+      "text": "y",
+      "language": "es-419",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.9,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-004/m4-reading-token-y.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m4-reading-token-pero",
+      "text": "pero",
+      "language": "es-419",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.9,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-004/m4-reading-token-pero.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m4-reading-token-tambien",
+      "text": "también",
+      "language": "es-419",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.9,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-004/m4-reading-token-tambien.mp3",
+      "mvpRequired": true
+    }
+  ]
+}

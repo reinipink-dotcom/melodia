@@ -1,0 +1,173 @@
+{
+  "module": 7,
+  "moduleId": 7,
+  "concept": "Articles & Gender (A1)",
+  "targetConcept": "Spanish definite articles (el, la, los, las) and noun gender",
+  "curriculumSpec": "TBD — curriculum-architect is drafting module-007-spec.md (task #1). This validation locks the song selection so the spec + content-builder can anchor to a single primary.",
+  "finalDecisionNote": "FINAL — primary locked to 'La Vida Es Un Carnaval' (Celia Cruz) per song-validator 2026-05-19. Title leads with 'La', salsa tempo is A1-parseable, and gendered noun pairs (la vida / el cielo / la pena / el carnaval) are dense throughout. NO mid-flight swaps.",
+  "primarySong": {
+    "title": "La Vida Es Un Carnaval",
+    "artist": "Celia Cruz",
+    "album": "Mi Vida Es Cantar (1998)",
+    "genre": "Salsa / Afro-Cuban",
+    "conceptMatchScore": 9.5,
+    "difficulty": "A1",
+    "durationSeconds": 279,
+    "spotifyId": "1BwrMGGhPA6GarWIYaFrW8",
+    "youtubeId": "7Ho86ggAVrY",
+    "spotifyIdVerified": true,
+    "youtubeIdVerified": true,
+    "usefulFormsFound": ["la", "el", "los", "las"],
+    "tempoConcern": false,
+    "slangConcern": false,
+    "explicitContentConcern": false,
+    "approved": true,
+    "approvalStatus": "approved",
+    "conceptMatchRationale": "Title is 'La Vida' — the article+noun pair the lesson teaches. Celia's declamatory salsa diction makes 'la', 'el', 'los', 'las' audibly distinct. Gendered noun density is high (la vida, el carnaval, las penas, los problemas) — ideal A1 evidence for article-noun matching.",
+    "copyrightSafeNotes": "Cite only individual articles ('el', 'la', 'los', 'las') and 2-3 word article+noun pairs ('la vida', 'el carnaval', 'las penas') as concept evidence. The 4-word title 'La Vida Es Un Carnaval' is safe to display as metadata. NEVER reproduce full lines, chorus, or verses. Quiz items must test the Spanish article-gender concept ('Which article goes with vida?', 'What is the masculine article?'), never lyric recall.",
+    "verificationNotes": "Spotify ID 1BwrMGGhPA6GarWIYaFrW8 confirmed as the canonical 1998 'Mi Vida Es Cantar' track via web search. YouTube ID 7Ho86ggAVrY is the official audio upload (duration ~4:39 = 279s). Both should still get a 1-click human spot-check before shipping.",
+    "downstreamConflictNote": "modules.ts id:7 is currently 'Numbers & Ordinals' (Sofía Reyes — '1, 2, 3'). M7 spec requires this slot to be swapped to 'Articles & Gender' with primary 'La Vida Es Un Carnaval'. Numbers should migrate to another A1 slot — coordinate with curriculum-architect. modules.ts id:9 ('Definite & Indefinite Articles', Shakira — 'La La La') will likely need a different song since Shakira is already heavily used (M6 primary)."
+  },
+  "genreAlternatives": {
+    "pop": {
+      "title": "El Mismo Sol",
+      "artist": "Alvaro Soler",
+      "genre": "Latin Pop",
+      "conceptMatchScore": 9.0,
+      "difficulty": "A1",
+      "durationSeconds": 213,
+      "spotifyId": "58WOkUl3O9LvLZjdhiQvIX",
+      "youtubeId": "aNHwNreDp3A",
+      "spotifyIdVerified": true,
+      "youtubeIdVerified": true,
+      "usefulFormsFound": ["el", "la", "los"],
+      "tempoConcern": false,
+      "slangConcern": false,
+      "explicitContentConcern": false,
+      "status": "approved",
+      "notes": "Modern (2015) upbeat Latin pop — title 'El Mismo Sol' leads with 'el' + masculine noun pairing. Spanish-Cuban-German artist with clean enunciation. Family-friendly, optimistic, no slang. Article density is solid for A1.",
+      "copyrightSafeNotes": "Cite only individual articles and short article+noun pairs ('el sol', 'la luz'). Title 'El Mismo Sol' is safe metadata."
+    },
+    "reggaeton": {
+      "title": "El Perdón",
+      "artist": "Nicky Jam & Enrique Iglesias",
+      "genre": "Reggaeton / Urbano (slow)",
+      "conceptMatchScore": 8.5,
+      "difficulty": "A1",
+      "durationSeconds": 245,
+      "spotifyId": "7qCAVkHWZkF44OzOUKf8Cr",
+      "youtubeId": "hXI8RQYC36Q",
+      "spotifyIdVerified": true,
+      "youtubeIdVerified": true,
+      "usefulFormsFound": ["el", "la"],
+      "tempoConcern": false,
+      "slangConcern": false,
+      "explicitContentConcern": false,
+      "status": "approved",
+      "notes": "30-week Hot Latin Songs #1, 300M+ streams, slower reggaeton tempo (A1-accessible). Title 'El Perdón' is a clean masculine article+noun pair. Family-friendly lyrics — about apology/regret, no explicit content. Both artists enunciate clearly.",
+      "copyrightSafeNotes": "Cite only individual articles + 2-word title 'El Perdón' as metadata. NEVER reproduce chorus."
+    },
+    "rnb": {
+      "title": "La Diabla",
+      "artist": "Romeo Santos",
+      "genre": "Bachata / Latin R&B",
+      "conceptMatchScore": 8.0,
+      "difficulty": "A1",
+      "durationSeconds": 240,
+      "spotifyId": "3eCuEXYF3VnbTDHaztfUAv",
+      "youtubeId": "tYUD9zpSTgw",
+      "spotifyIdVerified": true,
+      "youtubeIdVerified": true,
+      "usefulFormsFound": ["la", "el"],
+      "tempoConcern": false,
+      "slangConcern": false,
+      "explicitContentConcern": false,
+      "status": "approved",
+      "notes": "Romeo Santos is the 'King of Bachata' — soulful, slow-tempo Latin R&B lane. Title 'La Diabla' is a feminine article+noun pair (with -a ending = perfect canonical example for the gender rule). Romeo's smooth delivery makes articles audible.",
+      "copyrightSafeNotes": "Cite only individual articles + 2-word title 'La Diabla' as metadata. Title literally exemplifies the -a → feminine rule. Quiz the rule, not the chorus."
+    },
+    "regional-mexican": {
+      "title": "La Llorona",
+      "artist": "Chavela Vargas",
+      "genre": "Ranchera / Folk",
+      "conceptMatchScore": 9.0,
+      "difficulty": "A1",
+      "durationSeconds": 251,
+      "spotifyId": "21VxAmhZn3p0kdb0jXu4Ry",
+      "youtubeId": "J0Ss46HaKNk",
+      "spotifyIdVerified": true,
+      "youtubeIdVerified": true,
+      "usefulFormsFound": ["la", "el", "los"],
+      "tempoConcern": false,
+      "slangConcern": false,
+      "explicitContentConcern": false,
+      "status": "approved",
+      "notes": "Iconic Mexican folk ballad. Chavela's slow, declamatory delivery is ideal for A1 listeners parsing every syllable. Title 'La Llorona' is the canonical feminine article+noun pair. Cultural cornerstone — gives the content-builder a strong reading-passage hook for Mexican folklore. Family-friendly (the legend is melancholy but not explicit).",
+      "copyrightSafeNotes": "Cite only individual articles + 2-word title 'La Llorona' as metadata. Reading-passage discussion of the folklore must be 100% original prose."
+    }
+  },
+  "rejectedCandidates": [
+    {
+      "title": "La La La (Brazil 2014)",
+      "artist": "Shakira ft. Carlinhos Brown",
+      "reason": "Currently slotted in modules.ts id:9 as the articles song, but Shakira is already M6 primary. Variety rule blocks reuse in M7. Also, 'La La La' is a vocalization, not the definite article — weaker concept evidence than 'La Vida'."
+    },
+    {
+      "title": "El Cuarto de Tula",
+      "artist": "Buena Vista Social Club",
+      "reason": "Strong concept match (el + masculine noun in title) but the tempo is fast and the son cubano improvisation makes individual articles less audible than in Celia's salsa. Save as a B1+ cultural deep-dive candidate."
+    },
+    {
+      "title": "La Bamba",
+      "artist": "Ritchie Valens",
+      "reason": "Iconic but the title 'La Bamba' is the only clean article evidence — the rest is mostly repeating the title. Concept density is too thin. Also tempo is fast (~150 BPM)."
+    },
+    {
+      "title": "La Camisa Negra",
+      "artist": "Juanes",
+      "reason": "Strong concept match ('la camisa negra' = perfect feminine article+noun+adjective triple) BUT Juanes is already M4 primary ('A Dios Le Pido'). Variety rule blocks reuse."
+    },
+    {
+      "title": "La Bicicleta",
+      "artist": "Carlos Vives & Shakira",
+      "reason": "Title is a clean feminine pair but Shakira is M6 primary — variety rule blocks."
+    },
+    {
+      "title": "La Tortura",
+      "artist": "Shakira ft. Alejandro Sanz",
+      "reason": "Shakira already M6 primary."
+    },
+    {
+      "title": "La Gozadera",
+      "artist": "Gente de Zona ft. Marc Anthony",
+      "reason": "Strong feminine article+noun title but the song is mostly about listing country names — concept evidence is thin beyond the title. Save for a later geography/cultural module."
+    },
+    {
+      "title": "El Sol No Regresa",
+      "artist": "La Quinta Estación",
+      "reason": "Solid concept match but the band name is 'La Quinta Estación' (already provides 'la' evidence in metadata), the song itself has lower article density than Celia's track. Backup-tier."
+    },
+    {
+      "title": "La Vida Es Un Carnaval (En Vivo)",
+      "artist": "Celia Cruz",
+      "reason": "Live version (Spotify 4fKcZxu5Vimh2eoqmJOyno) — picked the studio 1998 version instead for cleaner A1-parseable diction."
+    }
+  ],
+  "copyrightFlag": "green",
+  "copyrightSafetyOverall": "All five distinct tracks (La Vida Es Un Carnaval / El Mismo Sol / El Perdón / La Diabla / La Llorona) are mainstream major-label releases with public Spotify + YouTube metadata. Concept evidence is strictly limited to individual articles ('el', 'la', 'los', 'las') and 2-3 word article+noun pairs that exemplify the gender rule. All titles are 2-4 words and safe to display as metadata. Quiz items must test the Spanish article-gender concept, never lyric recall. Reading-comprehension passage on Celia Cruz / Cuban salsa must be 100% original prose.",
+  "knownBugFlags": [
+    "Module 3 quiz dead-end — flagged per role spec, not specific to M7.",
+    "'¿Dónde jugarán los niños?' wrong YouTube Music link — flagged per role spec, M7 does not use Maná.",
+    "Timer notification issue in YouTube Music — flagged per role spec.",
+    "modules.ts id:7 currently is 'Numbers & Ordinals' (Sofía Reyes — '1, 2, 3'). The new M7 curriculum slot per task #1 is 'Articles & Gender'. Numbers content should migrate to another A1 slot — coordinate with curriculum-architect.",
+    "modules.ts id:9 ('Definite & Indefinite Articles') currently lists 'La La La (Brazil 2014)' (Shakira) as primary. With M7 now claiming the articles concept AND Shakira already used in M6, id:9 will likely be merged into M7 or repurposed. Track in PENDING.md."
+  ],
+  "humanVerificationRequired": [
+    "PRIMARY: 1-click spot-check Spotify (https://open.spotify.com/track/1BwrMGGhPA6GarWIYaFrW8) and YouTube (https://www.youtube.com/watch?v=7Ho86ggAVrY) for 'La Vida Es Un Carnaval' (Celia Cruz). Confirm 1998 'Mi Vida Es Cantar' studio track, ~4:39 runtime.",
+    "POP: 1-click spot-check 'El Mismo Sol' (Alvaro Soler) Spotify (58WOkUl3O9LvLZjdhiQvIX) and YouTube (aNHwNreDp3A) — confirm 2015 solo version (NOT the Jennifer Lopez collab).",
+    "REGGAETON: 1-click spot-check 'El Perdón' (Nicky Jam & Enrique Iglesias) Spotify (7qCAVkHWZkF44OzOUKf8Cr) and YouTube (hXI8RQYC36Q).",
+    "RNB: 1-click spot-check 'La Diabla' (Romeo Santos) Spotify (3eCuEXYF3VnbTDHaztfUAv) and YouTube (tYUD9zpSTgw) — confirm Fórmula Vol. 2 studio version, not the live/Tomatito version.",
+    "REGIONAL-MEXICAN: 1-click spot-check 'La Llorona' (Chavela Vargas) Spotify (21VxAmhZn3p0kdb0jXu4Ry) and YouTube (J0Ss46HaKNk).",
+    "DOWNSTREAM M7/M9 CONFLICT: add to PENDING.md that modules.ts id:7 needs to be repurposed from Numbers to Articles, and id:9 needs a new song (Shakira's 'La La La' is blocked by variety rule)."
+  ]
+}

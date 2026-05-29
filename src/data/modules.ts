@@ -120,6 +120,7 @@ export type Module = {
   hardQuizQuestions?: QuizQuestion[];
   readingPassage?: ReadingPassageToken[];
   culturalNote?: string;
+  culturalNoteVariants?: Partial<Record<GenreTrack, string>>;
   ttsTriggers?: TtsTrigger[];
   // ── Curriculum enrichment overlay ──────────────────────────────────────────
   vocabularyTheme?: string;           // real-world vocabulary category for this module
@@ -166,7 +167,7 @@ export const MODULES: Module[] = [
     song: { title: 'Bésame Mucho', artist: 'Consuelo Velázquez', durationSeconds: 210, spotifyId: '6jXSjt2gZkLQ9yEAGOC7CR', youtubeId: 'MY0fuEfBmD4' },
     genreSongs: {
       pop: { title: 'Limón y Sal', artist: 'Julieta Venegas', durationSeconds: 218, spotifyId: '7dITAq1YP5e0kTcaDq4YWI', youtubeId: 'tIpzfs5tBJU' },
-      reggaeton: { title: 'Despacito', artist: 'Luis Fonsi ft. Daddy Yankee', durationSeconds: 229, spotifyId: '6habFhsOp2NvshLv26DqMb', youtubeId: 'kJQP7kiw5Fk' },
+      reggaeton: { title: 'Gasolina', artist: 'Daddy Yankee', durationSeconds: 192, spotifyId: '6jEZLz3YpnEBRpVkv35AmP', youtubeId: 'CCF1_jI8Prk' },
       rnb: { title: 'Burbujas de Amor', artist: 'Juan Luis Guerra 4.40', durationSeconds: 245, spotifyId: '0TarPYIjJndYucFUOMce8P', youtubeId: 'PWGwF_B0bxk' },
       'regional-mexican': { title: 'Cielito Lindo', artist: 'Vicente Fernández', durationSeconds: 195, spotifyId: '1YIE0WBii65tRNXsxV5iGs', youtubeId: 'T6o_zaTvHSI' },
     },
@@ -293,23 +294,25 @@ export const MODULES: Module[] = [
       { text: 'hablar', isSpanish: true, english: 'to speak', phonetic: 'ah-BLAR' },
       { text: ' proves the H is always silent. The whole alphabet, in one love song from a girl who had not yet lived the feeling.', isSpanish: false },
     ],
+    // Narration-style audio (v2) — replaces old slow+normal single-word format.
+    // New files: m1-*.mp3 — generate via /melodia-audio 1 (module-001-tts-v2.json).
+    // Reading tokens kept as single-word pronunciation files for tap-to-hear.
     ttsTriggers: [
-      { id: 'vocab-vowels-slow',           screen: 'preListen', text: 'a, e, i, o, u', language: 'es-419', slowVersion: true,  normalVersion: false, outputFile: 'assets/audio/module-001/vocab-vowels-slow.mp3',          mvpRequired: true },
-      { id: 'vocab-vowels',                screen: 'preListen', text: 'a, e, i, o, u', language: 'es-419', slowVersion: false, normalVersion: true,  outputFile: 'assets/audio/module-001/vocab-vowels.mp3',               mvpRequired: true },
-      { id: 'vocab-enye-slow',             screen: 'preListen', text: 'ñ',             language: 'es-419', slowVersion: true,  normalVersion: false, outputFile: 'assets/audio/module-001/vocab-enye-slow.mp3',            mvpRequired: true },
-      { id: 'vocab-enye',                  screen: 'preListen', text: 'ñ',             language: 'es-419', slowVersion: false, normalVersion: true,  outputFile: 'assets/audio/module-001/vocab-enye.mp3',                 mvpRequired: true },
-      { id: 'vocab-ll-slow',               screen: 'preListen', text: 'll',            language: 'es-419', slowVersion: true,  normalVersion: false, outputFile: 'assets/audio/module-001/vocab-ll-slow.mp3',              mvpRequired: true },
-      { id: 'vocab-ll',                    screen: 'preListen', text: 'll',            language: 'es-419', slowVersion: false, normalVersion: true,  outputFile: 'assets/audio/module-001/vocab-ll.mp3',                   mvpRequired: true },
-      { id: 'vocab-h-slow',                screen: 'preListen', text: 'h',             language: 'es-419', slowVersion: true,  normalVersion: false, outputFile: 'assets/audio/module-001/vocab-h-slow.mp3',               mvpRequired: true },
-      { id: 'vocab-h',                     screen: 'preListen', text: 'h',             language: 'es-419', slowVersion: false, normalVersion: true,  outputFile: 'assets/audio/module-001/vocab-h.mp3',                    mvpRequired: true },
-      { id: 'vocab-rr-slow',               screen: 'preListen', text: 'rr',            language: 'es-419', slowVersion: true,  normalVersion: false, outputFile: 'assets/audio/module-001/vocab-rr-slow.mp3',              mvpRequired: true },
-      { id: 'vocab-rr',                    screen: 'preListen', text: 'rr',            language: 'es-419', slowVersion: false, normalVersion: true,  outputFile: 'assets/audio/module-001/vocab-rr.mp3',                   mvpRequired: true },
-      { id: 'phrase-besame-mucho',         screen: 'preListen', text: 'Bésame mucho.', language: 'es-419', slowVersion: false, normalVersion: true,  outputFile: 'assets/audio/module-001/phrase-besame-mucho.mp3',        mvpRequired: true },
-      { id: 'reading-token-besame-mucho',  screen: 'reading',   text: 'Bésame Mucho',  language: 'es-419', slowVersion: false, normalVersion: true,  outputFile: 'assets/audio/module-001/reading-token-besame-mucho.mp3', mvpRequired: true },
-      { id: 'reading-token-hola',          screen: 'reading',   text: 'Hola',          language: 'es-419', slowVersion: false, normalVersion: true,  outputFile: 'assets/audio/module-001/reading-token-hola.mp3',         mvpRequired: true },
-      { id: 'reading-token-besame',        screen: 'reading',   text: 'bésame',        language: 'es-419', slowVersion: false, normalVersion: true,  outputFile: 'assets/audio/module-001/reading-token-besame.mp3',       mvpRequired: true },
-      { id: 'reading-token-llorar',        screen: 'reading',   text: 'llorar',        language: 'es-419', slowVersion: false, normalVersion: true,  outputFile: 'assets/audio/module-001/reading-token-llorar.mp3',       mvpRequired: true },
-      { id: 'reading-token-hablar',        screen: 'reading',   text: 'hablar',        language: 'es-419', slowVersion: false, normalVersion: true,  outputFile: 'assets/audio/module-001/reading-token-hablar.mp3',       mvpRequired: true },
+      { id: 'm1-intro',               screen: 'preListen',      text: "Welcome to Module 1. Spanish is one of the most phonetic languages on earth — once you know the sounds, you can read anything out loud. As you listen to 'Bésame Mucho', pay attention to the vowels. Every vowel in the song sounds exactly the same as in every other Spanish word you'll ever hear.",                                                                                                                                                                                                  language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-001/m1-intro-alphabet.mp3',    mvpRequired: true },
+      { id: 'm1-vocab-vowels',         screen: 'preListen',      text: "Spanish has five vowels: a, e, i, o, u. Each one sounds exactly the same every single time — never reduced, never swallowed, never changed by the letters around it. A is 'ah', E is 'eh', I is 'ee', O is 'oh', U is 'oo'. Once those five sounds are in your ear, you can read any Spanish word out loud and it will sound right.",                                                                                                                                                                   language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-001/m1-vocab-vowels.mp3',       mvpRequired: true },
+      { id: 'm1-vocab-enye',           screen: 'preListen',      text: "'Ñ' is unique to Spanish — it doesn't exist in English. It sounds like the 'ny' in canyon. Think of it as the letter N wearing a little hat. Example words: niño, which means boy or child; mañana, meaning tomorrow or morning; año, meaning year. The tilde on top is the whole story — it transforms N into a completely different sound.",                                                                                                                                                          language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-001/m1-vocab-enye.mp3',         mvpRequired: true },
+      { id: 'm1-vocab-ll',             screen: 'preListen',      text: "'LL' in Spanish sounds like the English 'y' in 'yes' — a soft, gliding sound. It used to be considered a separate letter called elle, and in some regions it still sounds more like a 'j' or 'zh'. For standard Latin American Spanish, say it like 'y'. Example words: llamar — to call; llegar — to arrive; lluvia — rain. You'll hear this sound a lot in songs.",                                                                                                                                  language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-001/m1-vocab-ll.mp3',           mvpRequired: true },
+      { id: 'm1-vocab-h',              screen: 'preListen',      text: "The letter H in Spanish is completely silent — always. If you see an H, pretend it's not there. Hola is pronounced 'oh-la', not 'hoh-la'. Hablar — to speak — sounds like 'ah-BLAR'. Hotel sounds like 'oh-TEL'. The one exception is the combination CH, which sounds like the English 'ch' in cheese. But a standalone H? Silent, every time.",                                                                                                                                                   language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-001/m1-vocab-h.mp3',            mvpRequired: true },
+      { id: 'm1-vocab-rr',             screen: 'preListen',      text: "The double R — rr — is the famous Spanish trill. It's formed by flapping your tongue tip rapidly against the roof of your mouth, right behind your top teeth. Think of a child making a car engine sound. Words like perro — dog — and carro — car — need this full trill. A single R between vowels, like in pero — but — uses just one quick tap. The difference matters: perro is dog, pero is but. Two very different words.",                                                                    language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-001/m1-vocab-rr.mp3',           mvpRequired: true },
+      { id: 'm1-phrase-besame-mucho',  screen: 'preListen',      text: "'Bésame mucho' means 'kiss me a lot' — bésame means kiss me, and mucho means a lot or very much. This phrase has been recorded by hundreds of artists and is one of the most recognized Spanish phrases in the world. Notice how every vowel is clear and open: BEH-sa-meh MOO-cho. That's the Spanish vowel system doing its job — every syllable lands cleanly.",                                                                                                                                language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-001/m1-phrase-besame-mucho.mp3', mvpRequired: true },
+      { id: 'm1-reading-intro',        screen: 'reading',        text: "Now for a short reading passage about the song you just heard. You'll see some Spanish words highlighted in orange — tap any of them to hear the pronunciation and meaning. The goal here isn't to understand every word. It's to start recognizing the alphabet sounds you just learned, appearing in real text.",                                                                                                                                                                                       language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-001/m1-reading-intro.mp3',      mvpRequired: true },
+      { id: 'm1-lesson-complete',      screen: 'lessonComplete', text: "You just learned the foundation of Spanish pronunciation. The 27-letter alphabet, the five pure vowels, the silent H, the unique Ñ, the double-L, and the rolled RR. Spanish is phonetic — these rules work everywhere, every time. From here, every word you see, you can say out loud. That's a superpower. Next up: accent marks and stress — the tiny symbols that change meaning completely.",                                                                                              language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-001/m1-lesson-complete.mp3',    mvpRequired: true },
+      // Reading tap tokens — single-word pronunciation (v1 files kept on disk)
+      { id: 'reading-token-besame-mucho', screen: 'reading', text: 'Bésame Mucho', language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-001/reading-token-besame-mucho.mp3', mvpRequired: true },
+      { id: 'reading-token-hola',         screen: 'reading', text: 'Hola',         language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-001/reading-token-hola.mp3',         mvpRequired: true },
+      { id: 'reading-token-besame',       screen: 'reading', text: 'bésame',       language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-001/reading-token-besame.mp3',       mvpRequired: true },
+      { id: 'reading-token-llorar',       screen: 'reading', text: 'llorar',       language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-001/reading-token-llorar.mp3',       mvpRequired: true },
+      { id: 'reading-token-hablar',       screen: 'reading', text: 'hablar',       language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-001/reading-token-hablar.mp3',       mvpRequired: true },
     ],
   },
 
@@ -402,6 +405,23 @@ export const MODULES: Module[] = [
       { text: 'tu', isSpanish: true, english: 'your' },
       { text: '. The accent marks are small, but in her singing they carry the entire emotion of a line.', isSpanish: false },
     ],
+    // Narration-style audio — generate via /melodia-audio 2 (module-002-tts.json)
+    ttsTriggers: [
+      { id: 'm2-intro',             screen: 'preListen',      text: "Module 2 is about accent marks — those little lines sitting over vowels in Spanish. They are not decoration. They change meaning, they change pronunciation, and they tell you exactly where to stress a word. As you listen to 'Quizás, Quizás, Quizás' by Nat King Cole, notice how the word quizás sounds — the stress lands on the last syllable, and that accent mark is why.",                                                                                                                                                                                                                                  language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-002/m2-intro-accents.mp3',    mvpRequired: true },
+      { id: 'm2-vocab-el-vs-el',    screen: 'preListen',      text: "Here's a pair that trips up learners for years: el without an accent means 'the' — it's the masculine article. Él with an accent on the E means 'he' — the pronoun. They sound identical out loud. The accent mark exists purely to tell you which one is on the page. El libro — the book. Él habla — he speaks. One little mark, two completely different jobs.",                                                                                                                                                                                                                                             language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-002/m2-vocab-el-vs-el.mp3',   mvpRequired: true },
+      { id: 'm2-vocab-tu-vs-tu',    screen: 'preListen',      text: "Tu without an accent means 'your' — a possessive. Tú with an accent on the U means 'you' — the pronoun. Again, identical sounds, completely different meanings on paper. Tu libro — your book. Tú hablas — you speak. Spanish uses accent marks as a disambiguation tool so you never have to guess from context alone which word is which.",                                                                                                                                                                                                                                                                   language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-002/m2-vocab-tu-vs-tu.mp3',   mvpRequired: true },
+      { id: 'm2-vocab-si-vs-si',    screen: 'preListen',      text: "Si without an accent means 'if' — a conditional connector. Sí with an accent on the I means 'yes'. Same sound, opposite jobs in a sentence. Si quieres — if you want. Sí, quiero — yes, I want. You'll see this pair constantly in song lyrics where singers say sí, sí, sí — yes, yes, yes — with the accent marking every single one as an affirmation, not a condition.",                                                                                                                                                                                                                                   language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-002/m2-vocab-si-vs-si.mp3',   mvpRequired: true },
+      { id: 'm2-vocab-se-vs-se',    screen: 'preListen',      text: "Se without an accent is a small grammar word you'll see in phrases like se llama — is called. Sé with an accent means 'I know'. They sound the same, but the accent tells your eyes which job the word is doing. Se llama Ana. Yo sé la respuesta. One mark, completely different meaning.",                                                                                                                                                                                                                                                                                    language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-002/m2-vocab-se-vs-se.mp3',   mvpRequired: true },
+      { id: 'm2-vocab-mas-vs-mas',  screen: 'preListen',      text: "Mas without an accent is an older, literary word for 'but'. Más with an accent means 'more' — the word you'll hear constantly in songs: más música, más amor, más y más. The accent on the á is what makes it 'more', not a connector.",                                                                                                                                                                                                                                                                                                                                 language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-002/m2-vocab-mas-vs-mas.mp3', mvpRequired: true },
+      { id: 'm2-phrase-el-acento-va-en', screen: 'preListen', text: "The phrase 'El acento va en blank' means 'The stress goes on blank'. Use it to talk about pronunciation: el acento va en tú; el acento va en más; el acento va en café. It gives you a sentence for explaining exactly where a word is stressed.",                                                                                                                                                                                                                                                                                                                language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-002/m2-phrase-el-acento-va-en.mp3', mvpRequired: true },
+      { id: 'm2-reading-intro',     screen: 'reading',        text: "Now a short reading passage about Camila Cabello, whose name itself is a great accent-mark lesson. You'll see Spanish words highlighted — some with accents, some without. Tap any of them to hear the word and see how the accent changes where the stress falls. Pay attention to how a single mark shifts the entire rhythm of a word.",                                                                                                                                                                                                                                                                         language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-002/m2-reading-intro.mp3',    mvpRequired: true },
+      { id: 'm2-lesson-complete',   screen: 'lessonComplete', text: "Accent marks are now in your toolkit. You know el from él, tu from tú, si from sí — and you know that quizás stresses the last syllable because the accent mark says so. From here on, every accent mark you see in a Spanish text is information, not decoration. Next up: question words — the eight little words that unlock thousands of real conversations.",                                                                                                                                                                                                                                                   language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-002/m2-lesson-complete.mp3',  mvpRequired: true },
+      // Reading tap tokens — short Spanish pronunciation for tappable passage words
+      { id: 'm2-reading-token-havana',    screen: 'reading', text: 'Havana',    language: 'en-US', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-002/m2-reading-token-havana.mp3',    mvpRequired: true },
+      { id: 'm2-reading-token-la-habana', screen: 'reading', text: 'La Habana', language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-002/m2-reading-token-la-habana.mp3', mvpRequired: true },
+      { id: 'm2-reading-token-si',        screen: 'reading', text: 'sí',        language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-002/m2-reading-token-si.mp3',        mvpRequired: true },
+      { id: 'm2-reading-token-tu',        screen: 'reading', text: 'tú',        language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-002/m2-reading-token-tu.mp3',        mvpRequired: true },
+    ],
   },
 
   {
@@ -411,7 +431,7 @@ export const MODULES: Module[] = [
     concept: '¿Qué? ¿Dónde? ¿Cómo? and the rest',
     conceptDescription:
       'Eight question words unlock thousands of real conversations. Learn them once and they work in every tense, every context, forever.',
-    song: { title: '¿Dónde Jugarán los Niños?', artist: 'Maná', durationSeconds: 275, youtubeId: '3H9dN5Na8JI' },
+    song: { title: '¿Dónde Jugarán los Niños?', artist: 'Maná', durationSeconds: 275, spotifyId: '6wkt75iqzOk8YCCfwtaYqJ', youtubeId: 'KNo2o_TJF0I' },
     genreSongs: {
       pop: { title: 'Qué Calor', artist: 'Major Lazer ft. J Balvin & El Alfa', durationSeconds: 205 },
       reggaeton: { title: 'Qué Calor', artist: 'Major Lazer ft. J Balvin & El Alfa', durationSeconds: 205 },
@@ -479,6 +499,23 @@ export const MODULES: Module[] = [
       { text: '¿Por qué', isSpanish: true, english: 'Why' },
       { text: ' did no one stop it? Spanish question words land harder than English ones because they are short, sharp, and carry an accent mark that pulls your voice up at the end. Maná sold over forty million albums by asking questions instead of giving answers.', isSpanish: false },
     ],
+    // Narration-style audio — generate via /melodia-audio 3 (module-003-tts.json)
+    ttsTriggers: [
+      { id: 'm3-intro',           screen: 'preListen',      text: "Module 3 is about question words — the eight Spanish words that let you ask anything. Learn these once and they work in every tense, every context, for the rest of your life. As you listen to '¿Dónde Jugarán los Niños?' by Maná, the title itself is your first question: dónde — where. Where will the children play? One question word, carrying the weight of the whole song.",                                                                                                                                                                                                                                language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-003/m3-intro-question-words.mp3', mvpRequired: true },
+      { id: 'm3-vocab-que',       screen: 'preListen',      text: "'¿Qué?' means 'what?' — the most versatile question word in Spanish. Qué without the accent mark means 'that' or 'which', so the accent is doing real work here. ¿Qué es esto? — What is this? ¿Qué quieres? — What do you want? In songs, you'll hear ¿qué? used to express surprise, confusion, or emphasis. It's one syllable, sharp and direct: 'keh'.",                                                                                                                                                                                                                                                            language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-003/m3-vocab-que.mp3',            mvpRequired: true },
+      { id: 'm3-vocab-donde',     screen: 'preListen',      text: "'¿Dónde?' means 'where?' — your location question word. The accent on the ó tells you to stress the first syllable: DON-deh. ¿Dónde estás? — Where are you? ¿Dónde vives? — Where do you live? Without the accent, donde (no accent) means 'where' in a non-question context — as in the place where something happens. The accent is what makes it a question word.",                                                                                                                                                                                                                                                       language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-003/m3-vocab-donde.mp3',          mvpRequired: true },
+      { id: 'm3-vocab-como',      screen: 'preListen',      text: "'¿Cómo?' means 'how?' — and also 'what?' when you're asking someone to repeat themselves. The accent on the ó: CO-mo. ¿Cómo estás? — How are you? ¿Cómo te llamas? — What's your name? ¿Cómo? on its own is the polite way to say 'sorry, could you repeat that?' — more useful in real conversations than almost any other phrase.",                                                                                                                                                                                                                                                                                     language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-003/m3-vocab-como.mp3',           mvpRequired: true },
+      { id: 'm3-vocab-quien',     screen: 'preListen',      text: "'¿Quién?' means 'who?' — singular. The accent on the é: kyEN. ¿Quién eres tú? — Who are you? ¿Quién cantó eso? — Who sang that? The plural form is ¿quiénes? — who are they. Notice the QU in Spanish always makes a K sound — the U is silent after Q. So quién sounds like 'kyen', not 'kwyen'.",                                                                                                                                                                                                                                                                                                                     language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-003/m3-vocab-quien.mp3',          mvpRequired: true },
+      { id: 'm3-vocab-por-que',   screen: 'preListen',      text: "'¿Por qué?' means 'why?' — written as two words with an accent on the é. The answer word is 'porque' — because — written as one word with no accent. ¿Por qué te gusta esta canción? — Why do you like this song? Porque es perfecta — Because it's perfect. Two words, one accent = the question. One word, no accent = the answer. Spanish made them mirror images of each other on purpose.",                                                                                                                                                                                                                            language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-003/m3-vocab-por-que.mp3',        mvpRequired: true },
+      { id: 'm3-phrase-question-frame', screen: 'preListen', text: "The question frame '¿blank es tu blank?' gives you a reusable shell for asking about someone's favorites and identity. Try it with the words from this module: ¿Cuál es tu canción favorita? ¿Dónde está tu casa? ¿Cómo se llama tu artista favorito? The inverted question mark tells your eyes the question starts right now.",                                                                                                                                                                                                                                                   language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-003/m3-phrase-question-frame.mp3', mvpRequired: true },
+      { id: 'm3-reading-intro',   screen: 'reading',        text: "Time to read about Maná — the band whose question is the title of today's song. You'll see Spanish question words highlighted in the passage. Tap any of them to hear the pronunciation. Notice how every question word carries an accent mark — that's not a coincidence. In Spanish, accent marks on question words are mandatory, and they're how you tell a question word from a regular word.",                                                                                                                                                                                                                           language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-003/m3-reading-intro.mp3',        mvpRequired: true },
+      { id: 'm3-lesson-complete', screen: 'lessonComplete', text: "You now have the eight question words: qué, dónde, cómo, quién, por qué, cuándo, cuál, and cuánto. Every single one carries an accent mark — that's how you spot a question word in any Spanish text. These eight words let you build thousands of real questions, in any tense, forever. Next: prepositions and connectors — the small words that link ideas together.",                                                                                                                                                                                                                                                        language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-003/m3-lesson-complete.mp3',      mvpRequired: true },
+      // Reading tap tokens — short Spanish pronunciation for tappable passage words
+      { id: 'm3-reading-token-donde-jugaran',  screen: 'reading', text: '¿Dónde jugarán los niños?', language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-003/m3-reading-token-donde-jugaran.mp3', mvpRequired: true },
+      { id: 'm3-reading-token-como',           screen: 'reading', text: '¿Cómo?',                    language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-003/m3-reading-token-como.mp3',          mvpRequired: true },
+      { id: 'm3-reading-token-donde',          screen: 'reading', text: '¿Dónde?',                   language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-003/m3-reading-token-donde.mp3',         mvpRequired: true },
+      { id: 'm3-reading-token-por-que',        screen: 'reading', text: '¿Por qué?',                 language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-003/m3-reading-token-por-que.mp3',       mvpRequired: true },
+    ],
   },
 
   {
@@ -492,7 +529,7 @@ export const MODULES: Module[] = [
     genreSongs: {
       pop: { title: 'A Dios Le Pido', artist: 'Juanes', durationSeconds: 267, spotifyId: '0JHM9KIq6oUPd4gHxMlB0T', youtubeId: 'kMIaYXxLnUA' },
       reggaeton: { title: 'Despacito', artist: 'Luis Fonsi ft. Daddy Yankee', durationSeconds: 229, spotifyId: '6habFhsOp2NvshLv26DqMb', youtubeId: 'kJQP7kiw5Fk' },
-      rnb: { title: 'Obsesión', artist: 'Aventura', durationSeconds: 245 },
+      rnb: { title: 'Obsesión', artist: 'Aventura', durationSeconds: 252, spotifyId: '50iOwPQbtGmEc29q2okbEh', youtubeId: '8_QY5gFQUTg' },
       'regional-mexican': { title: 'El Rey', artist: 'Vicente Fernández', durationSeconds: 200, spotifyId: '6P3dT8EkJd0LOyZklOl0Na', youtubeId: 'oVdWmX4OEV8' },
     },
     vocabulary: [
@@ -525,10 +562,10 @@ export const MODULES: Module[] = [
         explanation: "Con means 'with', sin means 'without'. They're functional opposites — when you can hear one, you can hear the other.",
       },
       {
-        question: "Which Spanish word would connect these two ideas: 'I speak English' ___ 'I don't speak Spanish'?",
+        question: "Which word completes this sentence to show a contrast: 'Quiero café, ___ no tengo dinero.' (I want coffee, ___ I have no money.)",
         options: ['y', 'también', 'pero', 'con'],
         correctIndex: 2,
-        explanation: "Pero means 'but' — it's the connector you reach for when two ideas contrast. 'Hablo inglés, pero no español.'",
+        explanation: "Pero means 'but' — the contrast connector. 'Quiero café, pero no tengo dinero.' Y means 'and', which would join ideas instead of contrasting them — the opposite of what the sentence needs.",
       },
       {
         question: "Which word order correctly says 'I'm from Colombia, but I speak English.'?",
@@ -643,24 +680,30 @@ export const MODULES: Module[] = [
         reviewFormat: ['speaking-prompt', 'translation'],
       },
     ],
+    // Narration-style audio (v2) — replaces old slow+normal single-word format.
+    // New files: m4-*.mp3 — generate via /melodia-audio 4 (module-004-tts-v2.json).
+    // Reading tokens kept from v1 (files exist on disk).
     ttsTriggers: [
-      { id: 'vocab-de-slow',         screen: 'preListen',      text: 'de',                              language: 'es-419', slowVersion: true,  normalVersion: false, outputFile: 'assets/audio/module-004/vocab-de-slow.mp3',                  mvpRequired: true },
-      { id: 'vocab-de',              screen: 'preListen',      text: 'de',                              language: 'es-419', slowVersion: false, normalVersion: true,  outputFile: 'assets/audio/module-004/vocab-de.mp3',                       mvpRequired: true },
-      { id: 'vocab-con-slow',        screen: 'preListen',      text: 'con',                             language: 'es-419', slowVersion: true,  normalVersion: false, outputFile: 'assets/audio/module-004/vocab-con-slow.mp3',                 mvpRequired: true },
-      { id: 'vocab-con',             screen: 'preListen',      text: 'con',                             language: 'es-419', slowVersion: false, normalVersion: true,  outputFile: 'assets/audio/module-004/vocab-con.mp3',                      mvpRequired: true },
-      { id: 'vocab-sin-slow',        screen: 'preListen',      text: 'sin',                             language: 'es-419', slowVersion: true,  normalVersion: false, outputFile: 'assets/audio/module-004/vocab-sin-slow.mp3',                 mvpRequired: true },
-      { id: 'vocab-sin',             screen: 'preListen',      text: 'sin',                             language: 'es-419', slowVersion: false, normalVersion: true,  outputFile: 'assets/audio/module-004/vocab-sin.mp3',                      mvpRequired: true },
-      { id: 'vocab-pero-slow',       screen: 'preListen',      text: 'pero',                            language: 'es-419', slowVersion: true,  normalVersion: false, outputFile: 'assets/audio/module-004/vocab-pero-slow.mp3',                mvpRequired: true },
-      { id: 'vocab-pero',            screen: 'preListen',      text: 'pero',                            language: 'es-419', slowVersion: false, normalVersion: true,  outputFile: 'assets/audio/module-004/vocab-pero.mp3',                     mvpRequired: true },
-      { id: 'vocab-tambien-slow',    screen: 'preListen',      text: 'también',                         language: 'es-419', slowVersion: true,  normalVersion: false, outputFile: 'assets/audio/module-004/vocab-tambien-slow.mp3',             mvpRequired: true },
-      { id: 'vocab-tambien',         screen: 'preListen',      text: 'también',                         language: 'es-419', slowVersion: false, normalVersion: true,  outputFile: 'assets/audio/module-004/vocab-tambien.mp3',                  mvpRequired: true },
-      { id: 'contrast-perro-slow',   screen: 'quiz',           text: 'perro',                           language: 'es-419', slowVersion: true,  normalVersion: false, outputFile: 'assets/audio/module-004/contrast-perro-slow.mp3',            mvpRequired: true },
-      { id: 'phrase-cafe-con-leche', screen: 'preListen',      text: 'Café con leche, sin azúcar.',     language: 'es-419', slowVersion: false, normalVersion: true,  outputFile: 'assets/audio/module-004/phrase-cafe-con-leche.mp3',          mvpRequired: true },
-      { id: 'phrase-yo-tambien',     screen: 'preListen',      text: 'Yo también.',                     language: 'es-419', slowVersion: false, normalVersion: true,  outputFile: 'assets/audio/module-004/phrase-yo-tambien.mp3',              mvpRequired: true },
-      { id: 'speaking-prompt-frame-1', screen: 'preListen',    text: 'Quiero café con leche.',          language: 'es-419', slowVersion: false, normalVersion: true,  outputFile: 'assets/audio/module-004/speaking-frame-quiero-cafe-con-leche.mp3', mvpRequired: true },
-      { id: 'speaking-prompt-frame-2', screen: 'preListen',    text: 'Hablo inglés, pero no español.',  language: 'es-419', slowVersion: false, normalVersion: true,  outputFile: 'assets/audio/module-004/speaking-frame-hablo-ingles-pero.mp3',     mvpRequired: true },
-      { id: 'reading-snippet-con-sus-seres', screen: 'reading', text: 'con sus seres queridos',         language: 'es-419', slowVersion: false, normalVersion: true,  outputFile: 'assets/audio/module-004/reading-con-sus-seres.mp3',          mvpRequired: true },
-      { id: 'reading-snippet-sin-miedo',     screen: 'reading', text: 'sin miedo',                      language: 'es-419', slowVersion: false, normalVersion: true,  outputFile: 'assets/audio/module-004/reading-sin-miedo.mp3',              mvpRequired: true },
+      { id: 'm4-intro',                      screen: 'preListen',      text: "Module 4 covers the small words that hold Spanish sentences together — prepositions and connectors. De, con, sin, pero, también. They're short, they're everywhere, and once you know them, you can start building real phrases. As you listen to 'A Dios Le Pido' by Juanes, listen for how these words connect ideas: con sus ojos — with his eyes. A single preposition carrying a whole image.",                                                                                                                                                                                                              language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-004/m4-intro-prepositions.mp3',  mvpRequired: true },
+      { id: 'm4-vocab-de',                   screen: 'preListen',      text: "'De' means 'of' or 'from' — one of the most common words in Spanish. Soy de México — I'm from Mexico. Un vaso de agua — a glass of water. De noche — at night (literally: of night). It connects a noun to its origin, its material, or its container. You'll hear de in almost every Spanish sentence. Two letters, enormous range.",                                                                                                                                                                                                                                                                            language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-004/m4-vocab-de.mp3',            mvpRequired: true },
+      { id: 'm4-vocab-con',                  screen: 'preListen',      text: "'Con' means 'with' — it describes accompaniment, ingredients, or the manner of doing something. Café con leche — coffee with milk. Vivo con mi familia — I live with my family. Con mucho gusto — with pleasure. You'll hear con constantly in food orders, in song lyrics, in everyday speech. Three letters, always meaning 'with'.",                                                                                                                                                                                                                                                                            language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-004/m4-vocab-con.mp3',           mvpRequired: true },
+      { id: 'm4-vocab-sin',                  screen: 'preListen',      text: "'Sin' means 'without' — the opposite of con. Café sin azúcar — coffee without sugar. Sin miedo — without fear. Sin ti — without you, one of the most common phrases in Latin music. It shows up everywhere you want to say something is absent.",                                                                                                                                                                                                                                                                                                                                                              language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-004/m4-vocab-sin.mp3',           mvpRequired: true },
+      { id: 'm4-vocab-pero',                 screen: 'preListen',      text: "'Pero' means 'but' — the contrast connector. Hablo inglés, pero no hablo chino — I speak English, but I don't speak Chinese. When you see pero in a sentence, expect a contrast or a limitation after it. One quick note: pero has one R, not two. Perro with two Rs means dog. The trill makes all the difference.",                                                                                                                                                                                                                                                                                           language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-004/m4-vocab-pero.mp3',          mvpRequired: true },
+      { id: 'm4-vocab-tambien',              screen: 'preListen',      text: "'También' means 'also' or 'too' — the addition word. Yo también — me too. Ella habla español y también habla portugués — She speaks Spanish and also speaks Portuguese. The accent on the é: tam-BIÉN. In conversation, yo también is one of the most useful phrases you'll use — every time someone tells you something you share, that's your response.",                                                                                                                                                                                                                                                     language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-004/m4-vocab-tambien.mp3',       mvpRequired: true },
+      { id: 'm4-phrase-cafe-con-leche',      screen: 'preListen',      text: "'Café con leche' means coffee with milk — it's the classic Spanish breakfast drink. Three words, all Module 4 vocabulary: café is the noun, con is the preposition, leche is milk. You can extend it: café con leche sin azúcar — coffee with milk, without sugar. That single sentence uses three of the five words from this module. Order it in any Spanish-speaking country and you'll be understood immediately.",                                                                                                                                                                                        language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-004/m4-phrase-cafe-con-leche.mp3', mvpRequired: true },
+      { id: 'm4-speaking-prompt',            screen: 'preListen',      text: "Here's your speaking frame for today: 'Quiero ___ con ___, pero sin ___.' Fill in the blanks with something you'd order or want. I want — con — pero sin — that's three Module 4 words in one sentence. Say it out loud, substitute your own items, and you've just built a real Spanish sentence from scratch.",                                                                                                                                                                                                                                                                                             language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-004/m4-speaking-prompt.mp3',     mvpRequired: true },
+      { id: 'm4-reading-intro',              screen: 'reading',        text: "Now a reading passage about Juanes, the Colombian singer behind 'A Dios Le Pido'. You'll see the prepositions and connectors from this module highlighted as tappable words in the text. Tap them to hear each one. Notice how con, de, sin, and pero show up constantly — these small words are the connective tissue of every Spanish sentence.",                                                                                                                                                                                                                                                             language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-004/m4-reading-intro.mp3',       mvpRequired: true },
+      { id: 'm4-lesson-complete',            screen: 'lessonComplete', text: "Five small words — de, con, sin, pero, también — and you've just unlocked a huge part of how Spanish connects ideas. You also know the difference between pero and perro, which is the kind of detail that makes people think you've been studying for years. Next: subject pronouns — yo, tú, él, ella, nosotros, ellos. The building blocks of every sentence.",                                                                                                                                                                                                                                                language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-004/m4-lesson-complete.mp3',     mvpRequired: true },
+      // Reading tap tokens — short single-word Spanish pronunciation
+      { id: 'm4-reading-token-de',       screen: 'reading', text: 'de',       language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-004/m4-reading-token-de.mp3',       mvpRequired: true },
+      { id: 'm4-reading-token-con',      screen: 'reading', text: 'con',      language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-004/m4-reading-token-con.mp3',      mvpRequired: true },
+      { id: 'm4-reading-token-sin',      screen: 'reading', text: 'sin',      language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-004/m4-reading-token-sin.mp3',      mvpRequired: true },
+      { id: 'm4-reading-token-y',        screen: 'reading', text: 'y',        language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-004/m4-reading-token-y.mp3',        mvpRequired: true },
+      { id: 'm4-reading-token-pero',     screen: 'reading', text: 'pero',     language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-004/m4-reading-token-pero.mp3',     mvpRequired: true },
+      { id: 'm4-reading-token-tambien',  screen: 'reading', text: 'también',  language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-004/m4-reading-token-tambien.mp3',  mvpRequired: true },
+      // Legacy snippet files (kept on disk from v1)
+      { id: 'reading-snippet-con-sus-seres', screen: 'reading', text: 'con sus seres queridos', language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-004/reading-con-sus-seres.mp3', mvpRequired: true },
+      { id: 'reading-snippet-sin-miedo',     screen: 'reading', text: 'sin miedo',              language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-004/reading-sin-miedo.mp3',    mvpRequired: true },
     ],
   },
 
@@ -701,10 +744,10 @@ export const MODULES: Module[] = [
     // Tappable preview vocab (soy, somos, usted, ustedes) appear inline in explanations
     // below — content-builder marked them with [tappable: "word" → "translation"] markers.
     // Markers stripped here; full tappable-popover UI wiring deferred (see PENDING.md).
-    // TODO: reggaeton variant of culturalNote exists in
-    // notes/melodia/5-lessons/module-005-content.ts.draft (genreVariants.reggaeton — "Ivy Queen
-    // and the First Emphatic 'Yo'"). Module type currently supports only a single culturalNote
-    // string; wire conditional rendering when the schema gains culturalNoteVariants.
+    culturalNoteVariants: {
+      reggaeton:
+        "If you picked reggaeton, your song today is 'Yo Quiero Bailar' by Ivy Queen — known across Latin America as La Reina del Reggaetón, the Queen of Reggaeton. She was making this music in the early 2000s, years before Bad Bunny brought the genre to global pop charts, and the chorus of this song is a clinic in subject pronouns: she opens with yo (I want), then pivots to tú (you want), drawing a sharp line between what she wants and what someone else assumes. That contrast — yo versus tú, planted at the front of each line — is the same emphatic-pronoun energy Bomba Estéreo uses in 'Soy Yo,' just a generation earlier. Ivy Queen was teaching this lesson before the textbooks caught up.",
+    },
     culturalNote:
       "Bomba Estéreo formed in Bogotá in 2005, with lead singer Li Saumet drawing on the cumbia rhythms of Colombia's Caribbean coast. Their 2015 hit 'Soy Yo' — literally 'I am me' — became an anthem for outsiders and kids who didn't fit in. The song's music video features an eleven-year-old girl walking through her neighborhood as fully, unapologetically herself. Spanish usually drops the subject pronoun, so every time Li sings yo in the chorus, it's a choice — emphasis, identity, defiance. That choice is exactly the grammar concept you're learning today.",
     quizQuestions: [
@@ -793,11 +836,7 @@ export const MODULES: Module[] = [
       { text: 'Soy yo', isSpanish: true, english: 'I am me / it is me' },
       { text: " — I am me. The song became an anthem for kids who didn't fit in, with a music video starring an eleven-year-old girl walking through her neighborhood being unapologetically herself. The video has been watched hundreds of millions of times. Listen for how often Li sings ", isSpanish: false },
       { text: 'yo', isSpanish: true, english: 'I' },
-      { text: '. Spanish usually drops the subject pronoun — the verb ending already does the work. So when a singer chooses to say ', isSpanish: false },
-      { text: 'yo', isSpanish: true, english: 'I' },
-      { text: " out loud, again and again, it's a deliberate choice. It means: me, specifically, no one else. That's the whole song. That's why this is the perfect first lesson on subject pronouns. Every time you hear ", isSpanish: false },
-      { text: 'yo', isSpanish: true, english: 'I' },
-      { text: ' in the chorus, you are hearing a Spanish speaker plant a flag.', isSpanish: false },
+      { text: ". Spanish usually drops the subject pronoun — the verb ending already does the work. So when a singer chooses to say it out loud, again and again, it is a deliberate choice. It means: me, specifically, no one else. Every time you hear it in the chorus, you are hearing a Spanish speaker choose to be seen. That is what yo means — not just 'I', but 'me, right here'.", isSpanish: false },
     ],
     // ttsTriggers: one file per cue (no slow/normal pairs from Module 5 onward —
     // per Reine, 2026-05-17). 10 mvpRequired + 1 conditional reggaeton variant.
@@ -814,110 +853,615 @@ export const MODULES: Module[] = [
       { id: 'module-005-reading-001',               screen: 'reading',        text: "Bomba Estéreo formed in Bogotá in 2005, but their sound was born on Colombia's Caribbean coast — the cumbia rhythms, the chants, the salt air. Their lead singer, Li Saumet, grew up in Santa Marta. When the band released 'Soy Yo' in 2015, the title was already the whole message. Soy yo — I am me. The song became an anthem for kids who didn't fit in, with a music video starring an eleven-year-old girl walking through her neighborhood being unapologetically herself. Listen for how often Li sings yo. Spanish usually drops the subject pronoun, so when a singer chooses to say yo out loud, again and again, it's a deliberate choice. It means: me, specifically, no one else. Every time you hear yo in the chorus, you're hearing a Spanish speaker plant a flag.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-005/m5-reading-bomba-estereo.mp3', mvpRequired: true },
       { id: 'module-005-cultural-note-reggaeton',   screen: 'preListen',      text: "If you picked reggaeton, your song today is 'Yo Quiero Bailar' by Ivy Queen — La Reina del Reggaetón, the Queen of Reggaeton. She was making this music in the early 2000s, years before Bad Bunny brought the genre to global pop charts. Listen to the chorus: she opens with yo, then pivots to tú — drawing a line between what she wants and what someone else assumes. Same emphatic-pronoun energy as 'Soy Yo,' just a generation earlier.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-005/m5-cultural-note-ivy-queen.mp3', mvpRequired: false },
       { id: 'module-005-lesson-complete',           screen: 'lessonComplete', text: "You can now name who is doing the doing. Five pronouns — yo, tú, él, ella, nosotros, ellos. And you know the secret: Spanish drops the pronoun by default, so when a speaker says it, they mean it. Try one sentence out loud tomorrow — 'Yo soy de' plus your country. Say it like you mean it.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-005/m5-lesson-complete.mp3', mvpRequired: true },
+      // Reading tap tokens — short Spanish pronunciation for tappable passage words
+      { id: 'm5-reading-token-soy-yo', screen: 'reading', text: 'Soy yo', language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-005/m5-reading-token-soy-yo.mp3', mvpRequired: true },
+      { id: 'm5-reading-token-yo',     screen: 'reading', text: 'yo',     language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-005/m5-reading-token-yo.mp3',     mvpRequired: true },
     ],
   },
 
+  // TODO Phase 6: re-lock modules 9-60 when RevenueCat is set up
   {
     id: 6,
-    title: 'Days, Months, Seasons & Time',
+    title: 'Ser vs Estar',
     level: 'A1',
-    concept: 'Ayer, hoy, mañana — navigating time in Spanish',
+    concept: 'Two Spanish verbs for "to be" — identity vs. state',
     conceptDescription:
-      'Talk about yesterday, today, and tomorrow. Name the days, months, and seasons. These time words appear in almost every real conversation.',
-    song: { title: 'Mañana Será Bonito', artist: 'Karol G', durationSeconds: 219 },
+      "English has one verb for 'to be'. Spanish has two — and the split is the single most important thing you'll learn this week. Use ser for who someone is: their name, their nationality, their job, the things that don't change overnight. Use estar for how they are right now: feelings, mood, where they're standing. The same sentence — 'I am happy' — can mean two different things depending on which verb you reach for. Soy feliz says you're a happy person by nature. Estoy feliz says you're happy in this moment. Two verbs, two truths, one human.",
+    song: { title: 'Estoy Aquí', artist: 'Shakira', durationSeconds: 250, spotifyId: '4M1lEbqPzlEw1JYWB6aE7K', youtubeId: 'NmJHH026X0c' },
     genreSongs: {
-      pop: { title: 'Mañana Será Bonito', artist: 'Karol G', durationSeconds: 219 },
-      rnb: { title: 'Ayer', artist: 'Luis Miguel', durationSeconds: 206 },
-      'regional-mexican': { title: 'Ayer', artist: 'Luis Miguel', durationSeconds: 206 },
+      pop: { title: 'Estoy Aquí', artist: 'Shakira', durationSeconds: 250, spotifyId: '4M1lEbqPzlEw1JYWB6aE7K', youtubeId: 'NmJHH026X0c' },
+      reggaeton: { title: 'Calma — Remix', artist: 'Pedro Capó & Farruko', durationSeconds: 240, spotifyId: '5iwz1NiezX7WWjnCgY5TH4', youtubeId: '1_zgKRBrT0Y' },
+      rnb: { title: 'Estoy Aquí', artist: 'Shakira', durationSeconds: 250, spotifyId: '4M1lEbqPzlEw1JYWB6aE7K', youtubeId: 'NmJHH026X0c' },
+      'regional-mexican': { title: 'El Rey', artist: 'Vicente Fernández', durationSeconds: 178, spotifyId: '32r25QdtfHgAxjohp2EoPH', youtubeId: '5jmE8UsaM2U' },
     },
     vocabulary: [
-      { spanish: 'ayer', english: 'yesterday' },
-      { spanish: 'hoy', english: 'today' },
-      { spanish: 'mañana', english: 'tomorrow (also: morning)' },
-      { spanish: 'el fin de semana', english: 'the weekend' },
-      { spanish: 'verano', english: 'summer' },
+      { spanish: 'soy', english: 'I am (identity)' },
+      { spanish: 'eres', english: 'you are (identity)' },
+      { spanish: 'es', english: 'he / she is (identity)' },
+      { spanish: 'estoy', english: 'I am (state / location)' },
+      { spanish: 'está', english: 'he / she is (state / location)' },
     ],
     grammarPoints: [
-      'Days: lunes, martes, miércoles, jueves, viernes, sábado, domingo',
-      'Days and months are NOT capitalized in Spanish',
-      'Time words: ayer (yesterday), hoy (today), mañana (tomorrow/morning)',
-      'Seasons: verano (summer), otoño (fall), invierno (winter), primavera (spring)',
-      'Time units: segundo, minuto, hora, día, semana, mes, año',
+      'Ser = identity: name, nationality, profession, relationships, origin',
+      'Estar = state / location: feelings, mood, where someone is right now',
+      'Yo + soy/estoy. Tú + eres/estás. Él/ella + es/está',
+      'Accent matters: está (verb, is) ≠ esta (demonstrative, this)',
+      "Soy feliz (I'm a happy person) ≠ Estoy feliz (I'm happy right now)",
     ],
-    quizTypes: ['Time vocabulary matching', 'Listen for days/months in songs', 'Calendar exercises'],
-    readingTopic: 'Karol G: La Bichota\'s Journey from Medellín',
-    readingRatio: '90% English / 10% Spanish time words inserted',
+    quizTypes: ['Ser vs estar judgment', 'Conjugation match', 'Minimal-pair meaning flip'],
+    readingTopic: 'Shakira and the Song That Said "I Am Here"',
+    readingRatio: '88% English / 12% Spanish ser/estar examples',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 100,
+    culturalNoteVariants: {
+      reggaeton:
+        "If you picked reggaeton, your song today is 'Calma' — the remix by Pedro Capó and Farruko, both Puerto Rican artists. The track became one of the most-streamed Spanish-language songs of the late 2010s, and like Shakira's 'Estoy Aquí', it leans hard on estar. Pedro Capó sings about being on the beach, being at peace, being in the moment — present-state descriptions that all call for estoy or está, never soy. His enunciation is unusually clean for the genre, and Farruko's verse is short and accessible. Listen for estoy and es in the chorus. That's estar telling you where he is, and ser telling you what the day is. Two verbs, one slower-tempo reggaeton, the same lesson.",
+    },
+    culturalNote:
+      "Shakira was born in Barranquilla, on Colombia's Caribbean coast, in 1977. She signed with Sony Music as a teenager and recorded Pies Descalzos — 'bare feet' — at eighteen, releasing it in 1995. The album's first single, 'Estoy Aquí' — 'I am here' — was the song that carried her out of Colombia and into the rest of Latin America. The title alone teaches today's lesson: estoy is the state she's in (waiting, longing), and aquí anchors her to a place. Spanish would not accept soy aquí — soy is for identity, and a place is not who you are. Every time you hear estoy in a Latin song, the artist is letting you in on a moment. Every time you hear soy, they are claiming an identity. Those two verbs are how Spanish lets a singer be both at once.",
+    quizQuestions: [
+      {
+        question: "Which verb fits the sentence: 'She is a doctor.'",
+        options: [
+          'ser — being a doctor is her profession, an identity',
+          "estar — she's a doctor right now, but maybe not tomorrow",
+          'either one — both mean "is" in English',
+          'neither — profession needs a different verb',
+        ],
+        correctIndex: 0,
+        explanation:
+          "Profession = identity = ser. The full sentence is 'Ella es doctora.' Even if she changes jobs in five years, the grammar today treats her profession as part of who she is.",
+      },
+      {
+        question: "Which verb fits: 'He is tired.'",
+        options: [
+          'ser — tiredness defines him as a person',
+          'estar — tiredness is a state right now, not who he is',
+          'either one — tiredness is borderline',
+          'neither — tiredness is a noun, no verb needed',
+        ],
+        correctIndex: 1,
+        explanation:
+          "Tiredness is a state, not an identity — and cansado (tired) is always paired with estar. The full sentence is 'Él está cansado.' He'll be fine after a nap; that's exactly what estar is for.",
+      },
+      {
+        question: "Which verb fits: 'We are from Argentina.'",
+        options: [
+          "ser — origin / where you're from is identity",
+          'estar — location, so estar',
+          'either one — origin and location are the same idea',
+          'neither — origin uses a different verb entirely',
+        ],
+        correctIndex: 0,
+        explanation:
+          "Origin (where you're from) is identity — that's ser. The full sentence is 'Somos de Argentina.' Compare to location (where you are right now) — estamos en Argentina — which would use estar. Same country, different grammar.",
+      },
+      {
+        question: "Complete: 'Yo ___ feliz hoy.' (I am happy today — happy right now, in this moment.)",
+        options: ['soy', 'estoy', 'eres', 'está'],
+        correctIndex: 1,
+        explanation:
+          "Hoy means 'today' — a clue that this is about a state right now, not your permanent disposition. Estoy feliz hoy = I'm happy today. Soy feliz would mean you're a happy person by nature — a different claim entirely.",
+      },
+    ],
+    easyQuizQuestions: [
+      {
+        question: "Which word means 'I am' when you're talking about WHO you are (identity)?",
+        options: ['estoy', 'soy', 'eres', 'está'],
+        correctIndex: 1,
+        explanation:
+          "Soy is the 'I am' for identity — your name, your nationality, your job. Estoy is also 'I am', but for states and locations. Same English translation, two different Spanish verbs.",
+      },
+      {
+        question: "Which Spanish verb form means 'he/she is' when you're describing a STATE (mood, feeling, location)?",
+        options: ['es', 'está', 'soy', 'eres'],
+        correctIndex: 1,
+        explanation:
+          "Está is the estar form for 'he/she is' — used for states and locations. Es is also 'he/she is', but it's the ser form for identity. Accent matters: está (verb, is) ≠ esta (this, feminine — no accent).",
+      },
+      {
+        question: "Which infinitive means 'to be' for temporary states and locations?",
+        options: ['ser', 'estar', 'soy', 'tú'],
+        correctIndex: 1,
+        explanation:
+          "Estar is the 'to be' for how you are and where you are — feelings, mood, location. Ser is the other 'to be' — for who you are. Both translate as 'to be' in English. Spanish splits them.",
+      },
+    ],
+    hardQuizQuestions: [
+      {
+        question: "What's the difference between 'Soy feliz' and 'Estoy feliz'? Both translate as 'I am happy' in English.",
+        options: [
+          "No difference — they're interchangeable.",
+          "Soy feliz = I'm a happy person by nature (identity). Estoy feliz = I'm happy right now (state).",
+          'Soy feliz is formal; estoy feliz is informal.',
+          'Soy feliz is past tense; estoy feliz is present tense.',
+        ],
+        correctIndex: 1,
+        explanation:
+          "This is the whole lesson in one minimal pair. Same adjective, same English translation — the only thing that changes is which 'to be' you reach for and what you're actually claiming. Soy feliz is a statement about who you are. Estoy feliz is a statement about how you feel today. Spanish lets you say both; English collapses them into one.",
+      },
+      {
+        question: "Translate: 'I'm well, and you?'",
+        options: [
+          'Soy bien, ¿y tú?',
+          'Estoy bien, ¿y tú?',
+          'Yo bien, ¿tú?',
+          'Estoy bien, ¿y usted?',
+        ],
+        correctIndex: 1,
+        explanation:
+          "'Estoy bien, ¿y tú?' — feeling fine is a state, so estar (estoy). Recycles y from Module 4 and tú from Module 5. Option D uses usted (you, formal) — also grammatical, but in a casual exchange tú is the natural fit.",
+      },
+      {
+        question: "Shakira's song title 'Estoy Aquí' translates as 'I am here'. Why estoy and not soy?",
+        options: [
+          'Because soy is too short to sing in a chorus.',
+          'Because location and the feeling of being somewhere are STATES — exactly what estar (estoy) is for. Soy would mean she IS the place itself.',
+          'Because soy is only for plural subjects.',
+          'Because aquí can only be used with estar grammatically by accident.',
+        ],
+        correctIndex: 1,
+        explanation:
+          "Where you are and how you feel right now = estar. Shakira chose estoy because she's telling you about a moment — being in this place, feeling this longing. If she'd sung 'soy aquí' it would be ungrammatical to a Spanish ear, like saying 'I am here as a permanent identity'. The verb choice is doing emotional work: every estoy in a song lets the listener in on a feeling.",
+      },
+    ],
+    readingPassage: [
+      {
+        text: "Shakira was born in Barranquilla, on Colombia's Caribbean coast, in 1977. By the time she was eighteen, she had already signed with Sony Music and recorded the album that would carry her out of Colombia and into the rest of Latin America: ",
+        isSpanish: false,
+      },
+      { text: 'Pies Descalzos', isSpanish: true, english: 'bare feet' },
+      {
+        text: ", released in 1995. The first single was a song with a title that, by itself, teaches you today's whole lesson. ",
+        isSpanish: false,
+      },
+      { text: 'Estoy aquí', isSpanish: true, english: 'I am here' },
+      {
+        text: ' — I am here. Two words, two verbs of estar doing two jobs at once: estoy is the state she is in (waiting, longing, holding on), and aquí anchors her to the place — here, right now. Notice what she did not sing. She did not sing ',
+        isSpanish: false,
+      },
+      { text: 'soy', isSpanish: true, english: 'I am (identity — ser)' },
+      {
+        text: ' aquí. Spanish would not accept it. Soy is for identity — who someone ',
+        isSpanish: false,
+      },
+      { text: 'es', isSpanish: true, english: 'he/she/it is (identity — ser)' },
+      {
+        text: ' — and a place is not who you are. When Shakira tells the person she is singing to that he ',
+        isSpanish: false,
+      },
+      { text: 'eres', isSpanish: true, english: 'you are (identity — ser)' },
+      {
+        text: ' something to her, that is ser. When she tells you how she ',
+        isSpanish: false,
+      },
+      { text: 'está', isSpanish: true, english: 'he/she/it is (state — estar)' },
+      {
+        text: ' in this moment, that is estar. The whole song is a lesson in two verbs.',
+        isSpanish: false,
+      },
+    ],
+    // ttsTriggers: one file per cue (no slow/normal pairs from Module 5 onward).
+    // Source: notes/melodia/5-lessons/module-006-tts.json (voice-engineer manifest).
+    // Orphan tokens m6-reading-token-estoy and m6-reading-token-aqui stripped per
+    // team-lead Gate-2 — both are covered by the "estoy aquí" phrase tappable.
+    ttsTriggers: [
+      { id: 'module-006-intro',                     screen: 'preListen',      text: "Today we're learning the two Spanish verbs for 'to be' — ser and estar. Ser is for who someone is. Estar is for how they are or where they are. As you listen to 'Estoy Aquí' by Shakira, count how many times she sings estoy. That's estar — the verb of the moment. Then count the soy moments — that's ser, the verb of identity. Press listen when you're ready.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-006/m6-intro-ser-vs-estar.mp3', mvpRequired: true },
+      { id: 'module-006-vocab-ser',                 screen: 'preListen',      text: "Ser is the 'to be' for identity — who someone is. Soy means 'I am'. Eres means 'you are'. Es means 'he is' or 'she is'. Use these when you're naming a person, a profession, a nationality — anything that doesn't change overnight.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-006/m6-vocab-ser.mp3', mvpRequired: true },
+      { id: 'module-006-vocab-estar',               screen: 'preListen',      text: "Estar is the 'to be' for states and locations — how someone is or where they are. Estoy means 'I am'. Estás means 'you are'. Está means 'he is' or 'she is'. Use these for feelings, mood, and where someone is standing right now. When Shakira sings estoy aquí, that's estar twice — the state she's in, and where she is.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-006/m6-vocab-estar.mp3', mvpRequired: true },
+      { id: 'module-006-vocab-contrast',            screen: 'preListen',      text: "Here's the trick. 'Soy feliz' and 'estoy feliz' both translate as 'I am happy' in English — but they mean different things in Spanish. Soy feliz says you're a happy person by nature. Estoy feliz says you're happy in this moment. Same English, two truths.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-006/m6-vocab-contrast.mp3', mvpRequired: true },
+      { id: 'module-006-phrase-estoy-bien',         screen: 'preListen',      text: "'Estoy bien, ¿y tú?' — I'm well, and you? This is the textbook answer to ¿Cómo estás? from Module 3. Estoy is the form of estar — it's about how you feel right now. Then y tú — and you? Memorize the whole chunk. It's the single most useful exchange you'll leave today's lesson with.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-006/m6-phrase-estoy-bien.mp3', mvpRequired: true },
+      { id: 'module-006-speaking-prompt',           screen: 'preListen',      text: "Try this with me. Look in a mirror. First, a ser sentence — 'Soy', plus your name. That's who you are. Now an estar sentence — 'Estoy bien', or 'estoy cansado', or 'estoy aquí'. That's how you are right now, or where you are. Same person, two verbs, two different things said out loud.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-006/m6-speaking-prompt.mp3', mvpRequired: true },
+      { id: 'module-006-reading-001',               screen: 'reading',        text: "Shakira was born in Barranquilla, on Colombia's Caribbean coast, in 1977. By the time she was eighteen, she had already signed with Sony Music and recorded the album that would carry her out of Colombia and into the rest of Latin America — Pies Descalzos, released in 1995. The first single was a song with a title that, by itself, teaches you today's whole lesson. Estoy aquí — I am here. Two words, two verbs of estar doing two jobs at once: estoy is the state she's in, and aquí anchors her to the place. Notice what she did not sing. She did not sing soy aquí. Spanish would not accept it. Soy is for identity, and a place is not who you are. When she tells someone he eres something to her, that's ser. When she tells you how she está in this moment, that's estar. The whole song is a lesson in two verbs.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-006/m6-reading-shakira.mp3', mvpRequired: true },
+      { id: 'module-006-cultural-note-reggaeton',   screen: 'preListen',      text: "If you picked reggaeton, your song today is 'Calma' — the remix by Pedro Capó and Farruko, both Puerto Rican artists. The track became one of the most-streamed Spanish-language songs of the late 2010s, and like Shakira's 'Estoy Aquí', it leans hard on estar. Pedro Capó sings about being on the beach, being at peace, being in the moment — present-state descriptions that all call for estoy or está. Listen for estoy and es in the chorus. That's estar telling you where he is, and ser telling you what the day is. Two verbs, one slower-tempo reggaeton, the same lesson.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-006/m6-cultural-note-calma.mp3', mvpRequired: false },
+      { id: 'module-006-lesson-complete',           screen: 'lessonComplete', text: "You can now say who you are AND how you are. Two verbs, two truths. Ser for identity — soy, eres, es. Estar for state and location — estoy, estás, está. The same English 'I am' splits into two Spanish jobs, and you have both. Try one mirror moment tomorrow — 'Soy' plus your name, then 'Estoy' plus how you feel. Same person, two verbs.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-006/m6-lesson-complete.mp3', mvpRequired: true },
+      // Reading tap tokens — short Spanish pronunciation for tappable passage words.
+      // 6 distinct tokens per the unique-tappable-in-passage rule.
+      { id: 'm6-reading-token-pies-descalzos', screen: 'reading', text: 'pies descalzos', language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-006/m6-reading-token-pies-descalzos.mp3', mvpRequired: true },
+      { id: 'm6-reading-token-estoy-aqui',     screen: 'reading', text: 'estoy aquí',     language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-006/m6-reading-token-estoy-aqui.mp3',     mvpRequired: true },
+      { id: 'm6-reading-token-soy',            screen: 'reading', text: 'soy',            language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-006/m6-reading-token-soy.mp3',            mvpRequired: true },
+      { id: 'm6-reading-token-es',             screen: 'reading', text: 'es',             language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-006/m6-reading-token-es.mp3',             mvpRequired: true },
+      { id: 'm6-reading-token-eres',           screen: 'reading', text: 'eres',           language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-006/m6-reading-token-eres.mp3',           mvpRequired: true },
+      { id: 'm6-reading-token-esta',           screen: 'reading', text: 'está',           language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-006/m6-reading-token-esta.mp3',           mvpRequired: true },
+    ],
+    recyclingTargets: [
+      { moduleId: 1, concept: 'Pure vowel sounds carry the verb forms (soy, eres, estoy stress patterns)', intervalDays: [1, 7], reviewFormat: ['listening-recognition'] },
+      { moduleId: 2, concept: 'Accents do grammatical work: está vs esta, estás vs estas', intervalDays: [1, 3, 14], reviewFormat: ['mini-quiz'] },
+      { moduleId: 3, concept: 'Question words now have verb-anchored answers (¿Cómo estás? → Estoy bien)', intervalDays: [3, 7], reviewFormat: ['speaking-prompt'] },
+      { moduleId: 4, concept: 'Connectors stitch identity and state together (y, pero)', intervalDays: [1, 7, 30], reviewFormat: ['translation'] },
+      { moduleId: 5, concept: 'Pronouns finally get their first real verbs (yo soy / yo estoy, tú eres / tú estás)', intervalDays: [1, 3, 7, 30], reviewFormat: ['mini-quiz', 'speaking-prompt'] },
+    ],
   },
 
   {
     id: 7,
-    title: 'Numbers & Ordinals',
+    title: 'Articles & Gender',
     level: 'A1',
-    concept: '0–1,000,000 + primero, segundo, tercero...',
+    concept: 'el / la / los / las — and the masculine vs. feminine split that controls them',
     conceptDescription:
-      'Numbers unlock prices, ages, addresses, phone numbers, and dates. Ordinals let you say first, second, third. Essential from day one.',
-    song: { title: '1, 2, 3', artist: 'Sofía Reyes ft. Jason Derulo & De La Ghetto', durationSeconds: 191 },
+      "Spanish nouns are never neutral. Every single one is either masculine — taking el for singular and los for plural — or feminine — taking la for singular and las for plural. The shortcut works most of the time: if a noun ends in -o, it's usually masculine (el libro). If it ends in -a, it's usually feminine (la casa). From today, you stop saying nouns naked. Spanish nouns always travel with their article. Say la canción, not just canción. Say el corazón, not just corazón. The article tells you the gender, and the gender quietly shapes every adjective, every pronoun, every possessive that comes after.",
+    song: { title: 'La Vida Es Un Carnaval', artist: 'Celia Cruz', durationSeconds: 279, spotifyId: '1BwrMGGhPA6GarWIYaFrW8', youtubeId: '7Ho86ggAVrY' },
     genreSongs: {
-      'regional-mexican': { title: 'Cien Años', artist: 'Pedro Infante', durationSeconds: 185 },
-      rnb: { title: 'Cien Años', artist: 'Pedro Infante', durationSeconds: 185 },
+      pop: { title: 'El Mismo Sol', artist: 'Alvaro Soler', durationSeconds: 213, spotifyId: '58WOkUl3O9LvLZjdhiQvIX', youtubeId: 'aNHwNreDp3A' },
+      reggaeton: { title: 'El Perdón', artist: 'Nicky Jam & Enrique Iglesias', durationSeconds: 245, spotifyId: '7qCAVkHWZkF44OzOUKf8Cr', youtubeId: 'hXI8RQYC36Q' },
+      rnb: { title: 'La Diabla', artist: 'Romeo Santos', durationSeconds: 240, spotifyId: '3eCuEXYF3VnbTDHaztfUAv', youtubeId: 'tYUD9zpSTgw' },
+      'regional-mexican': { title: 'La Llorona', artist: 'Chavela Vargas', durationSeconds: 251, spotifyId: '21VxAmhZn3p0kdb0jXu4Ry', youtubeId: 'J0Ss46HaKNk' },
     },
     vocabulary: [
-      { spanish: 'uno, dos, tres', english: 'one, two, three' },
-      { spanish: 'diez', english: 'ten' },
-      { spanish: 'veinte', english: 'twenty' },
-      { spanish: 'cien', english: 'one hundred' },
-      { spanish: 'primero / segundo', english: 'first / second' },
+      { spanish: 'el', english: 'the (masculine singular)' },
+      { spanish: 'la', english: 'the (feminine singular)' },
+      { spanish: 'los', english: 'the (masculine plural)' },
+      { spanish: 'las', english: 'the (feminine plural)' },
+      { spanish: 'la casa', english: 'the house (feminine)' },
     ],
     grammarPoints: [
-      '1–15 individual words: uno, dos, tres... quince',
-      '16–19 are compound (one word): dieciséis, diecisiete, dieciocho, diecinueve',
-      '20+: veinte, veintiuno... treinta y uno, cuarenta, cincuenta, cien, mil',
-      'Ordinals: primero, segundo, tercero, cuarto, quinto (agree in gender)',
-      'Primero/Tercero drop -o before masculine nouns: el primer piso, el tercer día',
+      '-o ending → usually masculine → el (singular) / los (plural). el libro, los libros.',
+      '-a ending → usually feminine → la (singular) / las (plural). la casa, las casas.',
+      "Nouns travel with their article — say la canción, not just canción.",
+      'el (article, no accent) vs él (pronoun, with accent) — same letters, different jobs. el libro = the book. él lee = he reads.',
+      'Four exceptions to memorize: el día (the day), la mano (the hand), el agua (the water), el problema (the problem).',
     ],
-    quizTypes: ['Number dictation', 'Ordinal matching', 'Listening for numbers in lyrics'],
-    readingTopic: 'Pedro Infante: The Golden Age of Mexican Cinema and Music',
-    readingRatio: '90% English / 10% Spanish numbers and stats highlighted',
+    quizTypes: ['Article + noun match', 'el / él / la / ella four-way pick', 'Exception trap'],
+    readingTopic: 'Celia Cruz and the Title That Teaches the Lesson',
+    readingRatio: '85% English / 15% Spanish article+noun tappables',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 100,
+    culturalNoteVariants: {
+      reggaeton:
+        "If you picked reggaeton, your song today is 'El Perdón' — a global hit by Nicky Jam and Enrique Iglesias. The title is a clean masculine article+noun pair: el perdón — the forgiveness. Slower-tempo reggaeton, family-friendly lyrics, both singers enunciate the el at the front of the title clearly. Listen for el and la in the chorus — every time you catch one, a gendered noun is arriving right behind it. Same lesson, different beat.",
+    },
+    culturalNote:
+      "Celia Cruz was a Cuban-born singer who became the most celebrated voice in salsa music, widely called the Queen of Salsa. She recorded 'La Vida Es Un Carnaval' on her 1998 album Mi Vida Es Cantar, and the song became one of her signature anthems across Latin America. The title itself is today's lesson in four words — la vida (the life, feminine) sits next to un carnaval (a carnival, masculine), and your ear can hear the gender of each noun before the noun even lands. That is what gendered articles do in Spanish — they set up what's coming. Every time you hear la in a song, a feminine noun is about to arrive. Every time you hear el, a masculine one. The article tells you what's coming before the word does.",
+    quizQuestions: [
+      {
+        question: "Which article goes with libro (book)?",
+        options: ['la', 'el', 'los', 'las'],
+        correctIndex: 1,
+        explanation:
+          "Libro ends in -o, so it's masculine and takes el — el libro. The -o ending is the cleanest gender signal in Spanish, and it works for most nouns you'll meet in A1.",
+      },
+      {
+        question: "Which article goes with canción (song)?",
+        options: ['el', 'la', 'los', 'las'],
+        correctIndex: 1,
+        explanation:
+          "Canción ends in -ción, and every -ción noun in Spanish is feminine — la canción. The plural is las canciones. You'll lean on this rule for the rest of your Spanish life: la situación, la información, la conversación, all feminine.",
+      },
+      {
+        question: "Pick the right word: '___ chico canta.' (The boy sings.)",
+        options: ['el', 'él', 'la', 'ella'],
+        correctIndex: 0,
+        explanation:
+          "Chico is a masculine noun (-o ending), so the article is el — no accent. The accented él means 'he', which would be used before a verb, not a noun. Same letters, two different jobs — and the accent is what tells them apart.",
+      },
+      {
+        question: "Which article goes with casas (houses)?",
+        options: ['el', 'la', 'los', 'las'],
+        correctIndex: 3,
+        explanation:
+          "Casa is feminine (la casa), and casas is the plural form, so the article becomes las — las casas. Feminine plural always uses las, never los.",
+      },
+    ],
+    easyQuizQuestions: [
+      {
+        question: "What does el mean in English?",
+        options: ['the (feminine singular)', 'the (masculine singular)', 'he', 'a'],
+        correctIndex: 1,
+        explanation:
+          "El is 'the' for masculine singular nouns — el libro, el chico, el corazón. Without the accent, it's the article. With the accent, él means 'he' — a totally different word.",
+      },
+      {
+        question: "What does las mean in English?",
+        options: ['the (feminine plural)', 'the (masculine plural)', 'she', 'these'],
+        correctIndex: 0,
+        explanation:
+          "Las is 'the' for feminine plural nouns — las casas, las canciones, las chicas. It's only used when every noun in the group is feminine.",
+      },
+      {
+        question: "Which article goes with chica (girl)?",
+        options: ['el', 'la', 'los', 'las'],
+        correctIndex: 1,
+        explanation:
+          "Chica ends in -a, so it's feminine and takes la — la chica. Compare with el chico (the boy) — same root, different ending, different article. The ending carries the gender.",
+      },
+    ],
+    hardQuizQuestions: [
+      {
+        question: "Which article goes with día (day)?",
+        options: ['la', 'el', 'los', 'las'],
+        correctIndex: 1,
+        explanation:
+          "Día looks feminine — it ends in -a — but it's actually one of the high-frequency exceptions: el día. Just memorize it as a pair. The same trap shows up in el problema, el sistema, el idioma — Greek-root -ma nouns are masculine.",
+      },
+      {
+        question: "Translate: 'The song is pretty.'",
+        options: [
+          'El canción es bonito.',
+          'La canción es bonita.',
+          'La canción es bonito.',
+          'El canción es bonita.',
+        ],
+        correctIndex: 1,
+        explanation:
+          "Canción is feminine, so the article is la AND the adjective has to agree with it — bonita, not bonito. That's the masculine/feminine system at work: the gender of the noun shapes the article in front of it and the adjective behind it. One word's gender, three words' agreement.",
+      },
+      {
+        question: "Fill in both blanks: '___ libro es de ___ chica.' (The book belongs to the girl.)",
+        options: [
+          'la / el',
+          'el / la',
+          'el / el',
+          'la / la',
+        ],
+        correctIndex: 1,
+        explanation:
+          "Libro is masculine (-o ending) → el libro. Chica is feminine (-a ending) → la chica. The full sentence is 'El libro es de la chica.' Recycles de from Module 4 and es from Module 6 — and now you can wrap both nouns in their correct articles.",
+      },
+    ],
+    readingPassage: [
+      {
+        text: "Celia Cruz was born in Havana, Cuba, and grew up to become the most celebrated voice in salsa music — a singer so iconic that the world simply calls her the Queen of Salsa. In 1998, on the album Mi Vida Es Cantar, she recorded a song whose title alone teaches today's whole lesson: ",
+        isSpanish: false,
+      },
+      { text: 'La Vida Es Un Carnaval', isSpanish: true, english: 'Life is a carnival' },
+      {
+        text: ". Look at that title for a second. The first word is ",
+        isSpanish: false,
+      },
+      { text: 'la', isSpanish: true, english: 'the (feminine singular)' },
+      {
+        text: " — the feminine article — and it sits right in front of vida, a feminine noun. Three words later comes a masculine noun, carnaval, which would take ",
+        isSpanish: false,
+      },
+      { text: 'el', isSpanish: true, english: 'the (masculine singular)' },
+      {
+        text: " if it had a definite article in front of it. That's what Spanish does in every song, every sentence, every street sign. A noun never travels alone — it travels with an article, and the article tells your ear the gender before the noun even arrives. When Celia sings ",
+        isSpanish: false,
+      },
+      { text: 'la canción', isSpanish: true, english: 'the song' },
+      {
+        text: ", you hear a feminine word coming. When she names the carnaval, the masculine slot opens. Once you start hearing ",
+        isSpanish: false,
+      },
+      { text: 'los', isSpanish: true, english: 'the (masculine plural)' },
+      {
+        text: " and ",
+        isSpanish: false,
+      },
+      { text: 'las', isSpanish: true, english: 'the (feminine plural)' },
+      {
+        text: " in the chorus of any Spanish song, you'll realize Spanish has been teaching you gender from the first syllable.",
+        isSpanish: false,
+      },
+    ],
+    ttsTriggers: [
+      { id: 'module-007-intro',                     screen: 'preListen',      text: "Today we're learning the four little words that wrap every Spanish noun — el, la, los, las. They all mean 'the' in English, but Spanish splits them four ways: masculine singular, feminine singular, masculine plural, feminine plural. As you listen to 'La Vida Es Un Carnaval' by Celia Cruz, count how many times she sings la — it's the most common article in any love song, and once you can hear it, half of every Spanish chorus opens up. Press listen when you're ready.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-007/m7-intro.mp3', mvpRequired: true },
+      { id: 'module-007-vocab-el-la',               screen: 'preListen',      text: "El is 'the' for masculine singular nouns — el libro, the book. La is 'the' for feminine singular nouns — la casa, the house. The shortcut: if the noun ends in -o, it's almost always masculine and takes el. If it ends in -a, it's almost always feminine and takes la. Two endings, two articles, one rule that covers most of A1.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-007/m7-vocab-el-la.mp3', mvpRequired: true },
+      { id: 'module-007-vocab-los-las',             screen: 'preListen',      text: "Now the plurals. Los is 'the' for masculine plural — los libros, the books. Las is 'the' for feminine plural — las casas, the houses. One small wrinkle — if you have a mixed group of boys and girls, Spanish defaults to the masculine plural los. So los niños can mean 'the boys' or 'the kids' in general. Las niños is never correct.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-007/m7-vocab-los-las.mp3', mvpRequired: true },
+      { id: 'module-007-vocab-gender-rule',         screen: 'preListen',      text: "Here's the deal. Spanish has no neutral nouns — every single one is masculine or feminine. The -o and -a endings give the gender away most of the time, but there are four big exceptions you should just memorize as pairs. El día — the day, masculine even though it ends in -a. La mano — the hand, feminine even though it ends in -o. El agua — the water, feminine but takes el to avoid the double-a sound. And el problema — the problem, masculine because of its Greek roots. Learn the rule first, then learn these four. That's it.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-007/m7-vocab-gender-rule.mp3', mvpRequired: true },
+      { id: 'module-007-phrase-la-cancion-bonita',  screen: 'preListen',      text: "'La canción es bonita.' — The song is pretty. Three words doing a lot of work. La is the feminine article because canción is feminine. Es is 'is', recycled from Module 6's ser. And bonita ends in -a because it has to agree with the feminine noun in front of it. If you say it about a masculine noun — like a book — it becomes 'El libro es bonito.' Same idea, different gender, different endings. Memorize the whole chunk — it's the most useful sentence you'll leave with today.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-007/m7-phrase-la-cancion-bonita.mp3', mvpRequired: true },
+      { id: 'module-007-speaking-prompt',           screen: 'preListen',      text: "Try this. Look around the room you're in and pick five objects. For each one, say it out loud with its article. The book — el libro. The chair — la silla. The lamp — la lámpara. The phone — el teléfono. The music — la música. If you don't know the word, look it up — but always say the article and the noun together. Spanish nouns don't travel alone. They come wrapped in their article. From today on, that's how you say them.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-007/m7-speaking-prompt.mp3', mvpRequired: true },
+      { id: 'module-007-reading-intro',             screen: 'reading',        text: "Celia Cruz was born in Havana, Cuba, and grew up to become the most celebrated voice in salsa music — a singer so iconic that the world simply calls her the Queen of Salsa. In 1998, on the album Mi Vida Es Cantar, she recorded a song whose title alone teaches today's whole lesson — La Vida Es Un Carnaval. Look at that title for a second. The first word is la — the feminine article — and it sits right in front of vida, a feminine noun. Three words later comes a masculine noun, carnaval, which would take el if it had a definite article in front of it. That's what Spanish does in every song, every sentence, every street sign. A noun never travels alone — it travels with an article, and the article tells your ear the gender before the noun even arrives. When Celia sings la canción, you hear a feminine word coming. When she names the carnaval, the masculine slot opens. Once you start hearing los and las in the chorus of any Spanish song, you'll realize Spanish has been teaching you gender from the first syllable.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-007/m7-reading-celia.mp3', mvpRequired: true },
+      { id: 'module-007-cultural-note-reggaeton',   screen: 'preListen',      text: "If you picked reggaeton, your song today is 'El Perdón' — a global hit by Nicky Jam and Enrique Iglesias. The title is a clean masculine article+noun pair — el perdón, the forgiveness. Slower-tempo reggaeton, family-friendly lyrics, and both singers enunciate the el at the front of the title clearly. Listen for el and la in the chorus — every time you catch one, a gendered noun is arriving right behind it. Same lesson, different beat.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-007/m7-cultural-note-reggaeton.mp3', mvpRequired: false },
+      { id: 'module-007-lesson-complete',           screen: 'lessonComplete', text: "From today, Spanish nouns never travel naked. You can wrap any noun you meet in its correct article — el libro, la canción, los chicos, las casas. You know the rule — -o is usually masculine, -a is usually feminine — and you know the four exceptions that break it. Next time you hear a Spanish song, listen for la and el in the first ten seconds. They're almost always there. And every time you catch one, you're hearing the gender of the next word arrive a beat early.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-007/m7-lesson-complete.mp3', mvpRequired: true },
+      // Reading tap tokens — short Spanish pronunciation for tappable passage words.
+      // 6 distinct tokens — one per unique Spanish tappable in the reading passage.
+      { id: 'm7-reading-token-la-vida-es-un-carnaval', screen: 'reading', text: 'La Vida Es Un Carnaval', language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-007/m7-reading-token-la-vida-es-un-carnaval.mp3', mvpRequired: true },
+      { id: 'm7-reading-token-la',                     screen: 'reading', text: 'la',                     language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-007/m7-reading-token-la.mp3',                     mvpRequired: true },
+      { id: 'm7-reading-token-el',                     screen: 'reading', text: 'el',                     language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-007/m7-reading-token-el.mp3',                     mvpRequired: true },
+      { id: 'm7-reading-token-la-cancion',             screen: 'reading', text: 'la canción',             language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-007/m7-reading-token-la-cancion.mp3',             mvpRequired: true },
+      { id: 'm7-reading-token-los',                    screen: 'reading', text: 'los',                    language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-007/m7-reading-token-los.mp3',                    mvpRequired: true },
+      { id: 'm7-reading-token-las',                    screen: 'reading', text: 'las',                    language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-007/m7-reading-token-las.mp3',                    mvpRequired: true },
+    ],
+    recyclingTargets: [
+      { moduleId: 1, concept: 'Pronunciation of el/la/los/las — soft l, closed e in el, open a in la. Vowel endings -o/-a as the gender signal.', intervalDays: [1, 7], reviewFormat: ['listening-recognition'] },
+      { moduleId: 2, concept: 'el (article, no accent) vs él (pronoun, with accent) — same letters, different parts of speech.', intervalDays: [1, 3, 14], reviewFormat: ['mini-quiz', 'translation'] },
+      { moduleId: 5, concept: 'Four-way contrast: el / él / la / ella — article before a noun, pronoun before a verb.', intervalDays: [1, 3, 7, 30], reviewFormat: ['mini-quiz', 'translation', 'speaking-prompt'] },
+      { moduleId: 6, concept: 'Adjective-gender agreement (cansado/cansada, bonito/bonita) flows from the same masculine/feminine system that controls articles.', intervalDays: [3, 7, 14], reviewFormat: ['mini-quiz', 'speaking-prompt'] },
+    ],
   },
 
   {
     id: 8,
-    title: 'Greetings & Polite Phrases',
+    title: 'Demonstratives & Possessives',
     level: 'A1',
-    concept: 'Hola, gracias, adiós — the phrases you\'ll use every day',
+    concept: 'este / ese / aquel — and mi / tu / su — pointing at things and claiming them',
     conceptDescription:
-      'The social glue of Spanish. These phrases are your entry point into every real-world interaction — from ordering coffee to meeting someone for the first time.',
-    song: { title: 'Gracias a la Vida', artist: 'Mercedes Sosa', durationSeconds: 287 },
+      "Spanish gives you two tools for talking about the things around you. The first is the demonstrative — este, ese, aquel — which says how far away the thing is from you. Este is here in your hand. Ese is over by the person you're talking to. Aquel is across the room, or across a year. The second tool is the possessive — mi, tu, su — which says who the thing belongs to. Both tools replace the article you learned yesterday. You say mi libro, not mi el libro. You say este libro, not este el libro. Two systems, one rule, and from today on every noun you point to has an owner and a place.",
+    song: { title: 'Mi Gente', artist: 'J Balvin & Willy William', durationSeconds: 189, spotifyId: '4ipnJyDU3Lq15qBAYNqlqK', youtubeId: 'wnJ6LuUFpMo' },
     genreSongs: {
-      pop: { title: 'Hola', artist: 'Bomba Estéreo', durationSeconds: 204 },
-      reggaeton: { title: 'Hola', artist: 'Bomba Estéreo', durationSeconds: 204 },
+      pop: { title: 'Mi Persona Favorita', artist: 'Alejandro Sanz & Camila Cabello', durationSeconds: 199, spotifyId: '6hCuO8rcHV6Y1he9zOUlcf', youtubeId: 'W4AiOKlOO0Q' },
+      reggaeton: { title: 'Mi Gente', artist: 'J Balvin & Willy William', durationSeconds: 189, spotifyId: '4ipnJyDU3Lq15qBAYNqlqK', youtubeId: 'wnJ6LuUFpMo' },
+      rnb: { title: 'Tu Falta De Querer', artist: 'Mon Laferte', durationSeconds: 232, spotifyId: '4skuEIloXWuxxgekKupkEH', youtubeId: 'WT-VE9OyAJk' },
+      'regional-mexican': { title: 'Esta Noche Con Mariachis', artist: 'Vicente Fernández', durationSeconds: 178, spotifyId: '1NZrtN3sWFoQgIcpcxeh3K', youtubeId: 'COpovqGFU9Q' },
     },
     vocabulary: [
-      { spanish: 'hola', english: 'hello' },
-      { spanish: 'gracias', english: 'thank you' },
-      { spanish: 'de nada', english: 'you\'re welcome' },
-      { spanish: 'por favor', english: 'please' },
-      { spanish: 'hasta luego', english: 'see you later' },
+      { spanish: 'este / esta', english: 'this (masc. / fem.)' },
+      { spanish: 'ese / esa', english: 'that (masc. / fem.)' },
+      { spanish: 'aquel / aquella', english: 'that over there (masc. / fem.)' },
+      { spanish: 'mi / mis', english: 'my (singular / plural noun)' },
+      { spanish: 'tu / tus', english: 'your (informal — singular / plural noun)' },
+      { spanish: 'su / sus', english: 'his / her / your (formal) / their' },
     ],
     grammarPoints: [
-      'Greetings: hola, buenos días, buenas tardes, buenas noches',
-      '¿Cómo estás? (informal) vs ¿Cómo está usted? (formal)',
-      'Responses: muy bien, gracias / más o menos / no muy bien',
-      'Polite phrases: por favor, gracias, de nada, con permiso, perdón',
-      'Farewells: adiós, hasta luego, hasta pronto, hasta mañana, chao',
+      'Three-way distance: este (here, with me), ese (there, with you), aquel (over there, far from both).',
+      'Possessives match the noun: mi libro / mis libros — number agreement. nuestra casa / nuestro libro — gender + number.',
+      'Demonstratives and possessives REPLACE the article — say mi libro OR el libro, never mi el libro.',
+      'Accent disambiguation: mi (my, possessive) vs mí (me, after a preposition). tu (your, possessive) vs tú (you, subject pronoun).',
+      'su is ambiguous on purpose — it covers his, her, your (formal), and their. Context tells you which.',
     ],
-    quizTypes: ['Greeting matching', 'Appropriate response selection', 'Listening comprehension'],
-    readingTopic: 'Mercedes Sosa: La Negra and the Voice of Latin America',
-    readingRatio: '100% English with Spanish greetings woven in as dialogue',
+    quizTypes: ['Demonstrative distance pick', 'Possessive person match', 'mi/mí + tu/tú accent disambiguation'],
+    readingTopic: 'J Balvin and the Song That Claimed a Whole City',
+    readingRatio: '80% English / 20% Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 100,
+    culturalNoteVariants: {
+      pop:
+        "If you picked pop, your song today is 'Mi Persona Favorita' — a duet by Alejandro Sanz and Camila Cabello. The title is a textbook M8 phrase — mi (the first-person possessive) wrapped around persona favorita (favorite person), the whole thing claiming someone as yours. Sanz is a Spanish singer-songwriter who has written some of the most-covered ballads in Latin music; Camila Cabello is the Cuban-American pop artist who broke out with 'Havana'. The arrangement is slow, the flamenco guitar leaves space between every line, and the word mi lands clean every time it arrives. Listen for it. Each one is the speaker claiming the listener as their favorite — the entire emotional architecture of the song is built on one syllable.",
+    },
+    culturalNote:
+      "J Balvin is a Medellín-born reggaeton artist who became one of the defining voices of the urbano boom of the 2010s. In 2017 he released 'Mi Gente' with the French-Moroccan producer Willy William, and it turned into one of the biggest Spanish-language songs the world had ever heard — a global hit that played from Bogotá clubs to American radio without ever switching languages. The title is today's whole lesson in two words. Mi is the first-person possessive — my. Gente means people. Mi gente — my people — is what a Spanish speaker calls their crew, their neighborhood, their city, their country, anyone who feels like home. When Balvin sings ¿dónde está mi gente? he's not asking a question, he's planting a flag. That is what possessives do in Spanish. They take a noun and they say this one belongs to me. Every time you hear mi in a song, the artist is claiming something — and from today on, you can hear what.",
+    quizQuestions: [
+      {
+        question: "Which possessive means 'my' before a singular noun like libro?",
+        options: ['mi', 'tu', 'su', 'mis'],
+        correctIndex: 0,
+        explanation:
+          "Mi is 'my' for singular nouns — mi libro, mi casa, mi gente. The plural form mis is used when the noun is plural — mis libros, mis amigos. One word for one thing, the other for many.",
+      },
+      {
+        question: "Pick the right demonstrative: '___ libro' — the book that's right here in my hand.",
+        options: ['aquel', 'ese', 'este', 'esa'],
+        correctIndex: 2,
+        explanation:
+          "Este is the 'near me' demonstrative — the book in your hand, the song you're playing right now. Ese would be the book near the person you're talking to, and aquel would be a book across the room. Libro is masculine, so the masculine form este is correct (not esta).",
+      },
+      {
+        question: "How do you say 'our house' in Spanish?",
+        options: ['mi casa', 'su casa', 'nuestra casa', 'nuestro casa'],
+        correctIndex: 2,
+        explanation:
+          "Nuestra casa — 'our house'. Nuestro / nuestra is one of the only possessives that splits by gender. Casa is feminine, so it takes nuestra. If the noun were masculine — nuestro libro — the form would flip. The rule from yesterday's article lesson still holds: the noun's gender controls everything in front of it.",
+      },
+      {
+        question: "What does 'Es su libro' mean in English?",
+        options: [
+          'It is his book.',
+          'It is her book.',
+          'It is your book (formal) or their book.',
+          'All of the above — context decides.',
+        ],
+        correctIndex: 3,
+        explanation:
+          "Su is the most ambiguous possessive in Spanish. It covers his, her, your (formal), AND their, and the sentence alone doesn't tell you which. Spanish speakers read the surrounding context — or add de él, de ella, de ustedes — to be specific. When you hear su in a song, expect ambiguity and let the rest of the verse clarify.",
+      },
+    ],
+    easyQuizQuestions: [
+      {
+        question: "What does este mean in English?",
+        options: ['that', 'this', 'my', 'the'],
+        correctIndex: 1,
+        explanation:
+          "Este is 'this' for masculine nouns — este libro, este día. The feminine form is esta — esta canción, esta noche. Same meaning, just matched to the gender of the noun.",
+      },
+      {
+        question: "What does esa mean in English?",
+        options: ['this (fem.)', 'that (fem.)', 'her', 'these'],
+        correctIndex: 1,
+        explanation:
+          "Esa is the 'near you' demonstrative for feminine nouns — esa canción, esa casa. The masculine form is ese. Spanish has three distance words where English has two — esa lands in the middle (close to the listener) rather than the close-or-far split English uses.",
+      },
+      {
+        question: "What does tu mean in English (no accent)?",
+        options: ['you', 'your', 'I', 'the'],
+        correctIndex: 1,
+        explanation:
+          "Tu without an accent is the possessive 'your' — tu libro, tu canción. With an accent — tú — it means 'you' (the subject pronoun from Module 5). The accent does grammatical work: same letters, two different jobs.",
+      },
+    ],
+    hardQuizQuestions: [
+      {
+        question: "Which sentence is correct?",
+        options: [
+          'Mi el libro está aquí.',
+          'Mi libro está aquí.',
+          'El mi libro está aquí.',
+          'Libro mi está aquí.',
+        ],
+        correctIndex: 1,
+        explanation:
+          "Possessives REPLACE the article — you say mi libro OR el libro, never mi el libro. The same rule applies to demonstratives: este libro, not este el libro. From today on, treat mi, tu, su, este, ese, and aquel as article-slot words. Only one of them gets to sit there at a time.",
+      },
+      {
+        question: "Pick the correct form: 'It's for me.' (a preposition + the right form)",
+        options: [
+          'Es para mi.',
+          'Es para mí.',
+          'Es para tu.',
+          'Es para tú.',
+        ],
+        correctIndex: 1,
+        explanation:
+          "After a preposition like para, you use mí with an accent — the object-pronoun form. The accent matters: mi (no accent) is the possessive 'my' (mi libro), and mí (with accent) is the 'me' that follows prepositions (para mí). Same word on the page in many fonts, different jobs in the grammar.",
+      },
+      {
+        question: "Translate: 'This is my favorite song.'",
+        options: [
+          'Este es mi canción favorita.',
+          'Esta es mi canción favorita.',
+          'Esta es mi canción favorito.',
+          'Este es la mi canción favorita.',
+        ],
+        correctIndex: 1,
+        explanation:
+          "Canción is feminine (-ción nouns always are, from Module 7), so the demonstrative is esta — not este. The possessive mi doesn't change for gender, but the adjective favorita has to agree with canción — feminine ending -a. One sentence wires together Module 6's es, Module 7's gender system, and Module 8's two new tools.",
+      },
+    ],
+    readingPassage: [
+      {
+        text: "J Balvin grew up in Medellín, Colombia, and built his career one dance floor at a time before becoming one of the most recognized voices in reggaeton anywhere in the world. In 2017, he released a song with the French-Moroccan producer Willy William that crossed borders most Spanish-language tracks never quite manage to cross — ",
+        isSpanish: false,
+      },
+      { text: 'Mi Gente', isSpanish: true, english: 'My People' },
+      {
+        text: ". The title is today's whole lesson in two words. ",
+        isSpanish: false,
+      },
+      { text: 'mi', isSpanish: true, english: 'my' },
+      {
+        text: " is the first-person possessive — my — and gente means people, so the phrase together claims a whole community as the speaker's own. That single syllable is everywhere in Spanish-language music. When an artist sings about ",
+        isSpanish: false,
+      },
+      { text: 'tu', isSpanish: true, english: 'your (informal)' },
+      {
+        text: " corazón, they're naming your heart and addressing you directly at the same time. When they sing about ",
+        isSpanish: false,
+      },
+      { text: 'su', isSpanish: true, english: 'his / her / your (formal) / their' },
+      {
+        text: " familia, they could mean his family, her family, your family, or their family — the listener has to read the rest of the verse to know which. Demonstratives do something different. ",
+        isSpanish: false,
+      },
+      { text: 'esta', isSpanish: true, english: 'this (fem.)' },
+      {
+        text: " noche means tonight — the night happening right now, close enough to touch. But ",
+        isSpanish: false,
+      },
+      { text: 'aquel', isSpanish: true, english: 'that (over there / long ago)' },
+      {
+        text: " verano means that summer — the one from years ago, far enough away to be a memory. Spanish gives you three distances where English gives you two, and songwriters use that extra word to reach across time. By the end of 'Mi Gente', you'll have heard mi dozens of times. That's J Balvin claiming Medellín, claiming his crew, claiming everyone listening — one syllable, one whole city.",
+        isSpanish: false,
+      },
+    ],
+    ttsTriggers: [
+      { id: 'module-008-intro',                     screen: 'preListen',      text: "Today we're learning the two systems Spanish uses to talk about the things around you. The first is demonstratives — este, ese, aquel — three words for three distances. The second is possessives — mi, tu, su — for who the thing belongs to. As you listen to 'Mi Gente' by J Balvin and Willy William, count every time you hear mi. The title itself is the lesson — mi gente means my people, and the whole song is one syllable repeated like a flag. Press listen when you're ready.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-008/m8-intro.mp3', mvpRequired: true },
+      { id: 'module-008-vocab-demonstratives',      screen: 'preListen',      text: "Demonstratives say how far away something is. Este — this, right here in my hand. Ese — that, over by you. Aquel — that one over there, far from both of us. The feminine forms are esta, esa, and aquella — they match feminine nouns the way Module 7 taught. Three distances, two genders, six little words that let you point at anything.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-008/m8-vocab-demonstratives.mp3', mvpRequired: true },
+      { id: 'module-008-vocab-possessives',         screen: 'preListen',      text: "Possessives say who the thing belongs to. Mi means my — mi libro, my book. Tu means your, informally — tu canción, your song. Su means his, her, your formal, or their — all four at once. Su libro could be his book, her book, your book, or their book, and Spanish lets context decide. The plural forms are mis, tus, and sus — they match the noun, not the owner.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-008/m8-vocab-possessives.mp3', mvpRequired: true },
+      { id: 'module-008-vocab-distance-rule',       screen: 'preListen',      text: "Here's the trick that makes the third demonstrative worth learning. Este and esta open a phrase with right now — esta noche means this night, the one happening as you're speaking. Aquel and aquella reach back across time — aquel verano means that summer, the one from years ago, the one you remember. English needs extra words to do that — 'that summer back then, the one I remember' — Spanish does it in one syllable. Aquel is the memory word.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-008/m8-vocab-distance-rule.mp3', mvpRequired: true },
+      { id: 'module-008-phrase-mi-cancion-favorita', screen: 'preListen',     text: "'Es mi canción favorita.' — It's my favorite song. Four words wiring together three modules. Es is the ser form for 'it is', from Module 6. Mi is the first-person possessive, from today. Canción is feminine, so favorita has to end in -a to agree with it — Module 7's gender system at work. From today on, this is the sentence you can say about every track in Melodia. It's my favorite song. The grammar is yours.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-008/m8-phrase-mi-cancion-favorita.mp3', mvpRequired: true },
+      { id: 'module-008-speaking-prompt',           screen: 'preListen',      text: "Try this. Look around your room one more time — you did this yesterday with articles. Now say each object twice. First with a demonstrative, pointing — este libro, esa lámpara, aquel cuadro. Then with a possessive, claiming it — mi libro, mi lámpara, mi cuadro. Now pick one object and imagine handing it to someone. Say 'Es para ti — es tu libro ahora.' It's for you — it's your book now. You're not pointing at objects anymore. You're giving them away.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-008/m8-speaking-prompt.mp3', mvpRequired: true },
+      { id: 'module-008-reading-intro',             screen: 'reading',        text: "J Balvin grew up in Medellín, Colombia, and built his career one dance floor at a time before becoming one of the most recognized voices in reggaeton anywhere in the world. In 2017, he released a song with the French-Moroccan producer Willy William that crossed borders most Spanish-language tracks never quite manage to cross — Mi Gente. The title is today's whole lesson in two words. Mi is the first-person possessive — my — and gente means people, so the phrase together claims a whole community as the speaker's own. That single syllable is everywhere in Spanish-language music. When an artist sings about tu corazón, they're naming your heart and addressing you directly at the same time. When they sing about su familia, they could mean his family, her family, your family, or their family — the listener has to read the rest of the verse to know which. Demonstratives do something different. Esta noche means tonight — the night happening right now, close enough to touch. But aquel verano means that summer — the one from years ago, far enough away to be a memory. Spanish gives you three distances where English gives you two, and songwriters use that extra word to reach across time. By the end of 'Mi Gente', you'll have heard mi dozens of times. That's J Balvin claiming Medellín, claiming his crew, claiming everyone listening — one syllable, one whole city.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-008/m8-reading-balvin.mp3', mvpRequired: true },
+      { id: 'module-008-cultural-note-pop',         screen: 'preListen',      text: "If you picked pop, your song today is 'Mi Persona Favorita' — a duet by Alejandro Sanz and Camila Cabello. The title is a textbook M8 phrase — mi wrapped around persona favorita, the whole thing claiming someone as yours. The arrangement is slow, the flamenco guitar leaves space between every line, and the word mi lands clean every time it arrives. Each one is the speaker claiming the listener as their favorite — the entire emotional architecture of the song is built on one syllable.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-008/m8-cultural-note-pop.mp3', mvpRequired: false },
+      { id: 'module-008-lesson-complete',           screen: 'lessonComplete', text: "Look at what you can do now. You can name anything in Spanish — that was Module 7. You can point at it from three different distances — este, ese, aquel — and you can claim it for any of five people — mi, tu, su, nuestro, su. Every noun phrase in A1 Spanish is built from the tools you have right now. You started this lesson saying words. You're finishing it building sentences out of grammar that belongs to you. This is the last free module — and you earned every part of it. From here on, the language opens up. Mi gente. That's you now.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-008/m8-lesson-complete.mp3', mvpRequired: true },
+      // Reading tap tokens — short Spanish pronunciation for tappable passage words.
+      // 6 distinct tokens — one per unique Spanish tappable in the reading passage.
+      { id: 'm8-reading-token-mi-gente', screen: 'reading', text: 'Mi Gente', language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-008/m8-reading-token-mi-gente.mp3', mvpRequired: true },
+      { id: 'm8-reading-token-mi',       screen: 'reading', text: 'mi',       language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-008/m8-reading-token-mi.mp3',       mvpRequired: true },
+      { id: 'm8-reading-token-tu',       screen: 'reading', text: 'tu',       language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-008/m8-reading-token-tu.mp3',       mvpRequired: true },
+      { id: 'm8-reading-token-su',       screen: 'reading', text: 'su',       language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-008/m8-reading-token-su.mp3',       mvpRequired: true },
+      { id: 'm8-reading-token-esta',     screen: 'reading', text: 'esta',     language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-008/m8-reading-token-esta.mp3',     mvpRequired: true },
+      { id: 'm8-reading-token-aquel',    screen: 'reading', text: 'aquel',    language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-008/m8-reading-token-aquel.mp3',    mvpRequired: true },
+    ],
+    recyclingTargets: [
+      { moduleId: 1, concept: 'Pure vowel discipline in este/esta/esto — three forms separated by one vowel each. M1 vowel pairs doing grammatical work.', intervalDays: [1, 7], reviewFormat: ['listening-recognition'] },
+      { moduleId: 2, concept: 'mi vs mí and tu vs tú — the second-cleanest A1 accent disambiguation pair after el/él. Possessive (no accent) vs object/subject pronoun (with accent).', intervalDays: [1, 3, 14], reviewFormat: ['mini-quiz', 'translation'] },
+      { moduleId: 5, concept: 'Subject pronouns map to possessives: yo→mi, tú→tu, él/ella/usted→su, nosotros→nuestro, ellos/ustedes→su. M5 pronouns now generate ownership claims.', intervalDays: [1, 3, 7, 30], reviewFormat: ['mini-quiz', 'speaking-prompt', 'translation'] },
+      { moduleId: 6, concept: 'es mi casa, es tu libro, es su canción — the canonical ownership frame combines M6 third-person ser with M8 possessives.', intervalDays: [3, 7, 14], reviewFormat: ['mini-quiz', 'speaking-prompt'] },
+      { moduleId: 7, concept: 'Gender + number agreement extends to demonstratives and possessives. Possessives REPLACE articles — mi libro OR el libro, never both.', intervalDays: [1, 3, 7, 14, 30], reviewFormat: ['mini-quiz', 'translation', 'speaking-prompt'] },
+    ],
   },
 
   // ── A1-A2 Elementary Transition — Modules 9–19 ────────────────────────────
@@ -950,7 +1494,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Shakira: From Barranquilla to the World Stage',
     readingRatio: '70% English / 30% Spanish article+noun pairs highlighted',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 120,
   },
 
@@ -981,7 +1525,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Enrique Iglesias: Son of a Legend, Star in His Own Right',
     readingRatio: '70% English / 30% Spanish with AR verbs',
     songsNeeded: 3,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 120,
   },
 
@@ -1012,7 +1556,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Jesse & Joy: A Sibling Duo Who Changed Latin Pop',
     readingRatio: '65% English / 35% Spanish with ER verbs',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 120,
   },
 
@@ -1045,7 +1589,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Marc Anthony: Salsa, Soul, and New York City',
     readingRatio: '60% English / 40% Spanish short bio with IR verbs',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 120,
   },
 
@@ -1076,7 +1620,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Bomba Estéreo: Where Colombian Folklore Meets Electronic Music',
     readingRatio: '55% English / 45% Spanish with ser constructions',
     songsNeeded: 3,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 120,
   },
 
@@ -1107,7 +1651,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Shakira: Early Life in Barranquilla and the Making of Laundry Service',
     readingRatio: '50% English / 50% Spanish with estar constructions',
     songsNeeded: 3,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 120,
   },
 
@@ -1138,7 +1682,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Romeo Santos: The King of Bachata',
     readingRatio: '50% English / 50% Spanish contrasting ser/estar',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 120,
   },
 
@@ -1169,7 +1713,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Calle 13: Music as Political Protest Across Latin America',
     readingRatio: '45% English / 55% Spanish with progressive forms highlighted',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 120,
   },
 
@@ -1200,7 +1744,7 @@ export const MODULES: Module[] = [
     readingTopic: 'J Balvin: Medellín\'s Ambassador to the World',
     readingRatio: '40% English / 60% Spanish descriptions of artists',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 120,
   },
 
@@ -1231,7 +1775,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Nicky Jam: From the Bronx to Reggaeton Royalty',
     readingRatio: '40% English / 60% Spanish with possessives throughout',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 120,
   },
 
@@ -1262,7 +1806,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Maluma: Pretty Boy, Dirty Boy and the New Face of Reggaeton',
     readingRatio: '35% English / 65% Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 120,
   },
 
@@ -1295,7 +1839,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Jesse & Joy: Writing Songs About Real Life',
     readingRatio: '35% English / 65% Spanish',
     songsNeeded: 3,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 140,
   },
 
@@ -1326,7 +1870,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Regional Mexican Music: The Sounds of Sinaloa',
     readingRatio: '30% English / 70% Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 140,
   },
 
@@ -1357,7 +1901,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Ricky Martin: From Menudo to Global Superstar',
     readingRatio: '30% English / 70% Spanish with poder constructions',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 140,
   },
 
@@ -1388,7 +1932,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Pitbull: From Miami to Global Brand',
     readingRatio: '30% English / 70% Spanish with ir constructions',
     songsNeeded: 3,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 140,
   },
 
@@ -1419,7 +1963,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Sech: Panama\'s Biggest Export in Music',
     readingRatio: '25% English / 75% Spanish',
     songsNeeded: 3,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 140,
   },
 
@@ -1450,7 +1994,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Jorge Drexler: The Uruguayan Doctor Who Won an Oscar',
     readingRatio: '25% English / 75% Spanish with al/del throughout',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 140,
   },
 
@@ -1481,7 +2025,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Armando Manzanero: The Romantic Composer Who Defined Latin Ballads',
     readingRatio: '25% English / 75% Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 140,
   },
 
@@ -1512,7 +2056,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Selena: The Queen of Tejano and Her Lasting Legacy',
     readingRatio: '20% English / 80% Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 140,
   },
 
@@ -1543,7 +2087,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Manu Chao: The Globetrotting Voice of Latin Alternative',
     readingRatio: '20% English / 80% Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 140,
   },
 
@@ -1574,7 +2118,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Daddy Yankee: The Godfather of Reggaeton Retires in Style',
     readingRatio: '15% English / 85% Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 140,
   },
 
@@ -1605,7 +2149,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Shakira & Anuel AA: When Pop Worlds Collide',
     readingRatio: '20% English / 80% Spanish',
     songsNeeded: 3,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 140,
   },
 
@@ -1637,7 +2181,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Sech and the Panama City Sound',
     readingRatio: '15% English / 85% Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 160,
   },
 
@@ -1667,7 +2211,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Ricky Martin: The Man Behind the Voice',
     readingRatio: '15% English / 85% Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 160,
   },
 
@@ -1697,7 +2241,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Daddy Yankee: A Career in His Own Words',
     readingRatio: '10% English / 90% Spanish',
     songsNeeded: 3,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 160,
   },
 
@@ -1727,7 +2271,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Alejandro Fernández: Carrying the Mariachi Legacy Forward',
     readingRatio: '10% English / 90% Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 160,
   },
 
@@ -1757,7 +2301,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Becky G: From Inglewood to International Star',
     readingRatio: '10% English / 90% Spanish',
     songsNeeded: 3,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 160,
   },
 
@@ -1787,7 +2331,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Jesse & Joy: The Album That Changed Their Lives',
     readingRatio: 'Fully Spanish with glossary for 5–10 difficult words',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 160,
   },
 
@@ -1817,7 +2361,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Juan Luis Guerra: The Poet of Dominican Music',
     readingRatio: 'Fully Spanish — artist reflecting on their past',
     songsNeeded: 3,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 160,
   },
 
@@ -1847,7 +2391,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Buena Vista Social Club: Rediscovering Cuban Music',
     readingRatio: 'Fully Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 160,
   },
 
@@ -1877,7 +2421,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Julieta Venegas: Accordion, Indie Pop, and Mexican Identity',
     readingRatio: 'Fully Spanish — artist daily routine',
     songsNeeded: 3,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 160,
   },
 
@@ -1907,7 +2451,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Bad Bunny and Enrique Iglesias: Two Generations of Latin Music',
     readingRatio: 'Fully Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 160,
   },
 
@@ -1937,7 +2481,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Karol G: La Bichota and the Rise of Female Reggaeton',
     readingRatio: 'Fully Spanish',
     songsNeeded: 3,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 160,
   },
 
@@ -1967,7 +2511,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Becky G: The Many Sides of a Multilingual Star',
     readingRatio: 'Fully Spanish — comparing artists/albums',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 160,
   },
 
@@ -1997,7 +2541,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Los Ángeles Azules: Cumbia as Cultural Identity',
     readingRatio: 'Fully Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 160,
   },
 
@@ -2027,7 +2571,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Selena: The Queen of Tejano Who Crossed All Borders',
     readingRatio: 'Fully Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 160,
   },
 
@@ -2057,7 +2601,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Los Ángeles Azules: Four Decades of Cumbia Cumbia',
     readingRatio: 'Fully Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 160,
   },
 
@@ -2087,7 +2631,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Día de los Muertos: The Living Holiday',
     readingRatio: 'Fully Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 160,
   },
 
@@ -2119,7 +2663,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Ricardo Arjona: Philosopher, Poet, and Guatemalan Icon',
     readingRatio: 'Fully Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 160,
   },
 
@@ -2149,7 +2693,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Alejandro Fernández: Son of Vicente, King in His Own Right',
     readingRatio: 'Fully Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 160,
   },
 
@@ -2179,7 +2723,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Morat: Colombian Band Taking Over Latin Pop',
     readingRatio: 'Fully Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 160,
   },
 
@@ -2211,7 +2755,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Ha-Ash: Two American Sisters Who Conquered Mexico',
     readingRatio: 'Fully Spanish — artist future plans',
     songsNeeded: 3,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 180,
   },
 
@@ -2241,7 +2785,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Alejandro Sanz: Three Decades at the Top of Spanish Pop',
     readingRatio: 'Fully Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 180,
   },
 
@@ -2271,7 +2815,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Reik: Mexican Pop Trio and the Sound of Romance',
     readingRatio: 'Fully Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 180,
   },
 
@@ -2301,7 +2845,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Selena: What Could Have Been — A Cultural Reflection',
     readingRatio: 'Fully Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 180,
   },
 
@@ -2331,7 +2875,7 @@ export const MODULES: Module[] = [
     readingTopic: 'David Bisbal: From Operación Triunfo to Global Stages',
     readingRatio: 'Fully Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 180,
   },
 
@@ -2363,7 +2907,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Silvio Rodríguez: The Poet Who Defined Cuban Nueva Trova',
     readingRatio: 'Fully Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 200,
   },
 
@@ -2393,7 +2937,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Sebastián Yatra: Colombia\'s Romantic Lead',
     readingRatio: 'Fully Spanish',
     songsNeeded: 3,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 200,
   },
 
@@ -2423,7 +2967,7 @@ export const MODULES: Module[] = [
     readingTopic: 'The Grammar of Desire: Subjunctive in Latin Love Songs',
     readingRatio: 'Fully Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 200,
   },
 
@@ -2453,7 +2997,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Marc Anthony: The Salsa Singer Who Became a Legend',
     readingRatio: 'Fully Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 200,
   },
 
@@ -2483,7 +3027,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Los Bukis: The Band That Defined Mexican Pop Romance',
     readingRatio: 'Fully Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 200,
   },
 
@@ -2513,7 +3057,7 @@ export const MODULES: Module[] = [
     readingTopic: 'Selena: A Life in Music, A Legacy That Never Ended',
     readingRatio: 'Fully Spanish',
     songsNeeded: 2,
-    status: 'locked',
+    status: 'unlocked',
     xpReward: 200,
   },
 ];

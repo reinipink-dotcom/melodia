@@ -1,0 +1,221 @@
+// ──── MODULE 7 — Articles & Gender (A1) ────
+// Primary song: "La Vida Es Un Carnaval" — Celia Cruz (1998, Mi Vida Es Cantar)
+// Schema matches src/data/modules.ts Module interface exactly. Paste into modules.ts id:7.
+// Reading passage respects: max 6 unique Spanish tappables, each appearing exactly once.
+
+{
+  id: 7,
+  title: 'Articles & Gender',
+  level: 'A1',
+  concept: 'el / la / los / las — and the masculine vs. feminine split that controls them',
+  conceptDescription:
+    "Spanish nouns are never neutral. Every single one is either masculine — taking el for singular and los for plural — or feminine — taking la for singular and las for plural. The shortcut works most of the time: if a noun ends in -o, it's usually masculine (el libro). If it ends in -a, it's usually feminine (la casa). From today, you stop saying nouns naked. Spanish nouns always travel with their article. Say la canción, not just canción. Say el corazón, not just corazón. The article tells you the gender, and the gender quietly shapes every adjective, every pronoun, every possessive that comes after.",
+  song: { title: 'La Vida Es Un Carnaval', artist: 'Celia Cruz', durationSeconds: 279, spotifyId: '1BwrMGGhPA6GarWIYaFrW8', youtubeId: '7Ho86ggAVrY' },
+  genreSongs: {
+    pop: { title: 'El Mismo Sol', artist: 'Alvaro Soler', durationSeconds: 213, spotifyId: '58WOkUl3O9LvLZjdhiQvIX', youtubeId: 'aNHwNreDp3A' },
+    reggaeton: { title: 'El Perdón', artist: 'Nicky Jam & Enrique Iglesias', durationSeconds: 245, spotifyId: '7qCAVkHWZkF44OzOUKf8Cr', youtubeId: 'hXI8RQYC36Q' },
+    rnb: { title: 'La Diabla', artist: 'Romeo Santos', durationSeconds: 240, spotifyId: '3eCuEXYF3VnbTDHaztfUAv', youtubeId: 'tYUD9zpSTgw' },
+    'regional-mexican': { title: 'La Llorona', artist: 'Chavela Vargas', durationSeconds: 251, spotifyId: '21VxAmhZn3p0kdb0jXu4Ry', youtubeId: 'J0Ss46HaKNk' },
+  },
+  vocabulary: [
+    { spanish: 'el', english: 'the (masculine singular)' },
+    { spanish: 'la', english: 'the (feminine singular)' },
+    { spanish: 'los', english: 'the (masculine plural)' },
+    { spanish: 'las', english: 'the (feminine plural)' },
+    { spanish: 'la canción', english: 'the song (feminine)' },
+  ],
+  grammarPoints: [
+    '-o ending → usually masculine → el (singular) / los (plural). el libro, los libros.',
+    '-a ending → usually feminine → la (singular) / las (plural). la casa, las casas.',
+    "Nouns travel with their article — say la canción, not just canción.",
+    'el (article, no accent) vs él (pronoun, with accent) — same letters, different jobs. el libro = the book. él lee = he reads.',
+    'Four exceptions to memorize: el día (the day), la mano (the hand), el agua (the water), el problema (the problem).',
+  ],
+  quizTypes: ['Article + noun match', 'el / él / la / ella four-way pick', 'Exception trap'],
+  readingTopic: 'Celia Cruz and the Title That Teaches the Lesson',
+  readingRatio: '85% English / 15% Spanish article+noun tappables',
+  songsNeeded: 2,
+  status: 'unlocked',
+  xpReward: 50,
+  culturalNoteVariants: {
+    reggaeton:
+      "If you picked reggaeton, your song today is 'El Perdón' — a global hit by Nicky Jam and Enrique Iglesias. The title is a clean masculine article+noun pair: el perdón — the forgiveness. Slower-tempo reggaeton, family-friendly lyrics, both singers enunciate the el at the front of the title clearly. Listen for el and la in the chorus — every time you catch one, a gendered noun is arriving right behind it. Same lesson, different beat.",
+  },
+  culturalNote:
+    "Celia Cruz was a Cuban-born singer who became the most celebrated voice in salsa music, widely called the Queen of Salsa. She recorded 'La Vida Es Un Carnaval' on her 1998 album Mi Vida Es Cantar, and the song became one of her signature anthems across Latin America. The title itself is today's lesson in four words — la vida (the life, feminine) sits next to un carnaval (a carnival, masculine), and your ear can hear the gender of each noun before the noun even lands. That is what gendered articles do in Spanish — they set up what's coming. Every time you hear la in a song, a feminine noun is about to arrive. Every time you hear el, a masculine one. The article tells you what's coming before the word does.",
+  quizQuestions: [
+    {
+      question: "Which article goes with libro (book)?",
+      options: ['la', 'el', 'los', 'las'],
+      correctIndex: 1,
+      explanation:
+        "Libro ends in -o, so it's masculine and takes el — el libro. The -o ending is the cleanest gender signal in Spanish, and it works for most nouns you'll meet in A1.",
+    },
+    {
+      question: "Which article goes with canción (song)?",
+      options: ['el', 'la', 'los', 'las'],
+      correctIndex: 1,
+      explanation:
+        "Canción ends in -ción, and every -ción noun in Spanish is feminine — la canción. The plural is las canciones. You'll lean on this rule for the rest of your Spanish life: la situación, la información, la conversación, all feminine.",
+    },
+    {
+      question: "Pick the right word: '___ chico canta.' (The boy sings.)",
+      options: ['el', 'él', 'la', 'ella'],
+      correctIndex: 0,
+      explanation:
+        "Chico is a masculine noun (-o ending), so the article is el — no accent. The accented él means 'he', which would be used before a verb, not a noun. Same letters, two different jobs — and the accent is what tells them apart.",
+    },
+    {
+      question: "Which article goes with casas (houses)?",
+      options: ['el', 'la', 'los', 'las'],
+      correctIndex: 3,
+      explanation:
+        "Casa is feminine (la casa), and casas is the plural form, so the article becomes las — las casas. Feminine plural always uses las, never los.",
+    },
+  ],
+  easyQuizQuestions: [
+    {
+      question: "What does el mean in English?",
+      options: ['the (feminine singular)', 'the (masculine singular)', 'he', 'a'],
+      correctIndex: 1,
+      explanation:
+        "El is 'the' for masculine singular nouns — el libro, el chico, el corazón. Without the accent, it's the article. With the accent, él means 'he' — a totally different word.",
+    },
+    {
+      question: "What does las mean in English?",
+      options: ['the (feminine plural)', 'the (masculine plural)', 'she', 'these'],
+      correctIndex: 0,
+      explanation:
+        "Las is 'the' for feminine plural nouns — las casas, las canciones, las chicas. It's only used when every noun in the group is feminine.",
+    },
+    {
+      question: "Which article goes with chica (girl)?",
+      options: ['el', 'la', 'los', 'las'],
+      correctIndex: 1,
+      explanation:
+        "Chica ends in -a, so it's feminine and takes la — la chica. Compare with el chico (the boy) — same root, different ending, different article. The ending carries the gender.",
+    },
+  ],
+  hardQuizQuestions: [
+    {
+      question: "Which article goes with día (day)?",
+      options: ['la', 'el', 'los', 'las'],
+      correctIndex: 1,
+      explanation:
+        "Día looks feminine — it ends in -a — but it's actually one of the high-frequency exceptions: el día. Just memorize it as a pair. The same trap shows up in el problema, el sistema, el idioma — Greek-root -ma nouns are masculine.",
+    },
+    {
+      question: "Translate: 'The song is pretty.'",
+      options: [
+        'El canción es bonito.',
+        'La canción es bonita.',
+        'La canción es bonito.',
+        'El canción es bonita.',
+      ],
+      correctIndex: 1,
+      explanation:
+        "Canción is feminine, so the article is la AND the adjective has to agree with it — bonita, not bonito. That's the masculine/feminine system at work: the gender of the noun shapes the article in front of it and the adjective behind it. One word's gender, three words' agreement.",
+    },
+    {
+      question: "Fill in both blanks: '___ libro es de ___ chica.' (The book belongs to the girl.)",
+      options: [
+        'la / el',
+        'el / la',
+        'el / el',
+        'la / la',
+      ],
+      correctIndex: 1,
+      explanation:
+        "Libro is masculine (-o ending) → el libro. Chica is feminine (-a ending) → la chica. The full sentence is 'El libro es de la chica.' Recycles de from Module 4 and es from Module 6 — and now you can wrap both nouns in their correct articles.",
+    },
+  ],
+  readingPassage: [
+    {
+      text: "Celia Cruz was born in Havana, Cuba, and grew up to become the most celebrated voice in salsa music — a singer so iconic that the world simply calls her the Queen of Salsa. In 1998, on the album Mi Vida Es Cantar, she recorded a song whose title alone teaches today's whole lesson: ",
+      isSpanish: false,
+    },
+    { text: 'La Vida Es Un Carnaval', isSpanish: true, english: 'Life is a carnival' },
+    {
+      text: ". Look at that title for a second. The first word is ",
+      isSpanish: false,
+    },
+    { text: 'la', isSpanish: true, english: 'the (feminine singular)' },
+    {
+      text: " — the feminine article — and it sits right in front of vida, a feminine noun. Three words later comes a masculine noun, carnaval, which would take ",
+      isSpanish: false,
+    },
+    { text: 'el', isSpanish: true, english: 'the (masculine singular)' },
+    {
+      text: " if it had a definite article in front of it. That's what Spanish does in every song, every sentence, every street sign. A noun never travels alone — it travels with an article, and the article tells your ear the gender before the noun even arrives. When Celia sings ",
+      isSpanish: false,
+    },
+    { text: 'la canción', isSpanish: true, english: 'the song' },
+    {
+      text: ", you hear a feminine word coming. When she names the carnaval, the masculine slot opens. Once you start hearing ",
+      isSpanish: false,
+    },
+    { text: 'los', isSpanish: true, english: 'the (masculine plural)' },
+    {
+      text: " and ",
+      isSpanish: false,
+    },
+    { text: 'las', isSpanish: true, english: 'the (feminine plural)' },
+    {
+      text: " in the chorus of any Spanish song, you'll realize Spanish has been teaching you gender from the first syllable.",
+      isSpanish: false,
+    },
+  ],
+  ttsTriggers: [
+    { id: 'module-007-intro',                     screen: 'preListen',      text: "Today we're learning the four little words that wrap every Spanish noun — el, la, los, las. They all mean 'the' in English, but Spanish splits them four ways: masculine singular, feminine singular, masculine plural, feminine plural. As you listen to 'La Vida Es Un Carnaval' by Celia Cruz, count how many times she sings la — it's the most common article in any love song, and once you can hear it, half of every Spanish chorus opens up. Press listen when you're ready.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-007/m7-intro.mp3', mvpRequired: true },
+    { id: 'module-007-vocab-el-la',               screen: 'preListen',      text: "El is 'the' for masculine singular nouns — el libro, the book. La is 'the' for feminine singular nouns — la casa, the house. The shortcut: if the noun ends in -o, it's almost always masculine and takes el. If it ends in -a, it's almost always feminine and takes la. Two endings, two articles, one rule that covers most of A1.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-007/m7-vocab-el-la.mp3', mvpRequired: true },
+    { id: 'module-007-vocab-los-las',             screen: 'preListen',      text: "Now the plurals. Los is 'the' for masculine plural — los libros, the books. Las is 'the' for feminine plural — las casas, the houses. One small wrinkle — if you have a mixed group of boys and girls, Spanish defaults to the masculine plural los. So los niños can mean 'the boys' or 'the kids' in general. Las niños is never correct.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-007/m7-vocab-los-las.mp3', mvpRequired: true },
+    { id: 'module-007-vocab-gender-rule',         screen: 'preListen',      text: "Here's the deal. Spanish has no neutral nouns — every single one is masculine or feminine. The -o and -a endings give the gender away most of the time, but there are four big exceptions you should just memorize as pairs. El día — the day, masculine even though it ends in -a. La mano — the hand, feminine even though it ends in -o. El agua — the water, feminine but takes el to avoid the double-a sound. And el problema — the problem, masculine because of its Greek roots. Learn the rule first, then learn these four. That's it.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-007/m7-vocab-gender-rule.mp3', mvpRequired: true },
+    { id: 'module-007-phrase-la-cancion-bonita',  screen: 'preListen',      text: "'La canción es bonita.' — The song is pretty. Three words doing a lot of work. La is the feminine article because canción is feminine. Es is 'is', recycled from Module 6's ser. And bonita ends in -a because it has to agree with the feminine noun in front of it. If you say it about a masculine noun — like a book — it becomes 'El libro es bonito.' Same idea, different gender, different endings. Memorize the whole chunk — it's the most useful sentence you'll leave with today.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-007/m7-phrase-la-cancion-bonita.mp3', mvpRequired: true },
+    { id: 'module-007-speaking-prompt',           screen: 'preListen',      text: "Try this. Look around the room you're in and pick five objects. For each one, say it out loud with its article. The book — el libro. The chair — la silla. The lamp — la lámpara. The phone — el teléfono. The music — la música. If you don't know the word, look it up — but always say the article and the noun together. Spanish nouns don't travel alone. They come wrapped in their article. From today on, that's how you say them.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-007/m7-speaking-prompt.mp3', mvpRequired: true },
+    { id: 'module-007-reading-intro',             screen: 'reading',        text: "Celia Cruz was born in Havana, Cuba, and grew up to become the most celebrated voice in salsa music — a singer so iconic that the world simply calls her the Queen of Salsa. In 1998, on the album Mi Vida Es Cantar, she recorded a song whose title alone teaches today's whole lesson — La Vida Es Un Carnaval. Look at that title for a second. The first word is la — the feminine article — and it sits right in front of vida, a feminine noun. Three words later comes a masculine noun, carnaval, which would take el if it had a definite article in front of it. That's what Spanish does in every song, every sentence, every street sign. A noun never travels alone — it travels with an article, and the article tells your ear the gender before the noun even arrives. When Celia sings la canción, you hear a feminine word coming. When she names the carnaval, the masculine slot opens. Once you start hearing los and las in the chorus of any Spanish song, you'll realize Spanish has been teaching you gender from the first syllable.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-007/m7-reading-celia.mp3', mvpRequired: true },
+    { id: 'module-007-cultural-note-reggaeton',   screen: 'preListen',      text: "If you picked reggaeton, your song today is 'El Perdón' — a global hit by Nicky Jam and Enrique Iglesias. The title is a clean masculine article+noun pair — el perdón, the forgiveness. Slower-tempo reggaeton, family-friendly lyrics, and both singers enunciate the el at the front of the title clearly. Listen for el and la in the chorus — every time you catch one, a gendered noun is arriving right behind it. Same lesson, different beat.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-007/m7-cultural-note-reggaeton.mp3', mvpRequired: false },
+    { id: 'module-007-lesson-complete',           screen: 'lessonComplete', text: "From today, Spanish nouns never travel naked. You can wrap any noun you meet in its correct article — el libro, la canción, los chicos, las casas. You know the rule — -o is usually masculine, -a is usually feminine — and you know the four exceptions that break it. Next time you hear a Spanish song, listen for la and el in the first ten seconds. They're almost always there. And every time you catch one, you're hearing the gender of the next word arrive a beat early.", language: 'en-US-with-es-419-tokens', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-007/m7-lesson-complete.mp3', mvpRequired: true },
+    // Reading tap tokens — short Spanish pronunciation for tappable passage words.
+    // 6 distinct tokens — one per unique Spanish tappable in the reading passage.
+    { id: 'm7-reading-token-la-vida-es-un-carnaval', screen: 'reading', text: 'La Vida Es Un Carnaval', language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-007/m7-reading-token-la-vida-es-un-carnaval.mp3', mvpRequired: true },
+    { id: 'm7-reading-token-la',                     screen: 'reading', text: 'la',                     language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-007/m7-reading-token-la.mp3',                     mvpRequired: true },
+    { id: 'm7-reading-token-el',                     screen: 'reading', text: 'el',                     language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-007/m7-reading-token-el.mp3',                     mvpRequired: true },
+    { id: 'm7-reading-token-la-cancion',             screen: 'reading', text: 'la canción',             language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-007/m7-reading-token-la-cancion.mp3',             mvpRequired: true },
+    { id: 'm7-reading-token-los',                    screen: 'reading', text: 'los',                    language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-007/m7-reading-token-los.mp3',                    mvpRequired: true },
+    { id: 'm7-reading-token-las',                    screen: 'reading', text: 'las',                    language: 'es-419', slowVersion: false, normalVersion: true, outputFile: 'assets/audio/module-007/m7-reading-token-las.mp3',                    mvpRequired: true },
+  ],
+  recyclingTargets: [
+    { moduleId: 1, concept: 'Pronunciation of el/la/los/las — soft l, closed e in el, open a in la. Vowel endings -o/-a as the gender signal.', intervalDays: [1, 7], reviewFormat: ['listening-recognition'] },
+    { moduleId: 2, concept: 'el (article, no accent) vs él (pronoun, with accent) — same letters, different parts of speech.', intervalDays: [1, 3, 14], reviewFormat: ['mini-quiz', 'translation'] },
+    { moduleId: 5, concept: 'Four-way contrast: el / él / la / ella — article before a noun, pronoun before a verb.', intervalDays: [1, 3, 7, 30], reviewFormat: ['mini-quiz', 'translation', 'speaking-prompt'] },
+    { moduleId: 6, concept: 'Adjective-gender agreement (cansado/cansada, bonito/bonita) flows from the same masculine/feminine system that controls articles.', intervalDays: [3, 7, 14], reviewFormat: ['mini-quiz', 'speaking-prompt'] },
+  ],
+},
+
+// ──── AUDIO TEXT MANIFEST ────
+// 15 narration scripts total — 9 lesson cues + 6 reading-token cues.
+// Voice-engineer: generate one MP3 per script using OpenAI tts-1-hd, voice 'nova'.
+// All cues are normalVersion only (per Reine's M1 feedback: no slow/normal pairs).
+// Cost estimate: ~4500 chars total → ~$0.13.
+//
+// Reading passage tappable tokens (exact text match required for voice-engineer):
+//   1. "La Vida Es Un Carnaval"  → m7-reading-token-la-vida-es-un-carnaval.mp3
+//   2. "la"                      → m7-reading-token-la.mp3
+//   3. "el"                      → m7-reading-token-el.mp3
+//   4. "la canción"              → m7-reading-token-la-cancion.mp3
+//   5. "los"                     → m7-reading-token-los.mp3
+//   6. "las"                     → m7-reading-token-las.mp3
+//
+// Each appears EXACTLY ONCE as a tappable in readingPassage. Audit script
+// scripts/audit-reading-tokens.mjs will validate this.
+//
+// Lesson narration cues:
+//   - module-007-intro                   → m7-intro.mp3                    (pre-listen)
+//   - module-007-vocab-el-la             → m7-vocab-el-la.mp3              (pre-listen)
+//   - module-007-vocab-los-las           → m7-vocab-los-las.mp3            (pre-listen)
+//   - module-007-vocab-gender-rule       → m7-vocab-gender-rule.mp3        (pre-listen)
+//   - module-007-phrase-la-cancion-bonita→ m7-phrase-la-cancion-bonita.mp3 (pre-listen)
+//   - module-007-speaking-prompt         → m7-speaking-prompt.mp3          (pre-listen)
+//   - module-007-reading-intro           → m7-reading-celia.mp3            (reading)
+//   - module-007-cultural-note-reggaeton → m7-cultural-note-reggaeton.mp3  (pre-listen, optional genre variant)
+//   - module-007-lesson-complete         → m7-lesson-complete.mp3          (lesson complete)

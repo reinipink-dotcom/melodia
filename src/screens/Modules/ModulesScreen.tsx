@@ -20,6 +20,10 @@ import { ModulesStackParamList } from '../../navigation/ModulesNavigator';
 
 type NavProp = StackNavigationProp<ModulesStackParamList, 'ModulesList'>;
 
+// Builder mode: keep random access open while Reine is producing and testing modules.
+const MODULE_SEQUENCE_LOCKS_ENABLED = false;
+const PRO_UPSELL_ENABLED = false;
+
 function levelColor(level: string): string {
   switch (level) {
     case 'A1': return Colors.teal;
@@ -33,6 +37,7 @@ function levelColor(level: string): string {
 function resolveStatus(module: Module, completedIds: number[], currentId: number): Module['status'] {
   if (completedIds.includes(module.id)) return 'completed';
   if (module.id === currentId) return 'active';
+  if (!MODULE_SEQUENCE_LOCKS_ENABLED) return 'unlocked';
   if (module.id <= FREE_MODULE_LIMIT && module.id <= currentId + 1) return 'unlocked';
   return 'locked';
 }
@@ -95,7 +100,7 @@ export function ModulesScreen() {
         showsVerticalScrollIndicator={false}
       >
         {/* Pro upsell for premium levels */}
-        {(activeLevel === 'B1' || activeLevel === 'B2') && (
+        {PRO_UPSELL_ENABLED && (activeLevel === 'B1' || activeLevel === 'B2') && (
           <View style={styles.paywallBanner}>
             <Ionicons name="lock-closed" size={16} color={Colors.lavender} />
             <View style={styles.paywallText}>

@@ -21,9 +21,10 @@ import { MODULES } from '../../data/modules';
 import { getEnrichment } from '../../data/curriculum-enrichment';
 import { ModulesStackParamList } from '../../navigation/ModulesNavigator';
 import { useLessonStore } from '../../store/lessonStore';
+import { useOnboardingStore } from '../../store/onboardingStore';
 import { speakSpanish, stopSpeech } from '../../utils/speech';
 import { playTrigger, stopAudio } from '../../utils/audioPlayer';
-import { findPhraseTrigger, findVocabTrigger, hasGeneratedAudio } from '../../utils/ttsTriggers';
+import { findPhraseTrigger, findVocabTrigger } from '../../utils/ttsTriggers';
 
 type Props = {
   navigation: StackNavigationProp<ModulesStackParamList, 'PreListen'>;
@@ -76,9 +77,13 @@ export function PreListenScreen({ navigation, route }: Props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const userGenres = useOnboardingStore((s) => s.genres);
+  const userGenre = userGenres[0] ?? 'pop';
+
   if (!module) return null;
   const accent = levelColor(module.level);
   const enrichment = getEnrichment(moduleId);
+  const culturalNoteText = module.culturalNoteVariants?.[userGenre] ?? module.culturalNote;
 
   return (
     <SafeAreaView style={styles.safe} edges={['top']}>
@@ -127,7 +132,7 @@ export function PreListenScreen({ navigation, route }: Props) {
                 onPress={() => {
                   const trigger = findVocabTrigger(module, word.spanish);
                   if (trigger) playTrigger(trigger);
-                  else if (!hasGeneratedAudio(module)) speakSpanish(word.spanish);
+                  else speakSpanish(word.spanish);
                 }}
                 style={styles.speakerBtn}
                 activeOpacity={0.7}
@@ -156,7 +161,7 @@ export function PreListenScreen({ navigation, route }: Props) {
                   onPress={() => {
                     const trigger = findPhraseTrigger(module, enrichment.vocabPack.phraseChunk);
                     if (trigger) playTrigger(trigger);
-                    else if (!hasGeneratedAudio(module)) speakSpanish(enrichment.vocabPack.phraseChunk);
+                    else speakSpanish(enrichment.vocabPack.phraseChunk);
                   }}
                   style={styles.speakerBtn}
                   activeOpacity={0.7}
@@ -177,6 +182,16 @@ export function PreListenScreen({ navigation, route }: Props) {
                 </View>
               </>
             )}
+          </>
+        )}
+
+        {culturalNoteText && (
+          <>
+            <Text style={styles.sectionLabel}>CULTURAL NOTE</Text>
+            <View style={styles.tipBox}>
+              <Ionicons name="musical-notes-outline" size={16} color={accent} style={{ marginTop: 2 }} />
+              <Text style={[styles.tipText, { flex: 1 }]}>{culturalNoteText}</Text>
+            </View>
           </>
         )}
 

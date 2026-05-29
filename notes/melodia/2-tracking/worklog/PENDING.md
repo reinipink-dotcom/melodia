@@ -203,6 +203,48 @@ QuizScreen.tsx now reads `onboardingStore.level` and routes: beginner→easyQuiz
 
 ---
 
+## OPEN — M14 Song Conflict: Estoy Aquí Now Used by M6 | sim-required
+
+**Source:** M6 build 2026-05-18 — song-validator originally had "Estoy Aquí" (Shakira) booked for M14 (Estar — To Be (Temporary)). M6 (Ser vs Estar) ended up taking it after a mid-flight song churn (Vivir Mi Vida → Estoy Aquí → Vivir Mi Vida → Estoy Aquí). Songs JSON has been restored to reflect M6 = Estoy Aquí.
+
+**What needs to happen:**
+- [ ] When M14 enters the build queue, pick a replacement song that exemplifies Estar (temporary states). Candidates: song-validator to propose; do not pre-book here.
+- [ ] Update modules.ts id:14 song field accordingly.
+
+---
+
+## OPEN — modules.ts id:9 "La La La" (Shakira) Needs Repurposing | cloud-fixable
+
+**Source:** M7 song validation 2026-05-19. Artist variety conflict surfaced — M6 already uses Shakira ("Estoy Aquí"). M9 currently has "La La La" (Shakira) as a placeholder.
+
+**What needs to happen:**
+- [ ] Replace M9's song with a non-Shakira A1-A2 song aligned to "Common Adjectives" (the M9 concept). song-validator to propose options when M9 enters the build queue.
+- [ ] Update modules.ts id:9 song field accordingly.
+
+---
+
+## OPEN — modules.ts id:9 Concept Redundant with M7 | cloud-fixable
+
+**Source:** M8 curriculum spec 2026-05-19. modules.ts id:9 placeholder concept is "Definite & Indefinite Articles" — this is functionally REDUNDANT with M7 (Articles & Gender), which already covers `el/la/los/las` plus gender agreement.
+
+**What needs to happen:**
+- [ ] Re-concept M9 BEFORE the next module build kicks off. Curriculum architect to pick a fresh A1-A2 concept (e.g. "Common Adjectives" per current queue, or another distinct topic) that doesn't overlap M7.
+- [ ] Update modules.ts id:9 concept, title, and downstream fields accordingly.
+- [ ] Aligns with the existing PENDING item above ("La La La" song repurposing) — handle both in the same M9 spec pass.
+
+---
+
+## OPEN — reviewFormat Union Missing 'reading-recall' | code-quality
+
+**Source:** M8 wire-up 2026-05-19. While wiring M8 recyclingTargets, content-builder included `'reading-recall'` in a `reviewFormat` array. TS2322: not in the union type. UX-builder dropped the value to ship the module.
+
+**What needs to happen:**
+- [ ] Decide: widen the `reviewFormat` union in `curriculum-enrichment.ts` (or wherever the type lives) to include `'reading-recall'` — OR — accept the drop as canonical and update content-builder guidance to never propose `'reading-recall'`.
+- [ ] If widening: add a default UI handler for the new format on the LessonComplete/review surface.
+- [ ] Low priority — does not block M8 ship.
+
+---
+
 ## POST-MVP (future, not blocking launch)
 
 - **AI speaking challenge:** Speaking challenge card connects to an AI the user can have a short back-and-forth conversation with in Spanish

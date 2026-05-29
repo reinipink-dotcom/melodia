@@ -1,0 +1,156 @@
+{
+  "module": 3,
+  "title": "Question Words",
+  "provider": "openai",
+  "model": "tts-1-hd",
+  "defaultVoice": "nova",
+  "defaultLangAccent": "en-US-with-es-419-tokens",
+  "generatedBy": "voice-engineer-v2",
+  "generatedOn": "2026-05-18",
+  "notes": "Module 3 has no prior audio. First-generation narration-style TTS. Song is '¿Dónde Jugarán los Niños?' by Maná. Reading passage covers Maná and the band's origin story.",
+  "ttsTriggers": [
+    {
+      "id": "m3-intro",
+      "text": "Module 3 is about question words — the eight Spanish words that let you ask anything. Learn these once and they work in every tense, every context, for the rest of your life. As you listen to '¿Dónde Jugarán los Niños?' by Maná, the title itself is your first question: dónde — where. Where will the children play? One question word, carrying the weight of the whole song.",
+      "language": "en-US-with-es-419-tokens",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.95,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-003/m3-intro-question-words.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m3-vocab-que",
+      "text": "'¿Qué?' means 'what?' — the most versatile question word in Spanish. Qué without the accent mark means 'that' or 'which', so the accent is doing real work here. ¿Qué es esto? — What is this? ¿Qué quieres? — What do you want? In songs, you'll hear ¿qué? used to express surprise, confusion, or emphasis. It's one syllable, sharp and direct: 'keh'.",
+      "language": "en-US-with-es-419-tokens",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.95,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-003/m3-vocab-que.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m3-vocab-donde",
+      "text": "'¿Dónde?' means 'where?' — your location question word. The accent on the ó tells you to stress the first syllable: DON-deh. ¿Dónde estás? — Where are you? ¿Dónde vives? — Where do you live? Without the accent, donde (no accent) means 'where' in a non-question context — as in the place where something happens. The accent is what makes it a question word.",
+      "language": "en-US-with-es-419-tokens",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.95,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-003/m3-vocab-donde.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m3-vocab-como",
+      "text": "'¿Cómo?' means 'how?' — and also 'what?' when you're asking someone to repeat themselves. The accent on the ó: CO-mo. ¿Cómo estás? — How are you? ¿Cómo te llamas? — What's your name? (Literally: How do you call yourself?) ¿Cómo? on its own is the polite way to say 'sorry, could you repeat that?' — more useful in real conversations than almost any other phrase.",
+      "language": "en-US-with-es-419-tokens",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.95,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-003/m3-vocab-como.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m3-vocab-quien",
+      "text": "'¿Quién?' means 'who?' — singular. The accent on the é: kyEN. ¿Quién eres tú? — Who are you? ¿Quién cantó eso? — Who sang that? The plural form is ¿quiénes? — who are they / who are you all? Notice the QU in Spanish always makes a K sound — the U is silent after Q. So quién sounds like 'kyen', not 'kwyen'.",
+      "language": "en-US-with-es-419-tokens",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.95,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-003/m3-vocab-quien.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m3-vocab-por-que",
+      "text": "'¿Por qué?' means 'why?' — written as two words with an accent on the é. The answer word is 'porque' — because — written as one word with no accent. ¿Por qué te gusta esta canción? — Why do you like this song? Porque es perfecta — Because it's perfect. Two words, one accent = the question. One word, no accent = the answer. Spanish made them mirror images of each other on purpose.",
+      "language": "en-US-with-es-419-tokens",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.95,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-003/m3-vocab-por-que.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m3-phrase-question-frame",
+      "text": "The question frame '¿blank es tu blank?' gives you a reusable shell for asking about someone's favorites and identity. Try it with the words from this module: ¿Cuál es tu canción favorita? ¿Dónde está tu casa? ¿Cómo se llama tu artista favorito? The inverted question mark tells your eyes the question starts right now.",
+      "language": "en-US-with-es-419-tokens",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.95,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-003/m3-phrase-question-frame.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m3-reading-intro",
+      "text": "Time to read about Maná — the band whose question is the title of today's song. You'll see Spanish question words highlighted in the passage. Tap any of them to hear the pronunciation. Notice how every question word carries an accent mark — that's not a coincidence. In Spanish, accent marks on question words are mandatory, and they're how you tell a question word from a regular word.",
+      "language": "en-US-with-es-419-tokens",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.95,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-003/m3-reading-intro.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m3-lesson-complete",
+      "text": "You now have the eight question words: qué, dónde, cómo, quién, por qué, cuándo, cuál, and cuánto. Every single one carries an accent mark — that's how you spot a question word in any Spanish text. These eight words let you build thousands of real questions, in any tense, forever. Next: prepositions and connectors — the small words that link ideas together.",
+      "language": "en-US-with-es-419-tokens",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.95,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-003/m3-lesson-complete.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m3-reading-token-donde-jugaran",
+      "text": "¿Dónde jugarán los niños?",
+      "language": "es-419",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 1.0,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-003/m3-reading-token-donde-jugaran.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m3-reading-token-como",
+      "text": "¿Cómo?",
+      "language": "es-419",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.9,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-003/m3-reading-token-como.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m3-reading-token-donde",
+      "text": "¿Dónde?",
+      "language": "es-419",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.9,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-003/m3-reading-token-donde.mp3",
+      "mvpRequired": true
+    },
+    {
+      "id": "m3-reading-token-por-que",
+      "text": "¿Por qué?",
+      "language": "es-419",
+      "slowVersion": false,
+      "normalVersion": true,
+      "speed": 0.9,
+      "voice": "nova",
+      "outputFile": "assets/audio/module-003/m3-reading-token-por-que.mp3",
+      "mvpRequired": true
+    }
+  ]
+}

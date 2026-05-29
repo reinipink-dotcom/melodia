@@ -15,7 +15,7 @@ import { ModulesStackParamList } from '../../navigation/ModulesNavigator';
 import { useLessonStore } from '../../store/lessonStore';
 import { speakSpanish, stopSpeech } from '../../utils/speech';
 import { playTrigger, stopAudio } from '../../utils/audioPlayer';
-import { findReadingTrigger, hasGeneratedAudio } from '../../utils/ttsTriggers';
+import { findReadingTrigger } from '../../utils/ttsTriggers';
 
 type Props = {
   navigation: StackNavigationProp<ModulesStackParamList, 'Reading'>;
@@ -32,7 +32,7 @@ export function ReadingScreen({ navigation, route }: Props) {
   function handleTokenTap(token: ReadingPassageToken): void {
     const trigger = findReadingTrigger(module, token.text);
     if (trigger) playTrigger(trigger);
-    else if (!hasGeneratedAudio(module)) speakSpanish(token.text);
+    else speakSpanish(token.text);
   }
 
   useEffect(() => {
@@ -91,19 +91,25 @@ export function ReadingScreen({ navigation, route }: Props) {
       <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
         <View style={styles.passageCard}>
           <Text style={styles.passageText}>
-            {module.readingPassage.map((token, i) =>
-              token.isSpanish ? (
-                <Text
-                  key={i}
-                  onPress={() => { setActiveToken(token); handleTokenTap(token); }}
-                  style={styles.spanishWord}
-                >
-                  {token.text}
-                </Text>
-              ) : (
-                <Text key={i} style={styles.englishText}>{token.text}</Text>
-              )
-            )}
+            {(() => {
+              const seen = new Set<string>();
+              return module.readingPassage.map((token, i) => {
+                const key = token.text.toLowerCase();
+                const tappable = token.isSpanish && !seen.has(key);
+                if (tappable) seen.add(key);
+                return tappable ? (
+                  <Text
+                    key={i}
+                    onPress={() => { setActiveToken(token); handleTokenTap(token); }}
+                    style={styles.spanishWord}
+                  >
+                    {token.text}
+                  </Text>
+                ) : (
+                  <Text key={i} style={styles.englishText}>{token.text}</Text>
+                );
+              });
+            })()}
           </Text>
         </View>
 
