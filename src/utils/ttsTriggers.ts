@@ -58,6 +58,15 @@ function containsTokenSequence(haystack: string[], needle: string[]): boolean {
   return false;
 }
 
+function hasSameSpokenTokenText(trigger: TtsTrigger, text: string): boolean {
+  const triggerTokens = getRawTokens(trigger.text);
+  const textTokens = getRawTokens(text);
+  return (
+    triggerTokens.length === textTokens.length &&
+    triggerTokens.every((token, index) => token === textTokens[index])
+  );
+}
+
 function includesAllTokens(trigger: TtsTrigger, tokens: string[]): boolean {
   if (tokens.length === 0) return false;
   if (!tokens.some((token) => token.length > 1)) return false;
@@ -123,19 +132,11 @@ function isReadingPronunciationTrigger(trigger: TtsTrigger): boolean {
 export function findReadingTrigger(module: Module | undefined, tokenText: string): TtsTrigger | undefined {
   const triggers = module?.ttsTriggers ?? [];
   const pronunciationTriggers = triggers.filter(isReadingPronunciationTrigger);
-  const reusablePreListenTriggers = triggers.filter(
-    (trigger) => isPreListenKind(trigger, 'vocab') || isPreListenKind(trigger, 'phrase'),
-  );
-  // Dedicated reading-token/snippet pronunciations always beat preListen narrations.
-  // Reading narration cues (e.g. reading-intro) are excluded from tap lookups —
-  // tapping a single word should never play a 300-character English explanation.
+  // Reading taps need exact spoken-text matches. A highlighted word like "¿Dónde"
+  // must never resolve to a longer phrase such as "¿Dónde jugarán los niños?".
   return (
-    pronunciationTriggers.find((trigger) => isExactTextMatch(trigger, tokenText) && trigger.slowVersion) ??
-    pronunciationTriggers.find((trigger) => isExactTextMatch(trigger, tokenText) && trigger.normalVersion) ??
-    pronunciationTriggers.find((trigger) => isExactTextMatch(trigger, tokenText)) ??
-    pronunciationTriggers.find((trigger) => matchesIdentifier(trigger, tokenText)) ??
-    pronunciationTriggers.find((trigger) => matchesTrigger(trigger, tokenText)) ??
-    reusablePreListenTriggers.find((trigger) => matchesIdentifier(trigger, tokenText)) ??
-    reusablePreListenTriggers.find((trigger) => matchesTrigger(trigger, tokenText))
+    pronunciationTriggers.find((trigger) => hasSameSpokenTokenText(trigger, tokenText) && trigger.slowVersion) ??
+    pronunciationTriggers.find((trigger) => hasSameSpokenTokenText(trigger, tokenText) && trigger.normalVersion) ??
+    pronunciationTriggers.find((trigger) => hasSameSpokenTokenText(trigger, tokenText))
   );
 }

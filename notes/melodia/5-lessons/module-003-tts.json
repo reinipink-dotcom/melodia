@@ -114,7 +114,7 @@
       "language": "es-419",
       "slowVersion": false,
       "normalVersion": true,
-      "speed": 0.9,
+      "speed": 1.0,
       "voice": "nova",
       "outputFile": "assets/audio/module-003/m3-reading-token-donde-jugaran.mp3",
       "mvpRequired": true

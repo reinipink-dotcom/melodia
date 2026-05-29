@@ -1,3 +1,35 @@
+# AGENTS.md - Codex Adapter
+
+This file is the Codex-facing adapter for Melodia. `CLAUDE.md` remains the long-form source of project knowledge, and this file gives Codex the map, guardrails, and pointers it needs to work in the same project without duplicating or drifting from the Claude setup.
+
+## Adapter Rules
+- Treat `CLAUDE.md` as the canonical project context when details disagree.
+- Keep this file focused on Codex workflow, repository map, and important handoff notes.
+- Do not place copied skills in `.codex/skills/`; project skills live in `.agents/skills/`.
+- Keep Codex agent definitions in `.codex/agents/` as `.toml` files with `developer_instructions`.
+- Do not commit secrets or local tool overrides.
+
+## Project Map
+- `CLAUDE.md` - canonical Claude project instructions and long-form Melodia context.
+- `AGENTS.md` - this Codex adapter and local working guide.
+- `.codex/config.toml` - minimal Codex configuration for local tooling.
+- `.codex/agents/` - Codex agent adapters converted from `.claude/agents/*.md`.
+- `.agents/skills/` - project skills copied from `.claude/skills/`, plus Codex-specific project skills.
+- `.claude/` - Claude commands, skills, agents, and source setup.
+- `.planning/` - GSD planning artifacts, phase plans, quick fixes, and implementation state.
+- `notes/melodia/` - lesson production notes, module specs, trackers, audio manifests, and Reine feedback.
+- `src/` - React Native + Expo app source.
+- `assets/` - app images, mascot assets, and generated audio files.
+- `scripts/` - generation, validation, audio, and maintenance scripts.
+
+## Codex Workflow Notes
+- Before editing, inspect the existing pattern and preserve user or Claude changes already in the worktree.
+- For debugging or bug-fix work, create a small `.planning/quick/` artifact before touching files unless Reine explicitly asks to bypass GSD.
+- Prefer `rg` for search and `apply_patch` for manual edits.
+- Run focused checks after changes when practical, especially `npx tsc --noEmit` for TypeScript changes.
+
+---
+
 # MELODIA - Project Context
 
 ## What is Melodia?

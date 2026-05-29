@@ -416,6 +416,25 @@ After running `/melodia` or `/melodia-audio`:
 
 **Never let inbox items sit unread across multiple sessions. If an item can be fixed now, fix it. If it needs planning, add it to PENDING.md with a clear description and next action.**
 
+## Post-Build Checklist
+
+After every `/melodia` run, before closing the session, walk Reine through these steps:
+
+1. Run `/melodia-audio` if not done yet — generates MP3s from the TTS manifest (~30 sec)
+2. Boot simulator, walk through the new module end-to-end (`PreListen → Listen → Quiz → Results → Reading → LessonComplete`)
+3. If it passes: update module status to `app-ready` in `notes/melodia/1-daily/module-queue.md`
+4. **Merge working branch to `main` and push:** `git checkout main && git merge <branch> && git push origin main && git checkout <branch>`
+5. Re-read `PENDING.md` — mark resolved items `~~DONE~~`, tag new bugs as `| cloud-fixable` or `| sim-required`
+
+⏰ **Hard deadline: `main` must be updated before 11pm WAT every day.** The nightly cloud build clones fresh from `main`. Work that isn't on `main` by 11pm will be ignored or rebuilt by the cloud agent.
+
+**If Reine can't finish the sim walkthrough before 11pm:** merge anyway and leave the module at `needs-review`. The cloud will skip it and pick the next `pending` module. The review can happen the next morning.
+
+**How to tag PENDING.md items so the cloud pre-flight knows what to fix:**
+- `## OPEN — [title] | cloud-fixable` — cloud agent fixes this tonight (no sim, no API keys needed)
+- `## OPEN — [title] | sim-required` — only fixable locally with the iOS simulator
+- `## OPEN — [title] | blocked:reason` — waiting on something external, skip for now
+
 <!-- GSD:skills-start source:skills/ -->
 ## Project Skills
 
