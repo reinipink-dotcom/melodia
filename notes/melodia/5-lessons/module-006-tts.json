@@ -184,28 +184,6 @@
       "mvpRequired": true
     },
     {
-      "id": "m6-reading-token-estoy",
-      "text": "estoy",
-      "language": "es-419",
-      "slowVersion": false,
-      "normalVersion": true,
-      "speed": 0.9,
-      "voice": "nova",
-      "outputFile": "assets/audio/module-006/m6-reading-token-estoy.mp3",
-      "mvpRequired": true
-    },
-    {
-      "id": "m6-reading-token-aqui",
-      "text": "aquí",
-      "language": "es-419",
-      "slowVersion": false,
-      "normalVersion": true,
-      "speed": 0.9,
-      "voice": "nova",
-      "outputFile": "assets/audio/module-006/m6-reading-token-aqui.mp3",
-      "mvpRequired": true
-    },
-    {
       "id": "m6-reading-token-soy",
       "text": "soy",
       "language": "es-419",
